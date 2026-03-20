@@ -25,8 +25,8 @@ export default function BottomPrep() {
         },
         {
           label: "Level 4 · Complete Reset",
-          name: "Jango 1000 Class 4 Laser System",
-          description: "Complete bare gelcoat reset using the Jango 1000 Class 4 laser system — zero-waste, dustless paint removal. The most thorough bottom preparation available anywhere in Ontario.",
+          name: "Full Bare-Gelcoat Strip",
+          description: "Complete bare gelcoat reset — full removal of all antifouling paint down to bare gelcoat. Contact Spike directly to discuss scope and scheduling for this service.",
         },
       ]}
     />
