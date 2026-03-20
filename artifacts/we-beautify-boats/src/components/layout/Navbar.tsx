@@ -93,7 +93,7 @@ export function Navbar() {
               href="https://www.webeautifyboats.com/book-spike"
               target="_blank"
               rel="noopener noreferrer"
-              className="px-6 py-2.5 rounded-full bg-cyan-500 hover:bg-cyan-400 text-white font-semibold text-sm shadow-[0_0_20px_rgba(0,180,216,0.3)] hover:shadow-[0_0_25px_rgba(0,180,216,0.5)] transition-all hover:-translate-y-0.5 active:translate-y-0"
+              className="px-6 py-2.5 rounded-full bg-cyan-500 hover:bg-cyan-400 text-white font-semibold text-sm shadow-[0_0_20px_rgba(120,60,200,0.3)] hover:shadow-[0_0_25px_rgba(120,60,200,0.5)] transition-all hover:-translate-y-0.5 active:translate-y-0"
             >
               Book Now
             </a>

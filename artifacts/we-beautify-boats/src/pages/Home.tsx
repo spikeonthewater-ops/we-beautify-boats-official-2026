@@ -78,7 +78,7 @@ export default function Home() {
             
             <motion.h1 variants={fadeIn} className="text-5xl md:text-6xl lg:text-7xl font-display font-bold text-white mb-6 leading-tight">
               Professional Yacht & <br/>
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-blue-500">Boat Detailing</span>
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-purple-400">Boat Detailing</span>
             </motion.h1>
             
             <motion.p variants={fadeIn} className="text-lg md:text-xl text-gray-300 mb-10 max-w-2xl mx-auto font-light leading-relaxed">
@@ -90,7 +90,7 @@ export default function Home() {
                 href="https://www.webeautifyboats.com/book-spike"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="px-8 py-4 w-full sm:w-auto rounded-full bg-cyan-500 hover:bg-cyan-400 text-white font-bold text-lg shadow-[0_0_30px_rgba(0,180,216,0.4)] hover:shadow-[0_0_40px_rgba(0,180,216,0.6)] transition-all hover:-translate-y-1"
+                className="px-8 py-4 w-full sm:w-auto rounded-full bg-cyan-500 hover:bg-cyan-400 text-white font-bold text-lg shadow-[0_0_30px_rgba(120,60,200,0.4)] hover:shadow-[0_0_40px_rgba(120,60,200,0.6)] transition-all hover:-translate-y-1"
               >
                 Book Your Service
               </a>
@@ -195,7 +195,7 @@ export default function Home() {
               href="https://www.webeautifyboats.com/book-spike"
               target="_blank"
               rel="noopener noreferrer"
-              className="px-8 py-4 rounded-full bg-cyan-500 hover:bg-cyan-400 text-white font-bold text-lg shadow-[0_0_20px_rgba(0,180,216,0.3)] transition-transform hover:-translate-y-1"
+              className="px-8 py-4 rounded-full bg-cyan-500 hover:bg-cyan-400 text-white font-bold text-lg shadow-[0_0_20px_rgba(120,60,200,0.3)] transition-transform hover:-translate-y-1"
             >
               Schedule Service
             </a>
