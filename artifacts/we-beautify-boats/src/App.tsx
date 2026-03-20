@@ -15,6 +15,8 @@ import SeasonalPlans from "@/pages/SeasonalPlans";
 import OurWork from "@/pages/OurWork";
 import MeetTheTeam from "@/pages/MeetTheTeam";
 import Contact from "@/pages/Contact";
+import Blog from "@/pages/Blog";
+import BlogPost from "@/pages/BlogPost";
 
 // Service Detail Pages
 import DeckWashes from "@/pages/services/DeckWashes";
@@ -53,7 +55,10 @@ function Router() {
             <Route path="/hull-washes" component={HullWashes} />
             <Route path="/bottom-prep" component={BottomPrep} />
             <Route path="/interior-details" component={InteriorDetails} />
-            
+
+            <Route path="/blog" component={Blog} />
+            <Route path="/blog/:slug" component={BlogPost} />
+
             <Route component={NotFound} />
           </Switch>
         </main>

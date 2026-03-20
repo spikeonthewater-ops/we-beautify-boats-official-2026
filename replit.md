@@ -91,6 +91,20 @@ Generated Zod schemas from the OpenAPI spec (e.g. `HealthCheckResponse`). Used b
 
 Generated React Query hooks and fetch client from the OpenAPI spec (e.g. `useHealthCheck`, `healthCheck`).
 
+### `artifacts/we-beautify-boats` (`@workspace/we-beautify-boats`)
+
+Static React + Vite frontend for webeautifyboats.com. No backend — all data is static.
+
+- **Stack**: React, Vite, TypeScript, Tailwind CSS, shadcn/ui, Framer Motion, Wouter (routing)
+- **Theme**: Purple primary (`hsl(263,55%,52%)`), Midnight dark (`hsl(250,40%,8%)`), Silver accent
+- **Fonts**: DM Sans (body), Outfit (display)
+- **Logo**: `public/images/logo.png` displayed with white pill background in navbar
+- **Phone**: 416-890-5899 | **Booking**: https://www.webeautifyboats.com/book-spike
+- **Pages**: Home, Services, Seasonal Plans, Our Work, Meet the Team, Contact, Blog listing, Blog post
+- **Service pages**: Deck Washes, Deck Polishing, Protections, Hull Washes, Bottom Prep, Interior Details
+- **Blog**: Static data in `src/data/blogPosts.ts` — 10 posts fetched from Wix, structured with slug/title/date/category/excerpt/image/content. Categories: Hull & Bottom, Deck & Exterior, Interior, Seasonal & Planning, Team & Business. Routes: `/blog` (listing with category filter + featured post), `/blog/:slug` (full article with prev/next nav + related posts + booking CTA).
+- **Adding new blog posts**: Add a new entry to the `blogPosts` array in `src/data/blogPosts.ts` following the `BlogPost` interface.
+
 ### `scripts` (`@workspace/scripts`)
 
 Utility scripts package. Each script is a `.ts` file in `src/` with a corresponding npm script in `package.json`. Run scripts via `pnpm --filter @workspace/scripts run <script>`. Scripts can import any workspace package (e.g., `@workspace/db`) by adding it as a dependency in `scripts/package.json`.

@@ -15,6 +15,7 @@ const NAV_LINKS = [
   { href: "/seasonal-plans", label: "Seasonal Plans" },
   { href: "/our-work", label: "Our Work" },
   { href: "/meet-the-team", label: "Team" },
+  { href: "/blog", label: "Blog" },
   { href: "/contact", label: "Contact" },
 ];
 
@@ -57,7 +58,9 @@ export function Navbar() {
           {/* Desktop Nav */}
           <nav className="hidden lg:flex items-center gap-1">
             {NAV_LINKS.map((link) => {
-              const isActive = location === link.href;
+              const isActive = link.href === "/"
+                ? location === "/"
+                : location === link.href || location.startsWith(link.href + "/");
               return (
                 <Link
                   key={link.href}
