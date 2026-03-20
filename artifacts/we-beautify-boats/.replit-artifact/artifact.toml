@@ -1,0 +1,31 @@
+kind = "web"
+previewPath = "/"
+title = "We Beautify Boats"
+version = "1.0.0"
+id = "artifacts/we-beautify-boats"
+router = "path"
+
+[[integratedSkills]]
+name = "react-vite"
+version = "1.0.0"
+
+[[services]]
+name = "web"
+paths = [ "/" ]
+localPort = 23763
+
+[services.development]
+run = "pnpm --filter @workspace/we-beautify-boats run dev"
+
+[services.production]
+build = [ "pnpm", "--filter", "@workspace/we-beautify-boats", "run", "build" ]
+publicDir = "artifacts/we-beautify-boats/dist/public"
+serve = "static"
+
+[[services.production.rewrites]]
+from = "/*"
+to = "/index.html"
+
+[services.env]
+PORT = "23763"
+BASE_PATH = "/"
