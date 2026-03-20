@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { Check, Repeat, CalendarDays } from "lucide-react";
+import { Check, Repeat, CalendarDays, Package } from "lucide-react";
 
 interface Plan {
   title: string;
@@ -146,6 +146,114 @@ const ONE_TIME_PLANS: Plan[] = [
     ],
   },
 ];
+
+interface ServicePackage {
+  title: string;
+  totalVisits: number;
+  area: string;
+  resetVisit: string;
+  maintenanceVisits: string;
+  resetCount: number;
+  maintenanceCount: number;
+  desc: string;
+}
+
+const PACKAGES: ServicePackage[] = [
+  {
+    title: "5-Visit Deck Wash Package",
+    totalVisits: 5,
+    area: "Deck",
+    resetVisit: "Level 3 Deep Reset",
+    maintenanceVisits: "Level 1 Routine Washdown",
+    resetCount: 1,
+    maintenanceCount: 4,
+    desc: "Begins with one intensive Level 3 deck wash to deeply scrub away embedded grime, clear deck lockers, and clean all vinyl and windows. The remaining four visits are Level 1 eco-friendly routine washdowns to keep the deck guest-ready between resets.",
+  },
+  {
+    title: "10-Visit Deck Wash Package",
+    totalVisits: 10,
+    area: "Deck",
+    resetVisit: "Level 3 Deep Reset",
+    maintenanceVisits: "Level 1 Routine Washdown",
+    resetCount: 1,
+    maintenanceCount: 9,
+    desc: "Kicks off with a comprehensive Level 3 inch-by-inch deep scrub of the non-skid, trim, and lockers, followed by nine Level 1 visits to continuously float away fresh surface dirt, salt, and pollen before they bond to the deck.",
+  },
+  {
+    title: "5-Visit Interior Clean Package",
+    totalVisits: 5,
+    area: "Interior",
+    resetVisit: "Level 3 Steam Sanitization",
+    maintenanceVisits: "Level 1 Routine Maintenance",
+    resetCount: 1,
+    maintenanceCount: 4,
+    desc: "Resets the cabin with an initial Level 3 deep clean and steam sanitization of carpets, upholstery, and hard surfaces to eliminate odors and allergens. The four follow-up visits are Level 1 routine care to keep the cabin fresh and tidy.",
+  },
+  {
+    title: "10-Visit Interior Clean Package",
+    totalVisits: 10,
+    area: "Interior",
+    resetVisit: "Level 3 Steam Sanitization",
+    maintenanceVisits: "Level 1 Routine Maintenance",
+    resetCount: 1,
+    maintenanceCount: 9,
+    desc: "Starts with a Level 3 steam-clean and sanitization to restore a healthy, bacteria-free cabin environment, followed by nine Level 1 maintenance visits ensuring the cabin remains consistently tidy and comfortable for the full boating season.",
+  },
+];
+
+function PackageCard({ pkg, i }: { pkg: ServicePackage; i: number }) {
+  return (
+    <motion.div
+      initial={{ opacity: 0, y: 20 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ delay: i * 0.07 }}
+      className="bg-white border border-border rounded-3xl p-7 shadow-md hover:shadow-lg hover:border-cyan-500/30 transition-all flex flex-col"
+    >
+      <div className="flex items-start justify-between gap-4 mb-4">
+        <div>
+          <span className="inline-block text-xs font-bold uppercase tracking-widest text-cyan-500 mb-2">
+            {pkg.area} · {pkg.totalVisits} Visits
+          </span>
+          <h3 className="text-xl font-display font-bold text-marine-900 leading-snug">
+            {pkg.title}
+          </h3>
+        </div>
+        <div className="shrink-0 w-12 h-12 rounded-2xl bg-cyan-500/10 flex items-center justify-center">
+          <span className="text-2xl font-display font-black text-cyan-500">{pkg.totalVisits}</span>
+        </div>
+      </div>
+
+      <p className="text-sm text-muted-foreground leading-relaxed mb-6 flex-1">
+        {pkg.desc}
+      </p>
+
+      {/* Visit breakdown */}
+      <div className="space-y-2 mb-6">
+        <div className="flex items-center gap-3 bg-purple-50 border border-purple-200/60 rounded-xl px-4 py-3">
+          <span className="w-7 h-7 rounded-full bg-purple-500 text-white text-xs font-bold flex items-center justify-center shrink-0">
+            {pkg.resetCount}
+          </span>
+          <span className="text-sm font-semibold text-purple-800">{pkg.resetVisit}</span>
+        </div>
+        <div className="flex items-center gap-3 bg-cyan-50 border border-cyan-200/60 rounded-xl px-4 py-3">
+          <span className="w-7 h-7 rounded-full bg-cyan-500 text-white text-xs font-bold flex items-center justify-center shrink-0">
+            {pkg.maintenanceCount}
+          </span>
+          <span className="text-sm font-semibold text-cyan-800">{pkg.maintenanceVisits}</span>
+        </div>
+      </div>
+
+      <a
+        href="https://www.webeautifyboats.com/book-spike"
+        target="_blank"
+        rel="noopener noreferrer"
+        className="w-full text-center py-3.5 rounded-xl font-bold text-sm bg-gray-100 hover:bg-marine-900 hover:text-white text-marine-900 transition-all duration-300"
+      >
+        Get a Quote
+      </a>
+    </motion.div>
+  );
+}
 
 function PlanCard({ plan, i }: { plan: Plan; i: number }) {
   return (
@@ -304,6 +412,21 @@ export default function SeasonalPlans() {
           <div className="grid sm:grid-cols-2 gap-6 max-w-3xl">
             {ONE_TIME_PLANS.map((plan, i) => (
               <PlanCard key={plan.title} plan={plan} i={i} />
+            ))}
+          </div>
+        </section>
+
+        {/* Visit Packages */}
+        <section className="mb-16">
+          <SectionHeader
+            icon={<Package className="w-4 h-4" />}
+            label="Visit Packages"
+            title="Tiered-Visit Bundles"
+            subtitle="One deep reset to clear the baseline, then smart routine maintenance to keep it there. Available for decks and interiors in 5- or 10-visit blocks."
+          />
+          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+            {PACKAGES.map((pkg, i) => (
+              <PackageCard key={pkg.title} pkg={pkg} i={i} />
             ))}
           </div>
         </section>
