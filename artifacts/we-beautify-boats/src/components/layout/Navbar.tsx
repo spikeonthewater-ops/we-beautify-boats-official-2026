@@ -46,20 +46,12 @@ export function Navbar() {
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between">
           {/* Logo */}
-          <Link href="/" className="flex items-center gap-3 group">
+          <Link href="/" className="flex items-center group">
             <img
-              src={`${import.meta.env.BASE_URL}images/logo-icon.png`}
+              src={`${import.meta.env.BASE_URL}images/logo.png`}
               alt="We Beautify Boats Logo"
-              className="w-10 h-10 object-contain group-hover:scale-105 transition-transform duration-300"
+              className="h-12 w-auto object-contain rounded-lg bg-white px-2 py-1 group-hover:scale-105 transition-transform duration-300"
             />
-            <div className="flex flex-col">
-              <span className="text-white font-display font-bold text-xl leading-tight tracking-wide">
-                We Beautify Boats
-              </span>
-              <span className="text-cyan-400 text-[10px] font-semibold uppercase tracking-widest leading-none">
-                By Spike
-              </span>
-            </div>
           </Link>
 
           {/* Desktop Nav */}
@@ -91,11 +83,11 @@ export function Navbar() {
           {/* Actions */}
           <div className="hidden lg:flex items-center gap-4">
             <a
-              href="tel:4163053639"
+              href="tel:4168905899"
               className="flex items-center gap-2 text-sm font-medium text-gray-300 hover:text-white transition-colors"
             >
               <PhoneCall className="w-4 h-4 text-cyan-400" />
-              <span>416-305-3639</span>
+              <span>416-890-5899</span>
             </a>
             <a
               href="https://www.webeautifyboats.com/book-spike"
@@ -143,11 +135,11 @@ export function Navbar() {
             </nav>
             <div className="mt-8 flex flex-col gap-4">
               <a
-                href="tel:4163053639"
+                href="tel:4168905899"
                 className="flex items-center justify-center gap-2 py-4 text-white border border-white/20 rounded-xl"
               >
                 <PhoneCall className="w-5 h-5 text-cyan-400" />
-                <span className="font-medium">Call 416-305-3639</span>
+                <span className="font-medium">Call 416-890-5899</span>
               </a>
               <a
                 href="https://www.webeautifyboats.com/book-spike"

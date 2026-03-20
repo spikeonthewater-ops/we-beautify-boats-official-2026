@@ -29,8 +29,8 @@ export default function Contact() {
                 </div>
                 <div>
                   <h3 className="font-display font-bold text-marine-900 text-lg mb-1">Direct Line & WhatsApp</h3>
-                  <a href="tel:4163053639" className="text-2xl font-bold text-cyan-600 hover:text-cyan-500 transition-colors">
-                    416-305-3639
+                  <a href="tel:4168905899" className="text-2xl font-bold text-cyan-600 hover:text-cyan-500 transition-colors">
+                    416-890-5899
                   </a>
                   <p className="text-sm text-muted-foreground mt-2">
                     * Phone calls are preferred over text messages for the best service experience.
