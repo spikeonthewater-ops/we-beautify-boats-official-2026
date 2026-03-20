@@ -16,7 +16,7 @@ const SERVICES_LIST = [
     ],
     links: [
       { name: "Deck Washes", href: "/deck-washes" },
-      { name: "Deck Polishing", href: "/deck-polishing" }
+      { name: "Deck & Hull Polishing", href: "/deck-polishing" }
     ],
     img: "service-deck.png"
   },
@@ -24,15 +24,16 @@ const SERVICES_LIST = [
     id: "02",
     title: "Hull & Bottom",
     subtitle: "Elevating Hull Care to Artistry",
-    desc: "Freshwater hull washing, bottom preparation, and hull polishing. We eliminate organic staining, algae buildup, and surface oxidation while preparing antifouling coatings using structured bottom prep protocols.",
+    desc: "Freshwater hull washing, topsides polishing, and bottom preparation. We eliminate organic staining, algae buildup, and surface oxidation — and restore gelcoat brilliance from a light maintenance polish all the way to a wet-sanded mirror finish.",
     features: [
-      "Structured Hull Wash Levels 1–3",
+      "Hull Wash Levels 1–3",
+      "Topsides Polishing Levels 1–5",
       "Bottom Prep Levels 1–4",
-      "Freshwater-specific staining protocols",
-      "Antifouling preparation to spec"
+      "Freshwater-specific staining & oxidation protocols"
     ],
     links: [
       { name: "Hull Washes", href: "/hull-washes" },
+      { name: "Hull & Topsides Polishing", href: "/deck-polishing" },
       { name: "Bottom Prep", href: "/bottom-prep" }
     ],
     img: "service-hull.png"
