@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 import { Link } from "wouter";
-import { ArrowRight, CheckCircle2 } from "lucide-react";
+import { ArrowRight, CheckCircle2, Plus } from "lucide-react";
 
 const SERVICES_LIST = [
   {
@@ -70,6 +70,21 @@ const SERVICES_LIST = [
     ],
     img: "hero-bg.png"
   }
+];
+
+const EXTRAS_PREVIEW = [
+  "Wet Sanding Spots",
+  "Engine Bay Cleaning",
+  "Exterior Wood Refinishing",
+  "Tender Tubes Cleaning & Protection",
+  "Storm Line Check",
+  "Erect Canvas Service",
+  "Shrink Wrap Removal",
+  "Decal & Stripe Removal",
+  "Vinyl Recoloring",
+  "Propeller Polishing",
+  "Brightwork Polishing & Conditioning",
+  "Teak Deck Maintenance",
 ];
 
 export default function Services() {
@@ -149,6 +164,50 @@ export default function Services() {
             </div>
           ))}
         </div>
+
+        {/* Extra Services Banner */}
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          className="mt-28 bg-marine-900 rounded-3xl overflow-hidden"
+        >
+          <div className="p-10 md:p-14">
+            <div className="flex flex-col lg:flex-row gap-10 items-start">
+              <div className="flex-1">
+                <span className="text-cyan-400 font-bold uppercase tracking-widest text-xs block mb-3">
+                  Beyond Standard Detailing
+                </span>
+                <h2 className="text-3xl md:text-4xl font-display font-bold text-white mb-4">
+                  Extra Services
+                </h2>
+                <p className="text-gray-300 leading-relaxed max-w-xl mb-8">
+                  Targeted, expert solutions addressing specific vessel components, specialized restorations, and environmental compliance. Available as standalone appointments or add-ons to any booking.
+                </p>
+                <Link
+                  href="/extra-services"
+                  className="inline-flex items-center gap-2 px-7 py-3.5 rounded-full bg-cyan-500 hover:bg-cyan-400 text-white font-bold transition-all hover:-translate-y-0.5 shadow-lg shadow-cyan-500/25"
+                >
+                  View All Extra Services <ArrowRight className="w-4 h-4" />
+                </Link>
+              </div>
+              <div className="w-full lg:w-auto lg:min-w-[340px]">
+                <div className="grid grid-cols-2 gap-2">
+                  {EXTRAS_PREVIEW.map((name) => (
+                    <div
+                      key={name}
+                      className="flex items-center gap-2 bg-white/5 hover:bg-white/10 transition-colors rounded-xl px-3 py-2.5"
+                    >
+                      <Plus className="w-3.5 h-3.5 text-cyan-400 shrink-0" />
+                      <span className="text-sm text-gray-200 font-medium leading-tight">{name}</span>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </div>
+          </div>
+        </motion.div>
+
       </div>
     </div>
   );

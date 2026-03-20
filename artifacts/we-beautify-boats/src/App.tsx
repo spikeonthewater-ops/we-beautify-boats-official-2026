@@ -25,6 +25,7 @@ import Protections from "@/pages/services/Protections";
 import HullWashes from "@/pages/services/HullWashes";
 import BottomPrep from "@/pages/services/BottomPrep";
 import InteriorDetails from "@/pages/services/InteriorDetails";
+import ExtraServices from "@/pages/services/ExtraServices";
 
 import { useScrollToTop } from "@/hooks/use-navigation";
 
@@ -55,6 +56,7 @@ function Router() {
             <Route path="/hull-washes" component={HullWashes} />
             <Route path="/bottom-prep" component={BottomPrep} />
             <Route path="/interior-details" component={InteriorDetails} />
+            <Route path="/extra-services" component={ExtraServices} />
 
             <Route path="/blog" component={Blog} />
             <Route path="/blog/:slug" component={BlogPost} />
