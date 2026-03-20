@@ -3,17 +3,32 @@ import { ServiceDetailLayout } from "../../components/layout/ServiceDetailLayout
 export default function InteriorDetails() {
   return (
     <ServiceDetailLayout
-      title="Interior Details"
-      subtitle="A Cabin That Feels Like Home"
-      description="Yacht interiors face unique challenges like high humidity, mold, and confined odors. Our interior technicians execute a precision reset of your cabin, galleys, and heads so you can entertain and relax in total comfort."
-      bullets={[
-        "Deep carpet vacuuming and stain extraction",
-        "Marine leather and vinyl conditioning",
-        "Galley surface, fridge, and cabinetry sanitization",
-        "Head (bathroom) detailing and disinfection",
-        "Mold, mildew, and odor elimination treatments"
-      ]}
+      title="Interior Detailing"
+      subtitle="Routine Care to Full Environmental Remediation."
+      description="Comprehensive interior care ranging from routine wipe-downs to full environmental remediation. Four levels restore a fresh, healthy cabin — matched precisely to what your interior actually needs."
       image="service-interior.png"
+      levels={[
+        {
+          label: "Level 1 · Basic",
+          name: "Routine Cabin Care",
+          description: "Routine cabin care, dusting, and vacuuming for a tidy, guest-ready space. Ideal for boats in regular use that just need consistent upkeep.",
+        },
+        {
+          label: "Level 2 · Reset",
+          name: "Deep Cleaning Refresh",
+          description: "Deep cleaning refresh, detailing cupboards, drawers, windows, and hard-to-reach areas. For cabins that haven't had professional interior care in a season.",
+        },
+        {
+          label: "Level 3 · Sanitization",
+          name: "Steam-Clean Sanitization",
+          description: "Deep steam-cleaned sanitization for carpets, upholstery, bilges, and appliances. Eliminates biological load including mold colonies and bacterial contamination.",
+        },
+        {
+          label: "Level 4 · Intervention",
+          name: "Maximum Abatement",
+          description: "Maximum abatement for severe mold, pests, flooding, and odor using ozone treatment. Full-system intervention across every surface, compartment, and material type.",
+        },
+      ]}
     />
   );
 }

@@ -4,16 +4,31 @@ export default function BottomPrep() {
   return (
     <ServiceDetailLayout
       title="Bottom Prep"
-      subtitle="Hydrodynamic Efficiency Restored"
-      description="Proper bottom preparation is critical for antifouling adhesion and cruising performance. We follow documented prep methods (no guesswork sanding) to ensure your running gear and hull bottom are perfectly ready for the season."
-      bullets={[
-        "Power washing and scraping of marine growth/zebra mussels",
-        "Controlled sanding protocols to prep for new bottom paint",
-        "Running gear (props, shafts, trim tabs) scraping and cleaning",
-        "Masking of waterlines and vulnerable sensors",
-        "Application of barrier coats (if required/requested)"
-      ]}
+      subtitle="Critical Underwater Surface Preparation."
+      description="Critical underwater surface preparation required for maintaining hydrodynamics and ensuring optimal coating adhesion. Four levels cover everything from light fouling to complete bare-gelcoat laser reset."
       image="service-hull.png"
+      levels={[
+        {
+          label: "Level 1 · Basic Prep",
+          name: "Light Fouling & Slime Removal",
+          description: "Light fouling and slime removal using soft scrapers — no sanding. For boats maintained annually with minimal growth accumulation.",
+        },
+        {
+          label: "Level 2 · Standard Prep",
+          name: "Moderate Fouling & Scuff Sand",
+          description: "Moderate fouling removal and scuff sanding to promote antifouling paint adhesion. The standard preparation level for most Ontario seasonal haul-outs.",
+        },
+        {
+          label: "Level 3 · Aggressive Prep",
+          name: "Heavy-Duty Marine Growth Removal",
+          description: "Heavy-duty prep to sand away marine growth, barnacles, and flaking paint. For boats with significant accumulation or compromised antifouling systems.",
+        },
+        {
+          label: "Level 4 · Complete Reset",
+          name: "Jango 1000 Class 4 Laser System",
+          description: "Complete bare gelcoat reset using the Jango 1000 Class 4 laser system — zero-waste, dustless paint removal. The most thorough bottom preparation available anywhere in Ontario.",
+        },
+      ]}
     />
   );
 }
