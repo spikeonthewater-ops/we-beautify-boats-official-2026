@@ -242,7 +242,7 @@ export default function OurWork() {
     <div className="min-h-screen bg-background">
 
       {/* ── HERO ──────────────────────────────────────────── */}
-      <section className="relative bg-marine-900 pt-32 pb-20 overflow-hidden">
+      <section className="relative bg-marine-900 pt-36 pb-20 overflow-hidden">
         <div className="absolute inset-0 opacity-20 bg-[radial-gradient(ellipse_at_top_right,_var(--tw-gradient-stops))] from-cyan-600 via-transparent to-transparent pointer-events-none" />
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <motion.span
