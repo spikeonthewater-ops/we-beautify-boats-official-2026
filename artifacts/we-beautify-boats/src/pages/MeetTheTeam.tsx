@@ -28,7 +28,7 @@ export default function MeetTheTeam() {
   return (
     <div className="min-h-screen bg-background">
       {/* Hero */}
-      <section className="relative min-h-[70vh] flex items-end overflow-hidden bg-marine-900">
+      <section className="relative overflow-hidden bg-marine-900">
         {/* Full-bleed team photo */}
         <div className="absolute inset-0 z-0">
           <img
@@ -37,11 +37,10 @@ export default function MeetTheTeam() {
             className="w-full h-full object-cover object-top"
           />
           {/* Gradient overlays: subtle top darkening + strong bottom for text legibility */}
-          <div className="absolute inset-0 bg-gradient-to-b from-marine-900/50 via-transparent to-marine-900/90" />
-          <div className="absolute inset-0 bg-marine-900/20" />
+          <div className="absolute inset-0 bg-gradient-to-b from-marine-900/60 via-marine-900/30 to-marine-900/80" />
         </div>
 
-        <div className="relative z-10 w-full max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 pb-16 pt-36">
+        <div className="relative z-10 w-full max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 pt-36 pb-16">
           <motion.span
             initial={{ opacity: 0, y: 16 }}
             animate={{ opacity: 1, y: 0 }}
@@ -53,17 +52,17 @@ export default function MeetTheTeam() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.05 }}
-            className="text-5xl md:text-7xl font-display font-bold text-white mb-6 leading-tight"
+            className="text-4xl md:text-5xl font-display font-bold text-white mb-4 leading-tight"
           >
-            The Team Behind<br className="hidden md:block" /> the Shine
+            The Team Behind the Shine
           </motion.h1>
           <motion.p
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.12 }}
-            className="text-lg md:text-xl text-gray-200 leading-relaxed font-light max-w-2xl"
+            className="text-base md:text-lg text-gray-300 leading-relaxed font-light max-w-2xl"
           >
-            "We don't run a 'boat cleaning crew.' We run a marine service system — delivered by trained technicians working inside strict scopes, safety standards, and quality control."
+            A marine service system — delivered by trained technicians working inside strict scopes, safety standards, and quality control.
           </motion.p>
         </div>
       </section>
