@@ -49,9 +49,9 @@ export function Navbar() {
           {/* Logo */}
           <Link href="/" className="flex items-center group">
             <img
-              src={`${import.meta.env.BASE_URL}images/logo.png`}
+              src={`${import.meta.env.BASE_URL}images/logo-wbb.png`}
               alt="We Beautify Boats Logo"
-              className="h-12 w-auto object-contain rounded-lg bg-white px-2 py-1 group-hover:scale-105 transition-transform duration-300"
+              className="h-16 w-auto object-contain mix-blend-screen group-hover:scale-105 transition-transform duration-300"
             />
           </Link>
 

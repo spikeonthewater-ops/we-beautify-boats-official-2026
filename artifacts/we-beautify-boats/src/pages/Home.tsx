@@ -70,13 +70,22 @@ export default function Home() {
             variants={staggerContainer}
             className="max-w-4xl mx-auto"
           >
+            {/* Prominent logo */}
+            <motion.div variants={fadeIn} className="flex justify-center mb-6">
+              <img
+                src={`${import.meta.env.BASE_URL}images/logo-wbb.png`}
+                alt="We Beautify Boats by Spike"
+                className="h-48 md:h-64 lg:h-72 w-auto object-contain mix-blend-screen drop-shadow-2xl"
+              />
+            </motion.div>
+
             <motion.div variants={fadeIn} className="flex justify-center mb-6">
               <span className="px-4 py-1.5 rounded-full bg-cyan-500/20 border border-cyan-500/30 text-cyan-300 text-sm font-semibold tracking-wide backdrop-blur-md">
                 Ontario's Premier Mobile Marine Service
               </span>
             </motion.div>
             
-            <motion.h1 variants={fadeIn} className="text-5xl md:text-6xl lg:text-7xl font-display font-bold text-white mb-6 leading-tight">
+            <motion.h1 variants={fadeIn} className="text-4xl md:text-5xl lg:text-6xl font-display font-bold text-white mb-6 leading-tight">
               Professional Yacht & <br/>
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-purple-400">Boat Detailing</span>
             </motion.h1>

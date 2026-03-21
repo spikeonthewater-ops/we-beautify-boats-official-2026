@@ -8,20 +8,12 @@ export function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16">
           {/* Brand Col */}
           <div className="space-y-6">
-            <Link href="/" className="flex items-center gap-3">
+            <Link href="/" className="block">
               <img
-                src={`${import.meta.env.BASE_URL}images/logo-icon.png`}
-                alt="We Beautify Boats Logo"
-                className="w-12 h-12 object-contain"
+                src={`${import.meta.env.BASE_URL}images/logo-wbb.png`}
+                alt="We Beautify Boats by Spike"
+                className="h-28 w-auto object-contain mix-blend-screen hover:scale-105 transition-transform duration-300"
               />
-              <div className="flex flex-col">
-                <span className="text-white font-display font-bold text-xl leading-tight">
-                  We Beautify Boats
-                </span>
-                <span className="text-cyan-400 text-xs font-semibold uppercase tracking-widest">
-                  By Spike
-                </span>
-              </div>
             </Link>
             <p className="text-sm leading-relaxed text-gray-400">
               Defined service levels. Documented processes. 25 years of freshwater expertise protecting your hull, deck and interior for long-term value.
