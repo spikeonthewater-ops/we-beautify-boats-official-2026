@@ -4,7 +4,7 @@ import {
   X, CheckCircle2, Droplets, Sparkles, Waves,
   Compass, Zap, Ship, Shield, Hammer, Calendar, Gauge, Anchor,
   ShoppingCart, Plus, Trash2, ChevronLeft, ClipboardList,
-  Phone, MessageCircle, ArrowRight, User, MapPin, Ruler, Layers
+  Phone, MessageCircle, ArrowRight, User, MapPin, Ruler, Layers, CalendarCheck
 } from "lucide-react";
 import { useQuote, QuoteCategory, CartItem } from "@/context/QuoteContext";
 
@@ -801,28 +801,44 @@ export function QuoteDrawer() {
                     </div>
                   </div>
 
-                  {/* Action CTAs */}
-                  <a
-                    href={`https://wa.me/14168905899?text=${buildWhatsAppText()}`}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="flex items-center justify-center gap-3 w-full py-4 bg-[#25D366] hover:bg-[#1fba59] text-white font-black text-sm uppercase tracking-widest rounded-xl transition-all active:scale-[0.99] shadow-lg mb-3"
-                  >
-                    <MessageCircle className="w-5 h-5" />
-                    Send via WhatsApp
-                  </a>
+                  {/* Primary CTA — Square Appointments */}
+                  <div className="mb-3">
+                    <a
+                      href="https://square.site/appointments/buyer/widget/fcf51xt73abko4/L06YYAF0XFN9A"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="flex items-center justify-center gap-3 w-full py-4 rounded-xl font-black text-sm uppercase tracking-widest transition-all active:scale-[0.99] shadow-lg text-white"
+                      style={{ background: "linear-gradient(135deg,#6c47c1 0%,#3d1f8a 100%)" }}
+                    >
+                      <CalendarCheck className="w-5 h-5" />
+                      Reserve Assessment — Book via Square
+                    </a>
+                    <p className="text-center text-[10px] text-gray-400 mt-2 leading-relaxed">
+                      $250 CAD assessment fee collected securely via Square · Credited toward your service
+                    </p>
+                  </div>
+
+                  {/* Secondary — WhatsApp cart summary */}
+                  <div className="mb-3">
+                    <p className="text-[10px] font-bold uppercase tracking-widest text-gray-400 text-center mb-2">Also send your cart summary to Spike</p>
+                    <a
+                      href={`https://wa.me/14168905899?text=${buildWhatsAppText()}`}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="flex items-center justify-center gap-3 w-full py-3.5 bg-[#25D366] hover:bg-[#1fba59] text-white font-black text-sm uppercase tracking-widest rounded-xl transition-all active:scale-[0.99]"
+                    >
+                      <MessageCircle className="w-4 h-4" />
+                      Send Cart via WhatsApp
+                    </a>
+                  </div>
 
                   <a
                     href="tel:4168905899"
-                    className="flex items-center justify-center gap-3 w-full py-3.5 bg-marine-900 hover:bg-marine-800 text-white font-black text-sm uppercase tracking-widest rounded-xl transition-all active:scale-[0.99] mb-3"
+                    className="flex items-center justify-center gap-3 w-full py-3 bg-white border border-gray-200 hover:border-purple-300 hover:bg-purple-50 text-marine-900 font-black text-sm uppercase tracking-widest rounded-xl transition-all active:scale-[0.99] mb-2"
                   >
                     <Phone className="w-4 h-4" />
                     Call Spike — 416-890-5899
                   </a>
-
-                  <p className="text-center text-[10px] text-gray-400 leading-relaxed">
-                    Spike will confirm your slot and send a $250 CAD payment link within 24 hours.
-                  </p>
                 </div>
               )}
             </div>
