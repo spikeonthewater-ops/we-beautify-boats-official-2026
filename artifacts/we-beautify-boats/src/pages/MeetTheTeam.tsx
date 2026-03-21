@@ -34,7 +34,7 @@ export default function MeetTheTeam() {
           <img
             src={`${import.meta.env.BASE_URL}images/team-header.jpeg`}
             alt="We Beautify Boats crew working together on Some Nice III"
-            className="w-full h-full object-cover object-top"
+            className="w-full h-full object-cover object-center"
           />
           {/* Gradient overlays: subtle top darkening + strong bottom for text legibility */}
           <div className="absolute inset-0 bg-gradient-to-b from-marine-900/60 via-marine-900/30 to-marine-900/80" />
