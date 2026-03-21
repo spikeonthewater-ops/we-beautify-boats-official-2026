@@ -85,7 +85,7 @@ export default function BlogPost() {
 
   if (!post) {
     return (
-      <div className="min-h-screen bg-background flex items-center justify-center pt-24">
+      <div className="min-h-screen bg-background flex items-center justify-center pt-32">
         <div className="text-center">
           <h1 className="text-3xl font-display font-bold text-marine-900 mb-4">Post Not Found</h1>
           <Link href="/blog" className="text-cyan-500 hover:underline">← Back to Blog</Link>
@@ -103,7 +103,7 @@ export default function BlogPost() {
     .slice(0, 3);
 
   return (
-    <div className="min-h-screen bg-background pt-24 pb-24">
+    <div className="min-h-screen bg-background pt-16 pb-24">
 
       {/* Hero */}
       <div className="relative h-72 md:h-[420px] overflow-hidden">
