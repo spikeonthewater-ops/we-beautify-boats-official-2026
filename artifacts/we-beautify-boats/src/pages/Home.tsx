@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
 import { Link } from "wouter";
-import { Anchor, Sparkles, Droplets, ShieldCheck, ArrowRight, Star } from "lucide-react";
+import { Anchor, Sparkles, Droplets, ShieldCheck, ArrowRight, Star, ClipboardList } from "lucide-react";
+import { useQuote } from "@/context/QuoteContext";
 
 const fadeIn = {
   initial: { opacity: 0, y: 20 },
@@ -48,6 +49,7 @@ const SERVICES = [
 ];
 
 export default function Home() {
+  const { openQuote } = useQuote();
   return (
     <div className="min-h-screen bg-background">
       {/* Hero Section */}
@@ -95,14 +97,12 @@ export default function Home() {
             </motion.p>
             
             <motion.div variants={fadeIn} className="flex flex-col sm:flex-row items-center justify-center gap-4">
-              <a
-                href="https://www.webeautifyboats.com/book-spike"
-                target="_blank"
-                rel="noopener noreferrer"
+              <button
+                onClick={() => openQuote()}
                 className="px-8 py-4 w-full sm:w-auto rounded-full bg-cyan-500 hover:bg-cyan-400 text-white font-bold text-lg shadow-[0_0_30px_rgba(120,60,200,0.4)] hover:shadow-[0_0_40px_rgba(120,60,200,0.6)] transition-all hover:-translate-y-1"
               >
                 Book Your Service
-              </a>
+              </button>
               <Link
                 href="/our-services"
                 className="px-8 py-4 w-full sm:w-auto rounded-full bg-white/10 hover:bg-white/20 text-white border border-white/20 font-bold text-lg backdrop-blur-md transition-all hover:-translate-y-1"
@@ -200,14 +200,12 @@ export default function Home() {
             Book Spike directly or chat with our AI assistant for a prompt response.
           </p>
           <div className="flex flex-col sm:flex-row justify-center gap-4">
-            <a
-              href="https://www.webeautifyboats.com/book-spike"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="px-8 py-4 rounded-full bg-cyan-500 hover:bg-cyan-400 text-white font-bold text-lg shadow-[0_0_20px_rgba(120,60,200,0.3)] transition-transform hover:-translate-y-1"
+            <button
+              onClick={() => openQuote()}
+              className="inline-flex items-center gap-2 px-8 py-4 rounded-full bg-cyan-500 hover:bg-cyan-400 text-white font-bold text-lg shadow-[0_0_20px_rgba(120,60,200,0.3)] transition-transform hover:-translate-y-1"
             >
-              Schedule Service
-            </a>
+              <ClipboardList className="w-5 h-5" /> Reserve Assessment
+            </button>
             <a
               href="https://chatgpt.com/g/g-ZXCuleyCZ-we-beautify-boats-by-spike"
               target="_blank"

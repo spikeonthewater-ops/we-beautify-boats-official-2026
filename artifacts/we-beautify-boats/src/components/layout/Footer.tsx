@@ -1,7 +1,9 @@
 import { Link } from "wouter";
 import { Phone, Mail, MapPin, Instagram, Facebook } from "lucide-react";
+import { useQuote } from "@/context/QuoteContext";
 
 export function Footer() {
+  const { openQuote } = useQuote();
   return (
     <footer className="bg-marine-900 text-gray-300 pt-20 pb-10 border-t border-marine-800">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -88,18 +90,16 @@ export function Footer() {
               </li>
               <li className="flex items-center gap-3 text-sm">
                 <Mail className="w-5 h-5 text-cyan-400 shrink-0" />
-                <a href="https://www.webeautifyboats.com/contact-us" className="hover:text-white transition-colors">Contact via website</a>
+                <a href="mailto:webeautifyboats@gmail.com" className="hover:text-white transition-colors">webeautifyboats@gmail.com</a>
               </li>
             </ul>
             <div className="mt-8">
-              <a
-                href="https://www.webeautifyboats.com/book-spike"
-                target="_blank"
-                rel="noopener noreferrer"
+              <button
+                onClick={() => openQuote()}
                 className="inline-flex items-center justify-center px-6 py-3 border border-cyan-500 text-cyan-400 hover:bg-cyan-500 hover:text-white rounded-xl font-semibold transition-all duration-300 w-full"
               >
-                Book Service
-              </a>
+                Reserve Assessment
+              </button>
             </div>
           </div>
         </div>

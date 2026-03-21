@@ -4,7 +4,7 @@ import {
   X, CheckCircle2, Droplets, Sparkles, Waves,
   Compass, Zap, Ship, Shield, Hammer, Calendar, Gauge, Anchor,
   ShoppingCart, Plus, Trash2, ChevronLeft, ClipboardList,
-  Phone, MessageCircle, ArrowRight, User, MapPin, Ruler
+  Phone, MessageCircle, ArrowRight, User, MapPin, Ruler, Layers
 } from "lucide-react";
 import { useQuote, QuoteCategory, CartItem } from "@/context/QuoteContext";
 
@@ -20,6 +20,7 @@ const CATEGORIES: { id: QuoteCategory; name: string; icon: React.ReactNode }[] =
   { id: "protections",     name: "Protections",       icon: <Shield className="w-3.5 h-3.5" /> },
   { id: "extraServices",   name: "Extra Services",    icon: <Hammer className="w-3.5 h-3.5" /> },
   { id: "seasonalPlans",   name: "Seasonal Plans",    icon: <Calendar className="w-3.5 h-3.5" /> },
+  { id: "visitBundles",    name: "Visit Bundles",     icon: <Layers className="w-3.5 h-3.5" /> },
 ];
 
 interface ServiceItem {
@@ -132,6 +133,20 @@ const SERVICE_DATA: Record<QuoteCategory, CategoryData> = {
       { level: "SWP01", name: "Season Wrap-Up",           desc: "Haul-out prep: Deck L3, Interior L3, Bottom L2, Canvas.", prices: [2950,3600,4250,5950,7100,8250,9450], features: ["Haul-out preparation","Dry hull guarantee"] },
     ],
   },
+  visitBundles: {
+    title: "Visit Bundles",
+    description: "Pre-packaged multi-visit tiers for individual services — locked-in scheduling and 10–15% built-in savings.",
+    items: [
+      { level: "VB-DW3",  name: "3-Visit Deck Wash Pack",      desc: "Three Deck Wash Level 1 visits at 10% off. Lock in routine maintenance for the season.", prices: [405,505,710,910,1110,1315,1520], features: ["3 × DW01 Level 1","10% bundle discount","Consistent deck health"] },
+      { level: "VB-DW6",  name: "6-Visit Deck Wash Pack",      desc: "Six Deck Wash Level 1 visits at 15% off. Ideal for active boaters using their vessel every two weeks.", prices: [765,955,1335,1720,2100,2485,2865], features: ["6 × DW01 Level 1","15% bundle discount","Priority scheduling"] },
+      { level: "VB-HW3",  name: "3-Visit Hull Wash Pack",      desc: "Three Hull Wash Level 1 visits at 10% off. Keeps salt, scum, and foul lines in check.", prices: [675,845,1180,1520,1855,2190,2530], features: ["3 × HW01 Level 1","10% bundle discount","Waterline maintenance"] },
+      { level: "VB-HW6",  name: "6-Visit Hull Wash Pack",      desc: "Six Hull Wash Level 1 visits at 15% off. The full-season hull protection plan.", prices: [1275,1590,2230,2865,3505,4140,4780], features: ["6 × HW01 Level 1","15% bundle discount","Barnacle prevention"] },
+      { level: "VB-ID3",  name: "3-Visit Interior Pack",       desc: "Three Interior Level 1 detail visits at 10% off. Keeps the cabin fresh between full cleans.", prices: [610,760,1065,1365,1670,1975,2275], features: ["3 × ID01 Level 1","10% bundle discount","Cabin comfort maintained"] },
+      { level: "VB-ID5",  name: "5-Visit Interior Pack",       desc: "Five Interior Level 1 visits at 12% off. Full-season cabin maintenance program.", prices: [990,1235,1730,2225,2720,3215,3710], features: ["5 × ID01 Level 1","12% bundle discount","Monthly interior care"] },
+      { level: "VB-DP3",  name: "3-Visit Deck Polish Pack",    desc: "Three Deck Polish Level 1 refreshes at 10% off. Sustains gelcoat gloss through the entire season.", prices: [810,1015,1420,1825,2225,2635,3040], features: ["3 × DP01 Level 1","10% bundle discount","Sustained shine"] },
+      { level: "VB-LW",   name: "Launch + Wrap Bundle",        desc: "Spring Launch Ready + Fall Season Wrap-Up combined at 5% off. Start and end the season right — one reservation covers both.", prices: [5570,6745,7935,10070,11685,13300,14865], features: ["LRP01 + SWP01 combined","5% bundle discount","Full season coverage","Priority spring booking"] },
+    ],
+  },
 };
 
 type Step = "browse" | "cart" | "form" | "confirm";
@@ -155,6 +170,7 @@ const EMPTY_FORM: FormData = {
 export function QuoteDrawer() {
   const { isOpen, activeCategory, closeQuote, setCategory, cart, addToCart, removeFromCart, isInCart } = useQuote();
   const [loaIndex, setLoaIndex] = useState(1);
+  const [loaFeet, setLoaFeet] = useState("35");
   const [step, setStep] = useState<Step>("browse");
   const [form, setForm] = useState<FormData>(EMPTY_FORM);
   const scrollRef = useRef<HTMLDivElement>(null);
@@ -203,14 +219,14 @@ export function QuoteDrawer() {
       "",
       "⛵ *Vessel*",
       `Boat: ${form.boatName}${form.boatModel ? ` (${form.boatModel})` : ""}`,
-      `LOA: ${loaLabel}`,
+      `LOA: ${loaFeet} ft`,
       `Location: ${form.address}`,
       `Slip / Berth ID: ${form.slipId}`,
       "",
       "📋 *Selected Services*",
       ...cart.map(i => `• ${i.level} – ${i.name}: $${i.price.toLocaleString()} CAD`),
       "",
-      `📐 Vessel Size Used: ${loaLabel}`,
+      `📐 Vessel Size (Estimator): ${loaLabel} · Exact: ${loaFeet} ft`,
       `💰 Total Estimate: ~$${cartTotal.toLocaleString()} CAD`,
       "",
       "✅ *Assessment Commitment: $250 CAD*",
@@ -219,7 +235,7 @@ export function QuoteDrawer() {
     return encodeURIComponent(lines.join("\n"));
   };
 
-  const formComplete = form.firstName && form.lastName && form.phone && form.boatName && form.address && form.slipId;
+  const formComplete = form.firstName && form.lastName && form.phone && form.boatName && form.address && form.slipId && loaFeet;
 
   return (
     <AnimatePresence>
@@ -627,26 +643,23 @@ export function QuoteDrawer() {
                       </div>
                     </div>
 
-                    {/* LOA — auto-filled from estimator */}
+                    {/* LOA — specific feet entry */}
                     <div className="mb-3">
                       <div className="flex items-center gap-2 mb-1">
-                        <label className="text-[10px] font-black uppercase tracking-widest text-gray-400">Vessel LOA</label>
-                        <span className="text-[9px] text-cyan-600 font-bold">(from estimator)</span>
+                        <Ruler className="w-3.5 h-3.5 text-gray-400" />
+                        <label className="text-[10px] font-black uppercase tracking-widest text-gray-400">Vessel LOA (exact feet) *</label>
                       </div>
-                      <div className="flex gap-1.5 flex-wrap">
-                        {SIZES.map((size, idx) => (
-                          <button
-                            key={size}
-                            onClick={() => setLoaIndex(idx)}
-                            className={`px-3 py-1.5 rounded-full text-xs font-bold border transition-all ${
-                              loaIndex === idx
-                                ? "bg-cyan-500 border-cyan-400 text-white shadow-sm"
-                                : "border-gray-200 text-gray-500 hover:border-cyan-300 hover:text-cyan-600"
-                            }`}
-                          >
-                            {size}
-                          </button>
-                        ))}
+                      <div className="flex items-center gap-2">
+                        <input
+                          type="number"
+                          min="12"
+                          max="120"
+                          value={loaFeet}
+                          onChange={e => setLoaFeet(e.target.value)}
+                          placeholder="35"
+                          className="w-28 border border-gray-200 rounded-lg px-3 py-2.5 text-sm font-bold text-marine-900 bg-white focus:outline-none focus:ring-2 focus:ring-cyan-400 placeholder:text-gray-300"
+                        />
+                        <span className="text-sm font-semibold text-gray-500">ft overall length</span>
                       </div>
                     </div>
 
@@ -756,7 +769,7 @@ export function QuoteDrawer() {
                       </div>
                       <div className="flex justify-between">
                         <span className="text-gray-500 font-medium">LOA</span>
-                        <span className="font-bold text-marine-900">{SIZES[loaIndex]}</span>
+                        <span className="font-bold text-marine-900">{loaFeet} ft</span>
                       </div>
                       <div className="flex justify-between">
                         <span className="text-gray-500 font-medium">Location</span>

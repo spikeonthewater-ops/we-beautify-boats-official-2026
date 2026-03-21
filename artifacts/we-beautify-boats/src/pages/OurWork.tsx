@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
 import { MapPin, Youtube, ChevronRight } from "lucide-react";
+import { useQuote } from "@/context/QuoteContext";
 
 const fadeIn = { initial: { opacity: 0, y: 24 }, whileInView: { opacity: 1, y: 0 }, viewport: { once: true } };
 
@@ -236,6 +237,7 @@ const FIELD = [
 ];
 
 export default function OurWork() {
+  const { openQuote } = useQuote();
   return (
     <div className="min-h-screen bg-background">
 
@@ -427,14 +429,12 @@ export default function OurWork() {
           <p className="text-gray-300 max-w-xl mx-auto mb-8 leading-relaxed">
             Every boat has a story. Let's start yours. Book Spike for a personalized estimate and see your vessel returned to its prime.
           </p>
-          <a
-            href="https://www.webeautifyboats.com/book-spike"
-            target="_blank"
-            rel="noopener noreferrer"
+          <button
+            onClick={() => openQuote()}
             className="inline-flex items-center gap-2 px-8 py-4 rounded-full bg-cyan-500 hover:bg-cyan-400 text-white font-bold text-lg shadow-[0_0_30px_rgba(120,60,200,0.4)] hover:shadow-[0_0_40px_rgba(120,60,200,0.6)] transition-all hover:-translate-y-1"
           >
-            Book Your Transformation <ChevronRight className="w-5 h-5" />
-          </a>
+            Reserve Assessment <ChevronRight className="w-5 h-5" />
+          </button>
         </motion.section>
 
       </div>

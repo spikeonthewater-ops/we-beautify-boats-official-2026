@@ -3,8 +3,10 @@ import { Link } from "wouter";
 import { motion } from "framer-motion";
 import { Calendar, Tag, ArrowRight } from "lucide-react";
 import { blogPosts, CATEGORIES, getPostsByCategory, formatDate } from "@/data/blogPosts";
+import { useQuote } from "@/context/QuoteContext";
 
 export default function Blog() {
+  const { openQuote } = useQuote();
   const [activeCategory, setActiveCategory] = useState("All");
   const filtered = getPostsByCategory(activeCategory);
 
@@ -152,14 +154,12 @@ export default function Blog() {
           <p className="text-gray-300 mb-8 max-w-xl mx-auto">
             25 years of freshwater expertise across Ontario's lakes and marinas. Book directly with Spike.
           </p>
-          <a
-            href="https://www.webeautifyboats.com/book-spike"
-            target="_blank"
-            rel="noopener noreferrer"
+          <button
+            onClick={() => openQuote()}
             className="inline-flex items-center gap-2 px-8 py-4 rounded-full bg-cyan-500 hover:bg-cyan-400 text-white font-bold text-lg transition-all hover:-translate-y-0.5"
           >
-            Book a Service
-          </a>
+            Reserve Assessment
+          </button>
         </div>
       </div>
     </div>

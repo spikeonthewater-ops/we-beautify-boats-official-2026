@@ -4,6 +4,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X, PhoneCall } from "lucide-react";
 import { clsx, type ClassValue } from "clsx";
 import { twMerge } from "tailwind-merge";
+import { useQuote } from "@/context/QuoteContext";
 
 function cn(...inputs: ClassValue[]) {
   return twMerge(clsx(inputs));
@@ -20,6 +21,7 @@ const NAV_LINKS = [
 ];
 
 export function Navbar() {
+  const { openQuote } = useQuote();
   const [location] = useLocation();
   const [scrolled, setScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -92,14 +94,12 @@ export function Navbar() {
               <PhoneCall className="w-4 h-4 text-cyan-400" />
               <span>416-890-5899</span>
             </a>
-            <a
-              href="https://www.webeautifyboats.com/book-spike"
-              target="_blank"
-              rel="noopener noreferrer"
+            <button
+              onClick={() => openQuote()}
               className="px-6 py-2.5 rounded-full bg-cyan-500 hover:bg-cyan-400 text-white font-semibold text-sm shadow-[0_0_20px_rgba(120,60,200,0.3)] hover:shadow-[0_0_25px_rgba(120,60,200,0.5)] transition-all hover:-translate-y-0.5 active:translate-y-0"
             >
               Book Now
-            </a>
+            </button>
           </div>
 
           {/* Mobile Menu Toggle */}
@@ -144,14 +144,12 @@ export function Navbar() {
                 <PhoneCall className="w-5 h-5 text-cyan-400" />
                 <span className="font-medium">Call 416-890-5899</span>
               </a>
-              <a
-                href="https://www.webeautifyboats.com/book-spike"
-                target="_blank"
-                rel="noopener noreferrer"
+              <button
+                onClick={() => { openQuote(); }}
                 className="flex items-center justify-center py-4 bg-cyan-500 text-white rounded-xl font-bold text-lg shadow-lg shadow-cyan-500/25"
               >
                 Book Now
-              </a>
+              </button>
             </div>
           </motion.div>
         )}

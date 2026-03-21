@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
 import { Link } from "wouter";
+import { useQuote } from "@/context/QuoteContext";
 import {
   ArrowLeft,
   Layers,
@@ -80,6 +81,7 @@ const EXTRAS = [
 ];
 
 export default function ExtraServices() {
+  const { openQuote } = useQuote();
   return (
     <div className="pt-24 pb-24 min-h-screen bg-background">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -151,14 +153,12 @@ export default function ExtraServices() {
             >
               Call 416-890-5899
             </a>
-            <a
-              href="https://www.webeautifyboats.com/book-spike"
-              target="_blank"
-              rel="noopener noreferrer"
+            <button
+              onClick={() => openQuote("extraServices")}
               className="flex items-center justify-center px-6 py-3.5 rounded-full bg-cyan-500 hover:bg-cyan-400 text-white font-bold transition-all hover:-translate-y-0.5"
             >
-              Book Online
-            </a>
+              Reserve Assessment
+            </button>
           </div>
         </div>
 

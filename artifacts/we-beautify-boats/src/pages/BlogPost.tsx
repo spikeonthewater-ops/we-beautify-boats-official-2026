@@ -2,6 +2,7 @@ import { useParams, Link } from "wouter";
 import { motion } from "framer-motion";
 import { Calendar, Tag, ArrowLeft, ArrowRight, Phone } from "lucide-react";
 import { getPostBySlug, blogPosts, formatDate } from "@/data/blogPosts";
+import { useQuote } from "@/context/QuoteContext";
 
 function renderContent(content: string) {
   const lines = content.split("\n");
@@ -78,6 +79,7 @@ function renderContent(content: string) {
 }
 
 export default function BlogPost() {
+  const { openQuote } = useQuote();
   const params = useParams<{ slug: string }>();
   const post = getPostBySlug(params.slug);
 
@@ -171,14 +173,12 @@ export default function BlogPost() {
             >
               <Phone className="w-4 h-4 text-cyan-400" /> 416-890-5899
             </a>
-            <a
-              href="https://www.webeautifyboats.com/book-spike"
-              target="_blank"
-              rel="noopener noreferrer"
+            <button
+              onClick={() => openQuote()}
               className="flex items-center justify-center px-6 py-3 rounded-full bg-cyan-500 hover:bg-cyan-400 text-white font-bold transition-all"
             >
-              Book Now
-            </a>
+              Reserve Assessment
+            </button>
           </div>
         </div>
 

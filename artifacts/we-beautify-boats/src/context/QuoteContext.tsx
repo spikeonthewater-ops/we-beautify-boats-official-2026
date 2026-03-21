@@ -9,7 +9,8 @@ export type QuoteCategory =
   | "hullPolishing"
   | "protections"
   | "extraServices"
-  | "seasonalPlans";
+  | "seasonalPlans"
+  | "visitBundles";
 
 export interface CartItem {
   level: string;

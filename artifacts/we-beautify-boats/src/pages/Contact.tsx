@@ -1,7 +1,9 @@
 import { motion } from "framer-motion";
 import { Phone, MessageCircle, Clock, MapPin, CalendarClock, ArrowUpRight } from "lucide-react";
+import { useQuote } from "@/context/QuoteContext";
 
 export default function Contact() {
+  const { openQuote } = useQuote();
   return (
     <div className="pt-24 pb-24 min-h-screen bg-background">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -61,11 +63,9 @@ export default function Contact() {
             className="flex flex-col gap-6"
           >
             {/* Book Now Card */}
-            <a 
-              href="https://www.webeautifyboats.com/book-spike"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="group flex items-center p-8 bg-marine-900 rounded-3xl hover:bg-marine-800 transition-colors shadow-xl shadow-marine-900/20"
+            <button
+              onClick={() => openQuote()}
+              className="group flex items-center p-8 bg-marine-900 rounded-3xl hover:bg-marine-800 transition-colors shadow-xl shadow-marine-900/20 w-full text-left"
             >
               <div className="flex-1">
                 <div className="flex items-center gap-3 mb-3">
@@ -77,7 +77,7 @@ export default function Contact() {
               <div className="w-12 h-12 rounded-full bg-white/10 flex items-center justify-center shrink-0 group-hover:scale-110 transition-transform">
                 <ArrowUpRight className="w-6 h-6 text-cyan-400" />
               </div>
-            </a>
+            </button>
 
             {/* AI Assistant Card */}
             <a 
