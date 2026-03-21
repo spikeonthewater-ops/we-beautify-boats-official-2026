@@ -3,24 +3,25 @@ import { motion, AnimatePresence } from "framer-motion";
 import {
   X, CheckCircle2, Droplets, Sparkles, Waves,
   Compass, Zap, Ship, Shield, Hammer, Calendar, Gauge, Anchor,
-  ShoppingCart, Plus, Trash2, ChevronLeft, ClipboardList,
-  Phone, MessageCircle, ArrowRight, User, MapPin, Ruler, Layers, CalendarCheck
+  ShoppingCart, Plus, Trash2, ChevronLeft, ClipboardList, ChevronRight,
+  Phone, MessageCircle, ArrowRight, User, MapPin, Ruler, Layers, CalendarCheck,
+  LucideIcon
 } from "lucide-react";
 import { useQuote, QuoteCategory, CartItem } from "@/context/QuoteContext";
 
 const SIZES = ["Up to 20'", "21–30'", "31–40'", "41–50'", "51–60'", "61–70'", "71–80'"];
 
-const CATEGORIES: { id: QuoteCategory; name: string; icon: React.ReactNode }[] = [
-  { id: "deckWashes",      name: "Deck Washes",      icon: <Droplets className="w-3.5 h-3.5" /> },
-  { id: "interiorDetails", name: "Interior Details",  icon: <Sparkles className="w-3.5 h-3.5" /> },
-  { id: "hullWashes",      name: "Hull Washes",       icon: <Waves className="w-3.5 h-3.5" /> },
-  { id: "bottomPrep",      name: "Bottom Prep",       icon: <Compass className="w-3.5 h-3.5" /> },
-  { id: "deckPolishing",   name: "Deck Polishing",    icon: <Zap className="w-3.5 h-3.5" /> },
-  { id: "hullPolishing",   name: "Hull Polishing",    icon: <Ship className="w-3.5 h-3.5" /> },
-  { id: "protections",     name: "Protections",       icon: <Shield className="w-3.5 h-3.5" /> },
-  { id: "extraServices",   name: "Extra Services",    icon: <Hammer className="w-3.5 h-3.5" /> },
-  { id: "seasonalPlans",   name: "Seasonal Plans",    icon: <Calendar className="w-3.5 h-3.5" /> },
-  { id: "visitBundles",    name: "Visit Bundles",     icon: <Layers className="w-3.5 h-3.5" /> },
+const CATEGORIES: { id: QuoteCategory; name: string; subtitle: string; Icon: LucideIcon; color: string }[] = [
+  { id: "deckWashes",      name: "Deck Washes",      subtitle: "Non-skid, vinyl & lockers",       Icon: Droplets, color: "text-sky-500 bg-sky-50 border-sky-200" },
+  { id: "interiorDetails", name: "Interior Details",  subtitle: "Cabin, upholstery & odour",        Icon: Sparkles, color: "text-violet-500 bg-violet-50 border-violet-200" },
+  { id: "hullWashes",      name: "Hull Washes",       subtitle: "Waterline, hull sides & boot",     Icon: Waves,    color: "text-cyan-500 bg-cyan-50 border-cyan-200" },
+  { id: "bottomPrep",      name: "Bottom Prep",       subtitle: "Antifoul, barrier & osmosis",      Icon: Compass,  color: "text-teal-500 bg-teal-50 border-teal-200" },
+  { id: "deckPolishing",   name: "Deck Polishing",    subtitle: "Gelcoat restoration & shine",      Icon: Zap,      color: "text-amber-500 bg-amber-50 border-amber-200" },
+  { id: "hullPolishing",   name: "Hull Polishing",    subtitle: "Mirror gloss & oxidation removal", Icon: Ship,     color: "text-blue-500 bg-blue-50 border-blue-200" },
+  { id: "protections",     name: "Protections",       subtitle: "Wax, ceramic & UV coatings",       Icon: Shield,   color: "text-green-500 bg-green-50 border-green-200" },
+  { id: "extraServices",   name: "Extra Services",    subtitle: "Canvas, teak, vinyl & more",       Icon: Hammer,   color: "text-orange-500 bg-orange-50 border-orange-200" },
+  { id: "seasonalPlans",   name: "Seasonal Plans",    subtitle: "Managed care — 15% off",           Icon: Calendar, color: "text-rose-500 bg-rose-50 border-rose-200" },
+  { id: "visitBundles",    name: "Visit Bundles",     subtitle: "Multi-visit packs — up to 15% off", Icon: Layers,  color: "text-purple-500 bg-purple-50 border-purple-200" },
 ];
 
 interface ServiceItem {
@@ -172,6 +173,7 @@ export function QuoteDrawer() {
   const [loaIndex, setLoaIndex] = useState(1);
   const [loaFeet, setLoaFeet] = useState("35");
   const [step, setStep] = useState<Step>("browse");
+  const [browseMode, setBrowseMode] = useState<"grid" | "services">("grid");
   const [form, setForm] = useState<FormData>(EMPTY_FORM);
   const scrollRef = useRef<HTMLDivElement>(null);
 
@@ -187,13 +189,15 @@ export function QuoteDrawer() {
 
   const handleClose = () => {
     closeQuote();
-    setTimeout(() => { setStep("browse"); setForm(EMPTY_FORM); }, 400);
+    setTimeout(() => { setStep("browse"); setBrowseMode("grid"); setForm(EMPTY_FORM); }, 400);
   };
 
   const catData = SERVICE_DATA[activeCategory];
   const catMeta = CATEGORIES.find(c => c.id === activeCategory);
   const cartTotal = cart.reduce((sum, i) => sum + i.price, 0);
   const loaLabel = SIZES[loaIndex];
+  const cartCountFor = (catId: QuoteCategory) => cart.filter(i => i.category === catId).length;
+  const reviewedCount = CATEGORIES.filter(c => cartCountFor(c.id) > 0).length;
 
   const handleAddToCart = (service: ServiceItem) => {
     const catName = CATEGORIES.find(c => c.id === activeCategory)?.name ?? activeCategory;
@@ -313,60 +317,153 @@ export function QuoteDrawer() {
                 </div>
               </div>
 
-              {/* LOA + category tabs — only on browse step */}
+              {/* LOA selector — only on browse step */}
               {step === "browse" && (
-                <>
-                  <div className="px-5 pb-4">
-                    <div className="flex items-center gap-2 mb-2">
-                      <Gauge className="w-3.5 h-3.5 text-cyan-400" />
-                      <span className="text-[10px] font-black uppercase tracking-widest text-cyan-400">Vessel Length (LOA)</span>
-                    </div>
-                    <div className="flex gap-1.5 overflow-x-auto pb-1 scrollbar-hide">
-                      {SIZES.map((size, idx) => (
-                        <button
-                          key={size}
-                          onClick={() => setLoaIndex(idx)}
-                          className={`shrink-0 px-3 py-1.5 rounded-full text-xs font-bold border transition-all ${
-                            loaIndex === idx
-                              ? "bg-cyan-500 border-cyan-400 text-white shadow-md"
-                              : "border-white/20 text-white/60 hover:text-white hover:border-white/40"
-                          }`}
-                        >
-                          {size}
-                        </button>
-                      ))}
-                    </div>
+                <div className="px-5 pb-4 border-t border-white/10 pt-3">
+                  <div className="flex items-center gap-2 mb-2">
+                    <Gauge className="w-3.5 h-3.5 text-cyan-400" />
+                    <span className="text-[10px] font-black uppercase tracking-widest text-cyan-400">Vessel Length (LOA) — for pricing</span>
                   </div>
-
-                  <div className="flex overflow-x-auto scrollbar-hide border-t border-white/10">
-                    {CATEGORIES.map(cat => (
+                  <div className="flex gap-1.5 overflow-x-auto pb-1 scrollbar-hide">
+                    {SIZES.map((size, idx) => (
                       <button
-                        key={cat.id}
-                        onClick={() => setCategory(cat.id)}
-                        className={`shrink-0 flex items-center gap-1.5 px-4 py-3 text-[11px] font-bold whitespace-nowrap border-b-2 transition-all ${
-                          activeCategory === cat.id
-                            ? "border-cyan-400 text-white bg-white/5"
-                            : "border-transparent text-white/50 hover:text-white hover:bg-white/5"
+                        key={size}
+                        onClick={() => setLoaIndex(idx)}
+                        className={`shrink-0 px-3 py-1.5 rounded-full text-xs font-bold border transition-all ${
+                          loaIndex === idx
+                            ? "bg-cyan-500 border-cyan-400 text-white shadow-md"
+                            : "border-white/20 text-white/60 hover:text-white hover:border-white/40"
                         }`}
                       >
-                        {cat.icon}
-                        {cat.name}
+                        {size}
                       </button>
                     ))}
                   </div>
-                </>
+                  {browseMode === "services" && catMeta && (
+                    <button
+                      onClick={() => setBrowseMode("grid")}
+                      className="mt-3 flex items-center gap-1.5 text-[11px] font-bold text-white/60 hover:text-white transition-colors"
+                    >
+                      <ChevronLeft className="w-3.5 h-3.5" />
+                      All Categories
+                      <span className="ml-1 text-white/40">·</span>
+                      <span className="text-white font-black">{catMeta.name}</span>
+                    </button>
+                  )}
+                </div>
               )}
             </div>
 
             {/* ── BODY ───────────────────────────────────────── */}
             <div ref={scrollRef} className="flex-1 overflow-y-auto">
 
-              {/* ── STEP: BROWSE ── */}
-              {step === "browse" && (
+              {/* ── STEP: BROWSE — GRID ── */}
+              {step === "browse" && browseMode === "grid" && (
+                <div className="px-4 pt-5 pb-8">
+                  {/* Header + progress */}
+                  <div className="flex items-end justify-between mb-4 px-1">
+                    <div>
+                      <h2 className="font-display font-bold text-marine-900 text-lg leading-tight">Select Your Services</h2>
+                      <p className="text-xs text-gray-400 mt-0.5">Browse each category and add what you need</p>
+                    </div>
+                    {reviewedCount > 0 && (
+                      <div className="text-right shrink-0 ml-3">
+                        <div className="text-[10px] font-black uppercase tracking-widest text-gray-400">Explored</div>
+                        <div className="text-sm font-black text-purple-600">{reviewedCount}<span className="text-gray-300 font-normal"> / {CATEGORIES.length}</span></div>
+                      </div>
+                    )}
+                  </div>
+
+                  {/* Category grid */}
+                  <div className="grid grid-cols-2 gap-3">
+                    {CATEGORIES.map(cat => {
+                      const count = cartCountFor(cat.id);
+                      const hasItems = count > 0;
+                      return (
+                        <motion.button
+                          key={cat.id}
+                          onClick={() => { setCategory(cat.id); setBrowseMode("services"); }}
+                          whileTap={{ scale: 0.97 }}
+                          className={`relative text-left rounded-2xl border-2 p-4 transition-all shadow-sm ${
+                            hasItems
+                              ? "bg-white border-purple-400 ring-2 ring-purple-100"
+                              : "bg-white border-gray-100 hover:border-gray-300"
+                          }`}
+                        >
+                          {/* Cart badge */}
+                          {hasItems && (
+                            <div className="absolute top-3 right-3 flex items-center gap-1 bg-purple-600 text-white text-[9px] font-black px-2 py-0.5 rounded-full">
+                              <CheckCircle2 className="w-2.5 h-2.5" />
+                              {count}
+                            </div>
+                          )}
+
+                          {/* Icon */}
+                          <div className={`w-10 h-10 rounded-xl border flex items-center justify-center mb-3 ${cat.color}`}>
+                            <cat.Icon className="w-5 h-5" />
+                          </div>
+
+                          {/* Name */}
+                          <div className={`font-display font-bold text-sm leading-tight mb-1 ${hasItems ? "text-purple-900" : "text-marine-900"}`}>
+                            {cat.name}
+                          </div>
+
+                          {/* Subtitle */}
+                          <div className="text-[10px] text-gray-400 leading-snug">{cat.subtitle}</div>
+
+                          {/* Arrow */}
+                          <div className={`mt-2 flex items-center gap-1 text-[10px] font-bold ${hasItems ? "text-purple-500" : "text-gray-300"}`}>
+                            {hasItems ? "View / edit" : "Explore"}
+                            <ChevronRight className="w-3 h-3" />
+                          </div>
+                        </motion.button>
+                      );
+                    })}
+                  </div>
+
+                  {/* Bottom CTA */}
+                  {cart.length > 0 && (
+                    <motion.div
+                      initial={{ opacity: 0, y: 12 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      className="mt-5 bg-marine-900 rounded-2xl p-5 text-white"
+                    >
+                      <div className="flex items-center justify-between mb-3">
+                        <div>
+                          <div className="font-display font-bold text-base">Ready to reserve?</div>
+                          <div className="text-gray-400 text-xs mt-0.5">{cart.length} service{cart.length !== 1 ? "s" : ""} selected · ~${cartTotal.toLocaleString()} CAD est.</div>
+                        </div>
+                        <ShoppingCart className="w-8 h-8 text-cyan-400 shrink-0" />
+                      </div>
+                      <button
+                        onClick={() => setStep("cart")}
+                        className="flex items-center justify-center gap-2 w-full py-3 bg-cyan-500 hover:bg-cyan-400 text-white font-black text-sm uppercase tracking-widest rounded-xl transition-all"
+                      >
+                        Review Cart <ArrowRight className="w-4 h-4" />
+                      </button>
+                    </motion.div>
+                  )}
+
+                  {cart.length === 0 && (
+                    <div className="mt-5 border border-dashed border-gray-200 rounded-2xl p-5 text-center">
+                      <p className="text-xs text-gray-400 leading-relaxed">Not sure what you need? Browse each category above — Spike will scope the work during your on-site assessment.</p>
+                      <button
+                        onClick={() => setStep("form")}
+                        className="mt-3 inline-flex items-center gap-2 px-4 py-2.5 bg-marine-900 text-white font-bold text-xs rounded-xl hover:bg-marine-800 transition-all"
+                      >
+                        Skip to Reserve Assessment <ArrowRight className="w-3.5 h-3.5" />
+                      </button>
+                    </div>
+                  )}
+                </div>
+              )}
+
+              {/* ── STEP: BROWSE — SERVICES ── */}
+              {step === "browse" && browseMode === "services" && (
                 <div>
-                  <div className="px-5 pt-6 pb-4">
+                  <div className="px-5 pt-5 pb-3">
                     <div className="flex items-center gap-2 mb-1">
-                      <span className="text-cyan-600">{catMeta?.icon}</span>
+                      {catMeta && <catMeta.Icon className={`w-5 h-5 ${catMeta.color.split(" ")[0]}`} />}
                       <h2 className="text-xl font-display font-bold text-marine-900">{catData.title}</h2>
                     </div>
                     <p className="text-sm text-muted-foreground leading-relaxed">{catData.description}</p>
