@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 import { Link } from "wouter";
-import { ArrowLeft, Calculator } from "lucide-react";
+import { ArrowLeft, Calculator, ClipboardList } from "lucide-react";
 import { useQuote, QuoteCategory } from "@/context/QuoteContext";
 
 interface ServiceLevel {
@@ -147,14 +147,12 @@ export function ServiceDetailLayout({
               >
                 <Calculator className="w-5 h-5" /> Get a Quote
               </button>
-              <a
-                href="https://www.webeautifyboats.com/book-spike"
-                target="_blank"
-                rel="noopener noreferrer"
+              <button
+                onClick={() => openQuote(quoteCategory)}
                 className="inline-flex items-center gap-2 px-8 py-4 bg-marine-900 hover:bg-marine-800 text-white font-bold text-lg rounded-full transition-all shadow-lg hover:-translate-y-1"
               >
-                Book Spike
-              </a>
+                <ClipboardList className="w-5 h-5" /> Reserve Assessment
+              </button>
             </div>
           </motion.div>
 

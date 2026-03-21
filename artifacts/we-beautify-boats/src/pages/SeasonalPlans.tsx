@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
-import { Check, Repeat, CalendarDays, Package } from "lucide-react";
+import { Check, Repeat, CalendarDays, Package, ClipboardList } from "lucide-react";
+import { useQuote } from "@/context/QuoteContext";
 
 interface Plan {
   title: string;
@@ -202,6 +203,7 @@ const PACKAGES: ServicePackage[] = [
 ];
 
 function PackageCard({ pkg, i }: { pkg: ServicePackage; i: number }) {
+  const { openQuote } = useQuote();
   return (
     <motion.div
       initial={{ opacity: 0, y: 20 }}
@@ -243,19 +245,18 @@ function PackageCard({ pkg, i }: { pkg: ServicePackage; i: number }) {
         </div>
       </div>
 
-      <a
-        href="https://www.webeautifyboats.com/book-spike"
-        target="_blank"
-        rel="noopener noreferrer"
+      <button
+        onClick={() => openQuote("seasonalPlans")}
         className="w-full text-center py-3.5 rounded-xl font-bold text-sm bg-gray-100 hover:bg-marine-900 hover:text-white text-marine-900 transition-all duration-300"
       >
         Get a Quote
-      </a>
+      </button>
     </motion.div>
   );
 }
 
 function PlanCard({ plan, i }: { plan: Plan; i: number }) {
+  const { openQuote } = useQuote();
   return (
     <motion.div
       initial={{ opacity: 0, y: 20 }}
@@ -301,10 +302,8 @@ function PlanCard({ plan, i }: { plan: Plan; i: number }) {
         ))}
       </ul>
 
-      <a
-        href="https://www.webeautifyboats.com/book-spike"
-        target="_blank"
-        rel="noopener noreferrer"
+      <button
+        onClick={() => openQuote("seasonalPlans")}
         className={`w-full text-center py-3.5 rounded-xl font-bold text-sm transition-all duration-300 ${
           plan.highlight
             ? "bg-cyan-500 hover:bg-cyan-400 text-white shadow-lg shadow-cyan-500/25"
@@ -312,7 +311,7 @@ function PlanCard({ plan, i }: { plan: Plan; i: number }) {
         }`}
       >
         Get a Quote
-      </a>
+      </button>
     </motion.div>
   );
 }
@@ -331,6 +330,7 @@ function SectionHeader({ icon, label, title, subtitle }: { icon: React.ReactNode
 }
 
 export default function SeasonalPlans() {
+  const { openQuote } = useQuote();
   return (
     <div className="pt-24 pb-24 min-h-screen bg-background">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -446,14 +446,12 @@ export default function SeasonalPlans() {
             >
               Call 416-890-5899
             </a>
-            <a
-              href="https://www.webeautifyboats.com/book-spike"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center justify-center px-8 py-4 rounded-full bg-cyan-500 hover:bg-cyan-400 text-white font-bold transition-all hover:-translate-y-0.5"
+            <button
+              onClick={() => openQuote("seasonalPlans")}
+              className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-full bg-cyan-500 hover:bg-cyan-400 text-white font-bold transition-all hover:-translate-y-0.5"
             >
-              Book Online
-            </a>
+              <ClipboardList className="w-4 h-4" /> Reserve Assessment
+            </button>
           </div>
         </div>
 
