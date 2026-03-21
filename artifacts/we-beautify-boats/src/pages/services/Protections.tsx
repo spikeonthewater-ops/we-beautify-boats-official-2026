@@ -7,6 +7,7 @@ export default function Protections() {
       subtitle="Advanced Surface Shields. Lock In Your Investment."
       description="Advanced surface shields that lock in your detailing investment and protect against UV rays, salt, and oxidation. Four protection options — matched to how you use and store your boat."
       image="hero-bg.png"
+      quoteCategory="protections"
       options={[
         {
           name: "Marine Wax",

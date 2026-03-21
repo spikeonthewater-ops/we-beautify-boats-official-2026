@@ -7,6 +7,7 @@ export default function HullWashes() {
       subtitle="Eco-Friendly Topside Cleaning. Hull Integrity Protected."
       description="Eco-friendly topside cleaning designed to remove scum lines and buildup without compromising the hull's surface integrity. Three levels address everything from surface salt to heavy tannin staining."
       image="service-hull.png"
+      quoteCategory="hullWashes"
       levels={[
         {
           label: "Level 1 · Brush Wash",

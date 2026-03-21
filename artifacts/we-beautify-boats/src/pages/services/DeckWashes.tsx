@@ -7,6 +7,7 @@ export default function DeckWashes() {
       subtitle="Preserve Non-Skid Performance. Reset Surfaces Safely."
       description="Tiered deck washing engineered to preserve non-skid performance and safely reset surfaces without over-cleaning. Each level is calibrated to the actual condition of your deck — no unnecessary intervention, no damage from over-servicing."
       image="service-deck.png"
+      quoteCategory="deckWashes"
       levels={[
         {
           label: "Level 1 · Basic Detail",

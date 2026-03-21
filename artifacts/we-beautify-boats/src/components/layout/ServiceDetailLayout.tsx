@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
 import { Link } from "wouter";
-import { ArrowLeft } from "lucide-react";
+import { ArrowLeft, Calculator } from "lucide-react";
+import { useQuote, QuoteCategory } from "@/context/QuoteContext";
 
 interface ServiceLevel {
   label: string;
@@ -20,6 +21,7 @@ interface ServiceDetailLayoutProps {
   image: string;
   levels?: ServiceLevel[];
   options?: ServiceOption[];
+  quoteCategory?: QuoteCategory;
 }
 
 const LEVEL_COLORS = [
@@ -45,7 +47,9 @@ export function ServiceDetailLayout({
   image,
   levels,
   options,
+  quoteCategory,
 }: ServiceDetailLayoutProps) {
+  const { openQuote } = useQuote();
   return (
     <div className="pt-24 pb-24 min-h-screen bg-background">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -136,14 +140,22 @@ export function ServiceDetailLayout({
               </div>
             )}
 
-            <a
-              href="https://www.webeautifyboats.com/book-spike"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-block px-8 py-4 bg-marine-900 hover:bg-cyan-500 text-white font-bold text-lg rounded-full transition-all shadow-lg hover:-translate-y-1"
-            >
-              Book This Service
-            </a>
+            <div className="flex flex-wrap gap-3">
+              <button
+                onClick={() => openQuote(quoteCategory)}
+                className="inline-flex items-center gap-2 px-8 py-4 bg-cyan-500 hover:bg-cyan-400 text-white font-bold text-lg rounded-full transition-all shadow-lg hover:-translate-y-1"
+              >
+                <Calculator className="w-5 h-5" /> Get a Quote
+              </button>
+              <a
+                href="https://www.webeautifyboats.com/book-spike"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 px-8 py-4 bg-marine-900 hover:bg-marine-800 text-white font-bold text-lg rounded-full transition-all shadow-lg hover:-translate-y-1"
+              >
+                Book Spike
+              </a>
+            </div>
           </motion.div>
 
           {/* Image */}

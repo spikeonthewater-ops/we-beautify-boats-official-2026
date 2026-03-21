@@ -7,6 +7,7 @@ export default function BottomPrep() {
       subtitle="Critical Underwater Surface Preparation."
       description="Critical underwater surface preparation required for maintaining hydrodynamics and ensuring optimal coating adhesion. Four levels cover everything from light fouling to complete bare-gelcoat laser reset."
       image="service-hull.png"
+      quoteCategory="bottomPrep"
       levels={[
         {
           label: "Level 1 · Basic Prep",

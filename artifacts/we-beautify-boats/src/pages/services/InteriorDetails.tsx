@@ -7,6 +7,7 @@ export default function InteriorDetails() {
       subtitle="Routine Care to Full Environmental Remediation."
       description="Comprehensive interior care ranging from routine wipe-downs to full environmental remediation. Four levels restore a fresh, healthy cabin — matched precisely to what your interior actually needs."
       image="service-interior.png"
+      quoteCategory="interiorDetails"
       levels={[
         {
           label: "Level 1 · Basic",

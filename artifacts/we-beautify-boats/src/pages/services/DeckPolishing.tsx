@@ -7,6 +7,7 @@ export default function DeckPolishing() {
       subtitle="Scaled Surface Correction. Showroom Brilliance Restored."
       description="Scaled surface correction techniques designed to safely level gelcoat and restore showroom brilliance. Five distinct levels ensure your hull receives exactly the intervention it needs — no more, no less."
       image="service-deck.png"
+      quoteCategory="deckPolishing"
       levels={[
         {
           label: "Level 1 · Basic Refresh",
