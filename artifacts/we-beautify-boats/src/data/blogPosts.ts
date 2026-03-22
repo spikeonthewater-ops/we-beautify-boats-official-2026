@@ -103,6 +103,58 @@ If your boat was not maintained consistently the previous year and emerges from 
 We believe that your season should begin with excitement, not a chore list. We handle the intense spring preparation deliberately and methodically so you can step away knowing your boat is protected and ready to impress.`,
   },
   {
+    slug: "sio2-coating",
+    title: "SiO2 Coating: The Rain Day Advantage",
+    date: "2024-08-15",
+    category: "Spike's Essential Care Guides",
+    image: "https://static.wixstatic.com/media/2836bb_3ccdb8b21adb4a4cba32e5997279fed8~mv2.png/v1/fill/w_740,h_493,al_c,q_90,enc_avif,quality_auto/img.png",
+    imageAlt: "SiO2 nano-coating being applied to a wet boat hull, water beading and sheeting off instantly",
+    excerpt: "Most boat owners look at a rainy forecast and cancel their detailing plans. We look at a rainy forecast and see the perfect conditions for SiO2. This service turns water from an enemy into a tool — using the rain itself to distribute a nano-engineered Silicium shell across your entire vessel.",
+    content: `Most boat owners look at a rainy forecast and cancel their detailing plans. We look at a rainy forecast and see the perfect conditions for SiO2.
+
+This service is a high-tech add-on to a standard wash that turns water from an enemy into a tool. While traditional waxes require a bone-dry hull and hours of hand-buffing, our SiO2 Coating (using Permanon technology) utilizes water to distribute the protection. It is valid in all weather, but it is especially effective on rain days when traditional methods fail.
+
+## What This Service Is Designed to Do
+
+This service applies a nano-engineered Silicium (14Si) shell to your vessel. Unlike wax, which sits on top of the surface like a blanket, SiO2 particles rely on electrostatic attraction to bond instantly to the gelcoat.
+
+Success at this level creates a "spotless dry." When distributed with water, the product changes the surface tension of the boat so dramatically that water simply cannot hold on. It sheets off instantly, taking minerals and dirt with it, leaving a streak-free, brilliant shine even in high humidity or light rain.
+
+## How the Work Is Performed
+
+We treat this as a chemistry application rather than a mechanical one.
+
+**Step 1 — The Wash:** We perform a thorough wash to ensure the surface is free of organic contaminants.
+
+**Step 2 — The Application:** While the boat is still wet — or using the rain itself — we mist the SiO2 concentrate onto the surface.
+
+**Step 3 — The Distribution:** We use water, not a buffing pad, to distribute the product. The water carries the nano-particles into the microscopic pores of the gelcoat.
+
+**Step 4 — The Flash Dry:** The hydrophobic reaction is immediate. The water beads up and rolls off, leaving a dry, protected surface that requires minimal towel work.
+
+## What This Service Is Not Intended For
+
+This is not a polish. It will not remove oxidation, scratches, or chalking — if your boat is dull, SiO2 will simply seal the dullness in. It is also not a permanent ceramic coating requiring indoor curing; it is a seasonal maintenance shield designed for real-world marina conditions.
+
+## Why SiO2 Matters
+
+This service keeps your maintenance schedule on track regardless of the weather. By using an electrostatic product that loves water, we avoid the haze and streak issues that plague traditional waxes in damp conditions. It provides UV resistance and makes every future wash significantly faster because dirt can't stick to the Silicium shell. It also covers non-skid, glass, and stainless steel rails without leaving white residue in the cracks.
+
+## When This Service Is the Right Choice
+
+**The Weather Is Iffy:** It's an overcast or rainy day, and you still want the boat protected. This service turns the weather to your advantage.
+
+**The Add-On:** You are already booking a wash and want to lock in the shine for months, not weeks.
+
+**The Complex Layout:** You have a lot of non-skid, glass, and stainless steel rails. SiO2 protects all of them uniformly in a single pass.
+
+## When You Need More
+
+SiO2 is exceptional for surface maintenance, but if you need fusion-level durability that lasts through hundreds of washes — or if you want friction reduction for performance — upgrade to Spikes PT (PPS Technology), which electrostatically fuses PTFE directly into the gelcoat pores for a longer-lasting result.
+
+We don't fight the elements; we work with them. SiO2 Coating is the smartest way to protect your investment because it uses the very water your boat lives in to create the shield. It dries spotless, shines bright, and proves that you don't need a sunny day to get a brilliant result.`,
+  },
+  {
     slug: "spikes-pt",
     title: "Spikes PT: Ultimate Teflon Fusion & Surface Protection",
     date: "2024-09-01",
