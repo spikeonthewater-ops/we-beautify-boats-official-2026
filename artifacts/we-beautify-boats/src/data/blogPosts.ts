@@ -103,6 +103,58 @@ If your boat was not maintained consistently the previous year and emerges from 
 We believe that your season should begin with excitement, not a chore list. We handle the intense spring preparation deliberately and methodically so you can step away knowing your boat is protected and ready to impress.`,
   },
   {
+    slug: "antifouling-application",
+    title: "Antifouling Application: The Essential Underwater Shield",
+    date: "2024-07-15",
+    category: "Spike's Essential Care Guides",
+    image: "https://static.wixstatic.com/media/2836bb_a7a498734f534b139d88e7dabd1c3fc2~mv2.png/v1/fill/w_740,h_493,al_c,q_90,enc_avif,quality_auto/img.png",
+    imageAlt: "Antifouling paint being applied to a boat hull with a crisp professional waterline tape edge",
+    excerpt: "Once your boat hits the water, nature immediately tries to reclaim it. In Ontario's nutrient-rich waters, algae, slime, and zebra mussels are constantly looking for a foothold. Antifouling is the critical chemical barrier that keeps this growth at bay — because a clean bottom is the single biggest factor in vessel performance.",
+    content: `Once your boat hits the water, nature immediately tries to reclaim it. In the nutrient-rich waters of Ontario, algae, slime, and zebra mussels are constantly looking for a foothold. Without protection, your hull becomes a reef, destroying your fuel economy and speed within weeks.
+
+Antifouling is the critical chemical barrier that keeps this growth at bay. This service is for owners who understand that a clean bottom is the single biggest factor in vessel performance. We don't just slap paint on — we apply a system designed to limit adhesion, making sure your hull glides through the water rather than dragging the lake with it.
+
+## What This Service Is Designed to Do
+
+This service applies high-quality antifouling paint to the underwater portion of your hull. Its primary job is to create a surface where marine organisms cannot establish a strong bond.
+
+Success here looks like a hull that stays cleaner for longer and washes off easily at the end of the season. It solves the problem of drag — the invisible friction that slows you down and forces your engine to work harder. For those seeking long-term structural protection, we also offer an optional Epoxy Barrier Coat (minimum 3 coats), which seals the hull against moisture intrusion and blistering before the antifouling goes on.
+
+## How the Work Is Performed
+
+Antifouling is only as good as the preparation beneath it. We never paint over a dirty hull.
+
+**Stage 1 — Verification:** We confirm the hull has received the required bottom prep — standard application requires a BP02, while the Epoxy Barrier Coat upgrade requires a full laser-strip (BP04) for a clean, bondable substrate.
+
+**Stage 2 — The Tape Line:** We apply precision marine-grade masking tape to define a crisp, professional waterline. This is the signature of a professional job — a straight, clean edge that separates the painted bottom from the topsides.
+
+**Stage 3 — Application:** We apply the paint using controlled techniques to ensure uniform thickness. If you have selected the Epoxy Barrier system, we apply a minimum of three coats to ensure a watertight seal before the antifouling layer goes on.
+
+**Stage 4 — The Reveal:** The tape is pulled while the paint is still "live" to ensure a razor-sharp edge, not a jagged peel.
+
+## What This Service Is Not Intended For
+
+Paint is not a filler. This service is not intended to hide damage, blisters, or rough fiberglass. It does not include removal of old paint, blister remediation, or structural repairs. It cannot be applied to a hull that has not been properly prepped — painting over slime or barnacles guarantees failure, as the paint will simply flake off with the growth.
+
+## Why Antifouling Matters
+
+A smooth bottom is an efficient bottom. By completing a fresh Antifouling Application, you are protecting your engine from strain and your wallet from excessive fuel costs. If you choose the Epoxy Barrier Coat upgrade, you are effectively waterproofing the fiberglass itself, preventing the osmotic blistering that devalues boats and compromises hulls for good.
+
+## When This Service Is the Right Choice
+
+**The Seasonal Reset:** It is spring, and you are preparing to launch for the season. This is the most common and important timing.
+
+**The Fade:** Your existing bottom paint looks thin, patchy, or has worn through to the primer — it is time for a fresh coat.
+
+**The Investment:** You have just stripped the hull and want to lock in that clean substrate with fresh Epoxy and Antifouling protection from the start.
+
+## When This Service Is No Longer Enough
+
+If your hull has layers upon layers of old, cratered paint that is flaking off in chunks — "shelling" — applying more paint is a waste of money. The new paint will just fall off with the old paint. In that case, you need a full laser removal to strip the hull back to a stable base before painting can begin.
+
+We treat antifouling as a precision service, not a messy chore. Whether you need a seasonal refresh or a full epoxy barrier system, we ensure the product bonds correctly and the waterline looks sharp. A protected hull is a fast hull.`,
+  },
+  {
     slug: "wax-service",
     title: "Wax Service: Classic Protection & Seasonal Shine",
     date: "2024-08-01",
