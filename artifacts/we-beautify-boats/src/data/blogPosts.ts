@@ -103,6 +103,64 @@ If your boat was not maintained consistently the previous year and emerges from 
 We believe that your season should begin with excitement, not a chore list. We handle the intense spring preparation deliberately and methodically so you can step away knowing your boat is protected and ready to impress.`,
   },
   {
+    slug: "deck-wash-level-2",
+    title: "Deck Wash Level 2: When Routine Washing Is No Longer Enough",
+    date: "2023-12-15",
+    category: "Spike's Essential Care Guides",
+    image: "https://static.wixstatic.com/media/2836bb_11d5f0d76bfa460181a3efe76b36cc1c~mv2.jpg/v1/fill/w_740,h_493,al_c,q_90,enc_avif,quality_auto/img.jpg",
+    imageAlt: "Boat deck and vinyl seating being scrubbed with vinyl-safe cleaners at Level 2 to remove film and surface buildup",
+    excerpt: "Most boats don't jump straight from \"clean\" to \"problem.\" They pass through a middle stage where basic washing still helps — but no longer finishes the job. Deck Wash Level 2 exists for that moment. The diagnostic: non-skid that looks fine when dry but darkens when wet. Vinyl and glass that no longer rinse clean.",
+    content: `Most boats don't jump straight from "clean" to "problem." They pass through a middle stage where basic washing still helps — but no longer finishes the job.
+
+Deck Wash Level 2 exists for that moment.
+
+This service is designed for boats that are being used and cared for, but where routine washing no longer fully lifts grime, film, or light staining. It is still a maintenance service — not restoration — but it acknowledges that surfaces have begun to hold contamination that Level 1 is not meant to address.
+
+Knowing when to step up matters. Waiting too long only makes future cleaning harder.
+
+## What This Service Is Designed to Do
+
+Level 2 is intended to reset cleanliness when light to moderate buildup has started to cling to deck surfaces, vinyl, and windows. This is the stage where non-skid may still look acceptable when dry, but darkens when wet — and where vinyl and glass no longer rinse clean with a basic wash.
+
+At this level, the goal is not correction or recovery. The goal is to remove early-stage contamination safely, before it becomes embedded and before aggressive methods are required.
+
+Deck Wash Level 2 keeps maintenance on track when Level 1 is no longer delivering consistent results.
+
+## How the Work Is Performed
+
+The process begins with a fresh water rinse to remove loose dirt and debris. From there, a stronger eco-friendly detergent is used to address light to moderate grime and surface staining that routine washing can't fully lift. Cleaning is done deliberately, with appropriate agitation for each surface being treated.
+
+Unlike Level 1, this service also includes hands-on cleaning of vinyl seating and windows. Vinyl is scrubbed using vinyl-safe cleaners to remove film, body oils, and environmental residue. Windows are cleaned to restore clarity and remove the haze that builds up over time.
+
+After cleaning, all surfaces are thoroughly rinsed, and the deck, vinyl, and windows are dried to prevent water spots and mineral marks.
+
+On an average 30-foot boat, Deck Wash Level 2 typically takes 45 to 60 minutes, depending on layout and the level of contamination present.
+
+## What This Service Does Not Do
+
+Deck Wash Level 2 is still maintenance — not correction.
+
+It does not include oxidation removal, stain correction, surface restoration, or recovery from long-term neglect. It will not remove deeply embedded non-skid staining, biological growth, or discoloration that has already bonded into the surface. Trying to push Level 2 beyond its purpose risks unnecessary wear without delivering meaningful improvement. When that line is crossed, a different service level is required.
+
+## Why Level 2 Exists Between Maintenance and Correction
+
+This level exists to prevent escalation.
+
+When light to moderate buildup is removed early, decks stay safer underfoot, vinyl lasts longer, windows remain clearer, and future cleaning becomes easier instead of more aggressive. Boats that stay on a Level 2 cycle avoid the need for corrective services far more often than boats that delay.
+
+This is the level that keeps a "manageable" boat from becoming a project.
+
+## When This Service Is the Right Choice
+
+Deck Wash Level 2 is appropriate when a boat is still fundamentally sound but showing signs that basic washing is no longer enough. If grime does not fully lift during routine cleaning, if traffic areas darken quickly, or if vinyl and windows hold haze after rinsing, Level 2 is the correct next step.
+
+## When Level 2 Is No Longer Enough
+
+If non-skid remains dark even when wet, if staining is clearly visible after cleaning, or if surfaces feel slick rather than textured underfoot, the boat has moved beyond maintenance-level washing. The correct next step is Deck Wash Level 3, designed for heavier contamination that requires a different approach entirely.
+
+If you're not sure where your boat sits, call 416-890-5899 to arrange an in-person assessment before booking any service.`,
+  },
+  {
     slug: "deck-wash-level-3",
     title: "Deck Wash Level 3: Comprehensive Deck Cleaning for Heavily Soiled Boats",
     date: "2024-01-05",
