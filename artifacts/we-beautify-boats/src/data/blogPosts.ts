@@ -103,6 +103,86 @@ If your boat was not maintained consistently the previous year and emerges from 
 We believe that your season should begin with excitement, not a chore list. We handle the intense spring preparation deliberately and methodically so you can step away knowing your boat is protected and ready to impress.`,
   },
   {
+    slug: "effortless-elegance-bi-weekly",
+    title: "Effortless Elegance: When Bi-Weekly Boat Care Is the Right Fit",
+    date: "2023-12-01",
+    category: "Boat Ownership Intelligence",
+    image: "https://static.wixstatic.com/media/2836bb_4a8cf01c50714984a0af915d8b34803b~mv2.png/v1/fill/w_740,h_493,al_c,q_90,enc_avif,quality_auto/img.png",
+    imageAlt: "Well-maintained boat gleaming at a marina slip on a bi-weekly professional care schedule",
+    excerpt: "Not every boat needs weekly attention — but no boat benefits from being ignored. For many Ontario boat owners, the sweet spot sits right in the middle: frequent enough to preserve condition, spaced enough to stay practical. That's where the Effortless Elegance Bi-Weekly Plan comes in.",
+    content: `Not every boat needs weekly attention — but no boat benefits from being ignored.
+
+For many Ontario boat owners, the sweet spot sits right in the middle: frequent enough to preserve condition, spaced enough to stay practical. That's where the Effortless Elegance Bi-Weekly Plan comes in.
+
+It's designed for owners who want their boat to look consistently sharp without committing to weekly service. This plan isn't about chasing perfection. It's about maintaining it.
+
+## What Bi-Weekly Care Actually Covers
+
+**12 Scheduled On-Site Visits Per Season**
+
+Every two weeks, our crew services your boat at your marina or yacht club, focusing on visible condition, surface protection, and interior comfort. Here's what that looks like in practice:
+
+**Bi-Weekly Deck Wash (Level 2)**
+More than a rinse-down. We remove grime, water spotting, and early staining while paying attention to windows, rails, and stainless elements. It keeps decks clean without overworking surfaces.
+
+**Bi-Weekly Interior Detailing (Level 2)**
+Cabins are wiped down, surfaces refreshed, and common-use areas brought back to neutral. This level suits boats that are used regularly but not lived aboard full-time.
+
+**Monthly Hull Wash (Level 1)**
+Keeps waterline buildup under control and prevents dulling of gelcoat. This is maintenance — not correction — and works best when done consistently.
+
+**Monthly Wax Application**
+A maintenance coat applied to preserve gloss, protect from UV exposure, and slow oxidation between larger polishing services.
+
+This rhythm keeps your boat presentable, protected, and ready — without over-servicing.
+
+## Who This Plan Is Built For
+
+The Effortless Elegance Plan works best for:
+
+- Owners who boat every couple of weeks
+- Vessels stored wet during the season
+- Boats that host guests occasionally, not constantly
+- Owners who want strong appearance without weekly visits
+
+If your boat sits untouched for long stretches, bi-weekly care prevents the "catch-up clean" that always costs more later.
+
+## What This Plan Does Not Do
+
+This plan maintains condition — it does not reverse neglect.
+
+- It won't remove oxidation or heavy staining
+- It won't replace a full polish or restoration
+- It won't compensate for long-term surface damage
+
+That's intentional. Over-cleaning can be just as harmful as under-cleaning. This plan balances preservation with restraint.
+
+## How We Clean
+
+Tug Scrub is our product of choice throughout this plan. It is pH neutral, surface-safe, and formulated for regular marine use — strong enough to remove grime, gentle enough for gelcoat, interiors, and sensitive finishes. Nothing left behind, no residue feeding the next problem.
+
+If we see something trending toward damage during a visit, we flag it early — before it becomes expensive.
+
+## Why Consistent Bi-Weekly Service Protects Value
+
+Boat finishes don't fail suddenly. They fail gradually — through UV exposure, grime buildup, and missed care windows.
+
+Consistent bi-weekly service:
+- Reduces the need for aggressive polishing down the line
+- Keeps interiors usable and inviting
+- Maintains resale appearance without constant intervention
+
+This is how boats age well.
+
+## When Bi-Weekly Is the Smart Middle Ground
+
+Weekly service is ideal for heavy use. Monthly service suits light use. Bi-weekly service is where most owners land once they're honest about how they actually boat.
+
+The Effortless Elegance Bi-Weekly Plan keeps your vessel looking right, feeling right, and aging properly — without asking for more than you need.
+
+Call 416-890-5899 to discuss whether this plan is the right fit for your boat and marina.`,
+  },
+  {
     slug: "deck-wash-level-2",
     title: "Deck Wash Level 2: When Routine Washing Is No Longer Enough",
     date: "2023-12-15",
