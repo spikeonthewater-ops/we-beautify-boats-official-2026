@@ -103,6 +103,54 @@ If your boat was not maintained consistently the previous year and emerges from 
 We believe that your season should begin with excitement, not a chore list. We handle the intense spring preparation deliberately and methodically so you can step away knowing your boat is protected and ready to impress.`,
   },
   {
+    slug: "deck-polish-level-2",
+    title: "Deck Polish Level 2: Correcting Light Oxidation & Restoring Shine",
+    date: "2024-10-15",
+    category: "Spike's Essential Care Guides",
+    image: "https://static.wixstatic.com/media/2836bb_00f2bdbbe4ad4976a0bf2d4bf3963d14~mv2.png/v1/fill/w_740,h_493,al_c,q_90,enc_avif,quality_auto/img.png",
+    imageAlt: "Boat deck receiving a corrective compound polish to remove light oxidation and restore gloss",
+    excerpt: "When your deck feels slightly dry to the touch and the reflection is hazy, a simple wax or light polish won't cut it — it just seals in the dead material. Deck Polish Level 2 shifts from enhancement to actual surface correction, removing the degraded gelcoat layer before it becomes a structural problem.",
+    content: `Your boat's deck is subjected to the harshest elements in the marina — relentless UV rays, heavy foot traffic, and standing water. Over time, the protective 100 to 200-micron gloss layer of your gelcoat begins to break down. When this happens, a simple wash or light mid-season polish is no longer effective because the surface itself has started to chalk, dull, and lose its surface tension.
+
+Deck Polish Level 2 exists for the owner who notices their deck is losing its vibrant reflection and feeling slightly dry to the touch. This service bridges the gap between basic maintenance and heavy restoration, designed to physically remove light oxidation before it becomes a structural problem that requires aggressive leveling.
+
+## What This Service Is Designed to Do
+
+Lower levels of care stop working when oxidation is present. Applying a wax over oxidized gelcoat simply seals in the dull, dead material, leaving you with a shiny but cloudy deck.
+
+Deck Polish Level 2 solves this by shifting from simple enhancement to actual surface correction. Success at this level means stripping away the microscopic layer of degraded gelcoat — typically 2 to 10 microns — to reveal the healthy, original finish underneath. It restores a clean, uniform gloss, removes minor surface defects, and creates a stable, healthy substrate ready to accept a protective layer.
+
+## How a Deck Polish Level 2 Is Performed
+
+At Level 2, we treat the deck as a chemical and thermal puzzle. We do not just smear compound around — we choose a highly specific, corrective combination of pad and product tailored to your boat.
+
+Painted surfaces and natural gelcoat react very differently to friction and chemical combinations. To manage this, we moderate the heat transfer and chemical cut by starting with a medium-dense foam pad on surfaces that simply need an upgrade. However, where there are more aggressive patches of oxidation — usually trouble spots requiring hyper-focused correction — we adjust our approach to find the right balance.
+
+On those stubborn patches, we switch to a blended semi-synthetic wool pad. This generates the precise amount of heat needed to increase the cut of the medium or fast-cut compound, allowing us to break through the oxidation effectively.
+
+## What This Service Is Not Intended For
+
+It is critical to understand the limits of a fast-cut compound. This is not a heavy restoration service. It will not remove severe, chalky oxidation, deep gouges, or deep scratches that catch your fingernail. It does not include structural gelcoat repairs, colour matching, or surface leveling for extreme damage. Furthermore, polishing machines are strictly used on smooth gelcoat or painted sections — this service does not polish or correct the textured non-skid areas of your deck.
+
+## Why This Level Matters
+
+Gelcoat is a complex system, and ignoring light oxidation accelerates its decline. Once UV rays break the surface tension, the degradation moves deeper into the fiberglass layers. By intervening at Level 2 with targeted pad and product combinations, you are maintaining the health of your critical gloss layer and preventing the need for much more aggressive, expensive, and time-consuming multi-stage restorations down the road.
+
+## When This Service Is the Right Choice
+
+**The Touch Test:** You run your hand across the smooth fiberglass, and it feels slightly dry, powdery, or lacks its usual slickness.
+
+**The Reflection Fade:** The deck looks clean, but the reflection of the sun or stainless steel rails is blurred, hazy, or completely dull.
+
+**Spring Commissioning:** You are prepping your boat for the season and realize last year's wear and tear requires more than just a quick Level 1 refresh.
+
+## When This Service Is No Longer Enough
+
+If your deck has heavy white chalk rubbing off on your hands or clothes, or if the original colour has significantly faded or yellowed under years of sun exposure, a Level 2 fast-cut compound will not have enough bite to cut through the damage. At that stage, you require a Deck Polish Level 3 or Level 4 to perform coarse, multi-step compounding to cut deeper into the dead material.
+
+We approach deck polishing as a precision exercise — removing just enough material to restore perfection without wearing down your boat's natural defenses unnecessarily. By reading the surface and adjusting our thermal and chemical combinations on the fly, Level 2 provides the ideal intervention for maintaining a beautiful, functional deck before severe weathering takes hold.`,
+  },
+  {
     slug: "decal-stripe-removal",
     title: "Decal, Boat Name & Stripe Removal: A Clean Slate",
     date: "2024-11-01",
