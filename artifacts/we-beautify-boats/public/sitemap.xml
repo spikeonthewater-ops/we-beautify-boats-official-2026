@@ -87,7 +87,12 @@
     <priority>0.65</priority>
   </url>
   <url>
-    <loc>https://www.webeautifyboats.com/blog/always-ready-weekly-plan</loc>
+    <loc>https://www.webeautifyboats.com/blog/always-ready-weekly-full-season</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.65</priority>
+  </url>
+  <url>
+    <loc>https://www.webeautifyboats.com/blog/if-i-had-5-million-dollars</loc>
     <changefreq>monthly</changefreq>
     <priority>0.65</priority>
   </url>
