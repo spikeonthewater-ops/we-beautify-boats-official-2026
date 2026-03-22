@@ -172,6 +172,28 @@ We've spent 28+ years — since 1998 — taking boats from neglected to beautifu
 Call 416-890-5899 to discuss scheduling for the season.`,
   },
   {
+    slug: "lonely-boats-what-level-4",
+    title: "Lonely Boats — What Level 4 Can Do",
+    date: "2023-07-01",
+    category: "Interior & Onboard Living",
+    image: "https://i.ytimg.com/vi/wHTQBQSIgvk/maxresdefault.jpg",
+    imageAlt: "A forgotten boat pulled from five years under wrap — mold-covered interior awaiting Level 4 restoration by We Beautify Boats",
+    excerpt: "It's uncanny to imagine how many lonely boats might be sitting and suffering across Ontario, unaware of the help we can offer. Boats that have weathered time, forgotten under wraps, waiting for someone to breathe life back into them. This is exactly what Level 4 is for.",
+    content: `It's uncanny to imagine how many lonely boats might be sitting and suffering across Ontario, unaware of the help we can offer. Boats that have weathered time, forgotten under wraps, waiting for someone to breathe life back into them.
+
+For 28 years, we've accumulated the resources, expertise, and passion to restore boats of every design and character. Not only do we get the job done — we do it right the first time.
+
+Unfortunately, one recent example hit close to home.
+
+This boat was prepped and ready for transfer to a new, loving family. Yet it sat under wrap for five long years, forgotten. When it was finally unwrapped, water had crept in. With no visitors and no ventilation, moisture built up, leading to inevitable condensation. And when condensation meets untreated wood, mold takes over.
+
+The good news? This is a challenge we're fully equipped to solve. We thrive on opportunities like this — taking forgotten vessels and bringing them back to life, making them safe for you, your kids, your pets, and anyone else who steps onboard.
+
+If your boat looks anything like this one, don't wait. Letting it sit longer will only make the damage worse.
+
+Your boat deserves the best care — and we're ready to provide it. Call 416-890-5899 to book your Level 4 Interior Detailing and start the restoration.`,
+  },
+  {
     slug: "imagine-super-cool-robot",
     title: "Imagine We're Making a Super Cool Robot",
     date: "2023-07-15",
