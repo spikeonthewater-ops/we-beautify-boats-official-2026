@@ -103,6 +103,66 @@ If your boat was not maintained consistently the previous year and emerges from 
 We believe that your season should begin with excitement, not a chore list. We handle the intense spring preparation deliberately and methodically so you can step away knowing your boat is protected and ready to impress.`,
   },
   {
+    slug: "deck-wash-level-3",
+    title: "Deck Wash Level 3: Comprehensive Deck Cleaning for Heavily Soiled Boats",
+    date: "2024-01-05",
+    category: "Spike's Essential Care Guides",
+    image: "https://static.wixstatic.com/media/2836bb_01a6ae49934643a7b2059766106aac6c~mv2.jpg/v1/fill/w_740,h_493,al_c,q_90,enc_avif,quality_auto/img.jpg",
+    imageAlt: "Boat deck being thoroughly scrubbed inch by inch with lockers opened and all surfaces cleaned at Level 3",
+    excerpt: "There is a point where routine maintenance ends and methodical cleaning becomes necessary — not because a boat has failed, but because time, exposure, and inactivity have allowed contamination to settle everywhere at once. Deck Wash Level 3 exists for that point. This is where control is re-established.",
+    content: `There is a point where routine maintenance ends and methodical cleaning becomes necessary. Not because a boat has failed — but because time, exposure, and inactivity have allowed contamination to settle everywhere at once.
+
+Deck Wash Level 3 exists for that point.
+
+This service is designed for boats carrying heavy grime, widespread buildup, and early-stage staining across decks, lockers, vinyl, windows, and trim. It is often the first serious service of the season, especially for boats that have sat unattended for weeks or months. It is still a cleaning service — not restoration or disaster recovery — but it is no longer light or selective.
+
+Level 3 is where control is re-established.
+
+## What This Service Is Designed to Do
+
+Deck Wash Level 3 is intended to reset the entire topside of a boat that has drifted beyond routine or enhanced maintenance. At this stage, contamination is no longer limited to walk paths or obvious traffic areas. It has settled into non-skid texture, around hardware bases, inside lockers, along seams, and in areas that lighter services simply do not reach.
+
+The goal is to return the vessel to a known, manageable baseline — one where future maintenance can be planned instead of improvised, and where surface condition can be accurately evaluated without dirt masking underlying issues.
+
+This is the level that turns uncertainty into clarity.
+
+## How the Work Is Performed
+
+Deck Wash Level 3 begins with the application of a strong, eco-friendly cleaning solution across all deck surfaces. From there, cleaning is carried out inch by inch, with deliberate attention to non-skid texture, seams, fittings, transitions, and areas of embedded buildup.
+
+Unlike Levels 1 and 2, this service includes full cleaning of all deck lockers — both exterior faces and interior surfaces. Vinyl seating, windows, zippers, and trim are cleaned completely, not selectively. Nothing is skipped simply because it is time-consuming or inconvenient.
+
+At this level, we also introduce Universal Stone where appropriate. It is a 100% biodegradable, hand-applied product used to gently exfoliate stubborn contamination that standard detergents can no longer lift — without harming surfaces, technicians, or the surrounding environment. Its use is targeted and controlled, not broad or aggressive.
+
+Once cleaning is complete, all areas are thoroughly rinsed and dried to prevent water spotting and mineral residue.
+
+On an average 30-foot boat, Deck Wash Level 3 typically requires 1.5 to 2 hours, with time increasing based on deck complexity, number of lockers, and contamination level.
+
+## What This Service Does Not Do
+
+Deck Wash Level 3 is comprehensive cleaning — not correction.
+
+It does not include oxidation removal, surface polishing, stain correction beyond cleaning limits, or any form of restoration or repair. If discoloration, damage, or surface failure remains after Level 3, that indicates the boat has moved beyond structured cleaning and into a different service category. At that point, escalation — not more force — is required.
+
+## Why Level 3 Is Often a Turning Point
+
+This is the level where we truly learn a boat.
+
+By opening every locker, working through every section of deck, and addressing areas that are normally ignored, patterns become visible. Drainage issues, usage habits, and early material fatigue all reveal themselves once dirt is no longer hiding them.
+
+For many owners, Deck Wash Level 3 marks the shift from reactive ownership to informed maintenance. After this service, decisions become easier, schedules become clearer, and expectations become realistic.
+
+## When This Service Is the Right Choice
+
+Level 3 is appropriate when a boat shows heavy, widespread grime, when lockers and trim have not been cleaned in some time, when vinyl and windows hold buildup that quickly returns, or when the vessel has been left unattended long enough for contamination to settle everywhere. If Level 2 no longer delivers a meaningful reset, Level 3 is the correct next step.
+
+## When Level 3 Is No Longer Enough
+
+If contamination cannot be lifted through controlled, methodical cleaning — if surfaces are biologically compromised, deeply stained, or structurally affected — the boat has moved beyond comprehensive cleaning. That is where Deck Wash Level 4, our disaster and recovery-level service, begins. Level 4 is not an escalation of effort; it is a different category entirely.
+
+If your boat may be beyond structured cleaning, call 416-890-5899 to arrange an in-person assessment before any service is booked.`,
+  },
+  {
     slug: "deck-wash-level-4",
     title: "Deck Wash Level 4: Disaster-Level Cleaning for Neglected and Contaminated Boats",
     date: "2024-01-10",
