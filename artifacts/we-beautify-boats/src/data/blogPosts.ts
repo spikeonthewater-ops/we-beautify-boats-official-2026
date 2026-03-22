@@ -66,9 +66,9 @@ At We Beautify Boats, our interior services follow documented level protocols �
   },
   {
     slug: "launch-ready-plan",
-    title: "Launch Ready Plan: Because Spring Cleaning Is a Good Thing",
+    title: "Launch Ready Plan: Because Spring Cleaning Is a Good Thing!",
     date: "2026-02-27",
-    category: "Seasonal Boat Care",
+    category: "Spike's Essential Care Guides",
     image: "https://static.wixstatic.com/media/2836bb_33402d7a10ee4b69b3e2196671021781~mv2.png/v1/fill/w_740,h_493,al_c,q_90,enc_avif,quality_auto/img.png",
     imageAlt: "Two people cleaning a white sailboat with hoses at a boatyard",
     excerpt: "Spring is not the time for surprises. The Launch Ready Plan is a one-time, intensive reset designed to bring your boat out of hibernation clean, corrected, and confident.",
@@ -78,34 +78,29 @@ The Launch Ready Plan is a one-time, intensive reset designed specifically to br
 
 ## What This Service Is Designed to Do
 
-This plan is designed to sharpen, refresh, and refine a vessel that is already in generally good condition. It solves the problem of arriving at the dock on the first warm weekend only to find a boat that looks like it hasn't moved in six months — because it hasn't.
+This plan is designed to sharpen, refresh, and refine a vessel that is already in generally good condition. It solves the problem of arriving at the dock on the first warm weekend only to find a stale cabin, dirty canvas, and a slightly chalky hull. Success realistically means establishing a perfectly clean baseline across the entire vessel — a protected hull, a sanitized interior, and a brilliant deck — so you can simply step aboard, untie the lines, and start your season without touching a scrub brush.
 
-Success at this level looks like: non-skid surfaces that are clean and safe, exterior surfaces that are free of winter residue and oxidation bloom, hardware that is polished and properly protected, and a boat that arrives at the dock looking like you care for it — because you do.
+We approach this as a comprehensive, multi-stage spring commissioning. On the exterior, we execute a Level 3 Deck Wash to deeply scrub away all winter accumulation, clearing the lockers and preparing the surfaces for the season. Below the rub rail, we perform a Level 2 Hull Polish, using a medium machine polish to remove light oxidation before applying a durable protective coating to lock in the shine.
 
-## What's Included
+Inside the cabin, a Level 3 Interior Detailing provides a deep steam-clean, surface sanitization, and deodorizing treatment to refresh the air and fabrics after months of closed storage. Finally, we carefully reinstall your canvas coverings, checking the zippers and ensuring proper alignment and tensioning for optimal fit and protection.
 
-The Launch Ready Plan covers the full exterior of the vessel from non-skid deck surfaces through topsides and down to the waterline. Depending on vessel condition coming out of storage, the scope includes:
+## What This Service Is Not Intended For
 
-- Complete deck wash using appropriate pressure and technique for your non-skid type
-- Oxidation assessment and light correction where needed
-- Topsides wipe-down and protection application
-- Waterline cleaning and treatment
-- Hardware wipe-down and metal protection
-- Cockpit and helm area cleaning
+It is crucial to understand that this is a seasonal preparation service, not an extreme restoration package. The included hull polishing stage is strictly for light oxidation — it does not cover the heavy compounding or wet sanding required for severely neglected, chalky gelcoat.
 
-## Who This Is For
+The interior detailing explicitly excludes Level 4 mold remediation or pest abatement. We handle the cosmetic and environmental commissioning, not mechanical engine tune-ups or plumbing de-winterization, which must be handled by your mechanic.
 
-This plan is appropriate for boat owners who:
+The condition your boat wakes up in dictates how it will perform aesthetically all summer long. If you ignore the winter fallout and skip the protective coatings before splashing the boat, the summer sun will immediately bake that contamination deep into the gelcoat. By returning the deck to a clean baseline and sealing the hull in the spring, you dramatically lower your maintenance costs and physical effort for the rest of the year.
 
-- Take reasonable care of their vessels but acknowledge that winter storage creates its own set of surface problems
-- Want to start the season right, not spend the first three weekends cleaning
-- Have boats in generally good condition that need a professional reset, not a full restoration
+## When a Launch Ready Package Is the Right Choice
 
-## Ontario's Spring Reality
+This plan is the ideal choice for owners who have maintained a regular service schedule in the past and simply need an intensive professional reset to kick off the new season. You will know it is time when the winter cover comes off, the boat looks structurally intact, but the surfaces feel flat to the touch and the cabin smells like a long, cold winter.
 
-Ontario's boating season is short. Every weekend in June matters. A Launch Ready Plan scheduled for the week your boat comes out of storage means you arrive at your first weekend with a clean boat, not a project.
+## When This Level Is No Longer Enough
 
-We schedule Launch Ready services in coordination with your marina's haul-out and launch calendar. Contact Spike directly to discuss timing.`,
+If your boat was not maintained consistently the previous year and emerges from storage with extreme, heavy oxidation, deep structural stains, or an interior overrun by active black mold, this plan will not deliver its intended results. Those severe conditions require targeted, multi-day restorations like a Level 4 Hull Polish and specialized interior abatement before standard seasonal prep can even begin.
+
+We believe that your season should begin with excitement, not a chore list. We handle the intense spring preparation deliberately and methodically so you can step away knowing your boat is protected and ready to impress.`,
   },
   {
     slug: "10-year-old-boats-hull-polish-level-4",
