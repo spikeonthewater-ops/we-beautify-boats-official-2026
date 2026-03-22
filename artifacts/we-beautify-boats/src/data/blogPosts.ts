@@ -103,6 +103,40 @@ If your boat was not maintained consistently the previous year and emerges from 
 We believe that your season should begin with excitement, not a chore list. We handle the intense spring preparation deliberately and methodically so you can step away knowing your boat is protected and ready to impress.`,
   },
   {
+    slug: "basic-topsides-polish",
+    title: "Basic Topsides Polish: Your Finish Is Still Current",
+    date: "2025-09-01",
+    category: "Spike's Essential Care Guides",
+    image: "https://static.wixstatic.com/media/2836bb_bc1564c6bd8746bcbfe3f7ff7ffa720a~mv2.png/v1/fill/w_740,h_493,al_c,q_90,enc_avif,quality_auto/img.png",
+    imageAlt: "Boat hull topsides receiving a basic Level 1 maintenance polish",
+    excerpt: "When it has been less than one year since our last visit, your gelcoat finish is likely still current. Our resolve is to build a maintenance routine so consistent that a basic polish is all you ever need.",
+    content: `When it has been less than one year since our last visit, your gelcoat finish is likely still current. Whether your vessel is an actively running boat or serves primarily as a floating patio at the dock, the sun and marina elements will continuously attack the surface. Our resolve is to build a maintenance routine so consistent that a basic polish is all you ever need.
+
+## What This Service Is Designed to Do
+
+Skipping a season for budget or time is a misnomer — UV rays and environmental fallout do not take a break. This basic topsides polish is designed to stay ahead of that degradation. By addressing the hull before heavy oxidation sets in, we solve the problem of seasonal dullness. Realistically, success at this stage looks like a smooth, uniformly shiny hull that repels water and environmental contaminants effectively.
+
+We approach this maintenance step with a strict focus on preserving your gelcoat's thickness. Our technicians work systematically along the hull using professional buffing machines paired with foam polishing pads and a light polish compound. We make controlled, even passes to gently refine the top layer and remove minor surface scuffs without aggressive abrasion. A final, thorough wipe-down is completed to ensure no residue is left behind and the gloss is uniform.
+
+## What Basic Topsides Polish Is Not Intended For
+
+It is critical to understand that this level is strictly a maintenance procedure, not a restorative one. Hull Polish Level 1 is not intended for oxidation removal, heavy compounding, or surface leveling. If your gelcoat has a chalky texture or deep scratches from dock rash, this light polish will simply not hold. We do not use aggressive cutting compounds or attempt to rebuild neglected surfaces at this stage.
+
+## Why Staying on Schedule Matters
+
+Routine care is the only way to avoid invasive, expensive restorations down the line. Getting this hull polish on the schedule long before the chaos of the spring rush ensures your gelcoat is sealed and protected early. It aligns directly with our philosophy: we work, so you can play on the water every day without worrying about the condition of your vessel.
+
+## When This Level Is the Right Choice
+
+This service is the right choice exclusively for owners who already keep their hulls in excellent condition and have had professional correction recently. The visual cues are simple: the hull looks clean but lacks its peak shine, and the surface still feels perfectly smooth to the touch.
+
+## When This Level Is No Longer Enough
+
+If you run your bare hand across the hull and it leaves a white, chalky residue on your skin, or if the color looks visibly faded and dry, this basic polish is no longer enough. At that point, the gelcoat has begun to break down, and the surface requires the fast-cut compounding provided by Hull Polish Level 2 to actively remove the degraded material.
+
+Maintaining a healthy boat means respecting the realities of the marine environment and staying ahead of the wear. We are committed to applying only the necessary level of correction to preserve your hull for years to come.`,
+  },
+  {
     slug: "light-oxidation-level-2-topsides",
     title: "Light Oxidation Is Solved Fast at Level 2 Topsides",
     date: "2025-08-01",
