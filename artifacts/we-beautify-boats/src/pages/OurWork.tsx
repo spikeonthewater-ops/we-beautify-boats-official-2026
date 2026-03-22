@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
 import { MapPin, Youtube, ChevronRight } from "lucide-react";
 import { useQuote } from "@/context/QuoteContext";
+import PageMeta from "@/components/PageMeta";
 
 const fadeIn = { initial: { opacity: 0, y: 24 }, whileInView: { opacity: 1, y: 0 }, viewport: { once: true } };
 
@@ -240,6 +241,11 @@ export default function OurWork() {
   const { openQuote } = useQuote();
   return (
     <div className="min-h-screen bg-background">
+      <PageMeta
+        title="Our Work — Featured Projects | Spike On The Water (Ontario)"
+        description="Real boat detailing projects across Ontario's marinas — interior detailing, hull polishing, wet sanding, and bottom prep. See the results. Call Spike: 416-890-5899."
+        path="/our-work"
+      />
 
       {/* ── HERO ──────────────────────────────────────────── */}
       <section className="relative bg-marine-900 pt-36 pb-20 overflow-hidden">

@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+import PageMeta from "@/components/PageMeta";
 import { Link } from "wouter";
 import { ArrowRight, CheckCircle2, Plus } from "lucide-react";
 
@@ -106,6 +107,11 @@ const EXTRAS_PREVIEW = [
 export default function Services() {
   return (
     <div className="min-h-screen bg-background pb-20">
+      <PageMeta
+        title="Our Services | Spike On The Water (Ontario)"
+        description="Professional mobile boat detailing across Ontario — deck washes, hull polishing, interior detailing, antifouling, protections, and extra services. Call Spike: 416-890-5899."
+        path="/our-services"
+      />
       {/* Header */}
       <div className="bg-marine-900 text-white pt-32 pb-20 px-4 sm:px-6 lg:px-8 text-center relative overflow-hidden">
         <div className="absolute inset-0 opacity-10 bg-[url('https://images.unsplash.com/photo-1567899378494-47b22a2ae96a?w=1920&q=80')] bg-cover bg-center mix-blend-overlay"></div>

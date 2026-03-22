@@ -2,6 +2,7 @@ import { motion } from "framer-motion";
 import { Link } from "wouter";
 import { Anchor, Sparkles, Droplets, ShieldCheck, ArrowRight, Star, ClipboardList } from "lucide-react";
 import { useQuote } from "@/context/QuoteContext";
+import PageMeta from "@/components/PageMeta";
 
 const fadeIn = {
   initial: { opacity: 0, y: 20 },
@@ -52,6 +53,11 @@ export default function Home() {
   const { openQuote } = useQuote();
   return (
     <div className="min-h-screen bg-background">
+      <PageMeta
+        title="Spike On The Water | Mobile Boat & Yacht Detailing — Ontario, Canada"
+        description="Ontario's premier mobile yacht & boat detailing. Deck washes, hull polishing, interior detailing, antifouling & more. Serving Toronto, Oakville, Burlington & Hamilton marinas. Call Spike: 416-890-5899."
+        path="/"
+      />
       {/* Hero Section */}
       <section className="relative h-screen min-h-[600px] flex items-center justify-center overflow-hidden">
         {/* Background Image & Overlay */}

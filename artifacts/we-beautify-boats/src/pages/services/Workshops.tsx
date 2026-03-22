@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
 import { Link } from "wouter";
 import { useQuote } from "@/context/QuoteContext";
+import PageMeta from "@/components/PageMeta";
 import {
   ArrowLeft,
   ArrowRight,
@@ -122,6 +123,11 @@ export default function Workshops() {
 
   return (
     <div className="min-h-screen bg-background pb-20">
+      <PageMeta
+        title="Workshops & Training | Spike On The Water (Ontario)"
+        description="Marine detailing education for boat owners and professionals — 100, 200, and 300 series courses. Marina Pro-Series, Owner's Day, and Restoration Masterclass. $250 CAD. Call 416-890-5899."
+        path="/workshops"
+      />
       {/* Hero */}
       <div className="bg-marine-900 text-white pt-32 pb-20 px-4 sm:px-6 lg:px-8 text-center relative overflow-hidden">
         <div

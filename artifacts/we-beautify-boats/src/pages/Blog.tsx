@@ -4,6 +4,7 @@ import { motion } from "framer-motion";
 import { Calendar, Tag, ArrowRight } from "lucide-react";
 import { blogPosts, CATEGORIES, getPostsByCategory, formatDate } from "@/data/blogPosts";
 import { useQuote } from "@/context/QuoteContext";
+import PageMeta from "@/components/PageMeta";
 
 export default function Blog() {
   const { openQuote } = useQuote();
@@ -15,6 +16,11 @@ export default function Blog() {
 
   return (
     <div className="min-h-screen bg-background pt-32 pb-24">
+      <PageMeta
+        title="Marine Detailing Blog | Spike On The Water (Ontario)"
+        description="Expert insights on boat detailing, hull care, interior cleaning, antifouling, and seasonal prep from Spike — Ontario's leading mobile marine detailer. Call 416-890-5899."
+        path="/blog"
+      />
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
         {/* Header */}

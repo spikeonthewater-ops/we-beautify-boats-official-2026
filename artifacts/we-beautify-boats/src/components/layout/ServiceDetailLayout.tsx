@@ -2,6 +2,7 @@ import { motion } from "framer-motion";
 import { Link } from "wouter";
 import { ArrowLeft, Calculator, ClipboardList } from "lucide-react";
 import { useQuote, QuoteCategory } from "@/context/QuoteContext";
+import PageMeta from "@/components/PageMeta";
 
 interface ServiceLevel {
   label: string;
@@ -52,6 +53,10 @@ export function ServiceDetailLayout({
   const { openQuote } = useQuote();
   return (
     <div className="pt-32 pb-24 min-h-screen bg-background">
+      <PageMeta
+        title={title}
+        description={`${description.slice(0, 150)}${description.length > 150 ? "…" : ""}`}
+      />
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
         <Link

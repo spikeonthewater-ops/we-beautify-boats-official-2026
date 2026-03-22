@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
 import { Link } from "wouter";
 import { useQuote } from "@/context/QuoteContext";
+import PageMeta from "@/components/PageMeta";
 import {
   ArrowLeft,
   ArrowRight,
@@ -97,6 +98,11 @@ export default function ExtraServices() {
   const { openQuote } = useQuote();
   return (
     <div className="pt-32 pb-24 min-h-screen bg-background">
+      <PageMeta
+        title="Extra Services — Specialized Marine Work | Spike On The Water (Ontario)"
+        description="Targeted marine detailing extras: wet sanding, engine bay cleaning, teak maintenance, decal removal, propeller polishing & more. Add-ons or standalone. Call Spike: 416-890-5899."
+        path="/extra-services"
+      />
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
         <Link

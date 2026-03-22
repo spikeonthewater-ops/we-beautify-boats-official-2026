@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://www.webeautifyboats.com/sitemap.xml
+Sitemap: https://www.spikeonthewater.ca/sitemap.xml

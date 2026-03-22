@@ -1,11 +1,17 @@
 import { motion } from "framer-motion";
 import { Phone, MessageCircle, Clock, MapPin, CalendarClock, ArrowUpRight } from "lucide-react";
 import { useQuote } from "@/context/QuoteContext";
+import PageMeta from "@/components/PageMeta";
 
 export default function Contact() {
   const { openQuote } = useQuote();
   return (
     <div className="pt-32 pb-24 min-h-screen bg-background">
+      <PageMeta
+        title="Contact & Book | Spike On The Water (Ontario)"
+        description="Book Ontario's top mobile boat detailer. Call Spike at 416-890-5899 or WhatsApp — serving Toronto, Oakville, Burlington & Hamilton marinas. Reserve your assessment today."
+        path="/contact"
+      />
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">

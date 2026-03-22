@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
 import { ArrowUpRight, MapPin, Clock, Anchor } from "lucide-react";
+import PageMeta from "@/components/PageMeta";
 
 const ROLES = [
   {
@@ -27,6 +28,11 @@ const ROLES = [
 export default function MeetTheTeam() {
   return (
     <div className="min-h-screen bg-background">
+      <PageMeta
+        title="Meet the Team | Spike On The Water (Ontario)"
+        description="Meet Shane 'Spike' DesLoges — 28+ years of marine detailing experience, founder of Spike On The Water. Ontario's most trusted mobile boat detailer. Call 416-890-5899."
+        path="/meet-the-team"
+      />
       {/* Hero */}
       <section className="relative min-h-[70vh] flex items-end overflow-hidden bg-marine-900">
         {/* Full-bleed team photo */}

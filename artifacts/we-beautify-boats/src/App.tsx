@@ -32,6 +32,7 @@ const ExtraServices = lazy(() => import("@/pages/services/ExtraServices"));
 const Workshops = lazy(() => import("@/pages/services/Workshops"));
 
 import { useScrollToTop } from "@/hooks/use-navigation";
+import Analytics from "@/components/Analytics";
 
 const queryClient = new QueryClient();
 
@@ -86,6 +87,7 @@ function App() {
     <QueryClientProvider client={queryClient}>
       <TooltipProvider>
         <QuoteProvider>
+          <Analytics />
           <WouterRouter base={import.meta.env.BASE_URL.replace(/\/$/, "")}>
             <Router />
           </WouterRouter>
