@@ -103,6 +103,60 @@ If your boat was not maintained consistently the previous year and emerges from 
 We believe that your season should begin with excitement, not a chore list. We handle the intense spring preparation deliberately and methodically so you can step away knowing your boat is protected and ready to impress.`,
   },
   {
+    slug: "epoxy-barrier-coat",
+    title: "Epoxy Barrier Coat Application: The Structural Shield",
+    date: "2024-10-01",
+    category: "Spike's Essential Care Guides",
+    image: "https://static.wixstatic.com/media/2836bb_58ed987973484cbd852e5313d8899f03~mv2.png/v1/fill/w_740,h_493,al_c,q_90,enc_avif,quality_auto/img.png",
+    imageAlt: "Multi-coat epoxy barrier coat being applied to a stripped fiberglass hull underwater section",
+    excerpt: "There is a persistent myth in boating that fiberglass is waterproof. It isn't. Gelcoat is porous, and over time, water molecules migrate through it and create osmotic blistering — 'boat pox.' The epoxy barrier coat is the only thing standing between your hull's structural integrity and the water it sits in.",
+    content: `There is a persistent myth in boating that fiberglass is waterproof. It isn't. Gelcoat is porous, and over time, water molecules migrate through it, reacting with the uncured resins inside your laminate. This creates acetic acid, pressure, and eventually the dreaded "boat pox" — osmotic blistering.
+
+The Epoxy Barrier Coat is the only thing standing between your hull's structural integrity and the water it sits in. This service is not about aesthetics; it is about preservation. It is a strictly timed, chemical intervention designed to seal the hull hermetically after it has been stripped to bare gelcoat.
+
+## What This Service Is Designed to Do
+
+This service applies a high-build epoxy primer system to the underwater hull. Its primary job is to prevent moisture intrusion. By applying a minimum of three coats, we build a film thickness that water cannot penetrate.
+
+Success here looks like a uniform, matte shell — often alternating between grey and white layers to ensure perfect, verifiable coverage — that completely seals the substrate. It solves the problem of osmosis before it starts, ensuring your fiberglass remains dry even while the boat is in the water.
+
+## How the Work Is Performed
+
+Applying epoxy is a battle against the clock and the thermometer. We do not just roll paint — we manage a chemical reaction.
+
+**Stage 1 — Verification:** We confirm the hull is stripped to laser-removal standards. Epoxy cannot bond to old paint or dirty surfaces. The substrate must be bare and clean.
+
+**Stage 2 — The Mix:** We adhere strictly to the manufacturer's induction times — the period the epoxy must sit after mixing to fully activate before application begins.
+
+**Stage 3 — The Application:** We apply the epoxy using solvent-resistant rollers to achieve the specified film thickness across the entire underwater section, coat by coat.
+
+**Stage 4 — The Recoat Window:** This is critical. Subsequent coats must be applied while the previous coat is still chemically active — the "thumbprint" stage — to create a chemical bond rather than just a mechanical one. We monitor this window relentlessly.
+
+## What This Service Is Not Intended For
+
+This is not a blister repair service. If your hull already has moisture readings off the charts or visible blisters, sealing them inside an epoxy barrier will only accelerate the rot beneath.
+
+This is also not antifouling. The epoxy barrier coat is the primer layer; antifouling paint is a separate service applied last. The epoxy cannot be applied over old bottom paint — it requires a clean, laser-stripped surface. Materials are not included unless explicitly quoted; we apply the system you specify or purchase.
+
+## Why This Service Matters
+
+Osmotic blisters are one of the few things that can structurally destroy a fiberglass boat's value. Repairing a blistered bottom costs tens of thousands of dollars in drying time and fiberglass work. A properly applied barrier coat is the insurance policy that prevents that nightmare. It is the industry standard for protecting the asset value of the vessel.
+
+## When This Service Is the Right Choice
+
+**The Post-Strip Reset:** You have just invested in a full hull strip. You must seal the bare substrate immediately.
+
+**The New Boat:** You are commissioning a new vessel and want to start its life correctly from the ground up.
+
+**The Dry Hull:** Your boat has been on the hard for months or years, and moisture meter readings confirm it is dry enough to seal.
+
+## When This Service Is No Longer Enough
+
+If the hull is already wet — high moisture meter readings — or delaminating, barrier coating is not enough. You need a structural blister repair and a long-term drying period, often over a winter with heat lamps, before you can think about barrier coating. We do not seal wet hulls.
+
+We treat the Epoxy Barrier Coat as a critical system installation. We respect the mix ratios, we respect the temperature, and most importantly, we respect the recoat windows. When we walk away, your boat is armed against the elements for the next decade.`,
+  },
+  {
     slug: "deck-polish-level-2",
     title: "Deck Polish Level 2: Correcting Light Oxidation & Restoring Shine",
     date: "2024-10-15",
