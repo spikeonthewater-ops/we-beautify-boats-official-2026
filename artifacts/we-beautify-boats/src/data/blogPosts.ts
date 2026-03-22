@@ -103,6 +103,64 @@ If your boat was not maintained consistently the previous year and emerges from 
 We believe that your season should begin with excitement, not a chore list. We handle the intense spring preparation deliberately and methodically so you can step away knowing your boat is protected and ready to impress.`,
   },
   {
+    slug: "interior-detailing-level-1",
+    title: "Interior Detailing – Level 1: Basic Interior Maintenance for Boats That Are Already in Good Shape",
+    date: "2024-01-15",
+    category: "Spike's Essential Care Guides",
+    image: "https://static.wixstatic.com/media/2836bb_22ad016dd9e54afd95bf80fd33933970~mv2.png/v1/fill/w_740,h_493,al_c,q_90,enc_avif,quality_auto/img.png",
+    imageAlt: "Clean, well-maintained boat cabin interior after Level 1 basic maintenance service",
+    excerpt: "Interior Detailing Level 1 is meant to keep a clean boat feeling clean. Most interiors don't need to be pulled apart every time they're serviced. When a boat is already being looked after, what it needs is a simple, regular once-over to keep dust, fingerprints, and everyday use from slowly building up.",
+    content: `Interior Detailing Level 1 is meant to keep a clean boat feeling clean.
+
+Most interiors don't need to be pulled apart every time they're serviced. When a boat is already being looked after, what it really needs is a simple, regular once-over to keep dust, fingerprints, and everyday use from slowly building up. That's exactly where Level 1 fits.
+
+This service is most often used on a weekly or bi-weekly schedule. It's designed to be quick, predictable, and easy to live with. The goal isn't to change the condition of the interior — it's to preserve it.
+
+## What This Service Is Designed to Do
+
+Level 1 is designed for maintenance, not correction.
+
+It keeps the cabin fresh and comfortable by addressing the surfaces you naturally interact with during normal use. Visible countertops, walls, windows, and open areas are wiped down so the interior stays pleasant and doesn't slowly drift toward needing heavier attention.
+
+When used regularly, this level helps stretch the time between deeper interior services. It works best when the boat is already in reasonable shape and simply needs consistency to stay that way.
+
+## How the Work Is Performed
+
+The work is intentionally simple and consistent. The service is typically completed in about an hour, depending on the size and layout of the boat.
+
+**Hard surfaces** throughout the galley, salon, head, and berths are cleaned using Tug Scrub — effective on everyday grime without being aggressive, which makes it well suited for regular interior maintenance.
+
+**Finished wood surfaces** are treated with Thieves by Young Living, an all-purpose cleaner that's gentle on finishes while still leaving them clean and refreshed.
+
+**Stainless surfaces** are addressed where needed using Universal Stone to remove light water spotting that can remain after general cleaning.
+
+**Windows and mirrors** are polished using 808 to leave them clear and streak-free.
+
+We also do a light vacuum where access allows, but the focus at this level is always on visible, easy-to-reach areas. We do not open cupboards, empty shelves, or rearrange personal items. Anything that requires additional access naturally belongs to a higher service level.
+
+None of these products are meant to force results. They are selected because they support regular maintenance without wearing interiors down over time — which is what allows this service to be repeated weekly or bi-weekly without creating new problems.
+
+## What This Service Is Not Intended For
+
+Interior Detailing Level 1 isn't meant to solve deeper interior issues.
+
+If there's buildup inside cupboards, residue in corners, or areas that haven't been touched in a while, that's a sign the interior has moved beyond basic maintenance. The same applies to stains, odors, or anything that requires targeted or corrective attention. Those situations aren't a failure of Level 1 — they're simply an indication that a different level of service is a better fit.
+
+## Why This Level Matters
+
+Regular surface maintenance keeps interiors enjoyable to use, helps owners notice changes early, and prevents small things from becoming bigger projects later in the season. It's a practical service for people who want their boat to feel consistently looked after without overdoing it.
+
+## When This Service Is the Right Choice
+
+Level 1 makes the most sense when the interior is already clean, organized, and being used regularly. It's ideal for owners who want their cabin to stay presentable week to week without needing deeper work each time.
+
+If the interior still looks good and just needs to stay that way, this level does its job well.
+
+## When This Level Is No Longer Enough
+
+If the interior is starting to need more hands-on attention — cupboards, shelves, corners, stains, or odors — the next step is Interior Detailing Level 2, where deeper interior areas are addressed properly. If you're unsure where your boat sits, call 416-890-5899 and we'll point you in the right direction.`,
+  },
+  {
     slug: "interior-detailing-level-3",
     title: "Interior Detailing – Level 3: Steam Cleaning and Sanitization for All Surfaces",
     date: "2024-02-01",
