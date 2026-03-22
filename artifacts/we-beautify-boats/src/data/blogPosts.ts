@@ -103,6 +103,50 @@ If your boat was not maintained consistently the previous year and emerges from 
 We believe that your season should begin with excitement, not a chore list. We handle the intense spring preparation deliberately and methodically so you can step away knowing your boat is protected and ready to impress.`,
   },
   {
+    slug: "interior-detailing-level-3",
+    title: "Interior Detailing – Level 3: Steam Cleaning and Sanitization for All Surfaces",
+    date: "2024-02-01",
+    category: "Spike's Essential Care Guides",
+    image: "https://static.wixstatic.com/media/2836bb_2fe38f7e96d9470eb5abc1ed474a5c42~mv2.png/v1/fill/w_740,h_493,al_c,q_90,enc_avif,quality_auto/img.png",
+    imageAlt: "Professional steam injection equipment sanitizing boat cabin upholstery, headliners, and bilge spaces",
+    excerpt: "There is a distinct difference between a boat that looks clean and a boat that is sanitary. You can wipe down every counter and vacuum every carpet, but if the \"boat smell\" lingers, it's because the bacteria causing it is living where your cloth can't reach — inside the lockers, clinging to the headliners, thriving in the bilge. Level 3 removes the source, not the symptom.",
+    content: `There is a distinct difference between a boat that looks clean and a boat that is sanitary. You can wipe down every counter and vacuum every carpet, but if the "boat smell" lingers, it's because the bacteria causing it is living where your cloth can't reach — inside the lockers, clinging to the headliners, and thriving in the bilge.
+
+Interior Level 3 is our comprehensive sanitization service. It is designed for vessels that need a hygiene reset, targeting the invisible biological film that accumulates after a season of use, humidity, and enclosed storage.
+
+## What This Service Is Designed to Do
+
+We move through the vessel systematically with professional-grade steam injection equipment. This isn't just for the carpets and upholstery — we open every locker and cabinet, steaming the interiors to kill stagnant bacteria. We treat the walls and headliners to release trapped odors.
+
+Critically, we go below the floorboards. We steam and sanitize the bilges and mechanical spaces where stagnant water and oil residues often breed the bacteria responsible for that heavy, musty cabin smell. By using thermal energy rather than heavy chemical fragrances, we leave the boat sanitized — not perfumed.
+
+## What This Service Is Not Intended For
+
+This service is not a mold remediation solution. While steam sanitizes surfaces, it is not the correct protocol for an interior that has been overtaken by organic growth, black mold, or mildew blooms.
+
+If we encounter active mold spores or fuzzy growth on surfaces, we must stop and escalate. Pushing hot steam into an active mold bloom can inadvertently spread spores deeper into the air system — making the situation worse, not better. That condition requires Interior Level 4 to safely neutralize the biology before any cleaning begins.
+
+## Why This Level Matters
+
+Skipping deep sanitization allows biological matter — skin cells, food particles, humidity — to decay within your boat's fabrics. This is the root cause of that stale, musty smell that air fresheners only mask. Level 3 removes the source of the odor, extending the life of your expensive marine upholstery and ensuring the cabin is actually healthy to sleep in.
+
+## When This Service Is the Right Choice
+
+**Post-Trip:** After a long weekend with guests or kids — when the surfaces look fine but the air quality tells a different story.
+
+**Mid-Season:** When the carpets look flat or the salon cushions feel sticky to the touch.
+
+**Pre-Purchase:** To sanitize a "new-to-you" boat before moving your personal items aboard.
+
+## When This Level Is No Longer Enough
+
+If we open the boat and are hit with the sharp, earthy smell of mold, or if we see visible black or green growth on headliners and bulkheads, Level 3 is insufficient. At that stage, the health of the vessel is compromised, and we must move to Interior Level 4 — Mold Remediation and Ozone Treatment — to safely neutralize the spores before any cleaning can begin.
+
+True comfort on the water comes from knowing your environment is clean below the surface. Our steam approach is aggressive on grime but safe for your vessel's delicate marine fabrics. It's about resetting the baseline of your interior — not covering it up.
+
+Call 416-890-5899 to arrange an assessment and find out which interior level is right for your boat.`,
+  },
+  {
     slug: "spike-rules-assessment",
     title: "If You've Worked with Me Before, You Know These Rules Already",
     date: "2024-02-15",
