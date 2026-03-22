@@ -103,6 +103,74 @@ If your boat was not maintained consistently the previous year and emerges from 
 We believe that your season should begin with excitement, not a chore list. We handle the intense spring preparation deliberately and methodically so you can step away knowing your boat is protected and ready to impress.`,
   },
   {
+    slug: "deck-wash-level-4",
+    title: "Deck Wash Level 4: Disaster-Level Cleaning for Neglected and Contaminated Boats",
+    date: "2024-01-10",
+    category: "Spike's Essential Care Guides",
+    image: "https://static.wixstatic.com/media/2836bb_17e354d22f9342e6895e58da0e66e1e4~mv2.png/v1/fill/w_740,h_493,al_c,q_90,enc_avif,quality_auto/img.png",
+    imageAlt: "Severely contaminated boat deck covered in moss, sap, and antifouling fallout requiring disaster-level cleaning",
+    excerpt: "Some boats don't simply need more cleaning. Deck Wash Level 4 exists for boats that have been exposed, neglected, or contaminated to the point where normal maintenance services are no longer effective. This is what we call a disaster detail — the highest level of deck cleaning we offer before surfaces move into correction, repair, or replacement territory.",
+    content: `Some boats don't simply need more cleaning.
+
+Deck Wash Level 4 exists for boats that have been exposed, neglected, or contaminated to the point where normal maintenance services are no longer effective. This is what we call a disaster detail or fallout wash — the highest level of deck cleaning we offer before surfaces move into correction, repair, or replacement territory.
+
+Level 4 is not routine. It is not seasonal maintenance. It is the controlled attempt to reclaim surfaces that have been overwhelmed by environmental damage, contamination, or prolonged neglect.
+
+## What This Service Is Designed to Address
+
+This service is intended for boats suffering from severe contamination, including:
+
+- Moss, mold, and biological growth
+- Tree sap and organic fallout
+- Carbon residue and atmospheric pollution
+- Antifouling dust and sanding fallout from nearby boats
+- Long-term grime embedded across non-skid, seams, and transitions
+
+These conditions often result from boats being left unattended for extended periods, stored near unprotected industrial or marina activity, or exposed to repeated environmental fallout without proper cleaning intervals. At this stage, contamination is no longer isolated — it is everywhere.
+
+## The Tug Scrub Discovery
+
+Tug Scrub was not originally designed as a sap remover. Its ability to dissolve tree sap was discovered through real-world use on problem boats.
+
+Over years of hands-on cleaning, we found that Tug Scrub consistently breaks down sap's grip on gelcoat, non-skid, and textured surfaces when other cleaners simply smear it or force it deeper. Sap is a resin-based contaminant that bonds aggressively to surfaces, and through repeated field application, Tug Scrub proved capable of loosening and dissolving that bond so the contamination can be safely lifted away during controlled cleaning. Used correctly, it has become one of our most reliable tools for addressing sap fallout during Level 4 disaster and environmental contamination washes.
+
+## How the Work Is Performed
+
+Deck Wash Level 4 begins with the application of 100% Tug Scrub — a high-strength, eco-friendly detergent specifically selected to break down heavy organic and industrial contamination. This is followed by methodical, heavy-duty scrubbing of all deck surfaces, including non-skid, seams, fittings, transitions, and hard-to-reach areas that lighter services do not attempt.
+
+All accessible vinyl surfaces, windows, and trim are cleaned thoroughly as part of the process. This is a stem-to-stern topside cleaning — not a cosmetic pass over visible areas.
+
+Where required, controlled power rinsing is used to flush contamination from textured surfaces and joints. Once cleaning is complete, all areas are carefully dried to reduce water spotting and prevent immediate recontamination.
+
+For an average 30-foot boat, Deck Wash Level 4 typically requires 2 to 3 hours, with time increasing significantly based on severity, deck complexity, and environmental exposure.
+
+## What This Service Does Not Do
+
+Deck Wash Level 4 is the maximum level of cleaning — but it is still cleaning.
+
+It does not include oxidation removal, gelcoat correction, polishing, coating, structural repair, or cosmetic restoration. If staining, discoloration, or surface damage remains after Level 4, that indicates the surface has been severely affected and requires corrective services outside the scope of washing.
+
+At this point, no amount of additional detergent or pressure will safely improve the result. You NEED SPIKE — and a frank conversation about what comes next.
+
+## Why Level 4 Is a Critical Decision Point
+
+Level 4 is often where expectations must be reset.
+
+Our role at this stage is to remove as much contamination as safely possible, then clearly explain what condition remains underneath. Sometimes the result is a boat that can return to a structured maintenance cycle. Other times, it reveals damage that was previously hidden by grime.
+
+Either way, Level 4 creates clarity.
+
+This is also the level where we commonly identify environmental issues — such as antifoul dust fallout from nearby sanding — that owners could not reasonably prevent on their own.
+
+## When This Service Is the Right Choice
+
+Level 4 is appropriate when a boat shows severe, widespread contamination, when biological growth is present, when sap or industrial fallout has bonded to surfaces, or when the vessel has been left uncleaned for a year or more. If Level 3 cannot reclaim control of the surfaces, Level 4 is the final cleaning step before recovery or correction work is discussed.
+
+Deck Wash Level 4 is not about making promises. It is about doing everything cleaning can realistically do — safely and transparently. When a boat reaches this stage, honest assessment matters more than optimism.
+
+If you are unsure whether cleaning alone is still appropriate, call 416-890-5899 to arrange an in-person assessment before any service is booked.`,
+  },
+  {
     slug: "interior-detailing-level-2",
     title: "Interior Detailing – Level 2: A Deeper Interior Clean When Basic Isn't Enough",
     date: "2024-01-20",
