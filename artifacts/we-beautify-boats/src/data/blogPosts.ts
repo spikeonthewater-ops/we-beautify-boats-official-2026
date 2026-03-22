@@ -103,6 +103,75 @@ If your boat was not maintained consistently the previous year and emerges from 
 We believe that your season should begin with excitement, not a chore list. We handle the intense spring preparation deliberately and methodically so you can step away knowing your boat is protected and ready to impress.`,
   },
   {
+    slug: "always-ready-weekly-plan",
+    title: "The Always Ready Weekly Plan: What Full-Season Boat Care Really Looks Like",
+    date: "2023-11-15",
+    category: "Boat Ownership Intelligence",
+    image: "https://static.wixstatic.com/media/2836bb_68e0ba0923484988bf234ab0732390fb~mv2.png/v1/fill/w_740,h_493,al_c,q_90,enc_avif,quality_auto/img.png",
+    imageAlt: "Immaculate boat ready to go at marina dock — result of the Always Ready weekly full-season care plan",
+    excerpt: "Every marina has that one boat that always looks perfect — clean decks, spotless hull, fresh interior. It's not luck. It's a plan. The Always Ready Weekly Plan is how we keep serious boaters out of the work loop and on the water. 24 on-site visits per season. Every week. Rain or shine.",
+    content: `Every marina has that one boat that always looks perfect — clean decks, spotless hull, fresh interior. It's not luck. It's a plan. And more often than not, it's ours.
+
+In Ontario's busy boating season, neglect doesn't take long to show. One rainy week, one shoreline blow-in, one missed cleanup — and suddenly you're scrubbing instead of cruising.
+
+The Always Ready Weekly Plan is how we keep serious boaters out of the work loop and on the water.
+
+This isn't a light rinse or quick vacuum. It's structured, scheduled, and designed to protect your time and your investment.
+
+## What's Included: Real Maintenance on a Real Schedule
+
+**24 Weekly Service Visits — On Site**
+
+Our crew comes to your marina or yacht club every week — rain or shine — to handle the following:
+
+**Weekly Deck Wash (Level 1)**
+Removes surface dirt, bird droppings, and environmental fallout before they settle or stain. We spot-check high-traffic wear areas and keep eyes on sections that tend to degrade fast.
+
+**Weekly Interior Detailing (Level 1)**
+Freshens upholstery, checks for moisture buildup, and keeps surfaces inviting. If you spend weekends aboard or entertain guests, this is what keeps your cabin show-ready without lifting a finger.
+
+**6 Monthly Service Sessions — Alternating Focus**
+
+Each month, we rotate through these two key services:
+
+**Hull Wash (Level 1)**
+Removes scum lines, airborne grime, and general buildup that can dull your gelcoat and accelerate degradation.
+
+**Wax Application**
+We apply a maintenance coat to topsides and critical areas, preserving gloss and enhancing UV protection between major polishing jobs. Regular waxing prevents surface oxidation and keeps long-term restoration costs down.
+
+## What This Plan Is For
+
+This plan is best suited for:
+
+- Owners who use their boat weekly or more
+- Clients who host guests or charter informally
+- Vessels over 30 feet with visible exterior finishes
+- Boats stored wet for most of the season
+
+The value isn't just cleanliness — it's readiness. You pull in, step aboard, and go. That consistency matters when you only have a few precious months of boating in Ontario's tight season.
+
+## Limitations and Realities
+
+This plan covers Level 1 service tiers — not deep polishing or restorative work. Think of it like routine housekeeping, not a renovation.
+
+- We won't remove oxidation or staining — that requires hull or deck polishing services
+- We won't empty storage lockers or handle waste systems
+- We need dockside access and consistent scheduling
+
+While we keep a close eye on your vessel's condition, we'll flag anything that looks like it's beyond routine care. When that happens, you'll get options — not surprises.
+
+## When Weekly Service Is a Strategy, Not a Luxury
+
+For newer boats, consistent care extends the lifespan of finishes and fittings. For older boats, it prevents decline from accelerating. For working professionals and remote owners, it keeps things turnkey.
+
+You'll spend less time prepping, less money fixing, and more time using your boat.
+
+We've spent 28+ years — since 1998 — taking boats from neglected to beautiful. But we'd rather keep them beautiful from the start. That's what Always Ready delivers.
+
+Call 416-890-5899 to discuss scheduling for the season.`,
+  },
+  {
     slug: "effortless-elegance-bi-weekly",
     title: "Effortless Elegance: When Bi-Weekly Boat Care Is the Right Fit",
     date: "2023-12-01",
