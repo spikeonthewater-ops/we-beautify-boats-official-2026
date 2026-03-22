@@ -103,6 +103,48 @@ If your boat was not maintained consistently the previous year and emerges from 
 We believe that your season should begin with excitement, not a chore list. We handle the intense spring preparation deliberately and methodically so you can step away knowing your boat is protected and ready to impress.`,
   },
   {
+    slug: "cabin-comfort-weekly-plan",
+    title: "Cabin Comfort Weekly Plan",
+    date: "2025-05-20",
+    category: "Interior & Onboard Living",
+    image: "https://static.wixstatic.com/media/2836bb_d699c405c6d84702bdb469023108a99e~mv2.png/v1/fill/w_740,h_493,al_c,q_90,enc_avif,quality_auto/img.png",
+    imageAlt: "Clean, welcoming boat cabin interior ready for guests",
+    excerpt: "For highly active owners on the water every single week, waiting two weeks for a bi-weekly clean simply allows too much moisture and dust to settle. Open your companionway to a fresh, neutral cabin every weekend.",
+    content: `A boat's cabin is a closed system constantly battling the realities of a marine environment. Humidity, damp towels, wet swimsuits, and the inevitable tracking in of marina dust all combine to degrade the air quality and cleanliness of your interior. When a boat is left sealed up during the workweek, that trapped moisture and stale air settle into your upholstery and carpets.
+
+For highly active owners who are on the water every single week, waiting fourteen days for a bi-weekly clean simply allows too much moisture and dust to settle. The Cabin Comfort Weekly Plan exists so you can open your companionway to a fresh, neutral, and welcoming space every single weekend — without spending your Friday nights wiping down counters.
+
+If you are using your boat heavily for family outings, hosting guests, or weekend trips, light surface dirt accumulates rapidly. This weekly service schedule is designed specifically for active boaters who understand that consistent, high-frequency environmental management is the only way to preserve a luxurious, healthy cabin atmosphere throughout the entire Ontario boating season.
+
+## What This Service Is Designed to Do
+
+This plan is designed to manage the air, moisture, and material system of your boat's interior by establishing a strict seven-day reset. It solves the problem of arriving at the marina to find a stale, dusty cabin after a busy previous weekend. By intervening every week, we prevent light surface contamination from bonding to your hard surfaces and stop airborne dust from settling deeply into your fabrics. Success with this plan realistically looks like an interior that always smells neutral, feels clean to the touch, and is immediately ready for you and your guests to enjoy.
+
+Over the course of 24 scheduled visits throughout the season, our technicians perform a highly focused routine. Every week, we execute a Level 1 Interior Detailing. This involves a thorough dusting of all visible interior surfaces and a comprehensive vacuuming of your carpets, upholstery, and cabin floors to eliminate tracked-in dirt.
+
+We perform an anti-bacterial wipe-down of all high-touch areas and visible hard surfaces using mild, interior-safe marine cleaners. We also clean the interior windows to ensure a bright, streak-free view, and finish the process with a professional deodorizing treatment to maintain a fresh and neutral atmosphere.
+
+## What Cabin Comfort Weekly Is Not Intended For
+
+This plan is a routine surface-level maintenance program, not a deep cleaning or remediation service. It is not intended to clean the inside of your cupboards, drawers, or hidden storage spaces. It strictly excludes steam cleaning, hot water extraction for deep upholstery stains, or the sanitization of bilges and appliances.
+
+If your cabin has developed active mold, persistent musty odors, or pest issues, this Level 1 weekly service will not resolve those problems. Those situations require targeted remediation before a routine maintenance plan can be effective.
+
+## Why Frequency Protects Your Interior
+
+Skipping routine interior maintenance allows invisible contamination to become a visible problem. When dust and moisture are allowed to sit on marine fabrics for extended periods, they create the perfect breeding ground for mold and deep-set odors. By maintaining a weekly cleaning cadence, you protect the longevity of your interior materials and ensure the air quality inside the cabin remains safe and pleasant for everyone onboard.
+
+## When This Level Is the Right Choice
+
+This plan is the right choice for owners who use their boats constantly and demand a spotless interior every time they step aboard. The visual cues are simple: you want the visible countertops, floors, and windows wiped down and vacuumed so the interior never drifts toward needing heavier attention.
+
+## When This Level Is No Longer Enough
+
+When you open a storage locker and notice an accumulation of grime, or if a weekend trip results in heavy spills and set-in stains on the upholstery, a basic weekly wipe-down is no longer enough. At that point, your vessel requires a structured reset — such as our Level 2 or Level 3 Interior Detailing — to deep clean the cupboards, extract the stains, and sanitize the hidden areas before returning to this weekly maintenance cadence.
+
+Maintaining a comfortable cabin is about consistent, intentional care. We handle the upkeep so you can enjoy your time on the water.`,
+  },
+  {
     slug: "hull-polish-level-5-wet-sanding",
     title: "This Is a HUGE Effort: Hull Polish Level 5 | Wet Sanding",
     date: "2025-07-01",
