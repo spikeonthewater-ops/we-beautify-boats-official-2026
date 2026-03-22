@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { ArrowUpRight } from "lucide-react";
+import { ArrowUpRight, MapPin, Clock, Anchor } from "lucide-react";
 
 const ROLES = [
   {
@@ -65,6 +65,80 @@ export default function MeetTheTeam() {
           >
             "We don't run a 'boat cleaning crew.' We run a marine service system — delivered by trained technicians working inside strict scopes, safety standards, and quality control."
           </motion.p>
+        </div>
+      </section>
+
+      {/* Spike Bio */}
+      <section className="py-24 bg-white border-b border-border">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+
+            {/* Photo */}
+            <motion.div
+              initial={{ opacity: 0, x: -30 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              className="relative"
+            >
+              <div className="aspect-[4/5] rounded-3xl overflow-hidden shadow-2xl">
+                <img
+                  src={`${import.meta.env.BASE_URL}images/team-header.jpeg`}
+                  alt="Spike — Founder of We Beautify Boats"
+                  className="w-full h-full object-cover object-center"
+                />
+              </div>
+              {/* Stats badge */}
+              <div className="absolute -bottom-6 -right-6 bg-marine-900 text-white rounded-2xl px-6 py-5 shadow-2xl">
+                <p className="text-4xl font-display font-bold text-cyan-400">25+</p>
+                <p className="text-xs text-gray-300 uppercase tracking-widest mt-1">Years on the water</p>
+              </div>
+            </motion.div>
+
+            {/* Text */}
+            <motion.div
+              initial={{ opacity: 0, x: 30 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.1 }}
+            >
+              <span className="text-cyan-600 font-bold uppercase tracking-widest text-xs block mb-4">Founder & Lead Technician</span>
+              <h2 className="text-5xl md:text-6xl font-display font-bold text-marine-900 mb-2 leading-tight">Spike</h2>
+              <p className="text-muted-foreground text-sm mb-8 flex items-center gap-2">
+                <MapPin className="w-4 h-4 text-cyan-500" /> Ontario, Canada &nbsp;·&nbsp;
+                <Anchor className="w-4 h-4 text-cyan-500" /> Mobile Marine Detailing &nbsp;·&nbsp;
+                <Clock className="w-4 h-4 text-cyan-500" /> Since 2012
+              </p>
+
+              <div className="space-y-5 text-[17px] leading-relaxed text-foreground/80">
+                <p>
+                  I started We Beautify Boats because I saw a gap: boat owners who genuinely cared about their vessels but couldn't find a service that matched that care. Most detailing operations were either too generic, too expensive to justify, or showed up and washed without thinking. I knew there was a better way.
+                </p>
+                <p>
+                  With over 25 years spent around boats — on the water, under them, inside them, and restoring them — I built a service system around how I'd want my own boat treated. That means documented service levels, measured outcomes, no guesswork, and no cutting corners because no one's watching.
+                </p>
+                <p>
+                  We work across Lake Ontario's marinas from Toronto to Hamilton. Every service I perform or oversee is structured, intentional, and honest. When we're done, the boat looks right — and I can explain exactly why.
+                </p>
+                <p className="text-marine-900 font-semibold">
+                  "I don't just clean boats. I read them. Every surface tells a story about how it was cared for — and what it needs next."
+                </p>
+              </div>
+
+              <div className="mt-10 grid grid-cols-3 gap-6 border-t border-border pt-8">
+                {[
+                  { num: "500+", label: "Boats serviced" },
+                  { num: "12+", label: "Marinas served" },
+                  { num: "4", label: "Service areas" },
+                ].map((stat) => (
+                  <div key={stat.label}>
+                    <p className="text-3xl font-display font-bold text-marine-900">{stat.num}</p>
+                    <p className="text-sm text-muted-foreground mt-1">{stat.label}</p>
+                  </div>
+                ))}
+              </div>
+            </motion.div>
+
+          </div>
         </div>
       </section>
 
