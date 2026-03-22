@@ -103,6 +103,46 @@ If your boat was not maintained consistently the previous year and emerges from 
 We believe that your season should begin with excitement, not a chore list. We handle the intense spring preparation deliberately and methodically so you can step away knowing your boat is protected and ready to impress.`,
   },
   {
+    slug: "lifestyle-lift-bi-weekly-plan",
+    title: "Lifestyle Lift Bi-Weekly Plan",
+    date: "2025-05-15",
+    category: "Spike's Essential Care Guides",
+    image: "https://static.wixstatic.com/media/2836bb_c49659abd10f47ee8c469b6e1fb44d32~mv2.png/v1/fill/w_740,h_493,al_c,q_90,enc_avif,quality_auto/img.png",
+    imageAlt: "Sharp, well-maintained yacht at an Ontario yacht club",
+    excerpt: "Some boats do not need restoration. They need respect. The Lifestyle Lift Bi-Weekly Plan is not for boats in trouble — it is for boats that are already right.",
+    content: `Some boats do not need restoration. They need respect. You see them at the yacht club — racing sailboats, performance cruisers, and vessels that were recently polished, corrected, and protected. The gelcoat is dialed in, the stainless is sharp, and the non-skid is bright. They are not neglected; they are simply waiting.
+
+Waiting between race nights and weekend sails, they sit at the dock. But even a perfect boat gathers dust, fallout, pollen, bird marks, and marina grime. Too many times, I have corrected a boat to near-new condition, only to see it once the following year. By then, the protection is tired, the staining has started, the non-skid is darker, and the maintenance bill is far bigger than it needed to be.
+
+The owner always says the same thing: "We should have stayed on top of it." The Lifestyle Lift Bi-Weekly Plan exists exactly for this reason. It is not for boats in trouble. It is for boats that are already right.
+
+## What This Service Is Designed to Do
+
+This plan is designed to protect your investment in polishing and surface protection by preventing the slow slide into neglect. It solves the problem of environmental contamination degrading your finishes over the season. Success realistically looks like a vessel that is constantly ready for use, where the non-skid is bright, the vinyl is clean, and the stainless steel remains sharp without requiring another massive restoration at the end of the year.
+
+Over 12 expertly scheduled visits throughout the boating season, we perform our Bi-Weekly Deck Wash (Level 2). Every two weeks, our technicians arrive to execute a thorough washdown using stronger eco-friendly detergents designed to lift moderate grime without stripping your wax or coatings.
+
+We properly wash the non-skid, maintain the stainless steel, and clear the drainage channels. We specifically scrub the vinyl seating and exterior windows, ensuring clear views and comfortable lounging. Bird fallout and environmental contamination are removed early before they can etch the surface. A final rinse and complete drying process prevent water spots, and we consistently communicate any issues we see aboard so you are never caught off guard.
+
+## What This Service Is Not Intended For
+
+This plan is a proactive maintenance routine, not a deep restoration service. It strictly excludes oxidation removal, heavy stain correction, or gelcoat polishing. A Level 2 wash will not magically clean the deep interiors of neglected deck lockers or remove extreme, baked-on tree sap and lichen. If the boat has been ignored for months, a bi-weekly maintenance wash will not reverse that damage.
+
+## Why This Interval Makes the Difference
+
+Leaving bird fallout, pollen, and marina grime on your deck for weeks at a time actively breaks down your protective coatings. By intervening every fourteen days, we halt this chemical attack and preserve the baseline of your vessel. It keeps your maintenance costs predictable and stops the cycle of expensive annual corrections. Most importantly, a clean boat invites use — and boats that get used stay loved.
+
+## When This Level Is the Right Choice
+
+This plan is the right choice for racing sailors, yacht club members, and owners who have recently invested in polishing and protection. You will know this is the right fit if your boat is already in excellent condition and you simply want to step aboard every other weekend without spending your Friday night with a hose and a scrub brush.
+
+## When Lifestyle Lift Is No Longer Enough
+
+If you find that your usage drops and the boat sits for a month or more, gathering deep, embedded dirt inside the lockers and heavy stains on the non-skid, a Level 2 wash is no longer enough. At that point, the boat requires the inch-by-inch deep cleaning of our Level 3 wash to properly reset the surfaces before returning to a maintenance cadence.
+
+We handle the maintenance so you can focus on the water.`,
+  },
+  {
     slug: "fresh-start-weekly-plan",
     title: "A Spotless Deck Every Week — Fresh Starts for Endless Adventures",
     date: "2025-05-01",
