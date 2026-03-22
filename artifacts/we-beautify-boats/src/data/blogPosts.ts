@@ -103,6 +103,58 @@ If your boat was not maintained consistently the previous year and emerges from 
 We believe that your season should begin with excitement, not a chore list. We handle the intense spring preparation deliberately and methodically so you can step away knowing your boat is protected and ready to impress.`,
   },
   {
+    slug: "spike-rules-assessment",
+    title: "If You've Worked with Me Before, You Know These Rules Already",
+    date: "2024-02-15",
+    category: "Boat Ownership Intelligence",
+    image: "https://static.wixstatic.com/media/2836bb_a9eb95e4f2d045b6bacf3e2caf0c0169~mv2.jpg/v1/fill/w_740,h_493,al_c,q_85,enc_avif,quality_auto/img.jpg",
+    imageAlt: "Spike conducting a full boat detailing assessment, inspecting hull and surfaces with proper lighting",
+    excerpt: "They're not posted anywhere, but they're consistent. Every quote I give and every service I prescribe runs through a few filters. If a mistake can't be undone, the price goes nonlinear. Contamination isn't all the same. Uncoordinated DIY adds cost. And if I'm afraid to walk away, the quote's probably wrong.",
+    content: `They're not posted anywhere, but they're consistent. Every quote I give — and every service I prescribe — runs through a few filters:
+
+**If a mistake can't be undone, price goes nonlinear.**
+Wet sanding, Level 5 polishing, laser paint removal — you only do these once, and you'd better get them right.
+
+**Contamination isn't all the same.**
+Dirt is one thing. Diesel film, mineral staining, adhesive bleed, mildew — these cross categories. Each one needs different tools and carries different risk. I price accordingly.
+
+**Uncoordinated DIY adds cost.**
+I respect owners who maintain their own boats. I really do. But if you've already applied coatings or done spot repairs, I'm going to factor in the time it'll take to decode what I'm walking into.
+
+**If I'm afraid to walk away, the quote's probably wrong.**
+If I can't name a number that lets me say "no" if needed, then I'm not pricing the job right. I'd rather we both have that clarity up front.
+
+## Booking Online Does Not Launch Your Service
+
+That's planning — not deployment.
+
+The Full Boat Assessment is what confirms or adjusts your request before any crew, chemicals, or equipment get scheduled.
+
+## What the Full Boat Assessment Actually Is — And Isn't
+
+The Full Boat Assessment is booked as a two-hour max window. It costs $250 CAD, and yes — sometimes the hands-on part takes just 15 minutes. But what you're paying for isn't the clock. It's the clarity.
+
+That appointment includes:
+
+- Physical inspection — I look, touch, smell, and light it properly
+- Surface testing if something is in question
+- Video walkthrough with commentary — you can replay or share it
+- A live or recorded Zoom review if you want to go over findings
+- And most importantly: a service plan and price that actually fits the boat you own right now — not the version of it from last season or a photo on your phone
+
+Sometimes the job ends up simpler than you expected. Sometimes it's more involved. But either way, we both know before anything gets scheduled — and that protects everyone's time and outcome.
+
+Same-day service isn't available, and it shouldn't be. A real marine service plan deserves more than a few clicks and crossed fingers.
+
+## Why This Matters
+
+I've done this long enough to know that process matters more than polish. Your feedback helps me build a better version of this, season after season.
+
+Does this match your experience? Do you feel respected and informed during this part of the process? If you've had a Full Boat Assessment — or if you've walked away from one — I want to hear about it. Call me directly at 416-890-5899.
+
+All of our services are clearly detailed online and available for you to review at any time. Same-day service is not an option — but same-day assessment often is. That's the starting point. From there, we do it right.`,
+  },
+  {
     slug: "interior-detailing-level-4",
     title: "Interior Detailing – Level 4: Mold Remediation, Ozone Treatment, and Intervention",
     date: "2024-03-01",
