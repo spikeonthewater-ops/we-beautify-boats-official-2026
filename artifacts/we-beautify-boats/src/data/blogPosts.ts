@@ -103,6 +103,50 @@ If your boat was not maintained consistently the previous year and emerges from 
 We believe that your season should begin with excitement, not a chore list. We handle the intense spring preparation deliberately and methodically so you can step away knowing your boat is protected and ready to impress.`,
   },
   {
+    slug: "vinyl-recoloring-upholstery-restoration",
+    title: "Vinyl Recoloring: Upholstery Restoration",
+    date: "2025-04-15",
+    category: "Spike's Essential Care Guides",
+    image: "https://static.wixstatic.com/media/2836bb_05aa8998afc744e28fe241349a0c4dc7~mv2.png/v1/fill/w_740,h_493,al_c,q_90,enc_avif,quality_auto/img.png",
+    imageAlt: "Marine vinyl upholstery being restored with professional-grade dye",
+    excerpt: "Marine vinyl fades, stains, and loses its vibrancy over years of UV exposure and active use. This service revives your existing, structurally sound upholstery at a fraction of the cost of full replacement.",
+    content: `Marine vinyl lives a hard life. Constantly exposed to direct UV rays, wet swimsuits, sunscreen, and fluctuating temperatures, even the highest-quality upholstery eventually fades, stains, and loses its original vibrancy. Over time, what was once bright white or rich tan turns dull, chalky, and discolored.
+
+This service exists for owners who want to revive the look of their cockpit or cabin without the massive expense and lead time of completely replacing and re-stitching their cushions. We step in to physically restore the color and UV defense of your existing, structurally sound upholstery.
+
+## What This Service Is Designed to Do
+
+This service is designed to revive faded, stained, or weathered vinyl upholstery using professional marine-grade dyes. It solves the problem of unsightly seating that detracts from an otherwise beautifully maintained boat. Success realistically looks like a uniform, vibrant finish that blends seamlessly with your vessel's aesthetic, along with renewed UV resistance to extend the lifespan of the material.
+
+## How Vinyl Recoloring Is Performed
+
+Because overspray is a significant risk, our process begins with extensive, precision masking. We meticulously tape off all surrounding fiberglass, decking, and hardware to ensure only the target vinyl receives treatment.
+
+Once masked, our technicians perform a deep chemical cleaning of the vinyl to strip away built-up body oils, sunscreen, and environmental contaminants — creating a perfectly bare surface for adhesion.
+
+Finally, we apply a minimum of three controlled coats of high-quality marine-grade dye. This layered approach ensures durable color coverage and a uniform finish.
+
+## What This Service Is Not Intended For
+
+Honesty is our policy: this is strictly a cosmetic color restoration service. It explicitly excludes the repair of severely cracked, split, or physically torn vinyl. If the material is splitting at the seams or the underlying foam is waterlogged and rotting, dye will not fix the structural failure.
+
+Furthermore, while we use premium dyes, color matching is performed to the closest achievable match. We do not guarantee absolute factory-exact replication of original colors, especially on highly customized or decades-old patterns.
+
+## Why Recoloring Makes Sense Before Replacing
+
+Upholstery is one of the most visible elements of your boat. Faded, stained vinyl makes the entire vessel look dated and neglected — even if the fiberglass is polished. By recoloring the vinyl instead of replacing it, you save thousands of dollars in custom upholstery work while simultaneously reapplying a crucial UV barrier that stops the sun from further degrading the material.
+
+## When This Service Is the Right Choice
+
+This is the perfect choice when your vinyl is physically intact — meaning the seams are strong and there are no deep cracks or rips — but the color has faded, yellowed, or permanently stained from years of active use.
+
+## When This Service Is No Longer Enough
+
+If you press down on the cushion and hear water squishing in the foam, or if the vinyl surface has turned hard, brittle, and is actively cracking open under weight, recoloring is no longer viable. At that point, the structural baseline of the material has failed, requiring an honest handoff to a dedicated marine canvas and upholstery shop for full physical replacement.
+
+Your boat's seating should invite you to relax, not remind you of its age. We take the time to properly prep and dye your vinyl so you can enjoy a fresh, clean interior that looks as good as the day it launched.`,
+  },
+  {
     slug: "cabin-comfort-bi-weekly-plan",
     title: "Cabin Comfort Bi-Weekly Plan: Routine Interior Maintenance",
     date: "2025-05-01",
