@@ -5,6 +5,7 @@ import {
   Compass, Zap, Ship, Shield, Hammer, Calendar, Gauge, Anchor,
   ShoppingCart, Plus, Trash2, ChevronLeft, ClipboardList, ChevronRight,
   Phone, MessageCircle, ArrowRight, User, MapPin, Ruler, Layers, CalendarCheck,
+  GraduationCap,
   LucideIcon
 } from "lucide-react";
 import { useQuote, QuoteCategory, CartItem } from "@/context/QuoteContext";
@@ -22,6 +23,7 @@ const CATEGORIES: { id: QuoteCategory; name: string; subtitle: string; Icon: Luc
   { id: "extraServices",   name: "Extra Services",    subtitle: "Canvas, teak, vinyl & more",       Icon: Hammer,   color: "text-orange-500 bg-orange-50 border-orange-200" },
   { id: "seasonalPlans",   name: "Seasonal Plans",    subtitle: "Managed care — 15% off",           Icon: Calendar, color: "text-rose-500 bg-rose-50 border-rose-200" },
   { id: "visitBundles",    name: "Visit Bundles",     subtitle: "Multi-visit packs — up to 15% off", Icon: Layers,  color: "text-purple-500 bg-purple-50 border-purple-200" },
+  { id: "workshops",       name: "Workshops",         subtitle: "Training & certification series",   Icon: GraduationCap, color: "text-amber-600 bg-amber-50 border-amber-200" },
 ];
 
 interface ServiceItem {
@@ -134,6 +136,15 @@ const SERVICE_DATA: Record<QuoteCategory, CategoryData> = {
       { level: "FSP01", name: "Fresh Start Weekly",       desc: "24 weekly deck washes (Level 1).", prices: [6000,7200,8400,9600,10800,12000,13200], features: ["Spotless deck weekly","Ready for any outing"] },
       { level: "LRP01", name: "Launch Ready Plan",        desc: "Spring reset: Deck L3, Interior L3, Hull Polish L2, Canvas.", prices: [2900,3500,4100,4650,5200,5750,6300], features: ["Season commissioning","Canvas install"] },
       { level: "SWP01", name: "Season Wrap-Up",           desc: "Haul-out prep: Deck L3, Interior L3, Bottom L2, Canvas.", prices: [2950,3600,4250,5950,7100,8250,9450], features: ["Haul-out preparation","Dry hull guarantee"] },
+    ],
+  },
+  workshops: {
+    title: "Workshops & Training",
+    description: "Hands-on certification series taught by Spike. $100 CAD secures your date. Tools, chemistry, and 30 years of documented IP provided.",
+    items: [
+      { level: "W100", name: "100 Series: Fundamentals of Marine Detailing", desc: "Entry-level hybrid course — online theory plus on-the-water practical. Certificate of Practical Completion.", prices: [100,100,100,100,100,100,100], features: ["Hybrid format","Certificate of Practical Completion","Tools & materials provided"] },
+      { level: "W200", name: "200 Series: Advanced Marine Detailing Theory",  desc: "Comprehensive online theory platform (200) with optional on-the-water practical module (201). Certificate of Theoretical Completion.", prices: [100,100,100,100,100,100,100], features: ["Online theory platform","Optional practical add-on","Certificate of Theoretical Completion"] },
+      { level: "W300", name: "300 Series: Advanced Practical & Crew Management", desc: "Hands-on only. Advanced modules covering buffing, restoration, vinyl, brightwork, and Level 4 interior remediation. Certificate of Practical Completion.", prices: [100,100,100,100,100,100,100], features: ["Hands-on practical only","Advanced & crew management modules","Certificate of Practical Completion (300)"] },
     ],
   },
   visitBundles: {

@@ -9,7 +9,6 @@ import {
   Shield,
   Droplets,
   Sparkles,
-  Phone,
 } from "lucide-react";
 
 const CURRICULUM = [
@@ -334,7 +333,7 @@ export default function Workshops() {
               Why Book a Spike Workshop?
             </span>
             <h2 className="text-3xl md:text-4xl font-display font-bold mb-6">
-              From "Guys with Buffers" to Certified Technicians
+              From "Boat Owners with Buffers" to Certified Technicians
             </h2>
             <p className="text-gray-300 leading-relaxed text-lg mb-6">
               Most detailing is learned through trial and error — usually at the expense of the boat's finish. Our workshops provide a Certificate of Practical Completion that marks the difference between guesswork and mastery.
@@ -343,12 +342,12 @@ export default function Workshops() {
               We provide the tools, the chemistry, and 30 years of documented IP. You provide the venue. A <strong>$100 CAD reservation</strong> secures your date — workshops are seasonal and fill quickly.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <a
-                href="tel:4168905899"
+              <button
+                onClick={() => openQuote("workshops")}
                 className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-full bg-cyan-500 hover:bg-cyan-400 text-white font-bold transition-all hover:-translate-y-0.5 shadow-lg shadow-cyan-500/25"
               >
-                <Phone className="w-4 h-4" /> Call 416-890-5899
-              </a>
+                <GraduationCap className="w-4 h-4" /> Book a Workshop
+              </button>
               <a
                 href="https://wa.me/14168905899"
                 target="_blank"

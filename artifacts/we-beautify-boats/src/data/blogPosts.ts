@@ -206,7 +206,7 @@ Our workshops move beyond basic cleaning. We dive into the technical intellectua
 
 ## Why Book a Spike Workshop?
 
-Most detailing is learned through trial and error — usually at the expense of the boat's finish. Our workshops provide a **Certificate of Practical Completion**, moving your team from "guys with buffers" to certified technicians.
+Most detailing is learned through trial and error — usually at the expense of the boat's finish. Our workshops provide a **Certificate of Practical Completion**, moving your team from "boat owners with buffers" to certified technicians.
 
 We provide the tools, the chemistry, and 30 years of documented IP. You provide the venue.
 
