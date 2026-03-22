@@ -103,6 +103,52 @@ If your boat was not maintained consistently the previous year and emerges from 
 We believe that your season should begin with excitement, not a chore list. We handle the intense spring preparation deliberately and methodically so you can step away knowing your boat is protected and ready to impress.`,
   },
   {
+    slug: "wet-sanding-spots-precision-gelcoat-correction",
+    title: "Wet Sanding Spots: Precision Gelcoat Correction",
+    date: "2025-02-01",
+    category: "Spike's Essential Care Guides",
+    image: "https://static.wixstatic.com/media/2836bb_8e123c2b86884f27bcbb068281a396c2~mv2.png/v1/fill/w_740,h_493,al_c,q_90,enc_avif,quality_auto/img.png",
+    imageAlt: "Isolated deep gelcoat scratch being wet sanded and polished to a flawless finish",
+    excerpt: "Docks, stray pilings, and dropped tools inevitably leave deep scratches that standard polishing pads can't fix. Wet Sanding Spots is a highly targeted touch-up designed to permanently erase individual battle scars.",
+    content: `Boats live in dynamic, high-impact environments. Docks, stray pilings, and dropped tools inevitably leave deep scratches or isolated blemishes that disrupt an otherwise clean gelcoat finish.
+
+This service exists for owners who maintain their boats well but need to address specific, isolated damage without committing to the expense, time, and heavy intervention of a full hull or deck polishing service. It is a highly targeted touch-up designed to permanently erase individual battle scars.
+
+## What This Service Is Designed to Do
+
+Standard polishing pads spin over deep scratches, making the surrounding area shiny while leaving the defect entirely visible. Wet Sanding Spots solves this by physically leveling the gelcoat surrounding the scratch.
+
+Success here means the targeted area is not just leveled, but completely corrected. Each wet sanding spot charge includes all necessary removal steps — from sanding through to compound buffing and final polishing for that specific defect. The result is a bright, shiny spot that blends back into your boat, acting as a standalone touch-up.
+
+## How Wet Sanding Spots Are Performed
+
+We isolate the specific defect and introduce a constant flow of water to lubricate fine-grit sandpaper. This controls heat and allows us to gently level the gelcoat just enough to erase the scratch or blemish. Once flattened and uniform, we run through a targeted sequence of heavy compounding and fine machine polishing strictly on that isolated spot until the deep gloss is fully restored.
+
+## What This Service Is Not Intended For
+
+This is strictly a per-spot treatment. It is explicitly not a full-surface refinishing service — each distinct deep scratch or isolated blemish is an additional charge.
+
+If one side of your boat has widespread docking rash or generalized severe oxidation, isolated spot sanding is the wrong approach and becomes cost-prohibitive.
+
+Furthermore, while we level and polish the gelcoat, we do not perform structural fiberglass repairs or fill deep gouges that have penetrated completely through the gelcoat into the underlying fiberglass matting.
+
+## Why Addressing Deep Scratches Early Protects the Surrounding Gelcoat
+
+Ignoring deep scratches leaves the porous layers of your gelcoat exposed to water, salt, and UV rays, which accelerates local degradation. By addressing these blemishes properly, you prevent a small defect from compromising a larger area of the fiberglass. This highly targeted approach provides a cost-effective way to preserve your boat's structural defense and aesthetics without a massive restoration project.
+
+## When This Service Is the Right Choice
+
+**The Fingernail Test:** You have a distinct, isolated scratch from a rogue fender incident that catches your fingernail when you run it across the surface.
+
+**The Standalone Touch-Up:** The vast majority of your hull or deck looks great, and you simply want to erase one or two specific battle scars without paying for a full boat polish.
+
+## When Wet Sanding Spots Is No Longer Enough
+
+When you realize the spots you want to target are no longer isolated — perhaps a scratch runs the entire length of the port side, or chalky oxidation covers broad sections of the deck — spot treatment is no longer efficient or effective. At that point, the baseline of the surface has shifted, requiring an honest handoff to our comprehensive Hull Polish or Deck Polish services to properly restore the entire panel.
+
+Approaching a scratch with sandpaper requires respect for the finite gelcoat layer. When done with precision, it is the safest way to permanently erase localized damage and restore the brilliant shine you expect.`,
+  },
+  {
     slug: "erect-canvas-installation-removal",
     title: "Erect Canvas: Installation & Removal",
     date: "2025-02-15",
