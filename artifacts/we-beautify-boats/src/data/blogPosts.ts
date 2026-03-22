@@ -103,6 +103,48 @@ If your boat was not maintained consistently the previous year and emerges from 
 We believe that your season should begin with excitement, not a chore list. We handle the intense spring preparation deliberately and methodically so you can step away knowing your boat is protected and ready to impress.`,
   },
   {
+    slug: "season-wrap-up-plan",
+    title: "Season Wrap-Up Plan: Really Clean and Really Dry!!!",
+    date: "2025-11-01",
+    category: "Spike's Essential Care Guides",
+    image: "https://static.wixstatic.com/media/2836bb_d755a31b0892498b9ccc1036f679675c~mv2.png/v1/fill/w_740,h_493,al_c,q_90,enc_avif,quality_auto/img.png",
+    imageAlt: "Boat being prepared for winter haul-out storage",
+    excerpt: "As Ontario's boating season winds down, too many vessels are pulled from the water and immediately abandoned without proper inspection. The Season Wrap-Up Plan ensures your boat enters hibernation clean, controlled, and dry.",
+    content: `As the Ontario boating season winds down and the water cools, haul-out day quickly approaches. Unfortunately, too many vessels are pulled from the water and immediately abandoned for the winter without proper inspection. Food is left in lockers, damp towels remain in the cabin, canvas is left stretched under tension, and the bilges sit wet.
+
+Over a long, freezing winter, these small oversights compound into expensive repairs. Trapped moisture breeds aggressive mold, and environmental fallout etches into the gelcoat.
+
+The Season Wrap-Up Plan exists to eliminate that risk. We approach winter storage as an active preservation phase, ensuring your boat enters hibernation in a clean, controlled, and dry state.
+
+## What This Service Is Designed to Do
+
+This plan is designed to methodically close out your boating season and protect your vessel from the degradation of winter storage. It solves the problem of waking up in the spring to a boat plagued by mildew, foul odors, and deeply baked-in stains. Success with this plan realistically looks like a thoroughly sanitized cabin, a deeply cleaned deck, a prepped hull, and canvas safely stowed away. By putting the boat away clean and dry, you ensure she wakes up clean and dry.
+
+This is a comprehensive, multi-disciplinary intervention performed immediately after haul-out. We begin on the exterior with a Level 3 Deck Wash, executing a deep, restorative scrub to remove embedded grime, organic buildup, and seasonal fallout, leaving the deck dry and protected.
+
+Below the waterline, we perform a Level 2 Bottom Prep, removing moderate fouling and lightly sanding the hull to preserve the integrity of your antifouling coatings. Inside the cabin, we execute a Level 3 Interior Detailing — intensive steam cleaning, odor removal, and surface sanitization to kill any mildew risk before the cabin is sealed. Finally, we carefully remove your canvas systems, inspecting them and folding them properly for off-season storage so they do not sit under tension all winter.
+
+## What This Service Is Not Intended For
+
+This plan is strictly focused on cosmetic and environmental preservation — it is not a mechanical winterization service. We do not fog engines, drain water lines, or apply plumbing antifreeze. Those tasks must be handled by your marine mechanic.
+
+Additionally, we explicitly do not participate in applying shrink wrap. Single-use plastic is not aligned with our commitment to responsible environmental stewardship. If you use a reusable custom winter cover, we are happy to assist with frame assembly through our Erect Canvas service, but we will not seal your boat in disposable plastic.
+
+## Why a Season Wrap-Up Detail Matters
+
+Winter storage should preserve your vessel, not quietly degrade it. Leaving biological contaminants, salt, and moisture inside a dark, sealed environment for six months is a recipe for disaster. Proactively sanitizing the interior and deep-cleaning the exterior halts the chemical attack on your finishes and protects the respiratory health of your cabin for the following year.
+
+## When This Level Is the Right Choice
+
+This plan is the right choice for any owner hauling their boat out for the winter in Ontario. The ideal time to book is the exact week your boat is lifted from the water — before the severe cold sets in and before the marina locks down the yard for the season.
+
+## When This Level Is No Longer Enough
+
+If you open the companionway at the end of the season and discover an active, severe black mold infestation, pest intrusion, or standing water from a leak, the Level 3 Interior Detailing included in this plan is no longer enough. At that point, the vessel requires the targeted, multi-day remediation of our Level 4 Interior Detailing to safely abate the biological hazards before winter sets in.
+
+We approach storage as an act of preservation, closing your season deliberately and responsibly so you can step away with absolute peace of mind.`,
+  },
+  {
     slug: "10-year-old-boats-hull-polish-level-4",
     title: "10-Year-Old Boats Want a Hull Polish Level 4",
     date: "2026-02-25",
