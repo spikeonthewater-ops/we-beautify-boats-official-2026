@@ -103,6 +103,62 @@ If your boat was not maintained consistently the previous year and emerges from 
 We believe that your season should begin with excitement, not a chore list. We handle the intense spring preparation deliberately and methodically so you can step away knowing your boat is protected and ready to impress.`,
   },
   {
+    slug: "exterior-wood-refinishing",
+    title: "Exterior Wood Refinishing: Structured Marine Restoration",
+    date: "2024-12-15",
+    category: "Spike's Essential Care Guides",
+    image: "https://static.wixstatic.com/media/2836bb_344d7cd0931749f3bbe607e95bad578d~mv2.png/v1/fill/w_740,h_493,al_c,q_90,enc_avif,quality_auto/img.png",
+    imageAlt: "Teak handrails and exterior hardwood being stripped, sanded and refinished with marine-grade varnish",
+    excerpt: "Wood on a boat is a living system. Without proper intervention, vibrant teak and exterior hardwoods turn grey, crack, and become saturated with water. This service brings the natural elegance back — through a structured, modular restoration process.",
+    content: `Wood on a boat is a living system. Marine environments are unforgiving — UV exposure, salt spray, moisture cycling, and foot traffic constantly break down protective coatings and degrade wood fibers over time. Unlike fiberglass, when wood is left unprotected, it absorbs the elements.
+
+Without proper intervention, vibrant teak and exterior hardwoods turn grey, crack, and become saturated with water. This service exists for owners who understand that resetting exterior wood is an investment in the vessel's character. Whether you inherited a boat with failing finishes from a previous owner or your own varnish is beginning to lift, this process brings the natural elegance back to the surface.
+
+## What This Service Is Designed to Do
+
+This service is designed to revive, protect, and extend the life of exposed boat wood surfaces — including teak decks, handrails, toe rails, trim, steps, and caps. It solves the problems of grey, weathered teak, peeling varnish, uneven coloration, and raised grain.
+
+Success here looks like bare, healthy wood safely exposed, properly leveled, and securely sealed with fresh protection.
+
+This is not cosmetic maintenance — this is structural surface preservation. We execute each stage with precision and proper grain technique to ensure the wood's integrity and tone are fully restored.
+
+## How the Work Is Performed
+
+Because every piece of wood ages differently, we treat exterior refinishing as a modular, step-by-step process.
+
+**Stage 1 — Deep Cleaning & Stripping:** We extract embedded salt and contamination. Depending on the existing finish, we utilize controlled chemical strippers or physical removal to take off failing varnish and coatings.
+
+**Stage 2 — The Sanding:** We use powered sanders for broad areas and painstaking manual sanding for intricate trim, handrails, and toe rails — ensuring the wood is smooth without altering its original profile.
+
+**Stage 3 — Application of Protection:** We wash the raw wood and let it dry completely. Once dry, we build a resilient seal by applying fresh marine-grade protection in successive layers to guard against UV and moisture.
+
+When inspection determines that cleaning, stripping, sanding, and protection are all required, we classify and execute this as a Full Exterior Wood Restoration — with a combined minimum service value of $1,500 CAD.
+
+## What This Service Is Not Intended For
+
+Our expertise is in surface preservation, not shipwright carpentry. This service explicitly excludes structural wood repairs, rot remediation, or replacing missing fasteners. If your wood is spongy, deeply rotted, or structurally compromised, sanding and varnishing will not save it — it requires physical replacement by a marine carpenter.
+
+Furthermore, we do not apply specialty coatings outside of proven marine-grade oils and varnishes unless explicitly quoted separately.
+
+## Why Exterior Wood Refinishing Matters
+
+Every time wood is aggressively sanded, a fraction of its lifespan is permanently removed. By addressing failed coatings through careful, methodical stages, we preserve the thickness and structural integrity of the timber. Skipping this care leads to deep graying, severe cracking, and eventually the incredibly costly reality of having to manufacture and install custom-milled rails or brand-new decks.
+
+## When This Service Is the Right Choice
+
+**The Flake Test:** Your existing varnish or coating is visibly peeling, lifting, bubbling, or turning yellow.
+
+**The Grey Fade:** Your teak surfaces have lost their warm amber color, looking parched, deeply grooved, and splintered.
+
+**The Complete Reset:** You want a uniform, clean start for the new season and need stripping, sanding, and fresh protection applied end to end.
+
+## When This Service Is No Longer Enough
+
+If the wood is completely saturated with rot, or if previous heavy-handed sanding has worn the teak down so far that the deck screws or bungs are exposed and falling out, surface refinishing is no longer viable. At that stage, cosmetic work must stop, and you require a marine carpenter to mill and install new wood.
+
+Resetting exterior woodwork is a glorious, traditional process. It takes time, immense respect for the material, and a strict adherence to letting the wood dry properly between steps. When done right, it transforms the entire aesthetic of the vessel — returning a warmth and prestige that fiberglass simply cannot replicate.`,
+  },
+  {
     slug: "deck-polish-level-4",
     title: "Deck Polish Level 4: Intensive Correction for Severe Oxidation",
     date: "2025-01-01",
