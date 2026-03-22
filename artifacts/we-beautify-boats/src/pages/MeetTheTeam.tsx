@@ -89,7 +89,7 @@ export default function MeetTheTeam() {
               </div>
               {/* Stats badge */}
               <div className="absolute -bottom-6 -right-6 bg-marine-900 text-white rounded-2xl px-6 py-5 shadow-2xl">
-                <p className="text-4xl font-display font-bold text-cyan-400">25+</p>
+                <p className="text-4xl font-display font-bold text-cyan-400">28+</p>
                 <p className="text-xs text-gray-300 uppercase tracking-widest mt-1">Years on the water</p>
               </div>
             </motion.div>
@@ -114,7 +114,7 @@ export default function MeetTheTeam() {
                   I started We Beautify Boats because I saw a gap: boat owners who genuinely cared about their vessels but couldn't find a service that matched that care. Most detailing operations were either too generic, too expensive to justify, or showed up and washed without thinking. I knew there was a better way.
                 </p>
                 <p>
-                  With over 25 years spent around boats — on the water, under them, inside them, and restoring them — I built a service system around how I'd want my own boat treated. That means documented service levels, measured outcomes, no guesswork, and no cutting corners because no one's watching.
+                  With over 28 years spent around boats — on the water, under them, inside them, and restoring them — I built a service system around how I'd want my own boat treated. That means documented service levels, measured outcomes, no guesswork, and no cutting corners because no one's watching.
                 </p>
                 <p>
                   We work across Lake Ontario's marinas from Toronto to Hamilton. Every service I perform or oversee is structured, intentional, and honest. When we're done, the boat looks right — and I can explain exactly why.
