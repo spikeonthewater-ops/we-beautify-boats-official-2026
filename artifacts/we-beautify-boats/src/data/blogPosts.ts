@@ -103,6 +103,40 @@ If your boat was not maintained consistently the previous year and emerges from 
 We believe that your season should begin with excitement, not a chore list. We handle the intense spring preparation deliberately and methodically so you can step away knowing your boat is protected and ready to impress.`,
   },
   {
+    slug: "fresh-start-weekly-plan",
+    title: "A Spotless Deck Every Week — Fresh Starts for Endless Adventures",
+    date: "2025-05-01",
+    category: "Spike's Essential Care Guides",
+    image: "https://static.wixstatic.com/media/2836bb_4889a0d9a343465d949a025922651678~mv2.png/v1/fill/w_740,h_493,al_c,q_90,enc_avif,quality_auto/img.png",
+    imageAlt: "Spotless boat deck gleaming at an Ontario marina",
+    excerpt: "There is a distinct difference when you step aboard a boat that receives consistent, weekly attention. The Fresh Start Weekly Plan bridges the gap between spring polish and fall haul-out — so every weekend, you step aboard a pristine vessel.",
+    content: `There is a distinct difference when you step aboard a boat that receives consistent, weekly attention. Too many vessels get an intensive spring polish and a fall haul-out, but receive almost nothing in between. That long gap in the season is exactly where decks stain, stainless fittings corrode, and water spots harden.
+
+The Fresh Start Weekly Plan exists to bridge that gap. It is designed to maintain a high standard of presentation, ensuring that every time you walk down the dock, your vessel looks properly cared for, safe, and immediately ready for use.
+
+## What This Service Is Designed to Do
+
+This plan solves the problem of weekend preparation. Instead of spending your Friday night scrubbing the non-skid and wiping down rails, you arrive to a pristine baseline. By intervening every seven days, we stop environmental contaminants from bonding to your protective coatings. Success realistically looks like a consistently beautiful deck, clear windows, and a refreshed cockpit that invites pride of ownership all season long.
+
+This is a commitment of 24 scheduled visits from May through October. Rain or shine, our technicians arrive weekly to perform a Level 1 Deck Wash. We start with a freshwater rinse to remove surface dirt and debris, followed by a gentle scrub of the non-skid using eco-friendly, marine-safe detergents. We finish with a streak-free rinse, dry the windows, wipe down the stainless steel, and perform a visual check of your dock lines to ensure the vessel remains secure.
+
+This plan provides routine cleaning, not surface correction. It is explicitly not intended for oxidation removal, deep stain extraction, or heavy fallout recovery. A Level 1 wash will not remove embedded bird droppings that have baked in for a month, nor will it restore chalky gelcoat. We do not use harsh chemicals or aggressive scrubbing pads during these weekly visits.
+
+## Why Consistency Changes Everything
+
+When you maintain a boat every week, you prevent the slow slide into neglect. Washing away pollen, dust, and salt immediately preserves your protective coatings and prevents the gelcoat from degrading. This routine keeps your maintenance costs highly predictable and completely eliminates the need for a massive, expensive restoration the following year.
+
+## When This Level Is the Right Choice
+
+The Fresh Start Weekly Plan is strictly reserved for boats that have already had their gelcoat professionally polished and protected in the spring. If your boat is structurally sound, freshly sealed, and you simply want to step aboard a flawless vessel every single week, this is the exact right choice.
+
+## When This Level Is No Longer Enough
+
+If the vessel suffers a severe environmental event — such as parking under a weeping tree that dumps heavy sap, or a severe spider infestation leaving hard stains — a gentle Level 1 wash is no longer enough. At that point, the deck temporarily requires the targeted, heavier scrubbing of a Level 2 or Level 3 Deck Wash to safely reset the surface before returning to our weekly maintenance cadence.
+
+We handle the work every week so your boat stays beautiful.`,
+  },
+  {
     slug: "season-wrap-up-plan",
     title: "Season Wrap-Up Plan: Really Clean and Really Dry!!!",
     date: "2025-11-01",
