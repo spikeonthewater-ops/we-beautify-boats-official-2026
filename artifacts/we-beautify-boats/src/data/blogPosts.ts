@@ -103,6 +103,50 @@ If your boat was not maintained consistently the previous year and emerges from 
 We believe that your season should begin with excitement, not a chore list. We handle the intense spring preparation deliberately and methodically so you can step away knowing your boat is protected and ready to impress.`,
   },
   {
+    slug: "propeller-polishing-performance-efficiency",
+    title: "Propeller Polishing: Performance & Efficiency",
+    date: "2025-04-01",
+    category: "Spike's Essential Care Guides",
+    image: "https://static.wixstatic.com/media/2836bb_e3a3c7bff1da40d3ac53941f5fab617b~mv2.png/v1/fill/w_740,h_493,al_c,q_90,enc_avif,quality_auto/img.png",
+    imageAlt: "Boat propeller being polished to restore smooth hydrodynamic performance",
+    excerpt: "Your propeller is the hardest-working piece of metal on your boat. A season of marine growth, calcium deposits, and oxidation creates real drag on the blades — costing you speed, handling, and fuel economy.",
+    content: `Your propeller is the hardest-working piece of metal on your boat. Submerged constantly in the marina environment, it acts as a magnet for marine growth, hard calcium deposits, and surface oxidation. Over a season, this creates a microscopic — and often macroscopic — layer of physical drag on the blades.
+
+Propeller Polishing is a performance-focused maintenance service. It exists for owners who understand that underwater hydrodynamics directly impact their top-end speed, handling, and fuel economy. We step in while the boat is hauled out to clear away this restrictive buildup and restore the smooth efficiency of your drivetrain.
+
+## What This Service Is Designed to Do
+
+This service is designed to safely remove marine growth, dull oxidation, and surface corrosion from your boat's propeller. It solves the problem of induced drag that forces your engine to overwork.
+
+Success realistically looks like a clean, smooth metal surface — whether bronze or stainless steel — that minimizes water turbulence. By restoring the original finish, we reduce resistance, which translates to a smoother ride and better fuel efficiency on the water.
+
+## How Propeller Polishing Is Performed
+
+We approach the propeller methodically while the vessel is blocked on land. Our technicians carefully clean and polish the blades and hub using marine-safe abrasives and specialized polishing compounds. We manually work the metal to lift away the hard crust and oxidation.
+
+Crucially, we do this without altering the physical geometry or pitch of the blades. The surface is left exceptionally smooth to ensure water flows over it with minimal friction.
+
+## What This Service Is Not Intended For
+
+Honesty is our policy: this is strictly a cosmetic and surface-performance maintenance service for intact propellers. It explicitly excludes mechanical repairs. If your propeller is bent, dinged, or missing chunks of metal from a prop strike, polishing will not fix the imbalance — it requires a specialized marine machine shop.
+
+Furthermore, this service assumes standard access and does not include removing or reinstalling the propeller from the shaft unless explicitly quoted separately.
+
+## Why a Fouled Prop Costs You More Than You Think
+
+Pushing a fouled, rough propeller through the water is like driving a car with the parking brake partially engaged. It forces your engine to burn significantly more fuel to achieve your normal cruising speed. By keeping the metal clean and smooth, you preserve your fuel economy and prevent long-term corrosion from permanently pitting the expensive bronze or stainless steel alloys.
+
+## When This Service Is the Right Choice
+
+This is the perfect choice during your spring launch preparation or winter haul-out when you visually notice hard white barnacle rings, calcium deposits, or a dull, chalky green and brown finish overtaking your previously shiny blades.
+
+## When This Service Is No Longer Enough
+
+If you experience heavy vibration while running your boat, or if our technicians visually identify deep physical gouges and extreme pitting that abrasives cannot safely smooth out, surface polishing is no longer enough. At that point, the structural baseline of the metal has failed, requiring an honest handoff to a dedicated prop shop to physically weld, re-pitch, and balance the hardware.
+
+Maintaining the business end of your drivetrain comes down to simple physics. We ensure the metal is clean and smooth so your engine's power actually makes it to the water without fighting unnecessary drag.`,
+  },
+  {
     slug: "vinyl-recoloring-upholstery-restoration",
     title: "Vinyl Recoloring: Upholstery Restoration",
     date: "2025-04-15",
