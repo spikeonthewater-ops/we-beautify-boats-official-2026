@@ -212,7 +212,7 @@ We provide the tools, the chemistry, and 30 years of documented IP. You provide 
 
 "The snow has not slowed us down. Don't wait until May to upskill your crew. We Work · You Play · They Learn."
 
-Workshops are seasonal and fill quickly. A $100 CAD reservation secures your date. [View the full workshop page](/workshops) or call 416-890-5899.`,
+All courses are $250 CAD. Workshops are seasonal and fill quickly. [View the full workshop page](/workshops) or call 416-890-5899.`,
   },
   {
     slug: "wbb-agenda",
