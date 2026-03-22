@@ -103,6 +103,44 @@ If your boat was not maintained consistently the previous year and emerges from 
 We believe that your season should begin with excitement, not a chore list. We handle the intense spring preparation deliberately and methodically so you can step away knowing your boat is protected and ready to impress.`,
   },
   {
+    slug: "brightwork-polishing-conditioning",
+    title: "Brightwork Polishing & Conditioning: The Jewelry of Your Boat",
+    date: "2025-03-15",
+    category: "Spike's Essential Care Guides",
+    image: "https://static.wixstatic.com/media/2836bb_a2f4f9a7bdc4413188da528887ac2e24~mv2.png/v1/fill/w_740,h_493,al_c,q_90,enc_avif,quality_auto/img.png",
+    imageAlt: "Gleaming stainless steel stanchions and varnished teak brightwork on a classic boat",
+    excerpt: "Brightwork is the jewelry of your boat. Salt spray, morning dew, and relentless UV rays constantly attack stainless steel stanchions and varnished teak trim. This service preserves their elegance before they reach the point of failure.",
+    content: `Brightwork is the jewelry of your boat. From gleaming stainless steel stanchions and cleats to beautifully varnished teak trim, these accents define a vessel's classic marine character. However, the marina environment is unforgiving. Salt spray, morning dew, and relentless UV rays constantly attack these exposed surfaces.
+
+Over time, metals develop cloudy rust staining and tarnish, while varnished wood accumulates hard mineral deposits and chalky water spots. This service exists for owners who want to preserve the elegance of their exposed metal and wood components through dedicated maintenance — intervening long before the finishes degrade to the point of complete failure.
+
+## What This Service Is Designed to Do
+
+This service is designed to safely clean, decontaminate, and preserve your existing wood and metal finishes. It solves the problem of surface-level dullness, mineral etching, and light rust "tea staining" without resorting to aggressive abrasion. Success realistically looks like stainless steel that shines clearly and varnished wood that is free of water spots, properly nourished, and better protected to endure the remainder of the boating season.
+
+We approach brightwork with patience and chemical precision. For metal components, our technicians hand-apply marine-grade polishes and compounds, gently working the material to lift away tarnish and surface oxidation while preserving the underlying steel. For varnished wood, we rely entirely on finish-safe cleaning agents to safely dissolve hardened mineral deposits. Once the wood is neutralized and clean, we apply a specialized conditioning treatment that rehydrates the existing varnish layer, fortifying its defense against UV and moisture.
+
+## What This Service Is Not Intended For
+
+Honesty is our policy: this is strictly a maintenance, cleaning, and conditioning service. It explicitly excludes any form of mechanical sanding, chemical stripping, re-varnishing, or deep metal restoration.
+
+If your varnish is already peeling, bubbling, or flaking off the wood, Brightwork Polishing & Conditioning will not save it. Similarly, if your metal hardware has deep, structural pitting or heavy corrosion, hand polishing will not level the steel.
+
+## Why Brightwork Polishing Matters
+
+Brightwork is expensive to replace and incredibly labor-intensive to refinish. Allowing salt and hard water to sit on metal eventually leads to permanent pitting. Neglecting varnished wood allows the sun to dry out and crack the finish, exposing the raw timber beneath. By consistently conditioning these surfaces, you significantly extend their lifespan — delaying the massive expense and downtime of a full structural refinishing project.
+
+## When This Service Is the Right Choice
+
+This is the right choice when your metal hardware looks cloudy with light rust stains, or when your varnished handrails feel slightly chalky from water spots — but the coatings themselves are fundamentally intact, smooth, and adhering properly to the boat.
+
+## When This Service Is No Longer Enough
+
+If you run your hand along a teak toe rail and the varnish physically flakes off, or if the bare wood underneath has turned gray and parched, maintenance conditioning is no longer sufficient. At that point, the structural baseline of the finish has failed, requiring an honest handoff to our Exterior Wood Refinishing service to safely strip, sand, and rebuild the protective layers from scratch.
+
+Keeping your brightwork shining is an ongoing battle against the elements. We take pride in safely managing that upkeep so your vessel retains its elegance without unnecessary wear and tear on the materials.`,
+  },
+  {
     slug: "propeller-polishing-performance-efficiency",
     title: "Propeller Polishing: Performance & Efficiency",
     date: "2025-04-01",
