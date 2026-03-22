@@ -103,6 +103,60 @@ If your boat was not maintained consistently the previous year and emerges from 
 We believe that your season should begin with excitement, not a chore list. We handle the intense spring preparation deliberately and methodically so you can step away knowing your boat is protected and ready to impress.`,
   },
   {
+    slug: "bottom-prep-level-1",
+    title: "Bottom Prep Level 1: Basic Bottom Cleaning & Stain Removal",
+    date: "2024-05-01",
+    category: "Spike's Essential Care Guides",
+    image: "https://static.wixstatic.com/media/2836bb_72ffa2d92fc449a49f18b04af4991001~mv2.png/v1/fill/w_740,h_493,al_c,q_90,enc_avif,quality_auto/img.png",
+    imageAlt: "Boat hull being cleaned with Easy Eco Hull Cleaner after haul-out, removing slime and organic staining",
+    excerpt: "When a boat is hauled out of the water, the clock starts ticking. Slime and biofilm are easy to remove when wet, but become incredibly difficult once dried. Bottom Prep Level 1 is the immediate intervention to wash that biology off while it is still manageable — no sandpaper, just chemistry.",
+    content: `When a boat is hauled out of the water, the clock starts ticking. The slime, algae, and organic film coating the bottom are easy to remove when wet, but become incredibly difficult once dried. Bottom Prep Level 1 is the standard hygiene service to remove this fouling immediately.
+
+Owners often confuse "Bottom Prep" with "Sanding." Level 1 has nothing to do with sandpaper. It is purely about cleaning the hull surface that has been submerged all season.
+
+The reality of hauling a boat out in Ontario is that it comes out smelling like the lake. It's covered in a biofilm — slime, light grass, and organic staining. If you let that dry, it turns into concrete. Level 1 is the immediate intervention to wash that biology off while it is still wet or manageable.
+
+## What This Service Is Designed to Do
+
+This service targets soft fouling. It is designed to:
+
+**Remove Slime & Biofilm:** Wash away the slippery organic layer that coats underwater surfaces after a season in Ontario's waters.
+
+**Dissolve Organic Staining:** Chemically neutralize the brown and yellow staining caused by lake water and biological growth.
+
+**Clean Without Abrasion:** Restore the cleanliness of the bottom without removing the existing antifouling paint or scratching the gelcoat.
+
+Success at this level means a hull that is free of biological matter. It does not mean a new bottom — it means a clean old bottom.
+
+## How the Work Is Performed
+
+We avoid the use of dangerous, fuming acids whenever possible. For Level 1, our primary tool is Easy Eco Hull Cleaner — a Canadian-made product specifically formulated to target the organic fouling found in our waters. Unlike strong acids that whiten by burning, this product cleans by dissolving organics safely.
+
+We apply the cleaner to the hull surface, allowing it to dwell and break down the cellular structure of the algae and stains. Once the dwell time is complete, we follow with a high-pressure rinse or light manual agitation with soft tools to flush the debris away. Because the product is eco-focused, we aren't introducing harmful toxins into the marina runoff.
+
+## What This Service Is Not Intended For
+
+Bottom Prep Level 1 is a wash, not a sanding.
+
+**No Sanding:** We do not use sandpaper or abrasive pads at this level. If you need to key the surface for new paint, that is Level 2.
+
+**No Heavy Shells:** If your boat is covered in zebra mussels or barnacles, a chemical spray will not remove them. That requires heavy scraping, which falls under a different scope.
+
+**No Paint Removal:** This service cleans staining and very light foul from the surface — it does not strip paint.
+
+## Why This Level Matters
+
+Leaving organic fouling on your hull over the winter is a mistake. As it dries, it traps moisture against the hull, increasing blister risk, and creates a rough crusty surface that is ten times harder to clean in the spring. By performing Level 1 immediately at haul-out, you protect your hull and ensure that your spring prep is significantly easier.
+
+## When This Service Is the Right Choice
+
+Choose Level 1 if your boat has just been hauled out and has a layer of slime or light grass. It is the correct choice for trailered boats that need to look clean for the road, and for any owner who wants to put a clean boat into winter storage rather than letting the lake come with it.
+
+## When This Service Is No Longer Enough
+
+If you are planning to apply new antifouling paint in the spring, a chemical wash is not enough — you need to mechanically profile the surface with Bottom Prep Level 2 to ensure the new paint sticks. If you have heavy furry fouling, zebra mussels, or flaking paint, you need the mechanical preparation of Level 2 or Level 3.`,
+  },
+  {
     slug: "bottom-prep-level-2",
     title: "Bottom Prep Level 2: Precision Scuff & Solvent Wash",
     date: "2024-05-15",
