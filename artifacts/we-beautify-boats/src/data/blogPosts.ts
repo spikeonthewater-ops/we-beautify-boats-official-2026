@@ -103,6 +103,56 @@ If your boat was not maintained consistently the previous year and emerges from 
 We believe that your season should begin with excitement, not a chore list. We handle the intense spring preparation deliberately and methodically so you can step away knowing your boat is protected and ready to impress.`,
   },
   {
+    slug: "interior-detailing-level-2",
+    title: "Interior Detailing – Level 2: A Deeper Interior Clean When Basic Isn't Enough",
+    date: "2024-01-20",
+    category: "Spike's Essential Care Guides",
+    image: "https://static.wixstatic.com/media/2836bb_9b12702a65364893afa17a0caac6eb3c~mv2.jpg/v1/fill/w_740,h_493,al_c,q_90,enc_avif,quality_auto/img.jpg",
+    imageAlt: "Boat cabin interior being thoroughly cleaned at Level 2 — cupboards open, drawers cleared, all surfaces detailed",
+    excerpt: "Interior Detailing Level 2 is where we move beyond simple upkeep and start working more thoroughly through the interior. It's the level many owners step into after a busy stretch of use, before extended trips, or when guests are coming aboard. Still a cleaning service — not a correction — but more deliberate, more detailed, and more time-intensive than Level 1.",
+    content: `Interior Detailing Level 2 is where we move beyond simple upkeep and start working more thoroughly through the interior.
+
+This service is designed for boats that are still in generally good shape, but where routine wipe-downs are no longer enough to keep the cabin feeling fresh. It's the level many owners step into after a busy stretch of use, before extended trips, or when guests are coming aboard and the interior needs more attention than surface maintenance alone can provide.
+
+Level 2 is still a cleaning service — not a correction or restoration — but it's more deliberate, more detailed, and more time-intensive than Level 1.
+
+## What This Service Is Designed to Do
+
+At this level, we're no longer just maintaining visible surfaces. We're addressing the areas that naturally get missed during routine upkeep: storage spaces, tighter areas, and surfaces that need more than a quick once-over.
+
+The goal is to reset the interior to a cleaner, more comfortable baseline without crossing into corrective or restorative work. When done at the right time, Level 2 helps prevent the need for much heavier interior services later on.
+
+## How the Work Is Performed
+
+The work at Level 2 is more involved and more methodical. We perform full interior dusting and vacuuming of carpets, upholstery, and floors, followed by detailed cleaning of all visible and accessible surfaces. Windows and harder-to-reach areas are addressed, and interior storage spaces — cupboards and drawers — are opened, refreshed, and wiped down.
+
+This is the level where interiors start getting worked through instead of just wiped around. Because of that, time on task increases, with a minimum of two hours depending on vessel size, layout, and condition.
+
+Specialized vacuums, microfiber cloths, and interior-safe multi-surface cleaning solutions are used throughout to ensure the work is thorough without being aggressive.
+
+## What This Service Is Not Intended For
+
+Interior Detailing Level 2 has clear limits.
+
+It does not include steam cleaning, stain extraction, mold remediation, or any form of restoration work. If upholstery staining, odors, or deeper contamination are present, those conditions indicate the need for a higher-level interior service. Level 2 is about depth and coverage — not correction.
+
+## Why This Level Matters
+
+Level 2 is often the difference between an interior that feels "okay" and one that genuinely feels refreshed. By addressing cupboards, drawers, and areas that aren't touched during routine maintenance, this service helps restore comfort and usability without over-servicing the boat. It's especially valuable for owners who use their boats regularly and want to stay ahead of interior decline.
+
+## When This Service Is the Right Choice
+
+Interior Detailing Level 2 is a good fit when the interior still functions well but needs more than basic upkeep. It's commonly chosen before extended trips, guest visits, or after a period of heavier use where routine maintenance hasn't kept up.
+
+If Level 1 no longer feels sufficient, Level 2 is usually the correct next step.
+
+## When It's Time to Go Further
+
+If the interior requires stain removal, steam cleaning, odor treatment, or remediation beyond thorough surface cleaning, Level 2 will no longer be enough. At that point, the work moves beyond refreshing and into corrective territory — that's where Interior Detailing Level 3 comes in.
+
+If you're unsure which interior level best fits your boat's current condition, call 416-890-5899 and we can help match the service to what the interior actually needs.`,
+  },
+  {
     slug: "interior-detailing-level-1",
     title: "Interior Detailing – Level 1: Basic Interior Maintenance for Boats That Are Already in Good Shape",
     date: "2024-01-15",
