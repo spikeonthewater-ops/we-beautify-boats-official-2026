@@ -103,6 +103,58 @@ If your boat was not maintained consistently the previous year and emerges from 
 We believe that your season should begin with excitement, not a chore list. We handle the intense spring preparation deliberately and methodically so you can step away knowing your boat is protected and ready to impress.`,
   },
   {
+    slug: "bottom-prep-level-4",
+    title: "Bottom Prep Level 4: The $1.2 Million Laser Solution",
+    date: "2024-07-01",
+    category: "Spike's Essential Care Guides",
+    image: "https://static.wixstatic.com/media/2836bb_46211ff06e8749b1a059878db310cf48~mv2.png/v1/fill/w_740,h_493,al_c,q_90,enc_avif,quality_auto/img.png",
+    imageAlt: "Class 4 laser system stripping decades of antifouling paint from a boat hull to bare gelcoat",
+    excerpt: "In 2025, we proved that Class 4 laser technology is the superior method for stripping bottom paint. The results were undeniable. Now we're building the infrastructure to deploy it at scale — a $1.2M investment targeting August 2026. Here's a transparent look at what it actually takes.",
+    content: `In 2025, we successfully proved that Class 4 laser technology is the superior method for stripping bottom paint. We rented the gear, we did the work, and the results were undeniable.
+
+But the reality of logistics has caught up with us. The lack of coordinated group bookings made the rental model untenable for Spring 2026.
+
+We are not interested in halfway measures. To deliver this revolution sustainably, we cannot rely on rentals — we require a dedicated, owned fleet. This service is now scheduled for deployment in August 2026, running through November, contingent on securing the necessary infrastructure. This is a transparent look at what it actually takes to bring this technology to Ontario's boatyards.
+
+## What Bottom Prep Level 4 Is Designed to Do
+
+This service is designed to solve the "paint fatigue" crisis — decades of built-up antifouling and the banned VC17 that currently coat thousands of hulls in our region. It resets the hull to virgin gelcoat without the toxic plume of sandblasting or the chemical sludge of stripping.
+
+From a business perspective, this new Bottom Prep Level 4 is designed to operate at scale. It exists to process the sheer volume of boats that require complete bottom removal — a number that challenges the entire Ontario boating community. Every season, more boats need this intervention.
+
+## What the Deployment Requires
+
+Execution at this level requires more than just a technician — it requires a mobile power plant. The 2026 deployment plan involves a $1.2 million investment to field a fully independent unit.
+
+**The Machine:** We utilize a proprietary Class 4 laser system (retailing at $750,000) capable of vaporizing paint instantly, leaving the underlying gelcoat untouched.
+
+**The Infrastructure:** This system requires a dedicated 3-phase, 240-volt power supply — not available at a standard marina pedestal.
+
+**Support Systems:** A high-capacity air compression system provides critical laser cooling, while a specialized air cleaner and extractor ensures 100% containment of vaporized particulate — clean for the environment, clean for the technician.
+
+**Mobility:** The entire rig is mounted in a custom vehicle with specialized suspension and security to transport this high-value asset directly to your cradle.
+
+## What This Service Is Not Intended For
+
+This service is not intended for the "maybe next year" approach or scattered, last-minute bookings. The logistics of moving a $1.2 million setup require commitment and booking density. It is also not available for Spring 2026 launch prep — that window has closed due to community hesitation. We are now focused entirely on the late-summer and fall 2026 window.
+
+## Why This Level Matters
+
+The community hesitated, and the rental option vanished. Now we face a choice. Environmental regulations are tightening, and the old methods of grinding and blasting are becoming liabilities for marinas. Level 4 matters because it is the only future-proof method for hull maintenance. It protects the groundwater, the technicians, and the hull integrity.
+
+## When This Service Is the Right Choice
+
+**For Owners:** If you plan to haul out in August 2026 or later and want a complete hull reset — decades of paint gone, bare gelcoat ready for fresh Epoxy Barrier Coat and Antifouling.
+
+**For Partners:** If you see the thousands of boats needing this service and understand that the barrier to entry is equipment ownership, not demand.
+
+## When This Service Is No Longer Enough
+
+The laser is a cleaning tool, not a magic wand for structural repair. If the laser reveals osmosis blisters that were hiding under the paint, Level 4 stops. At that point, you move to blister remediation and fiberglass repair. We strip the canvas — we do not weave it.
+
+Spike is ready to make this happen. We are done waiting for the rental market to align with our standards. If you are a boat owner tired of the old ways, or a financing partner looking to be part of the only viable solution for mass hull restoration in Ontario, let's talk.`,
+  },
+  {
     slug: "antifouling-application",
     title: "Antifouling Application: The Essential Underwater Shield",
     date: "2024-07-15",
