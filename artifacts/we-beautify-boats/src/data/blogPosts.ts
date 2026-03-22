@@ -172,6 +172,54 @@ We've spent 28+ years — since 1998 — taking boats from neglected to beautifu
 Call 416-890-5899 to discuss scheduling for the season.`,
   },
   {
+    slug: "imagine-super-cool-robot",
+    title: "Imagine We're Making a Super Cool Robot",
+    date: "2023-07-15",
+    category: "Boat Ownership Intelligence",
+    image: "https://static.wixstatic.com/media/2836bb_a175e54c3c444331b3c04e1d185f7f45~mv2.png/v1/fill/w_740,h_493,al_c,q_90,enc_avif,quality_auto/img.png",
+    imageAlt: "Spike's vision for autonomous boat cleaning robots and the BoatersOS platform — explained simply",
+    excerpt: "Alright, here's the plan explained. We are making a super cool robot that can clean boats, fix them, and keep everything shiny and safe in the water. But to get there, we need to follow a fun plan, step by step.",
+    content: `Alright, here's the plan explained.
+
+We are making a super cool robot that can clean boats, fix them, and keep everything shiny and safe in the water. But to get there, we need to follow a fun plan, step by step!
+
+## 1. Learning How to Make Boats Extra Shiny
+
+First, we figure out the best ways to clean and make boats look amazing. We practice a lot and use friendly soaps that keep the ocean happy. We also make sure everyone knows how to do it really well by teaching them with fun lessons.
+
+## 2. Using a Special Super-Helper App
+
+We have a special app called BoatersOS. It helps us remember which boats need cleaning and what tools we need. We teach our team how to use this app so it makes our work faster and better. Basically we learn from everyone that works and plays on boats!
+
+## 3. Building the Boat Cleaning Robots
+
+Next, we start making robot friends that can help clean and fix boats by themselves. We build them, test them to make sure they work, and play around to see how we can make them even better!
+
+## 4. Setting Up a Big Home Base
+
+We set up a big home called Spike's Marine Station. It's where we keep our robots, teach people how to use them, and show everyone how cool they are. We also use our BoatersOS app to watch over everything and keep it running smoothly.
+
+## 5. Showing Off Our Robots and Teaching Everyone
+
+Once our robots are working great, we invite people to come see them at Spike's Marine Station. We let them try the robots, ask questions, and learn how they work. It's like a big show-and-tell for boat people!
+
+## 6. Making Sure Everything Stays Awesome
+
+We don't stop there! We keep watching our robots and make updates to keep them super smart. We make new plans to grow and even think of making robots that can do more tricks.
+
+## 7. Being Kind to the Earth
+
+We make sure everything we do is good for the fishies and the water. We use special power that's friendly to the earth, like sunshine and wind, and we make sure the robots don't leave any yucky stuff behind.
+
+## 8. Big Dreams for the Future
+
+We think about what's next! Maybe more robots that do even cooler things, or teaching lots of people to use our robots all over the world. We want to make sure the water stays clean and everyone has fun on their boats.
+
+That's the plan: start with making boats shiny, get help from our smart app, build and play with boat-cleaning robots, and share our cool work with the world — all while keeping the water happy and healthy!
+
+Live long and prosper. On the water, everyday. Forever.`,
+  },
+  {
     slug: "top-10-insights-boat-detailer",
     title: "Top 10 Insights Every Boat Detailer Wants Boat Owners To Know",
     date: "2023-08-01",
