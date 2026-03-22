@@ -126,9 +126,9 @@ export default function MeetTheTeam() {
 
               <div className="mt-10 grid grid-cols-3 gap-6 border-t border-border pt-8">
                 {[
-                  { num: "500+", label: "Boats serviced" },
-                  { num: "12+", label: "Marinas served" },
-                  { num: "4", label: "Service areas" },
+                  { num: "5,000+", label: "Boats served" },
+                  { num: "60+", label: "Marinas & yacht clubs" },
+                  { num: "7", label: "Great Lakes serviced" },
                 ].map((stat) => (
                   <div key={stat.label}>
                     <p className="text-3xl font-display font-bold text-marine-900">{stat.num}</p>
