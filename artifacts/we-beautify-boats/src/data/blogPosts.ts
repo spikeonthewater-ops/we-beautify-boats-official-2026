@@ -103,6 +103,48 @@ If your boat was not maintained consistently the previous year and emerges from 
 We believe that your season should begin with excitement, not a chore list. We handle the intense spring preparation deliberately and methodically so you can step away knowing your boat is protected and ready to impress.`,
   },
   {
+    slug: "light-oxidation-level-2-topsides",
+    title: "Light Oxidation Is Solved Fast at Level 2 Topsides",
+    date: "2025-08-01",
+    category: "Spike's Essential Care Guides",
+    image: "https://static.wixstatic.com/media/2836bb_09872291260545928829860c5a8016b2~mv2.png/v1/fill/w_740,h_493,al_c,q_90,enc_avif,quality_auto/img.png",
+    imageAlt: "Boat hull topsides after Level 2 medium machine polish correction",
+    excerpt: "When a basic wash and light polish no longer bring back the shine, the surface has started to physically degrade. Hull Polish Level 2 is designed to address this exact threshold — safely and fast.",
+    content: `A boat's hull operates in a harsh environment, constantly interacting with UV rays, water friction, and dockside elements. Over time, even standard maintenance cannot stop the onset of light oxidation, minor scratches, and a general dullness that reduces the gelcoat's color depth and clarity.
+
+When a basic wash and light polish no longer bring back the shine, the surface has started to physically degrade. Hull Polish Level 2 is designed to address this exact threshold, safely removing the compromised top layer to reveal the healthy gelcoat underneath.
+
+**Will this Level 2 Topsides service remove deep dock rash or deep scratches?**
+
+No, it will not. Hull Polish Level 2 addresses only light oxidation and minor surface defects. Deep scratches require wet sanding or heavier compounding to safely level the surrounding gelcoat.
+
+## How We Approach Level 2
+
+We approach this service using a medium machine polishing process to actively correct the surface rather than simply enhancing it. Using professional buffing machines paired with specialized foam polishing pads and a fast-cut compound, our technicians work methodically along the hull.
+
+This abrasive step safely levels minor surface defects and removes the light oxidation layer. We manage our compounding materials carefully to prevent airborne dust and runoff, keeping the marina ecosystem protected. Finally, a refinement polish is applied to create a uniform, noticeably brighter finish with restored clarity.
+
+## What This Service Is Not Intended For
+
+It is critical to understand the strict boundaries of this correction. Level 2 explicitly excludes heavy oxidation removal, deep scratch repair, wet sanding, or full gelcoat reconstruction.
+
+If your hull feels heavily chalked, deeply porous, or severely faded from years of neglect, a medium polish will not successfully level the damage. We do not attempt to fix structural surface failures with mid-level compounds.
+
+## Why Addressing Light Oxidation Early Matters
+
+This service is the right choice for owners whose boats need visible correction beyond a basic seasonal polish, but are not yet severely degraded. By addressing light oxidation early, you prevent the gelcoat from becoming deeply porous — saving the surface from requiring much more invasive and expensive wet sanding procedures down the line.
+
+## When This Level Is No Longer Enough
+
+When you look at the hull and see deep chalking, heavy fading that obscures the original color, or deep scratches that catch your fingernail, this level is no longer enough. At that stage, the gelcoat requires the intensive, multi-step compounding provided by Level 3 to actively cut through the deeper oxidation.
+
+Maintaining a healthy hull means reading the gelcoat's actual condition and applying only the precise level of correction required.
+
+---
+
+Not sure what level your hull needs? Start with Hull Polish Level 2. It's the ideal first choice when oxidation and dullness are visible but you're not ready for full restoration. Our medium fast-cut compound restores color depth and removes surface defects — without committing to the multi-stage refinement of Level 3.`,
+  },
+  {
     slug: "cabin-comfort-weekly-plan",
     title: "Cabin Comfort Weekly Plan",
     date: "2025-05-20",
