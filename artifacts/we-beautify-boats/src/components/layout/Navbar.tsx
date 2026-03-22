@@ -13,6 +13,7 @@ function cn(...inputs: ClassValue[]) {
 const NAV_LINKS = [
   { href: "/", label: "Home" },
   { href: "/our-services", label: "Services" },
+  { href: "/workshops", label: "Workshops" },
   { href: "/seasonal-plans", label: "Seasonal Plans" },
   { href: "/our-work", label: "Our Work" },
   { href: "/meet-the-team", label: "Team" },
