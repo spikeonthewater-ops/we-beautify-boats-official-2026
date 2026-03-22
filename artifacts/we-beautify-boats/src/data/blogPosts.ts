@@ -103,6 +103,61 @@ If your boat was not maintained consistently the previous year and emerges from 
 We believe that your season should begin with excitement, not a chore list. We handle the intense spring preparation deliberately and methodically so you can step away knowing your boat is protected and ready to impress.`,
   },
   {
+    slug: "decal-stripe-removal",
+    title: "Decal, Boat Name & Stripe Removal: A Clean Slate",
+    date: "2024-11-01",
+    category: "Spike's Essential Care Guides",
+    image: "https://static.wixstatic.com/media/2836bb_23efe0438c424883bf0cdcb97f4fbbca~mv2.png/v1/fill/w_740,h_493,al_c,q_90,enc_avif,quality_auto/img.png",
+    imageAlt: "Old vinyl boat name and stripe decals being safely removed from a fiberglass hull",
+    excerpt: "Renaming a newly purchased boat is a proud tradition — but the physical act of removing the old name is often a nightmare. After years baking in the Ontario sun, vinyl turns brittle and adhesives cement into the gelcoat. We approach removal as a controlled chemical and thermal process designed to safely lift the past away.",
+    content: `Renaming a newly purchased boat is a proud tradition, but the physical act of removing the old name is often a nightmare. After years of baking in the Ontario sun, vinyl graphics turn brittle, adhesives cement themselves into the microscopic pores of the fiberglass, and painted stripes can leach deep into the finish.
+
+This service exists for owners who want to reset their boat's identity without permanently scarring the hull. Too often, DIY removal attempts involve razor blades or harsh solvents that scratch the gelcoat or melt the surrounding finish. We approach decal removal as a controlled chemical and thermal process designed to safely lift the past away.
+
+## What This Service Is Designed to Do
+
+This service is designed to efficiently remove old or unwanted vinyl lettering, painted boat names, and exterior striping without damaging the underlying surface.
+
+Success here looks like a clean, smooth hull that is completely free of old adhesive residue. It solves the problem of brittle, flaking graphics and prepares the substrate so your new boat name or registration numbers will adhere properly and lay perfectly flat.
+
+## How the Work Is Performed
+
+Removing baked-on graphics relies on understanding adhesive chemistry and surface memory, rather than raw force.
+
+We begin with a **thermal release** for vinyl graphics — using controlled heat to soften the material and reactivate the underlying adhesive so it can be peeled smoothly. Next, we utilize specialized non-marring plastic blades to gently coax the material off the gelcoat.
+
+For painted names or stubborn glue, we apply marine-safe adhesive removers specifically designed to break down the sticky residue without burning the fiberglass. Finally, the area is thoroughly wiped clean to ensure no chemical residue remains.
+
+## What This Service Is Not Intended For
+
+This is strictly a material removal service, not a surface correction service — and it comes with two harsh realities of marine exposure.
+
+**The UV Shadow:** The gelcoat sitting under your old decal has been protected from UV rays and oxidation for years, meaning it is fresher and slightly thicker than the weathered gelcoat around it. When we remove the sticker, a raised, perfectly preserved shadow of the old name will remain. This service removes the sticker, but it does not level out that shadow. Wet Sanding Spots is the follow-up service to physically diminish it.
+
+**Ink Bleed:** If a painted stripe or an inked decal was originally applied over gelcoat that was already oxidized and porous, the colour often bleeds deep into the fiberglass. We can remove the surface material, but that deep ink stain may never be completely gone.
+
+## Why Professional Removal Matters
+
+Attempting to pry old vinyl off with the wrong tools is the fastest way to cause thousands of dollars in deep gelcoat gouges. Furthermore, if you simply apply a new sticker over old, bumpy adhesive residue, the new graphic will look terrible and likely peel off within a single season. Professional removal ensures your new branding goes onto a perfectly clean, stable foundation.
+
+## When This Service Is the Right Choice
+
+This is the right choice when you have just purchased a used vessel and need to remove the previous owner's name and port of registry. It is also the necessary first step if you are updating your boat's striping, applying new registration numbers, or if your existing vinyl graphics are cracked, chalky, and peeling off in unsightly chunks.
+
+## A Note on the Renaming Ceremony
+
+If you are removing the old name to give your boat a fresh identity, the maritime tradition of a proper renaming ceremony is worth honouring. A few time-honoured steps:
+
+- **Remove all traces of the old name** from the vessel before the ceremony — not just the decal, but logbooks, liferings, and any other markings.
+- **The Libation:** Pour champagne or wine into the sea (or a marina bucket) to appease Poseidon and request his blessing for the new name.
+- **Place New Name:** Only after the ceremony is complete should you apply the new name to the vessel.
+- **Avoid Thursdays:** It is considered bad luck to hold the ceremony on a Thursday — Thor's Day, the god of storms.
+- **The Sacrifice:** Use a metal tag to sink the old name, ensuring it reaches the bottom.
+- **Keep it Official:** The ceremony is a great excuse to have friends and family onboard for a celebration.
+
+Removing old graphics is tedious, sticky work that requires immense patience and the right chemistry. By taking the time to safely lift the old materials and dissolve the adhesive without aggressive scraping, we give you a true clean slate. Your boat's new name deserves a flawless foundation.`,
+  },
+  {
     slug: "deck-polish-level-3",
     title: "Deck Polish Level 3: Multi-Step Correction & Deep Reflection",
     date: "2024-11-15",
