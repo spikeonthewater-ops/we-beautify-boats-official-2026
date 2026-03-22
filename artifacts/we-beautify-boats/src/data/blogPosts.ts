@@ -103,6 +103,64 @@ If your boat was not maintained consistently the previous year and emerges from 
 We believe that your season should begin with excitement, not a chore list. We handle the intense spring preparation deliberately and methodically so you can step away knowing your boat is protected and ready to impress.`,
   },
   {
+    slug: "bottom-prep-level-2",
+    title: "Bottom Prep Level 2: Precision Scuff & Solvent Wash",
+    date: "2024-05-15",
+    category: "Spike's Essential Care Guides",
+    image: "https://static.wixstatic.com/media/2836bb_184751a7543740e48889db999e8ff749~mv2.png/v1/fill/w_740,h_493,al_c,q_90,enc_avif,quality_auto/img.png",
+    imageAlt: "Dustless sander with foam interface scuffing a boat hull to 150-grit before solvent wash and antifouling",
+    excerpt: "Painting a boat bottom is 90% preparation and 10% application. Bottom Prep Level 2 is the technical standard for adhesion — engineered 150-grit scuffing with foam-backed sanders that follow the hull's curves, finished with a solvent wash that chemically resets the surface for the bond.",
+    content: `Bottom Prep Level 2 is the technical standard for adhesion.
+
+It handles two things: the removal of moderate foul — stuff that is stuck harder than slime but isn't a barnacle colony — and the creation of a mechanical profile for new paint.
+
+The most critical detail here, and where amateurs consistently go wrong, is the sanding technique. You cannot just take a hard sanding pad to a curved hull — you will dig "edging scars" or crescents into the surface. We use thick foam backing interfaces on our dustless sanders. This allows the abrasive to glide over the curves rather than gouge them.
+
+We finish with 150 grit because it provides the perfect "tooth" for modern antifouling paints without leaving deep scratches that cause drag. Finally, we do a solvent wash. You can sand all day, but if you leave dust or hand oils on the hull, the paint will lift. The solvent wash chemically resets the surface for the bond.
+
+Painting a boat bottom is 90% preparation and 10% application. If you apply expensive antifouling paint over a surface that hasn't been properly keyed or cleaned, you are essentially painting a layer of dirt. It will delaminate — likely mid-season.
+
+## What This Service Is Designed to Do
+
+This service creates the perfect substrate for adhesion. It is designed to:
+
+**Remove Moderate Fouling:** Eliminate organic roughness that washing alone couldn't remove.
+
+**Key the Surface:** Create a uniform 150-grit profile that mechanically locks new paint onto the hull.
+
+**Prevent Damage:** Use specialized foam interfaces to follow the hull's curvature without digging edging scars or flat spots into the gelcoat.
+
+**Chemically Clean:** Remove all sanding dust and contaminants via a final solvent wash.
+
+## How the Work Is Performed
+
+We utilize dustless sanding systems to keep the boatyard — and your lungs — clean. The critical component in our process is the thick foam backing interface. Standard sanding pads are rigid; boat hulls are curved. If you use a rigid pad on a curve, the edge digs in, creating unsightly scars. Our foam pads absorb the curve, allowing the abrasive disc to glide smoothly across the entire surface.
+
+We sand to a 150-grit finish — the sweet spot for adhesion. Coarse enough to grip, fine enough to reduce drag.
+
+Once the sanding is complete, we perform a thorough solvent wash. This step wipes away the microscopic dust and any oils left from the sanding process that might prevent the paint from bonding. It is the final go/no-go check before the paint roller touches the hull.
+
+## What This Service Is Not Intended For
+
+Level 2 is for hulls that are structurally sound but need a fresh surface.
+
+**No Hardware Correction:** We do not sand underwater metals or sensors in this service. If your previous painter painted over your zincs, depth sounder, or trim tabs, that requires the corrective work of Bottom Prep Level 3.
+
+**No Heavy Stripping:** We are not removing layers of old paint to get back to bare gelcoat. That is Bottom Prep Level 4.
+
+## Why This Level Matters
+
+The foam interface matters because a hull with edging scars creates turbulence. The solvent wash matters because dust is the enemy of adhesion. Level 2 ensures that when you pay for antifouling, you are paying for protection that lasts the season — not paint that flakes off at the first knot of speed.
+
+## When This Service Is the Right Choice
+
+Choose Level 2 if your boat is unpainted and needs its first coat, or if it is already painted and simply needs a seasonal refresh with a sound, keyed base. If the hull has moderate fouling or roughness, this sanding process will smooth it out and create the profile that new paint needs.
+
+## When This Service Is No Longer Enough
+
+If we inspect your hull and find that the through-hulls, trim tabs, or transducers have been painted over by a previous service provider, Level 2 is not enough. Painting over a sensor blocks its signal; painting over a zinc anode stops it from protecting the hull. To correct these errors, we must escalate to Bottom Prep Level 3 to carefully remove paint from these critical components.`,
+  },
+  {
     slug: "bottom-prep-level-3",
     title: "Bottom Prep Level 3: Correcting Bad Antifouling Before We Protect",
     date: "2024-06-01",
