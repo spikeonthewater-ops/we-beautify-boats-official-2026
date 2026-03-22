@@ -382,36 +382,45 @@ If you are unsure which level applies to your hull, Spike will assess the surfac
     slug: "hull-polish-level-3-for-the-love-of-shine",
     title: "Hull Polish Level 3: For the Love of Shine",
     date: "2026-02-25",
-    category: "Exterior Surface Care",
-    image: "https://static.wixstatic.com/media/2836bb_a40c2279dfa14c638d8ec7fcdd2189fd~mv2.png/v1/fill/w_740,h_493,al_c,q_90,enc_avif,quality_auto/img.png",
-    imageAlt: "Close-up of a polished boat hull on stands reflecting surroundings",
+    category: "Spike's Essential Care Guides",
+    image: "https://static.wixstatic.com/media/2836bb_0eaf58cdfbb74ad3820e242cd956b353~mv2.jpg/v1/fill/w_740,h_493,al_c,q_85,enc_avif,quality_auto/img.jpg",
+    imageAlt: "Close-up of a polished boat hull reflecting surroundings after Level 3 correction",
     excerpt: "When a vessel spends multiple seasons in the elements without consistent protective care, the gelcoat begins to break down. Hull Polish Level 3 is the dedicated cut-and-shine service to correct it.",
     content: `A boat's hull ages based on its exposure to UV rays, constant water friction, and daily marina usage. When a vessel spends multiple seasons in the elements without consistent protective care, the gelcoat system inevitably begins to break down. Moderate oxidation sets in, leaving a faded, milky appearance and visible scratches that basic maintenance polishing simply cannot touch.
 
-## Hull Polish Level 3 exists for exactly this condition.
+Hull Polish Level 3 exists for exactly this condition.
 
 It is a dedicated cut and shine service meant to actively correct the gelcoat before the damage becomes irreversible. We provide the extra effort required for a solid outcome, moving beyond basic care to provide real love to the surface.
 
 ## What This Service Is Designed to Do
 
-When light polishes and fast-cut single-stage compounds stop working, it means the degraded, oxidized layer of gelcoat has become too thick for gentle products to cut through. Level 3 uses a two-stage compound and polish system to physically remove that compromised outer layer and reveal the gelcoat beneath it.
+When light polishes and fast-cut single-stage compounds stop working, it means the degraded, oxidized layer of gelcoat is too thick for a basic approach. This service is designed to solve moderate oxidation and surface dullness through a multi-stage correction process.
 
-Success at this level looks like: noticeably improved gloss and color depth, a surface that feels smooth instead of chalky when touched dry, and reduction of the swirl marks and light scratches that make a hull look tired even after washing.
+Success at this level realistically looks like restored color depth, renewed clarity, and a uniform high-gloss finish that brings the hull back to life without requiring full restoration.
 
-## Who This Is For
+We approach this as a multi-step correction process that requires extra input for a solid outcome. Using high-powered professional buffing machines and foam polishing pads, our technicians perform an initial cut with a coarse compound to physically remove the moderately oxidized gelcoat layer and level out visible scratches. We then follow up with a fine polish. This second step provides a toning effect to the moderate exfoliation achieved, refining the finish to produce a clear, smooth gloss. A final buffing pass ensures uniform shine across the hull.
 
-Level 3 is appropriate for boat owners who:
+**Will this service fix a completely chalky hull?**
 
-- Have noticed their hull looking dull or faded after washing — "clean but not shiny"
-- Have visible moderate oxidation or hazing across topsides
-- Have not had professional hull correction in two or more seasons
-- Want to restore the aesthetic quality of their vessel before the season begins
+No, it will not. Hull Polish Level 3 addresses moderate oxidation. If the gelcoat is severely oxidized or chalky, it requires the aggressive, multi-stage correction of Hull Polish Level 4.
 
-## What Comes After Level 3
+## What This Service Is Not Intended For
 
-After correction, the hull is ready for protection — either marine wax, synthetic sealant, or a longer-lasting polymer coating depending on your usage pattern and protection goals. We discuss this with you before the service begins.
+Hull Polish Level 3 strictly excludes wet sanding, full gelcoat restoration, and structural repairs. We are not digging deeper into the gelcoat structure like we do in Level 4. There is absolutely no gelcoat reconstruction involved at this tier. If your hull has deep gouges from dock rash or completely compromised gelcoat, a machine polish will not safely level the damage.
 
-Hull Polish Level 3 is available as a standalone service or as part of our seasonal maintenance packages.`,
+## Why Addressing Moderate Oxidation Now Matters
+
+Leaving moderate oxidation untreated is a compounding problem. The longer dead gelcoat sits on the hull, the more porous the system becomes, inviting deeper moisture intrusion, stubborn staining, and accelerated UV damage. This level of correction halts that decay. It seals the hull system, protecting the underlying structural layers and saving you from much more invasive, extreme restoration costs later.
+
+## When This Level Is the Right Choice
+
+This service is the right choice when your hull has a noticeably milky, faded appearance that obscures the original color. You will know it is time when the surface feels slightly dry or rough to the touch, and lighter seasonal maintenance no longer makes a visible difference.
+
+## When This Level Is No Longer Enough
+
+When the gelcoat turns completely chalky, rubs off as a heavy white powder on your hand, or features deep scratches that catch your fingernail, this level is no longer enough. At that stage, the surface degradation has surpassed what a standard cut and shine can safely remove. That condition requires the intensive, aggressive correction of Hull Polish Level 4.
+
+Maintaining your hull is about applying the exact right method for the current condition of the gelcoat. We believe in being transparent about what your boat actually needs — providing honest correction without unnecessary abrasion.`,
   },
   {
     slug: "storm-line-check-severe-weather-preparation",
