@@ -103,6 +103,56 @@ If your boat was not maintained consistently the previous year and emerges from 
 We believe that your season should begin with excitement, not a chore list. We handle the intense spring preparation deliberately and methodically so you can step away knowing your boat is protected and ready to impress.`,
   },
   {
+    slug: "deck-polish-level-4",
+    title: "Deck Polish Level 4: Intensive Correction for Severe Oxidation",
+    date: "2025-01-01",
+    category: "Spike's Essential Care Guides",
+    image: "https://static.wixstatic.com/media/2836bb_620c4d338d874d489d96fbaafb153ca7~mv2.png/v1/fill/w_740,h_493,al_c,q_90,enc_avif,quality_auto/img.png",
+    imageAlt: "Severely oxidized boat deck being restored with industrial-grade compound and wool pads",
+    excerpt: "When a boat sits unprotected for years, the sun consumes the entire protective gloss layer of the gelcoat. Deck Polish Level 4 is the final line of defense — an intensive industrial process designed to rescue a deeply weathered deck without resorting to sandpaper.",
+    content: `When a boat sits unprotected for years, the sun and elements do more than just dull the finish — they aggressively consume the protective 100 to 200-micron gloss layer of the gelcoat. The surface becomes deeply porous, severely chalky, and often heavily stained by environmental fallout that has baked directly into the fiberglass.
+
+Deck Polish Level 4 is a high-level, intensive restoration service engineered for decks that have suffered severe wear and long-term neglect. This exists for the owner looking to rescue a deeply weathered vessel, pulling it back from the brink of irreversible damage without resorting to the extreme friction of sandpaper.
+
+## What This Service Is Designed to Do
+
+Standard compounds and lower-level polishing (Levels 1 through 3) simply do not have the sustained mechanical bite required to cut through this volume of dead material. If you try to run a medium cut over severe oxidation, the pad will just load up with white chalk and burn out.
+
+Deck Polish Level 4 is designed to execute a deep, aggressive cut into the degraded gelcoat. Success at this level means safely stripping away the thickest layers of dead, porous material to reach the healthy, dense fiberglass underneath. By employing a multi-stage corrective process, we level out deep staining, erase severe scratches, and pull a brilliant, factory-like shine out of a surface that most people would assume needs to be repainted.
+
+## How the Work Is Performed
+
+This is a highly physical, multi-stage industrial process that demands patience and heavy-duty machinery.
+
+**Stage 1 — The Heavy Cut:** We deploy high-powered professional buffing machines equipped with aggressive wool pads and industrial-grade coarse compounds. This combination generates the necessary heat and friction to cut through the severe oxidation and deep surface staining.
+
+**Stage 2 — The Leveling Pass:** Because the heavy cut leaves microscopic swirl marks, we follow up with medium compounds and dense foam pads to smooth the newly exposed gelcoat.
+
+**Stage 3 — The Refinement:** We finish with a fine polishing stage using soft foam pads and dual-action polishers to pull out maximum clarity and depth, followed by the application of a durable protective sealant to lock in the result.
+
+## What This Service Is Not Intended For
+
+While Level 4 is highly aggressive, it is not a resurfacing tool and does not include wet sanding. If the gelcoat has worn so thin that the underlying fiberglass mat is visible, polishing will only burn through to the core — we cannot polish where material no longer exists.
+
+Furthermore, this service is exclusively for smooth gelcoat and painted surfaces. We do not use polishing machines on textured non-skid areas, and this service will not repair structural fractures or deep physical gouges.
+
+## Why This Level of Intervention Matters
+
+This is often the final line of defense for your gelcoat. Severely oxidized, porous fiberglass is not just an eyesore — it acts like a sponge for moisture and contaminants, accelerating structural decay. By intervening with an intensive Level 4 correction, you are restoring the boat's protective armor and preserving its asset value, potentially saving tens of thousands of dollars in repainting or structural re-gelcoating costs.
+
+## When This Service Is the Right Choice
+
+**The Barn Find:** You have acquired a boat that has been sitting uncovered in a yard or field for multiple seasons.
+
+**Deep Staining:** The chalky gelcoat is heavily discolored with embedded brown rust, leaf tannins, or industrial fallout that washing cannot touch.
+
+## When This Service Is No Longer Enough
+
+There is a limit to what liquid compounds and wool pads can achieve. If the gelcoat has developed a deep "orange peel" texture, if the surface is severely pitted, or if the oxidation has penetrated so deeply that the compound simply cannot reach healthy material, Level 4 will fail. At that extreme stage, you must escalate to Deck Polish Level 5, which utilizes physical wet sanding to flatten and strip the gelcoat with abrasives before any polishing can occur.
+
+We approach severe restoration with a deep respect for the limits of marine surfaces. Deck Polish Level 4 is a demanding, meticulous process that takes serious effort, but the transformation is profound. We don't cut corners — we cut through the decay, ensuring that when we leave, your deck isn't just shiny: it is structurally sound, sealed, and ready to face the elements once again.`,
+  },
+  {
     slug: "engine-bay-cleaning",
     title: "Engine Bay Cleaning: Environmental Preservation & Diagnostic Clarity",
     date: "2025-01-15",
