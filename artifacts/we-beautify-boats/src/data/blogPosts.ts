@@ -172,6 +172,62 @@ We've spent 28+ years — since 1998 — taking boats from neglected to beautifu
 Call 416-890-5899 to discuss scheduling for the season.`,
   },
   {
+    slug: "top-10-insights-boat-detailer",
+    title: "Top 10 Insights Every Boat Detailer Wants Boat Owners To Know",
+    date: "2023-08-01",
+    category: "Boat Ownership Intelligence",
+    image: "https://static.wixstatic.com/media/2836bb_ff9c7e34b54b41edae4557a7b3ab44f3~mv2.png/v1/fill/w_740,h_493,al_c,q_90,enc_avif,quality_auto/img.png",
+    imageAlt: "Spike sharing the ten things every Ontario boat owner should understand before booking professional detailing services",
+    excerpt: "Boating in Ontario is a unique experience, and understanding the landscape helps you make the most of your vessel. Here are the top 10 essential insights that every Ontario boat owner should know — from insurance requirements and temperature rules to why shrink wrap is a waste and why booking early is always the right move.",
+    content: `Boating in Ontario is a unique experience, and understanding the landscape helps you make the most of your vessel. Here are the top 10 essential boat detailing insights that every Ontario boat owner should know.
+
+## 1. Ontario's Boating Landscape
+
+Ontario is home to over 2 million boats, making it one of the most dynamic and diverse boating regions in Canada. This rich boating culture spans pristine lakes and sprawling waterways, offering unparalleled opportunities for exploration and enjoyment. Most boats on Ontario's waters are under 30 feet LOA — owned by passionate day sailors, anglers, and adventurers. Larger yachts up to 70 feet are common, and We Beautify Boats services them all.
+
+With so many vessels competing for attention at the dock, maintaining yours ensures it stands out. Regular detailing and restoration not only keep your boat beautiful — they ensure it's always ready for your next adventure.
+
+## 2. Insurance Is Non-Negotiable
+
+Any contractor working on your boat should carry at least $2 million in liability insurance. Hiring uninsured services can expose you to significant financial and safety risks if something goes wrong. Always verify coverage before allowing anyone aboard your vessel to perform work.
+
+## 3. In-Water Service Has a Season Window
+
+In-water detailing services in Ontario are generally limited to May 15 through October 15. This isn't just a scheduling preference — it reflects water conditions, temperature minimums, and marina access. The off-season, however, is an excellent window for efficient detailing, polishing, and bottom painting work while your boat is in storage or on the hard.
+
+## 4. Water Access Is Not a Barrier
+
+Services are not limited by water shut-offs at your marina or storage yard. We use tanks and pumps to bring water to the work, which means detailing can be performed on-site even without direct water access at your location. If you've ever been told a service can't happen because there's no hose, that's not a WBB problem.
+
+## 5. Preparation Has No Temperature Limits
+
+Maintenance work — including sanding, acid washing, and wood refinishing — can be performed year-round regardless of temperature. Winter preparation is not only possible, it's often the smartest move. Completing prep work in the off-season prevents the spring rush and ensures your vessel is ready to launch the moment the season opens.
+
+## 6. Temperature Consistency Is Mandatory for Coatings
+
+Protective coatings are different. Varnish, antifouling paint, SiO2, and similar products require a consistent ambient temperature of at least 10°C for a minimum of three days — both during and after application. This is not optional. Application outside these conditions leads to adhesion failure, hazing, and premature breakdown. Planning your coating services for appropriate weather windows is part of delivering lasting results.
+
+## 7. Shrink Wrap Is a Waste
+
+Single-use plastic shrink wrap is not only expensive — it actively harms boats and creates significant environmental waste. The heat used in application can damage gelcoat, hardware, and canvas if done incorrectly. Reusable eco-friendly covers are a superior alternative in every measurable way: better protection, lower cost over time, and no disposal problem at the end of winter. If your marina is still pushing shrink wrap, it's worth asking why.
+
+## 8. Spring Secures Fall Services
+
+Booking your fall services in the spring — while your boat is in the water and on your mind — guarantees timely care when the season ends. It also allows time for tasks like custom cover ordering, advanced refit planning, and coordinating any multi-visit work before the fall rush. The boaters who call in August for October availability are often disappointed.
+
+## 9. Fall Secures Spring Services
+
+The reverse is equally true. Scheduling your spring launch prep in the fall ensures your boat is prioritized, maintained, and ready to go without stress when the season begins. It avoids delays, extra rush fees, and the all-too-common scramble to complete essential work in the last two weeks before launch.
+
+Proactive planning is one of the simplest ways to save money and reduce stress in boat ownership. The boats that are consistently well cared for are the ones whose owners never wait until the last minute.
+
+## 10. Early Booking Protects Your Season
+
+The boating season in Ontario is short. Every week of delay in the spring is a week you're not on the water. Every week of delay in the fall is a week your boat isn't being properly stored. Building a relationship with a detailing provider you trust — and locking in your seasonal schedule early — is how you ensure your vessel gets the attention it deserves before the roster fills.
+
+Call 416-890-5899 to book your in-person assessment and secure your spot on the seasonal schedule. The $250 assessment fee is credited in full toward your first service.`,
+  },
+  {
     slug: "annual-interior-steam-sanitization",
     title: "5 Ways to Win in Boat Ownership with Annual Interior Steam Sanitization",
     date: "2023-08-15",
