@@ -103,6 +103,56 @@ If your boat was not maintained consistently the previous year and emerges from 
 We believe that your season should begin with excitement, not a chore list. We handle the intense spring preparation deliberately and methodically so you can step away knowing your boat is protected and ready to impress.`,
   },
   {
+    slug: "deck-polish-level-3",
+    title: "Deck Polish Level 3: Multi-Step Correction & Deep Reflection",
+    date: "2024-11-15",
+    category: "Spike's Essential Care Guides",
+    image: "https://static.wixstatic.com/media/2836bb_96170ce3f00b4d9894000fa7e880cadb~mv2.png/v1/fill/w_740,h_493,al_c,q_90,enc_avif,quality_auto/img.png",
+    imageAlt: "Heavily oxidized boat deck being restored with multi-step compound and finishing polish",
+    excerpt: "When the deck is chalky and leaves white powder on your hand, lower levels of care completely fail — wax just smears into dead, porous material. Deck Polish Level 3 physically cuts through the decayed gelcoat and refines what's underneath.",
+    content: `Over years of relentless UV bombardment and environmental fallout, the protective 100 to 200-micron gloss layer of your boat's gelcoat can severely break down. When this happens, the deck doesn't just look dull — it actually changes texture. The surface becomes porous, turning into a dry, chalky layer that leaves a white powder on your hands or clothes when you brush against it.
+
+Deck Polish Level 3 is an intensive surface restoration service designed specifically for this condition. It exists for the owner who has inherited a neglected vessel or watched their boat slowly lose its luster over several seasons. This is not a wash or a quick shine — this is a multi-step corrective intervention to rescue gelcoat that is cosmetically dead but structurally sound.
+
+## What This Service Is Designed to Do
+
+Lower levels of care completely fail when confronted with heavy oxidation. If you apply wax over a chalky deck, you are simply smearing product into dead, porous material.
+
+Deck Polish Level 3 solves this by physically cutting through the decayed material and refining what is underneath. This service combines the heavy lifting of our Level 2 correction with the high-gloss refinement of our Level 1 polish. Success at this level means safely removing the heavily oxidized, dead gelcoat to reveal the healthy base layer, and then polishing that new layer to achieve a much deeper, clearer reflection than a single-stage cut ever could.
+
+## How a Deck Polish Level 3 Is Performed
+
+Restoring heavily oxidized gelcoat is a rigorous, two-part mechanical process that requires both aggressive cutting power and delicate finishing.
+
+**Stage 1 — The Heavy Cut:** We begin with high-powered professional buffing machines equipped with coarse polishing compounds and aggressive pads. This step does the heavy lifting, cutting away 2 to 10 microns of chalky oxidation and leveling out deep surface scratches.
+
+**Stage 2 — The Refinement:** Once the dead layer is removed, the surface is clean but often looks slightly hazy from the friction of the coarse cut. We then switch to dual-action polishers, soft foam pads, and a light hologram-remover polish. This smooths out the microscopic abrasions left by the heavy cut, pulling out that deep, mirror-like reflection.
+
+**Stage 3 — The Final Finish:** The restored smooth fiberglass is meticulously hand-buffed with microfibers and sealed with a durable protective layer to guard against future weathering.
+
+## What This Service Is Not Intended For
+
+While Level 3 is highly corrective, it is strictly a surface polishing service and will not perform miracles on structural damage. This service explicitly excludes gelcoat reconstruction, filling deep gouges, color matching, or fixing fiberglass fractures.
+
+Furthermore, polishing machines can only be safely used on smooth surfaces — this process does not polish, restore, or reapply the textured non-skid areas of your deck.
+
+## Why This Level Matters
+
+Leaving heavy oxidation untreated is a direct threat to your boat's structural lifespan. As the gelcoat becomes more porous, it traps moisture and environmental contaminants deep within the fiberglass, accelerating decay. By performing a Level 3 restoration, you are halting this decay and recovering the aesthetic value of the boat before extreme, highly invasive wet sanding becomes your only option.
+
+## When This Service Is the Right Choice
+
+**The Chalk Test:** You run your hand firmly across the smooth fiberglass, and your palm comes away coated in a fine white powder. That powder is your dead gelcoat — and it is time for Level 3.
+
+## When This Service Is No Longer Enough
+
+If the oxidation has penetrated so deeply that coarse compounding machines cannot level it, or if the surface exhibits severe long-term damage, deep staining, or heavy "orange peel" textures, a Level 3 compound will not have enough cutting power.
+
+At that extreme stage, you must escalate to Deck Polish Level 4 for intensive heavy correction, or Deck Polish Level 5 to physically wet sand the fiberglass flat before any polishing can begin.
+
+Gelcoat restoration is a precise science of material removal and refinement. By combining a heavy corrective cut with a delicate finishing polish, we safely strip away the decay and leave behind a brilliant, deep reflection. Deck Polish Level 3 is a serious intervention — giving your heavily weathered deck a true second life and a stable foundation for seasonal protection.`,
+  },
+  {
     slug: "deck-polish-level-5",
     title: "Deck Polish Level 5: Wet Sanding & Ultimate Restoration",
     date: "2024-12-01",
