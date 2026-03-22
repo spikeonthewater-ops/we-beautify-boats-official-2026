@@ -55,6 +55,22 @@ const SERVICES_LIST = [
     img: "service-interior.png"
   },
   {
+    id: "05",
+    title: "Workshops & Training",
+    subtitle: "The Ontario Standard — Taught at Your Dock",
+    desc: "Bring 30 years of documented marine IP directly to your marina or yacht club. Intensive, hands-on workshops for staff crews, private owners, and advanced technicians — covering compound chemistry, predictive buffer workflows, environmental compliance, and surface restoration.",
+    features: [
+      "Certificate of Practical Completion for all participants",
+      "Three formats: Marina Pro-Series, Owner's Day, Restoration Masterclass",
+      "Tools, chemistry, and curriculum provided by Spike",
+      "Seasonal availability — fill quickly"
+    ],
+    links: [
+      { name: "View Workshops", href: "/workshops" },
+    ],
+    img: "service-workshops.png"
+  },
+  {
     id: "04",
     title: "Protections",
     subtitle: "Long-term Value Preservation",
@@ -98,7 +114,7 @@ export default function Services() {
           animate={{ opacity: 1, y: 0 }}
           className="max-w-3xl mx-auto relative z-10"
         >
-          <h1 className="text-4xl md:text-5xl lg:text-6xl font-display font-bold mb-6">Our 4 Areas of Attention</h1>
+          <h1 className="text-4xl md:text-5xl lg:text-6xl font-display font-bold mb-6">Our Areas of Service</h1>
           <p className="text-xl text-cyan-100/80 font-light leading-relaxed">
             More than just cleaning... it's the art of preserving and enhancing every element of your vessel, ensuring it looks and performs its best on the water.
           </p>

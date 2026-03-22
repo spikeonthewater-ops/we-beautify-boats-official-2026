@@ -29,6 +29,7 @@ const HullWashes = lazy(() => import("@/pages/services/HullWashes"));
 const BottomPrep = lazy(() => import("@/pages/services/BottomPrep"));
 const InteriorDetails = lazy(() => import("@/pages/services/InteriorDetails"));
 const ExtraServices = lazy(() => import("@/pages/services/ExtraServices"));
+const Workshops = lazy(() => import("@/pages/services/Workshops"));
 
 import { useScrollToTop } from "@/hooks/use-navigation";
 
@@ -65,6 +66,7 @@ function Router() {
               <Route path="/bottom-prep" component={BottomPrep} />
               <Route path="/interior-details" component={InteriorDetails} />
               <Route path="/extra-services" component={ExtraServices} />
+              <Route path="/workshops" component={Workshops} />
 
               <Route path="/blog" component={Blog} />
               <Route path="/blog/:slug" component={BlogPost} />

@@ -17,6 +17,7 @@ export const CATEGORIES = [
   "Boat Ownership Intelligence",
   "Spike's Essential Care Guides",
   "Spike's Musings",
+  "Workshops & Training",
 ];
 
 export const blogPosts: BlogPost[] = [
@@ -170,6 +171,48 @@ You'll spend less time prepping, less money fixing, and more time using your boa
 We've spent 28+ years — since 1998 — taking boats from neglected to beautiful. But we'd rather keep them beautiful from the start. That's what Always Ready delivers.
 
 Call 416-890-5899 to discuss scheduling for the season.`,
+  },
+  {
+    slug: "community-workshop-series",
+    title: "Better Care, Better Boating: A Community Workshop Series",
+    date: "2024-11-15",
+    category: "Workshops & Training",
+    image: `${import.meta.env.BASE_URL}images/service-workshops.png`,
+    imageAlt: "Better Care, Better Boating — a community workshop with We Beautify Boats by Spike, covering compound chemistry, buffer workflows, and marine surface science",
+    excerpt: "Bring 30 years of recreational marine expertise directly to your dock. Spike On The Water offers intensive, hands-on workshops for yacht clubs, marina staff, and owner-operators who want to master the Ontario Standard of marine preservation.",
+    content: `Bring 30 years of recreational marine expertise directly to your dock. We Beautify Boats by Spike offers intensive, hands-on workshops designed for yacht clubs, marina staff, and dedicated owner-operators who want to master the Ontario Standard of marine preservation.
+
+## The Curriculum: From Science to Surface
+
+Our workshops move beyond basic cleaning. We dive into the technical intellectual property required to maintain hull integrity and resale value.
+
+**Substrate Integrity Analysis:** Learning to read gelcoat, paint, and composites before the buffer touches the surface — the foundation of every great finish.
+
+**Compound & Polish Chemistry:** Understanding oxidation dynamics and selecting the precise pad and liquid combination for Great Lakes freshwater conditions. Know why each product does what it does, not just how to apply it.
+
+**Systematic Quality Control:** Implementing the Predictive Buffer Workflow to ensure mirror finishes without holograms or burn-through.
+
+**Environmental Impact Reduction:** Professional techniques for waste-water recycling and eco-conscious chemical application — protecting the water we all play in.
+
+**Safe Vinyl & Brightwork Recovery:** Specialized modules for tender tube detailing and metal polishing — the high-visibility work that separates a good crew from a great one.
+
+## Workshop Formats
+
+**The Marina Pro-Series** — for Staff & Crews. Efficiency, workflow optimization, and crew leadership for professional teams serving multiple vessels at scale.
+
+**Yacht Club "Owner's Day"** — for Private Owners. Practical DIY skills, tool safety, and seasonal maintenance. Take the knowledge home and apply it yourself.
+
+**The Restoration Masterclass** — for Advanced Technicians. Wet sanding, spot repairs, and ceramic coating application for experienced hands operating at the highest level.
+
+## Why Book a Spike Workshop?
+
+Most detailing is learned through trial and error — usually at the expense of the boat's finish. Our workshops provide a **Certificate of Practical Completion**, moving your team from "guys with buffers" to certified technicians.
+
+We provide the tools, the chemistry, and 30 years of documented IP. You provide the venue.
+
+"The snow has not slowed us down. Don't wait until May to upskill your crew. We Work · You Play · They Learn."
+
+Workshops are seasonal and fill quickly. [View the full workshop page](/workshops) or call 416-890-5899 to reserve your date.`,
   },
   {
     slug: "wbb-agenda",
