@@ -172,6 +172,50 @@ We've spent 28+ years — since 1998 — taking boats from neglected to beautifu
 Call 416-890-5899 to discuss scheduling for the season.`,
   },
   {
+    slug: "wbb-agenda",
+    title: "The We Beautify Boats Agenda",
+    date: "2023-06-01",
+    category: "Boat Ownership Intelligence",
+    image: "https://static.wixstatic.com/media/2836bb_3cfc52519f0d4ba69ba4ea24e778334e~mv2.webp/v1/fill/w_740,h_493,al_c,q_90,enc_avif,quality_auto/img.png",
+    imageAlt: "The We Beautify Boats agenda — passion, precision, and professionalism in every service on the water",
+    excerpt: "At We Beautify Boats by Spike, our mission extends beyond just enhancing boats — we are committed to elevating the entire boating experience, from the dock, across the water, everywhere people are chasing the horizon. Here's a breakdown of our agenda.",
+    content: `At We Beautify Boats by Spike, our mission extends beyond just enhancing boats — we are committed to elevating the entire boating experience, from the dock, across the water, everywhere people are chasing the horizon.
+
+Here's a breakdown of our agenda.
+
+## 1. A Great Day on the Water for Everyone
+
+Our primary goal is to ensure that every interaction with our services leaves a lasting positive impact on everyone involved.
+
+**Boat Owners:** Your boat is a reflection of you, and we aim to make it the pristine, polished vessel you're proud of. From top-tier washes to meticulous detailing, we treat your boat with care, ensuring it looks its best on the water.
+
+**The Boats:** Every boat deserves the best. Our services are tailored to rejuvenate, protect, and maintain vessels of all sizes. Whether it's restoring weathered wood or polishing hulls to a mirror shine, we make boats beautiful.
+
+**Our Crew:** We believe that a happy crew delivers the best results. Our team is trained not just to provide exceptional service but to take pride in the craft of beautifying boats. It's more than a job — it's a passion that shines through in every project.
+
+## 2. Data-Driven Boat Maintenance
+
+We are accumulating critical data on the lifespan and needs of boats across various categories to ensure a high standard of service. This allows us to:
+
+**Refine Service Schedules:** With data-driven insights, we can provide premium service schedules tailored to the exact needs of your boat, ensuring it always looks and performs at its best.
+
+**Measurable Articulation of Premium Care:** From hull preparation to deck polishing, we measure the impact of each service to provide the best recommendations for long-term maintenance. This helps extend the life of your boat and enhances its performance on the water.
+
+## 3. Apprenticeship and Industry Growth
+
+We are committed to nurturing the next generation of marine service professionals through:
+
+**Apprenticeship Programs:** Our goal is to fortify the recreational marine service industry by developing skilled professionals trained in the latest techniques and standards of boat care.
+
+**Elevating Industry Standards:** By formalizing an apprenticeship system, we ensure that the quality of boat maintenance services improves across the board — benefiting not just boat owners but the entire boating community.
+
+---
+
+In all that we do, We Beautify Boats seeks to combine passion, precision, and professionalism, making every day on the water beautiful.
+
+Call 416-890-5899 to become part of that agenda.`,
+  },
+  {
     slug: "spikes-marine-station-another-look",
     title: "Taking Another Look at Spike's Marine Station",
     date: "2023-06-15",
