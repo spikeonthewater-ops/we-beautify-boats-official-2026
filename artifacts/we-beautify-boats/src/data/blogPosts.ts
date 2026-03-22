@@ -103,6 +103,58 @@ If your boat was not maintained consistently the previous year and emerges from 
 We believe that your season should begin with excitement, not a chore list. We handle the intense spring preparation deliberately and methodically so you can step away knowing your boat is protected and ready to impress.`,
   },
   {
+    slug: "spikes-pt",
+    title: "Spikes PT: Ultimate Teflon Fusion & Surface Protection",
+    date: "2024-09-01",
+    category: "Spike's Essential Care Guides",
+    image: "https://static.wixstatic.com/media/2836bb_ca38ff8173b440a9b09dc9a4679f110b~mv2.png/v1/fill/w_740,h_493,al_c,q_90,enc_avif,quality_auto/img.png",
+    imageAlt: "Teflon PTFE protection being electrostatically fused into polished boat gelcoat",
+    excerpt: "Standard waxes sit on top of your gelcoat like a blanket. In the heat of an Ontario summer, that blanket softens, traps dirt, and washes away. Spikes PT is not a wax — it uses PTFE (Teflon®) technology to electrostatically fuse protection directly into the pores of your boat.",
+    content: `Standard waxes sit on top of your gelcoat like a blanket. In the heat of an Ontario summer, that blanket softens, traps dirt, and eventually washes away. For boat owners who demand longevity over seasonal repetition, we offer Spikes PT.
+
+This is not a wax. It is a patented paint protection system (PPS) that uses PTFE (Teflon®) technology to fuse protection directly into the pores of your boat. It exists for the owner who has just invested in a major paint correction and wants to lock that perfection in for the long haul, rather than watching it fade by August.
+
+## What This Service Is Designed to Do
+
+Spikes PT is designed to solve the problem of surface degradation caused by UV rays, acid rain, bird droppings, and tree sap. By fusing PTFE to the surface, we create a finish that is chemically inert and incredibly tough.
+
+Success at this level looks like a hull or deck that retains its "just polished" depth for over 150 washes. It eliminates the need for mid-season waxing. While you still need to wash your boat, the grime releases effortlessly because it cannot bond to the Teflon barrier.
+
+## How the Work Is Performed
+
+The application of Spikes PT is a science project, not a labour exercise. It relies on electrostatics, not elbow grease.
+
+**Step 1 — The Purge:** We apply a specialized polarizing lotion. This cleans the pores and, crucially, creates a positive electrostatic charge on the surface.
+
+**Step 2 — The Fusion:** We apply the negatively charged PTFE resins. Because opposites attract, the resin is pulled deep into the pores of the gelcoat, fusing instantly without the need for extreme heat.
+
+**Step 3 — The Cure:** The result is a sealed, armoured surface that is smooth, durable, and ready for the water.
+
+## What Spikes PT Is Not Intended For
+
+Spikes PT is not a correction tool. It has zero abrasive properties. It will not hide scratches or remove oxidation — the surface must already be perfect before this service begins.
+
+**Critical Warning:** Spikes PT will not bond to any unclean or electrostatically uncharged surface. If your boat has old wax, grease, or dust on it, the electrostatic fusion will fail. This service is strictly a protective final step applied to an already-corrected surface.
+
+## Why This Service Matters
+
+Once your gelcoat is corrected, it is immediately vulnerable to the environment. Spikes PT creates the strongest available barrier against the elements. It effectively freezes the condition of your gelcoat, ensuring that the money you spent on polishing isn't wasted by environmental exposure. It stops the clock on aging.
+
+## When This Service Is the Right Choice
+
+**The Fresh Polish:** You have just completed a Hull Polish Level 3, 4, or 5, or a Deck Polish. This is the best protection your renewed surfaces can receive.
+
+**The Dark Hull:** You own a dark blue or black boat that gets scorching hot in the sun. Wax melts; Teflon does not.
+
+**The Long Game:** You want to avoid waxing for the next 12–18 months and keep your boat looking exceptional with minimal effort.
+
+## When You Want Even More
+
+Spikes PT is the ultimate foundation for protection. However, some owners desire an even deeper, "wetter" gloss or extreme water-beading. In that case, Spikes PT can be layered — followed by an SiO2 coating or a high-grade marine wax for the ultimate belt-and-suspenders approach to gloss and protection.
+
+We use Spikes PT because it works. It uses the physics of electrostatic attraction to do what manual buffing cannot — fuse protection into the boat rather than smearing it on top. It is the finish line for a major restoration project, ensuring your boat stays beautiful long after it leaves our care.`,
+  },
+  {
     slug: "deck-polish-level-1",
     title: "Deck Polish Level 1: The Mid-Season Refresh",
     date: "2024-09-15",

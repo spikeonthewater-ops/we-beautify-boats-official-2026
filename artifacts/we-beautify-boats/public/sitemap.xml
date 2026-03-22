@@ -87,6 +87,11 @@
     <priority>0.65</priority>
   </url>
   <url>
+    <loc>https://www.webeautifyboats.com/blog/spikes-pt</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.65</priority>
+  </url>
+  <url>
     <loc>https://www.webeautifyboats.com/blog/deck-polish-level-1</loc>
     <changefreq>monthly</changefreq>
     <priority>0.65</priority>
