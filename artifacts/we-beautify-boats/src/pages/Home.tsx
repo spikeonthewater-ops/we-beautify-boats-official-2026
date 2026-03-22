@@ -54,8 +54,8 @@ export default function Home() {
   return (
     <div className="min-h-screen bg-background">
       <PageMeta
-        title="Spike On The Water | Mobile Boat & Yacht Detailing — Ontario, Canada"
-        description="Ontario's premier mobile yacht & boat detailing. Deck washes, hull polishing, interior detailing, antifouling & more. Serving Toronto, Oakville, Burlington & Hamilton marinas. Call Spike: 416-890-5899."
+        title="Spike On The Water | Mobile Boat & Yacht Detailing in Ontario"
+        description="Mobile yacht & boat detailing across Ontario — deck washes, hull polishing, interior detailing & protection. Workshops & Training Series 100–300. Call Spike: 416-890-5899."
         path="/"
       />
       {/* Hero Section */}

@@ -1,3 +1,4 @@
+import { useEffect } from "react";
 import { motion } from "framer-motion";
 import { Phone, MessageCircle, Clock, MapPin, CalendarClock, ArrowUpRight } from "lucide-react";
 import { useQuote } from "@/context/QuoteContext";
@@ -5,6 +6,17 @@ import PageMeta from "@/components/PageMeta";
 
 export default function Contact() {
   const { openQuote } = useQuote();
+
+  useEffect(() => {
+    const script = document.createElement("script");
+    script.src = "https://square.site/appointments/buyer/widget/fcf51xt73abko4/L06YYAF0XFN9A.js";
+    script.async = true;
+    document.body.appendChild(script);
+    return () => {
+      document.body.removeChild(script);
+    };
+  }, []);
+
   return (
     <div className="pt-32 pb-24 min-h-screen bg-background">
       <PageMeta
