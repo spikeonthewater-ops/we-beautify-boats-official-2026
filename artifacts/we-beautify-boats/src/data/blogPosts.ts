@@ -103,6 +103,54 @@ If your boat was not maintained consistently the previous year and emerges from 
 We believe that your season should begin with excitement, not a chore list. We handle the intense spring preparation deliberately and methodically so you can step away knowing your boat is protected and ready to impress.`,
   },
   {
+    slug: "always-ready-weekly-plan",
+    title: "Always Ready Weekly Plan: Consistent Care for Active Boaters",
+    date: "2025-05-15",
+    category: "Spike's Essential Care Guides",
+    image: "https://static.wixstatic.com/media/2836bb_d448795abee6472f9652158fa2f2f752~mv2.png/v1/fill/w_740,h_493,al_c,q_90,enc_avif,quality_auto/img.png",
+    imageAlt: "Clean, guest-ready boat docked at an Ontario marina on a summer weekend",
+    excerpt: "In the busy marinas of Ontario, a boat left alone for even a few days collects a surprising amount of environmental fallout. This weekly plan is for owners who want to step aboard a clean, welcoming vessel every single time.",
+    content: `In the busy marinas of Ontario, a boat left alone for even a few days collects a surprising amount of environmental fallout. Spiders move in, pollen settles on the non-skid, and the morning dew traps airborne dust right onto your gelcoat.
+
+This weekly plan exists for owners who use their boats constantly and want to step aboard a clean, welcoming vessel every single time — without spending their precious weekend hours scrubbing decks and wiping down counters.
+
+The reality of marina life is that boats are open systems exposed to the elements. If you are entertaining guests regularly or taking the family out every Friday afternoon, you know how quickly the baseline of cleanliness degrades. This service is designed for those who recognize that consistent, routine maintenance is the only way to genuinely enjoy the boating lifestyle without the underlying stress of upkeep.
+
+## What This Service Is Designed to Do
+
+This plan is designed to maintain a consistent baseline of cleanliness across your entire vessel throughout the boating season. It solves the problem of weekend preparation by ensuring that surface dirt, light contamination, and interior dust are managed before they have a chance to settle and bond to your boat.
+
+Success with this plan looks like a vessel that always feels fresh and ready for use — preventing the slow accumulation of grime that eventually forces owners into heavy, aggressive restoration work.
+
+Our process is built on consistency and precision over twenty-four scheduled visits. Every week, a technician performs a Level 1 Deck Wash: a fresh water rinse followed by an eco-friendly detergent scrub focused on high-traffic areas, and a final dry to prevent water spotting.
+
+Inside the cabin, we execute a Level 1 Interior Detailing — dusting visible surfaces, vacuuming the floors and upholstery, and wiping down high-touch areas with mild, interior-safe cleaners.
+
+Once a month, we incorporate a Level 1 Hull Wash to clear away surface salt and dirt down to the waterline. We also apply a high-quality premium marine wax monthly to maintain a smooth, UV-resistant shield across your exposed surfaces.
+
+## What Always Ready Is Not Intended For
+
+This plan is strictly a maintenance protocol, not a restoration service. It is not intended for boats that have heavy, chalky oxidation, deep gelcoat scratching, or neglected interiors dealing with mold, pest intrusion, or deep-set odors.
+
+If your vessel requires wet sanding, compounding, or steam cleaning to be brought back to a functional baseline, those actions must be performed before entering into a weekly maintenance schedule. We do not use aggressive chemicals or heavy machinery during these routine weekly visits.
+
+## Why Skipping Routine Care Is Always More Expensive
+
+Skipping routine maintenance in a marine environment has compounding consequences. When dirt, bird droppings, and mineral deposits are left to bake in the sun, they actively degrade your gelcoat and vinyl. By maintaining a weekly cleaning cadence and a monthly wax schedule, you are actively preserving the structural and cosmetic integrity of your surfaces — extending the lifespan of your vessel's materials and protecting your long-term investment while completely eliminating your personal chore list.
+
+## When This Level Is the Right Choice
+
+You will know this plan is the right choice when you find yourself spending more time cleaning your boat than actually navigating it. It is highly relevant for active boaters, families who treat their vessel like a summer cottage, and owners who frequently host guests and require the boat to present well at a moment's notice. If you have already invested in a major spring restoration and want to lock in those results until the fall haul-out, this is the schedule you need.
+
+## When This Level Is No Longer Enough
+
+There will be times when the weekly routine is no longer enough to handle what the environment or your usage throws at the boat. If you host a massive weekend gathering resulting in deep stains on the carpets, or if you notice your deck starting to dull and hold onto dirt despite the monthly wax, the baseline has shifted. At that point, we will have a calm, transparent conversation about stepping out of the routine to perform a targeted Level 3 Deck Polish or a Level 3 Interior Steam Clean to reset the surfaces before resuming your weekly care.
+
+As with everything we do at We Beautify Boats, our goal is to align our services with your actual needs. We handle the environmental reality of the marina so you can focus entirely on the water.
+
+We work, you play.`,
+  },
+  {
     slug: "bi-weekly-detail-plan",
     title: "Bi-Weekly Detail Plan: Targeted Care for the Busy Boater",
     date: "2025-06-01",
