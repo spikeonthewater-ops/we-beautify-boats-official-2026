@@ -103,6 +103,48 @@ If your boat was not maintained consistently the previous year and emerges from 
 We believe that your season should begin with excitement, not a chore list. We handle the intense spring preparation deliberately and methodically so you can step away knowing your boat is protected and ready to impress.`,
   },
   {
+    slug: "deck-polish-level-1",
+    title: "Deck Polish Level 1: The Mid-Season Refresh",
+    date: "2024-09-15",
+    category: "Spike's Essential Care Guides",
+    image: "https://static.wixstatic.com/media/2836bb_6bb1899645114e18ac94f2a40263e7fc~mv2.png/v1/fill/w_740,h_493,al_c,q_90,enc_avif,quality_auto/img.png",
+    imageAlt: "Dual-action polisher buffing a boat deck with soft foam pad and light hologram-remover polish",
+    excerpt: "By mid-summer, foot traffic, spilled drinks, and regular washing create micro-scratches that dull the gelcoat's reflection. Deck Polish Level 1 is the gentlest touch we offer — removing just 1 to 2 microns to make it sparkle again without cutting into the boat's foundation.",
+    content: `When you look at your boat, it's not just a sleek, shiny surface — it is an intricate stack of invisible layers working together like armour to keep the elements at bay. The outermost shield is the gloss finish gelcoat, typically 100 to 200 microns thick, giving the boat its good looks while keeping water and UV rays out. By mid-summer, foot traffic, spilled drinks, and regular washing can create micro-scratches that dull this delicate top layer.
+
+This service exists for the owner who has already invested in keeping their boat in great shape but wants to maintain that high-gloss finish throughout the entire season. It is a light maintenance polish designed to refresh the appearance of a well-kept deck without aggressive material removal.
+
+## What This Service Is Designed to Do
+
+Washing alone eventually stops delivering that showroom factor because microscopic surface tension and tiny scuffs dull the gelcoat's reflection. Deck Polish Level 1 solves this by gently leveling the finish.
+
+Success at this level looks like a revitalized, mirror-like shine free of light surface hazing. We are only removing 1 to 2 microns of the gelcoat layer — just enough to make it sparkle again without cutting deeply into the boat's foundation. This process also leaves behind a shine-enhancing protective finish to keep your deck looking fresh mid-season.
+
+## How the Work Is Performed
+
+While some older industry terms refer to this as a "hand polish," true consistency requires the right tools. The actual action relies on mechanical precision rather than raw elbow grease.
+
+We use a professional dual-action polisher equipped with a soft foam pad to evenly distribute a light, hologram-remover polish across the deck. The dual-action movement gently works the product into the surface to remove minor scuffs without generating the dangerous heat of a rotary compounding machine. Finally, the surface is meticulously hand-buffed with clean microfibre cloths to remove any remaining residue and reveal a clear, brilliant shine.
+
+## What This Service Is Not Intended For
+
+This is not a restoration service, and it contains no heavy abrasives. If your deck feels chalky to the touch, has a cloudy oxidized appearance, or features deep scratches, this level will not fix it. Deck Polish Level 1 is explicitly excluded from removing oxidation, performing heavy compounding, or executing surface restoration. Applying a light hologram polish to an oxidized deck will not restore the colour — it will simply leave you with a shiny, cloudy surface.
+
+## Why This Level Matters
+
+Your boat's gelcoat is a structural system, and preserving it is crucial. By lightly polishing the deck with a non-aggressive hologram remover, you are maintaining the costly correction work done earlier in the spring without wearing down the 100–200 micron gloss layer unnecessarily. It is a preventative measure that extends the life of your gelcoat and delays the need for heavy, expensive compounding jobs in the future.
+
+## When This Service Is the Right Choice
+
+This is the right choice when the mid-season slump hits. It is perfect for a well-kept vessel that needs a quick touch-up before hosting guests for a big weekend. If you have light shoe marks or minor fender rub that washing won't remove, but the gelcoat is otherwise healthy and free of oxidation, this is the exact service you need.
+
+## When This Service Is No Longer Enough
+
+If the deck has lost its shine entirely, feels rough and dry, or shows visible white chalkiness, a Level 1 polish is no longer enough. The gelcoat requires actual correction to remove the dead material, which typically involves removing 2 to 10 microns of the surface through compounding. At that point, you need to step up to Deck Polish Level 2 to address light oxidation and moderate wear using a fast-cut compound.
+
+We treat polishing as a science of preservation, respecting the intricate layers that make up your boat's finish. Level 1 is the gentlest touch we offer — dual-action tools and microfibers ensuring your protective layers remain intact while looking their absolute best. When you maintain your gelcoat correctly, you protect your investment and ensure your boat always looks exceptional on the water.`,
+  },
+  {
     slug: "epoxy-barrier-coat",
     title: "Epoxy Barrier Coat Application: The Structural Shield",
     date: "2024-10-01",
