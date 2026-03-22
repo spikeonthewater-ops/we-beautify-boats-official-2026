@@ -103,6 +103,60 @@ If your boat was not maintained consistently the previous year and emerges from 
 We believe that your season should begin with excitement, not a chore list. We handle the intense spring preparation deliberately and methodically so you can step away knowing your boat is protected and ready to impress.`,
   },
   {
+    slug: "bi-weekly-detail-plan",
+    title: "Bi-Weekly Detail Plan: Targeted Care for the Busy Boater",
+    date: "2025-06-01",
+    category: "Spike's Essential Care Guides",
+    image: "https://static.wixstatic.com/media/2836bb_35c96a3817ec45ad909a534dc15d548a~mv2.png/v1/fill/w_740,h_493,al_c,q_90,enc_avif,quality_auto/img.png",
+    imageAlt: "Racing sailboat with clean deck and crew preparing for race day",
+    excerpt: "Between Wednesday night club races and weekend regattas, an active race boat takes a beating. This bi-weekly plan separates baseline cosmetic maintenance from your actual race preparation.",
+    content: `Racing a sailboat requires intense focus, functional gear, and a vessel that performs predictably in changing conditions.
+
+Between Wednesday night club races and weekend regattas, an active race boat takes a beating. Non-skid surfaces fill with salt spray, sweat, and shoe scuffs, compromising grip. Below deck, wet sails, damp foul weather gear, and active crew members create a humid environment that slowly degrades the interior.
+
+This bi-weekly plan exists to separate the baseline cosmetic and environmental maintenance from your actual race preparation. A racing yacht is a highly tuned system, and your team's time on the dock should be spent tensioning the rig, inspecting halyards, and discussing tactics — not scrubbing the deck or wiping down the nav station.
+
+## What a Bi-Weekly Detail Is Designed to Do
+
+This plan is designed to intercept the environmental and usage-based buildup that occurs during an active racing schedule before it compromises safety or performance. It solves the problem of degraded deck traction and hull drag by applying a consistent cleaning protocol every fourteen days. Success with this plan looks like a boat with clean, grippy non-skid, a fresh interior that doesn't smell like damp spinnakers, and a foul line free of speed-robbing algae.
+
+## How the Work Is Performed: Our Crew vs. Your Crew
+
+We divide the responsibilities clearly so your team can focus on winning.
+
+**What Our Crew Does:** Over twelve scheduled visits, our technicians execute a Level 2 Deck Wash every two weeks. We focus heavily on mechanical agitation with soft-bristle brushes and eco-friendly detergents to extract dirt, oils, and salt from your non-skid, restoring maximum traction for your trimmers and bowman.
+
+Inside the cabin, we perform a Level 2 Interior Detailing by deep cleaning cupboards, vacuuming the floors, wiping down hard surfaces, and managing the inevitable moisture buildup.
+
+Once a month, we perform a Level 1 Hull Wash to clear slime and algae down to the waterline, followed by a monthly marine wax application to seal the gelcoat and protect against UV degradation.
+
+**What Your Crew Does:** With the baseline cleaning handled, your crew is free to focus entirely on performance. You manage the sail inventory, service the winches, tune the rig, and perform mechanical checks. We do not touch your running rigging, electronics, or racing hardware.
+
+## What This Service Is Not Intended For
+
+This plan is strictly a preventative maintenance routine, not a structural repair, rigging, or deep restoration service. It is not intended for boats requiring heavy gelcoat wet sanding, blister remediation on the hull, or deep mold abatement in the cabin. We do not organize your sail bags, wash your sails, or service your winches.
+
+If your hull requires aggressive wet sanding for a mirror-like racing bottom to minimize drag, that is a separate Level 5 Hull Polish service that must be completed before entering this maintenance schedule. We do not use harsh chemicals that could compromise the integrity of your racing hardware or lines.
+
+## Why Performance Depends on a Clean Boat
+
+In sailing, fractions of a knot and split-second maneuvers determine outcomes. If your crew slips during a tack because the deck is greasy with baked-in sunscreen and environmental fallout, or if algae along the waterline creates unnecessary hydrodynamic drag, performance suffers.
+
+By maintaining a bi-weekly cleaning cadence, we protect the functional surfaces of the boat. The clarity this provides is simple: we handle the environmental degradation so your team can operate safely, efficiently, and with confidence.
+
+## When This Level Is the Right Choice
+
+You will know this plan is the right choice when your crew is spending their valuable pre-race prep time hosing down the deck instead of discussing weather routing. It is highly relevant for competitive teams who race heavily on weekends or specific weeknights, but leave the boat idle in the marina during the remaining days.
+
+## When This Level Is No Longer Enough
+
+There will be times when a bi-weekly schedule cannot keep up with an intense racing calendar. If your team is participating in multiple offshore events, week-long regattas, or heavy-weather racing that introduces excessive salt and water below deck, the baseline will shift.
+
+We understand that a racing yacht is a piece of sporting equipment first and foremost. Our job is to manage the environmental reality of the marina so your team can focus entirely on the racecourse.
+
+We work, you play.`,
+  },
+  {
     slug: "simple-serenity-monthly-plan",
     title: "Simple Serenity Monthly Plan: Essential Deep Cleaning and Protection",
     date: "2025-06-15",
