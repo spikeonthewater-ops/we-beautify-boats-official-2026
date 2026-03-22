@@ -172,6 +172,80 @@ We've spent 28+ years — since 1998 — taking boats from neglected to beautifu
 Call 416-890-5899 to discuss scheduling for the season.`,
   },
   {
+    slug: "spikes-marine-station-another-look",
+    title: "Taking Another Look at Spike's Marine Station",
+    date: "2023-06-15",
+    category: "Boat Ownership Intelligence",
+    image: "https://static.wixstatic.com/media/2836bb_1151b6a6724d47bd9a3f8a20223bad3a~mv2.png/v1/fill/w_740,h_493,al_c,q_90,enc_avif,quality_auto/img.png",
+    imageAlt: "Spike's Marine Station approaching view — a community hub for environmental stewardship and sustainable marine innovation",
+    excerpt: "I thought the name of this blog should be 'If I had 5 Million Dollars' — but I only know a couple hundred multi-millionaires and none of them have given a second look at what we could create together. So this look at Spike's Marine Station is focused on the greater community we can build to serve the world's most essential resource: the water.",
+    content: `I thought the name of this blog should be "If I had 5 Million Dollars" — but I only know a couple hundred multi-millionaires and none of them have given a second look at what we could create together.
+
+So this look at Spike's Marine Station will be focused on the greater community we can create to serve the world's most essential resource: the water.
+
+I am under the delusion that a good idea, multiplied by the aptitude to be of exceptional service, with 25+ years of experience cultivating opportunities for all — new and old — in the recreational boating community, equates to something worth building.
+
+## A Vision That Requires Community
+
+Spike's Marine Station is more than just a marine hub. It's a movement toward environmental stewardship, cultural respect, and sustainable marine innovation. Building, launching, and operating this station will require a dedicated team, each playing a crucial role in making the vision a reality.
+
+Here's a look at the roles we'll need over the next five years to bring Spike's Marine Station to life.
+
+## Development and Construction Team (Years 1–2)
+
+**Total Team Size: 12–17 People**
+
+This team covers essential roles for the first two years, balancing personnel to oversee, build, and support modular construction and eco-compliance, along with safety and logistical operations.
+
+**Project Manager (1)** — Coordinates overall planning, budget, and construction activities to ensure all phases align with sustainability and safety goals.
+
+**Marine Engineer (1–2)** — Designs and oversees the floating infrastructure, focusing on eco-friendly and resilient construction.
+
+**Environmental Impact Specialist (1)** — Conducts environmental assessments and monitors potential impacts on local waterways and ecosystems.
+
+**Site Crew and Installers (6–10)** — Handles on-site assembly, modular setup, anchoring, and secure installation of each station component.
+
+**Construction Supervisor (1)** — Ensures construction activities are on schedule and meet quality standards, working closely with the Project Manager.
+
+**Health and Safety Officer (1)** — Oversees safety protocols to ensure compliance with health standards during construction and installation.
+
+**Supply Chain and Logistics Coordinator (1)** — Manages the timely arrival of materials, equipment, and modular units to the site.
+
+## Operations and Administration Team (Years 3–5)
+
+**Total Team Size: 7–10 People**
+
+This team ensures coverage for administration, operations, visitor services, and community outreach as the station opens to the public.
+
+**Station Operations Manager (1)** — Leads overall station operations, manages day-to-day activities, and coordinates departments to ensure smooth functioning.
+
+**Administrative Assistant (1–2)** — Provides administrative support, manages bookings and inquiries, and assists in scheduling events and station services.
+
+**Marine Services Coordinator (1)** — Acts as the main contact for boaters, brokers, and marine professionals, managing dock rentals, marine services, and industry collaborations.
+
+**Community Engagement Officer (1)** — Promotes Spike's programs, organizes community outreach, builds local partnerships, and develops educational programs.
+
+**Visitor Services Staff (1–2)** — Handles visitor check-ins, provides customer service, and ensures a positive experience for everyone who arrives at the station.
+
+## The Ripple Effect
+
+The skills and values at Spike's Marine Station don't stop at the dock — they ripple outward. Each team member becomes an ambassador of sustainability, sharing what they've learned with their families, friends, and wider community. This knowledge-sharing creates a cycle of positive environmental impact, as practical skills in water stewardship, sustainable practices, and marine care are paid forward into daily life.
+
+SMS will cultivate a community of environmentally conscious individuals who contribute to a healthier planet.
+
+## My Day One Mission
+
+"To cultivate opportunities in the marine environment through education and invigoration of all those old and new to the marine industry."
+
+*— Spike (photo by Mikka Jacino)*
+
+---
+
+Instead of waiting for support on building Spike's Marine Station, I built the Boaters Operating System. The vision is alive. The work continues.
+
+Call 416-890-5899 to learn more about what we're building — on the water and beyond.`,
+  },
+  {
     slug: "lonely-boats-what-level-4",
     title: "Lonely Boats — What Level 4 Can Do",
     date: "2023-07-01",
