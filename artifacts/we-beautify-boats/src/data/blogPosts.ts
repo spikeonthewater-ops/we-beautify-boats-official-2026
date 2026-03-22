@@ -103,6 +103,44 @@ If your boat was not maintained consistently the previous year and emerges from 
 We believe that your season should begin with excitement, not a chore list. We handle the intense spring preparation deliberately and methodically so you can step away knowing your boat is protected and ready to impress.`,
   },
   {
+    slug: "reset-routine-monthly-plan",
+    title: "The Reset Routine: Monthly Deep Deck Detailing",
+    date: "2025-06-01",
+    category: "Spike's Essential Care Guides",
+    image: "https://static.wixstatic.com/media/2836bb_c7bc9096f2c441db81c750523d9f94d1~mv2.png/v1/fill/w_740,h_493,al_c,q_90,enc_avif,quality_auto/img.png",
+    imageAlt: "Boat deck being deep cleaned during monthly maintenance service",
+    excerpt: "A boat deck left exposed to the marina environment for weeks at a time accumulates a serious layer of environmental fallout. The Reset Routine exists for owners who want a thorough, inch-by-inch reset once a month.",
+    content: `A boat deck left exposed to the marina environment for weeks at a time accumulates a serious layer of environmental fallout. Spiders, bird droppings, airborne dust, and organic runoff bond to the non-skid and settle deep into the lockers. By the time thirty days have passed, a quick spray-down is completely ineffective.
+
+The Reset Routine Monthly Plan exists for owners who do not need weekly care, but want a thorough, inch-by-inch reset once a month so their vessel is immaculate when they do arrive.
+
+## What a Monthly Deck Detailing Service Is Designed to Do
+
+This plan solves the problem of monthly grime buildup. Rather than letting dirt compound into permanent stains, this scheduled intervention provides a complete top-side reset.
+
+Success realistically looks like a bright, uniform deck, clean open lockers, and clear vinyl — restoring the brilliant appearance of the vessel so you can confidently host guests or enjoy a peaceful weekend on the water.
+
+Over the course of six scheduled visits during the season, our technicians perform a Deck Wash Level 3. We apply a strong, eco-friendly cleaning solution to all deck surfaces, followed by a meticulous inch-by-inch scrubbing of the non-skid. We open and clean the interior and exterior faces of all deck lockers, scrub the vinyl seating, and wash the windows. The process concludes with a thorough power rinse and drying to prevent water spots.
+
+## What This Service Is Not Intended For
+
+This plan strictly provides deep cleaning — it is not a restoration or polishing service. It explicitly excludes surface correction, heavy oxidation removal, wet sanding, or structural repairs. If your deck gelcoat is chalky, faded, or heavily scratched, this Level 3 wash will remove the dirt, but it will not restore the oxidized gelcoat underneath.
+
+## Why Monthly Is the Right Interval for Many Owners
+
+Skipping a deep monthly deck detailing wash allows contaminants like mold, tree sap, and bird droppings to permanently etch into your gelcoat and vinyl. Consistent monthly removal halts this chemical attack, preserving the integrity of your deck materials and significantly extending the life of your marine upholstery.
+
+## When This Level Is the Right Choice
+
+This plan is the right choice for owners who visit their boat a few times a month and want to arrive to a vessel that looks pristine and well-cared-for. You will know it is right when the deck requires more than a simple rinse, but is not neglected enough to need a disaster-level intervention.
+
+## When This Level Is No Longer Enough
+
+If the deck has accumulated extreme, disaster-level contamination like heavy moss, deep lichen, or years of baked-on sap, a standard Level 3 wash is no longer enough. At that stage, you require the aggressive fallout removal of our Level 4 Deck Wash before returning to this monthly maintenance routine.
+
+Maintaining a beautiful deck requires a structured approach to deep cleaning. We handle the heavy scrubbing so you can spend your weekends actually enjoying your boat.`,
+  },
+  {
     slug: "lifestyle-lift-bi-weekly-plan",
     title: "Lifestyle Lift Bi-Weekly Plan",
     date: "2025-05-15",
