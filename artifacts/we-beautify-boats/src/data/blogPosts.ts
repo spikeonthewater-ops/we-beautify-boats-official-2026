@@ -103,6 +103,42 @@ If your boat was not maintained consistently the previous year and emerges from 
 We believe that your season should begin with excitement, not a chore list. We handle the intense spring preparation deliberately and methodically so you can step away knowing your boat is protected and ready to impress.`,
   },
   {
+    slug: "erect-canvas-installation-removal",
+    title: "Erect Canvas: Installation & Removal",
+    date: "2025-02-15",
+    category: "Spike's Essential Care Guides",
+    image: "https://static.wixstatic.com/media/2836bb_e42eaffce03948a0a49982f5ad9ea3ce~mv2.png/v1/fill/w_740,h_493,al_c,q_90,enc_avif,quality_auto/img.png",
+    imageAlt: "Boat canvas weather enclosure being professionally installed for the season",
+    excerpt: "Canvas systems are complex puzzles of heavy fabric, clear isinglass, and tight zippers. Our Erect Canvas service handles your boat's weather enclosure correctly, securely, and without the physical hassle of wrestling with it yourself.",
+    content: `Canvas systems are complex puzzles of heavy fabric, clear isinglass, and tight zippers. Putting them back up in the spring or safely taking them down in the fall can be an incredibly frustrating process, especially when the material has contracted in storage.
+
+Our Erect Canvas service exists for owners who want their boat's weather enclosure handled correctly, securely, and without the physical hassle of wrestling with it themselves. Whether we are setting up for the summer or taking down for the winter, our technicians handle the materials with care. In the springtime, putting the canvas back up can be a difficult puzzle to solve — we take on this task so you can trust your boat is securely protected from the elements.
+
+## What the Erect Canvas Service Is Designed to Do
+
+This service is designed to provide full handling of your boat's standard canvas rig or custom winter cover. It solves the problem of improper tensioning that can lead to wind chafe, water pooling, or weather-related damage. Success realistically looks like a securely fitted enclosure that effectively protects your vessel, or a neatly folded and staged canvas set ready for safe off-season storage.
+
+We treat your canvas as a critical structural defense system for your vessel. During installation, our technicians work methodically to align panels, tension the fabric properly, and secure all fasteners. When removing canvas at the end of the season, we take it down carefully, condition the zippers, and lay the materials flat. We then fold and stage the canvas properly so that mold and mildew do not accumulate during the hot and cold cycles of winter storage.
+
+## What This Service Is Not Intended For
+
+Honesty is our policy: this is strictly an installation and removal service for standard canvas systems. It explicitly excludes canvas cleaning, stitching repairs, or modifications of any kind. If your canvas is severely damaged, we will safely stage it for you, but we do not perform physical repairs. Furthermore, highly complex rigs or excessively oversized custom winter covers fall outside standard parameters and may require an additional custom assessment.
+
+## Why Proper Canvas Handling Extends the Life of Expensive Materials
+
+Leaving your boat exposed or improperly enclosed invites immediate environmental damage. Conversely, putting away canvas while it is folded improperly guarantees mold and mildew growth over the winter. By having professionals execute the setup or takedown, you ensure your canvas fits securely — minimizing chafe and tearing — which ultimately extends the usable life of these expensive marine materials.
+
+## When This Service Is the Right Choice
+
+This service is the right choice during your spring commissioning phase when you need the enclosure erected, or in the fall just before your winter shrink wrap goes on. It is ideal when you simply want to avoid the physical frustration of installing the canvas puzzle yourself.
+
+## When This Service Is No Longer Enough
+
+Once your canvas is securely erected, the protected surfaces underneath will likely need attention after a long layup. Erecting the canvas only builds the shield — it does not clean the environment inside it. At that point, the baseline shifts, signaling a handoff to a Deck Wash or Interior Detailing to complete your vessel's preparation.
+
+Handling marine canvas requires patience and a gentle hand. We take pride in solving the puzzle properly so you can trust your enclosure to do its job safely.`,
+  },
+  {
     slug: "teak-deck-maintenance",
     title: "Teak Deck Maintenance",
     date: "2025-03-01",
