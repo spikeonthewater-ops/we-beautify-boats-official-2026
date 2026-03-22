@@ -216,7 +216,7 @@ export default function Workshops() {
               Most detailing is learned through trial and error — usually at the expense of the boat's finish. Our workshops provide a Certificate of Practical Completion that marks the difference between guesswork and mastery.
             </p>
             <p className="text-gray-300 leading-relaxed mb-8">
-              We provide the tools, the chemistry, and 30 years of documented IP. You provide the venue. Workshops are seasonal and fill quickly — reserve your date before the season begins.
+              We provide the tools, the chemistry, and 30 years of documented IP. You provide the venue. A <strong>$100 CAD reservation</strong> secures your date — workshops are seasonal and fill quickly.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <a
