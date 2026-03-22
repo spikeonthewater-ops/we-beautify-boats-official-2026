@@ -103,6 +103,58 @@ If your boat was not maintained consistently the previous year and emerges from 
 We believe that your season should begin with excitement, not a chore list. We handle the intense spring preparation deliberately and methodically so you can step away knowing your boat is protected and ready to impress.`,
   },
   {
+    slug: "deck-polish-level-5",
+    title: "Deck Polish Level 5: Wet Sanding & Ultimate Restoration",
+    date: "2024-12-01",
+    category: "Spike's Essential Care Guides",
+    image: "https://static.wixstatic.com/media/2836bb_caea8ba6eb0a4349afb178e111c0a0b5~mv2.png/v1/fill/w_740,h_493,al_c,q_90,enc_avif,quality_auto/img.png",
+    imageAlt: "Boat deck being wet sanded and restored to a mirror-like finish",
+    excerpt: "When a deck has spent years baking in the sun with deep pitting and severe oxidation, even industrial-grade compounds stop working. Deck Polish Level 5 is the absolute pinnacle — wet sanding the gelcoat flat before rebuilding a flawless, mirror-like finish.",
+    content: `When a boat deck has spent years baking in the sun, accumulating deep scratches, heavy pitting, and severe oxidation, standard polishing compounds completely stop working. The gelcoat becomes so deeply compromised and textured that even the most aggressive wool pads and industrial compounds will simply slide over the damage.
+
+Deck Polish Level 5 is the absolute pinnacle of surface restoration. When this level is prescribed, it is not just an optional upgrade or a casual choice — it is a firm affirmation of the pre-service condition. The deck is exquisitely complicated, requiring a direct, abrasive route to pull the beautiful finish back out of the fiberglass.
+
+## What This Service Is Designed to Do
+
+This service is designed to solve the problem of profound surface failure. Success at this level is a flawless, mirror-like finish on a deck that most would assume needs to be completely repainted.
+
+To achieve this, we must physically level the gelcoat. By sanding away the heavily degraded top layer — typically removing 5 to 15 microns of dead material — we bypass the deep oxidation and scratches entirely to reach the pure, healthy foundation underneath.
+
+## How the Work Is Performed
+
+This is a highly physical, multi-stage process that requires immense precision, patience, and a deep understanding of fiberglass thickness.
+
+**Stage 1 — The Wet Sand:** We begin with staged wet sanding, using progressively finer grits of sandpaper combined with water. The water controls the heat and prevents the paper from loading up with material as we safely and evenly flatten the surface imperfections.
+
+**Stage 2 — The Heavy Cut:** Once the surface is perfectly flat and uniformly frosted from the sanding, we introduce high-speed buffers and professional-grade coarse compounds to pull the color and clarity back to the surface.
+
+**Stage 3 — The Refinement:** We move through multiple stages of fine polishing to refine the microscopic scratches left by the compounding stage, creating a brilliant reflection.
+
+**Stage 4 — The Protection:** The freshly exposed, perfectly smooth gelcoat is then sealed with a high-gloss protective layer to guard against environmental wear.
+
+## What This Service Is Not Intended For
+
+While Level 5 is the ultimate surface correction, it is not structural fabrication. If the gelcoat has already worn completely through to the fiberglass mat from years of neglect, sanding will not put the gelcoat back. Furthermore, this service is exclusively for smooth gelcoat and painted surfaces — we do not use wet sanding techniques on textured non-skid areas. It also will not fix shattered fiberglass or deep structural gouges.
+
+## Why Deck Polish Level 5 Matters
+
+This is the last stop before a complete, massively expensive re-gelcoating or repainting of your deck. It physically removes the compromised, porous layer of the boat's armor, saving the vessel's asset value. For boats preparing for high-profile events or premium resale, this level of intervention is the only way to restore true showroom brilliance.
+
+## When This Service Is the Right Choice
+
+**The Prescription:** You've had a professional assessment confirming that compounding (Level 3 or 4) simply won't cut deep enough to remove the severe pitting, "orange peel" texture, or deep scratches.
+
+**The Rescue:** The boat has been severely neglected for years, and the deck looks completely chalky, stained, and dead to the touch.
+
+**The Showpiece:** You are preparing the vessel for premium resale and need the highest possible level of cosmetic care.
+
+## When This Service Is No Longer Enough
+
+As Level 5 is the absolute highest level of cosmetic restoration we offer, if the damage exceeds what wet sanding can safely level — such as widespread delamination, massive structural gouges, or areas where the gelcoat is completely missing — surface correction is no longer viable. At that point, the boat requires a fiberglass specialist for structural repair or a full shipyard repaint.
+
+We treat wet sanding with the utmost respect because we are physically altering the surface profile of your boat. It is a demanding, time-intensive process that requires deep expertise, but the transformation is nothing short of incredible. When the work is done, your deck is reborn — perfectly smooth and ready for the ultimate protection.`,
+  },
+  {
     slug: "exterior-wood-refinishing",
     title: "Exterior Wood Refinishing: Structured Marine Restoration",
     date: "2024-12-15",
