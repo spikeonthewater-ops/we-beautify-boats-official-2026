@@ -103,6 +103,52 @@ If your boat was not maintained consistently the previous year and emerges from 
 We believe that your season should begin with excitement, not a chore list. We handle the intense spring preparation deliberately and methodically so you can step away knowing your boat is protected and ready to impress.`,
   },
   {
+    slug: "engine-bay-cleaning",
+    title: "Engine Bay Cleaning: Environmental Preservation & Diagnostic Clarity",
+    date: "2025-01-15",
+    category: "Spike's Essential Care Guides",
+    image: "https://static.wixstatic.com/media/2836bb_cb081ef3db10498abd73349e12adf221~mv2.png/v1/fill/w_740,h_493,al_c,q_90,enc_avif,quality_auto/img.png",
+    imageAlt: "Clean boat engine bay after professional degreasing and environmental cleaning",
+    excerpt: "Over time, bilges accumulate a toxic soup of oil, fuel residue, grease, and belt dust. Left unchecked, that buildup is an environmental hazard waiting to be pumped overboard — and a diagnostic blindspot that hides failing components.",
+    content: `The engine bay is the beating heart of your vessel, but it is also a magnet for grime. Over time, bilges and engine compartments accumulate a toxic soup of oil, fuel residue, grease, and belt dust. Left unchecked, this buildup isn't just an eyesore — it is an environmental hazard waiting to be pumped overboard by your automatic float switch.
+
+This service exists for owners who understand that true boat care extends below the deck boards. It is for those who want to ensure strict environmental compliance and maintain a spotless mechanical space that makes identifying new engine issues instantly possible.
+
+## What This Service Is Designed to Do
+
+This service is designed to thoroughly extract the heavy contaminants hiding in the darkest parts of your vessel. We use environmentally safe marine degreasers to break down the buildup so it can be safely removed and contained — rather than leaking into Ontario's waterways.
+
+Success here is a bright, clean engine bay that looks cared for and smells neutral. More importantly, it turns your engine room into a clean diagnostic space. When the bilge is spotless, a single drop of fresh oil, a pink drip of coolant, or a dusting of black rubber from a failing belt becomes glaringly obvious — allowing you or your mechanic to catch small issues before they become catastrophic failures at sea.
+
+## How Engine Bay Cleaning Is Performed
+
+We treat the engine bay with extreme caution, as it houses sensitive electronics and air intakes. This is not a place for aggressive, high-pressure power washing.
+
+Depending on the configuration — from single outboards to twin inboards — we utilize delicate steam cleaning to safely melt away stubborn grease from the fiberglass surfaces. We apply specialized, eco-friendly degreasers to break down the oil. Finally, we execute controlled rinsing and meticulous containment practices to extract the contaminated water, ensuring zero pollutants are discharged into the marina. Where applicable, we also polish the exterior surfaces of outboard cowlings.
+
+## What This Service Is Not Intended For
+
+It is absolutely critical to understand that this is a cosmetic and environmental cleaning service, not a mechanical service. We do not turn wrenches, change oil filters, adjust belts, or repair leaking gaskets. If your engine is actively hemorrhaging oil, this service will only temporarily clean the mess — you must hire a certified marine mechanic to fix the underlying failure. Additionally, we cannot clean areas that are physically obstructed by fuel tanks, exhaust hoses, or the engines themselves.
+
+## Why Engine Bay Cleaning Matters
+
+Pumping oily bilge water into the lake is highly damaging to the marine ecosystem and can result in severe fines and a loss of marina privileges. Beyond environmental compliance, a dirty, grease-caked engine bay masks critical mechanical warnings. If everything in the compartment is already covered in black sludge, you will never see the slow drip of a failing raw water pump or a cracked hydraulic line until the system completely fails.
+
+## When This Service Is the Right Choice
+
+**Spring Commissioning:** You want to clear out any winterizing fluids, condensation, or general grime that accumulated during storage.
+
+**The Used Boat Reset:** You have just purchased a pre-owned vessel and need to establish a clean baseline to monitor the engine's health going forward.
+
+**Post-Maintenance:** A mechanic has recently completed a major engine repair and left behind greasy handprints, residual oil, and old coolant in the bilge.
+
+## When This Service Is No Longer Enough
+
+If the engine bay is flooded with inches of standing, heavily contaminated water mixed with raw fuel, or if there is severe structural damage and delamination in the fiberglass stringers beneath the engine, a standard environmental cleaning is no longer enough. At that stage, you require a specialized hazardous waste pump-out service or a fiberglass shipwright to repair the structural integrity of the hull.
+
+The spaces no one sees are often the most important to keep clean. By maintaining a spotless engine bay, you are protecting the lake, respecting your marina's environmental standards, and giving yourself the diagnostic clarity needed to boat safely. We take the dirty work out of the equation so you can turn the key with confidence.`,
+  },
+  {
     slug: "wet-sanding-spots-precision-gelcoat-correction",
     title: "Wet Sanding Spots: Precision Gelcoat Correction",
     date: "2025-02-01",
