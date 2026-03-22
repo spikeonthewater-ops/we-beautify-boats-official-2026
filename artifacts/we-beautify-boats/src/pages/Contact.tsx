@@ -79,9 +79,9 @@ export default function Contact() {
               </div>
             </button>
 
-            {/* AI Assistant Card */}
+            {/* WhatsApp Card */}
             <a 
-              href="https://chatgpt.com/g/g-ZXCuleyCZ-we-beautify-boats-by-spike"
+              href="https://wa.me/14168905899"
               target="_blank"
               rel="noopener noreferrer"
               className="group flex items-center p-8 bg-cyan-500 rounded-3xl hover:bg-cyan-400 transition-colors shadow-xl shadow-cyan-500/20"
@@ -89,9 +89,9 @@ export default function Contact() {
               <div className="flex-1">
                 <div className="flex items-center gap-3 mb-3">
                   <MessageCircle className="w-6 h-6 text-white" />
-                  <h3 className="text-2xl font-display font-bold text-white">Ask Spike AI</h3>
+                  <h3 className="text-2xl font-display font-bold text-white">WhatsApp Spike</h3>
                 </div>
-                <p className="text-cyan-50 font-medium">Digital customer service representative showcasing advanced support solutions.</p>
+                <p className="text-cyan-50 font-medium">Message Spike directly on WhatsApp — quick answers, no hold times.</p>
               </div>
               <div className="w-12 h-12 rounded-full bg-white/20 flex items-center justify-center shrink-0 group-hover:scale-110 transition-transform">
                 <ArrowUpRight className="w-6 h-6 text-white" />

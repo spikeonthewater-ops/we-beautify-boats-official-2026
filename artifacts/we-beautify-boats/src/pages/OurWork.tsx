@@ -294,18 +294,41 @@ export default function OurWork() {
                 transition={{ delay: i * 0.07 }}
                 className="group rounded-3xl overflow-hidden bg-white border border-gray-100 shadow-md hover:shadow-xl transition-shadow duration-300 flex flex-col"
               >
-                {/* Image */}
-                <div className="relative h-56 overflow-hidden bg-marine-900 shrink-0">
-                  <img
-                    src={p.img}
-                    alt={p.imgAlt}
-                    className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105 opacity-90 group-hover:opacity-100"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-marine-900/60 to-transparent" />
-                  <span className="absolute top-4 left-4 text-5xl font-display font-black text-white/20 leading-none select-none">
-                    {p.num}
-                  </span>
-                </div>
+                {/* Image — linked to YouTube when available */}
+                {p.youtubeUrl ? (
+                  <a
+                    href={p.youtubeUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="relative h-56 overflow-hidden bg-marine-900 shrink-0 block"
+                    aria-label={`Watch ${p.title} on YouTube`}
+                  >
+                    <img
+                      src={p.img}
+                      alt={p.imgAlt}
+                      className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105 opacity-90 group-hover:opacity-100"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-marine-900/60 to-transparent" />
+                    <span className="absolute top-4 left-4 text-5xl font-display font-black text-white/20 leading-none select-none">
+                      {p.num}
+                    </span>
+                    <div className="absolute bottom-3 right-3 bg-red-600 rounded-full p-1.5 shadow-lg">
+                      <Youtube className="w-4 h-4 text-white" />
+                    </div>
+                  </a>
+                ) : (
+                  <div className="relative h-56 overflow-hidden bg-marine-900 shrink-0">
+                    <img
+                      src={p.img}
+                      alt={p.imgAlt}
+                      className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105 opacity-90 group-hover:opacity-100"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-marine-900/60 to-transparent" />
+                    <span className="absolute top-4 left-4 text-5xl font-display font-black text-white/20 leading-none select-none">
+                      {p.num}
+                    </span>
+                  </div>
+                )}
 
                 {/* Body */}
                 <div className="p-6 flex flex-col flex-1">

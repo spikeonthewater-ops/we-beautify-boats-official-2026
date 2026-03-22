@@ -41,7 +41,7 @@ const SERVICES = [
   },
   {
     title: "Protections",
-    desc: "Ceramic coatings, sealants, and wax protection systems matched to your usage.",
+    desc: "Antifouling coatings, Spike's PT protection, and wax systems matched to your usage.",
     icon: ShieldCheck,
     href: "/protections",
     image: "hero-bg.png" // reusing as abstract background
@@ -207,12 +207,12 @@ export default function Home() {
               <ClipboardList className="w-5 h-5" /> Reserve Assessment
             </button>
             <a
-              href="https://chatgpt.com/g/g-ZXCuleyCZ-we-beautify-boats-by-spike"
+              href="https://wa.me/14168905899"
               target="_blank"
               rel="noopener noreferrer"
               className="px-8 py-4 rounded-full bg-white hover:bg-gray-50 text-marine-900 font-bold text-lg shadow-lg transition-transform hover:-translate-y-1"
             >
-              Chat with Spike AI
+              WhatsApp Spike
             </a>
           </div>
         </div>

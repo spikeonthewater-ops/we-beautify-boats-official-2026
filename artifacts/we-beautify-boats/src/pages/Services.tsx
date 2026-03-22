@@ -76,7 +76,7 @@ const SERVICES_LIST = [
     subtitle: "Long-term Value Preservation",
     desc: "Advanced marine surface protection systems matched to your usage patterns. We apply industry-leading sealants and coatings to defend against the elements.",
     features: [
-      "Ceramic coating applications",
+      "Antifouling coatings & long-term surface protection",
       "Marine-grade polymer sealants",
       "Teak oiling and sealing",
       "UV resistance treatments"
