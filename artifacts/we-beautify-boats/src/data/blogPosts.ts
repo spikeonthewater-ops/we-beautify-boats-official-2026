@@ -103,6 +103,52 @@ If your boat was not maintained consistently the previous year and emerges from 
 We believe that your season should begin with excitement, not a chore list. We handle the intense spring preparation deliberately and methodically so you can step away knowing your boat is protected and ready to impress.`,
   },
   {
+    slug: "teak-deck-maintenance",
+    title: "Teak Deck Maintenance",
+    date: "2025-03-01",
+    category: "Spike's Essential Care Guides",
+    image: "https://static.wixstatic.com/media/2836bb_2b8eab35b11a499d909fa1a04ae9d101~mv2.png/v1/fill/w_740,h_493,al_c,q_90,enc_avif,quality_auto/img.png",
+    imageAlt: "Teak deck being cleaned and oiled to restore its natural amber colour",
+    excerpt: "A teak deck is a beautiful, living material system — but the marine environment is unforgiving. UV rays, salt spray, and foot traffic pull the natural oils out of the wood, leaving it gray and parched. We step in before it reaches the point of no return.",
+    content: `A teak deck is a beautiful, living material system, but marine environments are unforgiving. Constant exposure to UV rays, salt spray, and foot traffic pulls the natural oils out of the wood. Over time, that rich, warm honey-brown color is bleached away, leaving the wood looking weathered, parched, and gray.
+
+This service exists for owners who understand that maintaining teak is essential to preserving both the elegance and the structural integrity of their deck. It is designed to intervene before the wood degrades to the point of needing aggressive, irreversible mechanical sanding. We step in to rehydrate and protect this finite resource so your deck feels healthy underfoot and remains resilient against the elements.
+
+## What This Service Is Designed to Do
+
+This service is designed to reverse the graying effect and properly nourish the wood. It solves the problem of dried-out, unprotected teak that is vulnerable to water intrusion and sun damage.
+
+Success realistically looks like the natural amber tone being fully restored, the grain feeling smooth and hydrated, and the deck actively repelling water rather than absorbing it.
+
+## How Teak Deck Maintenance Is Performed
+
+Because teak is sensitive, we rely on a controlled, chemical process rather than aggressive physical scrubbing that can permanently damage the soft fibers.
+
+First, our technicians use eco-friendly, teak-safe cleaners to extract embedded dirt, salt, and environmental fallout from the grain. Next, we apply a professional brightener to neutralize the cleaner and restore the wood's natural tone. Finally, once the deck is properly prepared and completely dry, we carefully apply premium marine-grade teak oil — working methodically with the grain direction to ensure the oil penetrates deeply, providing essential UV and moisture protection.
+
+## What This Service Is Not Intended For
+
+Honesty is our policy: this is strictly a cosmetic maintenance and preservation service for intact teak. It explicitly excludes structural teak repairs, replacing missing or peeling black deck caulking seams, or heavy mechanical sanding.
+
+Furthermore, if your teak currently has failing, peeling varnish or a hard clear-coat applied by a previous owner, this chemical cleaning service will not strip it off.
+
+## Why Routine Teak Maintenance Protects a Finite Asset
+
+Every piece of teak on your boat is a finite, expensive asset. If you let it dry out completely, the grain raises, the wood begins to splinter, and the decking eventually fails. Regular cleaning and oiling prevent moisture intrusion and stop the sun from permanently breaking down the fibers.
+
+Maintaining the oil barrier is the single most cost-effective way to avoid the incredibly expensive reality of having a shipwright manufacture and install a brand-new deck.
+
+## When This Service Is the Right Choice
+
+This service is the perfect choice when your deck has lost its warm color and started to look silver or gray, but the wood itself is still physically smooth, flat, and the black caulking seams are fully intact. It is an ideal annual or semi-annual reset to keep your boat looking its best and the wood properly hydrated.
+
+## When This Service Is No Longer Enough
+
+If your teak is deeply grooved, completely spongy, or if there are layers of old, bubbling varnish flaking off the surface, a simple chemical clean and oiling is no longer sufficient. At that point, the baseline of the wood has shifted, requiring an honest handoff to our Exterior Wood Refinishing service to physically sand, level, and restore the timber back to a healthy, bare state.
+
+Teak decks require respect and routine care. By consistently replacing the oils that the marine environment takes away, we ensure your deck remains a beautiful, durable foundation for your time on the water.`,
+  },
+  {
     slug: "brightwork-polishing-conditioning",
     title: "Brightwork Polishing & Conditioning: The Jewelry of Your Boat",
     date: "2025-03-15",
