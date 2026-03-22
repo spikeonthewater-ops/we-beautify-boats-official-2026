@@ -92,6 +92,11 @@
     <priority>0.65</priority>
   </url>
   <url>
+    <loc>https://www.webeautifyboats.com/blog/power-of-pre-booking</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.65</priority>
+  </url>
+  <url>
     <loc>https://www.webeautifyboats.com/blog/if-i-had-a-trillion-dollars</loc>
     <changefreq>monthly</changefreq>
     <priority>0.65</priority>

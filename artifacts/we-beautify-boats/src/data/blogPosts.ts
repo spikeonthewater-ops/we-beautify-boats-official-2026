@@ -172,6 +172,54 @@ We've spent 28+ years — since 1998 — taking boats from neglected to beautifu
 Call 416-890-5899 to discuss scheduling for the season.`,
   },
   {
+    slug: "power-of-pre-booking",
+    title: "The Power of Pre-Booking Boat Services: Securing Your Best Boating Season Ever",
+    date: "2023-09-15",
+    category: "Boat Ownership Intelligence",
+    image: "https://static.wixstatic.com/media/2836bb_bf2cda59a5b647db938baa41b573698f~mv2.png/v1/fill/w_740,h_493,al_c,q_90,enc_avif,quality_auto/img.png",
+    imageAlt: "Spike preparing for a full spring season of boat detailing — the case for pre-booking your spot early",
+    excerpt: "Running a small service business after COVID has been a test of resilience, grit, and passion. Many businesses didn't make it. But that's not who I am. That's not Spike. Pre-booking your boat services with We Beautify Boats isn't just a smart decision — it's a vital one.",
+    content: `Running a small service business after COVID has been a test of resilience, grit, and passion. Many businesses didn't make it, choosing to fold under the weight of ever-changing economic and social conditions. But that's not who I am. That's not Spike. For me, it's always been a choice: to serve or not to serve. I choose to serve. I choose to make awesome happen, no matter the challenges.
+
+## Why Pre-Booking Matters
+
+Pre-booking your boat services with We Beautify Boats isn't just a smart decision — it's a vital one.
+
+**1. Ensuring Excellence in Service**
+
+Post-COVID, maintaining the resources to deliver exceptional service has only become harder. Recruiting and training crew members takes time and commitment. With pre-booked services, I can hire the right people, train them to deliver above-expectation care, and ensure every boat owner receives top-tier service.
+
+**2. Guaranteeing Your Spot in the Spring Rush**
+
+Between March and May, the demand for boat services skyrockets as everyone rushes to get their vessels ready. Pre-booking guarantees your place in the schedule, so you're not left scrambling for help when the season begins.
+
+**3. Supporting Passionate, Hard Work**
+
+I've built this business on integrity and grit. I don't cut corners. I don't let fear dictate my path. Pre-booking allows me to continue operating with the care and dedication you expect while expanding my ability to train and serve more boat owners.
+
+**4. Growing a Community of Better Humans**
+
+Boating isn't just a pastime — it's a way to connect with nature, family, and yourself. Every sunrise on the water makes us better humans. By trusting us with your boat, you're helping me create a ripple effect of joy and connection that reaches beyond the dock. And when you tell your neighbours about We Beautify Boats, you're growing this community of passionate boat owners who value quality and care.
+
+## What's Included in the Launch Ready Plan
+
+When you pre-book the Launch Ready Plan, your boat will be fully prepped for the season. Here's what we deliver:
+
+- Deep cleaning to remove winter grime
+- Precision scrubbing to restore your deck's brilliance
+- Level 3 Interior Detailing: deep clean all interior surfaces for a fresh, inviting cabin; sanitize and deodorize for a spotless, pleasant-smelling space; polish to remove light oxidation and restore shine; apply a durable protective coating to maintain a sleek finish all season
+
+## A Partnership for Excellence
+
+When you pre-book, you're not just preparing your boat for the water — you're helping me build something bigger. With every commitment, I can better train our crew, refine our systems, and expand our ability to serve the community of boat owners who trust us.
+
+We work. You play. That's not just a tagline; it's a lifestyle. And it's only possible because of your trust and commitment.
+
+Help us grow, and we'll make your boats glow. Together, we'll make awesome happen on the water.
+
+Call 416-890-5899 to secure your spot.`,
+  },
+  {
     slug: "if-i-had-a-trillion-dollars",
     title: "If I Had a Trillion Dollars",
     date: "2023-10-01",
