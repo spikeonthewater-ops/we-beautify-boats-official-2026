@@ -103,6 +103,58 @@ If your boat was not maintained consistently the previous year and emerges from 
 We believe that your season should begin with excitement, not a chore list. We handle the intense spring preparation deliberately and methodically so you can step away knowing your boat is protected and ready to impress.`,
   },
   {
+    slug: "wax-service",
+    title: "Wax Service: Classic Protection & Seasonal Shine",
+    date: "2024-08-01",
+    category: "Spike's Essential Care Guides",
+    image: "https://static.wixstatic.com/media/2836bb_3ac2a61244b34ac3a48d2b371513a818~mv2.png/v1/fill/w_740,h_493,al_c,q_90,enc_avif,quality_auto/img.png",
+    imageAlt: "Premium marine wax being applied and hand-buffed to a high-gloss boat hull finish",
+    excerpt: "While new ceramic technologies grab the headlines, high-quality marine wax remains the time-tested baseline for protection. This service creates a sacrificial barrier between your vessel's finish and the harsh reality of the Ontario boating season — sun, salt, and bird droppings.",
+    content: `In the marine environment, the sun is an aggressive enemy. UV rays constantly attack gelcoat, drying out the pores and turning vibrant surfaces chalky and dull. While new ceramic technologies grab the headlines, high-quality marine wax remains the time-tested baseline for protection.
+
+This service is designed for the boat owner who understands that "naked" gelcoat is vulnerable gelcoat. It provides a sacrificial barrier between your vessel's finish and the harsh reality of the Ontario boating season — sun, salt, and bird droppings.
+
+## What This Service Is Designed to Do
+
+The primary function of our Wax Service is preservation, not correction. It seals the surface pores to prevent moisture intrusion and UV degradation. By applying a layer of premium marine wax, we create a hydrophobic (water-repelling) surface.
+
+Success here looks like a boat that sheds water instantly. It feels slick to the touch and has a deep, wet gloss. This layer makes future wash-downs significantly easier because dirt sits on the wax rather than embedding into the gelcoat.
+
+## How the Work Is Performed
+
+We treat wax application as a discipline, ensuring even coverage without the dreaded swirl marks often left by hasty applications.
+
+**Stage 1 — Application:** We apply a premium marine wax using specialized applicator pads to ensure uniform coverage across the hull or deck.
+
+**Stage 2 — Curing:** We allow the product to haze correctly, bonding to the surface.
+
+**Stage 3 — The Buff:** We hand-buff or machine-buff (using soft finishing pads) to remove the residue, revealing a high-gloss, sealed finish.
+
+## What This Service Is Not Intended For
+
+This is the most critical misunderstanding in boat maintenance: **wax is not polish.**
+
+This service contains no abrasives. It will not remove scratches, oxidation, chalkiness, or dullness. If you wax a dull boat, you will simply have a shiny dull boat. If your gelcoat is oxidized, applying wax seals that oxidation in — it does not fix it.
+
+## Why Wax Matters
+
+Skipping protection is the fastest way to devalue a boat. Once gelcoat loses its seal, it oxidizes exponentially faster. Regular waxing — typically spring and mid-season — acts as a sunscreen. It sacrifices itself so your gelcoat doesn't have to. It extends the time between expensive heavy compounding jobs.
+
+## When This Service Is the Right Choice
+
+**The Finish Is Good:** Your gelcoat is already smooth, shiny, and free of oxidation — perhaps you've just had a hull or deck polish done.
+
+**The Routine:** You want an affordable, proven solution to get you through the next few months of the season.
+
+**The Wash:** You want your weekly washes to be faster and more effective, with dirt sitting on the wax rather than bonding to the gelcoat.
+
+## When This Service Is No Longer Enough
+
+If you run your hand along the hull and it feels dry or chalky, or if the reflection is blurry, wax is not enough. You need a Hull Polish Level 2 or 3 to remove the dead gelcoat first. Furthermore, if you are looking for multi-season durability or extreme chemical resistance, consider upgrading to our SiO2 Coating (Permanon) or Spikes PT (PPS Technology) options.
+
+Wax is the honest workhorse of marine protection. It doesn't claim to be magic, but when applied correctly to a well-prepared surface, it offers the classic shine and protection that defines a well-kept vessel. We apply it with care because we know it's the only thing standing between your investment and the elements.`,
+  },
+  {
     slug: "sio2-coating",
     title: "SiO2 Coating: The Rain Day Advantage",
     date: "2024-08-15",
