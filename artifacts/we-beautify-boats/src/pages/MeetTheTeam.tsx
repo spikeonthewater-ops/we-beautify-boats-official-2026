@@ -106,7 +106,7 @@ export default function MeetTheTeam() {
               <p className="text-muted-foreground text-sm mb-8 flex items-center gap-2">
                 <MapPin className="w-4 h-4 text-cyan-500" /> Ontario, Canada &nbsp;·&nbsp;
                 <Anchor className="w-4 h-4 text-cyan-500" /> Mobile Marine Detailing &nbsp;·&nbsp;
-                <Clock className="w-4 h-4 text-cyan-500" /> Since 2012
+                <Clock className="w-4 h-4 text-cyan-500" /> Since 1998
               </p>
 
               <div className="space-y-5 text-[17px] leading-relaxed text-foreground/80">
