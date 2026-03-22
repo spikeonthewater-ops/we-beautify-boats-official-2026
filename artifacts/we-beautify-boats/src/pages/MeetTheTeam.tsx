@@ -82,9 +82,9 @@ export default function MeetTheTeam() {
             >
               <div className="aspect-[4/5] rounded-3xl overflow-hidden shadow-2xl">
                 <img
-                  src={`${import.meta.env.BASE_URL}images/team-header.jpeg`}
+                  src={`${import.meta.env.BASE_URL}images/spike-portrait.jpg`}
                   alt="Spike — Founder of We Beautify Boats"
-                  className="w-full h-full object-cover object-center"
+                  className="w-full h-full object-cover object-top"
                 />
               </div>
               {/* Stats badge */}
