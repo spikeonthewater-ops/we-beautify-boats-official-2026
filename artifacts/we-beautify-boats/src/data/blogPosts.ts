@@ -103,6 +103,66 @@ If your boat was not maintained consistently the previous year and emerges from 
 We believe that your season should begin with excitement, not a chore list. We handle the intense spring preparation deliberately and methodically so you can step away knowing your boat is protected and ready to impress.`,
   },
   {
+    slug: "interior-detailing-level-4",
+    title: "Interior Detailing – Level 4: Mold Remediation, Ozone Treatment, and Intervention",
+    date: "2024-03-01",
+    category: "Spike's Essential Care Guides",
+    image: "https://static.wixstatic.com/media/2836bb_4e09d712e12a4ceaa56858c29f73f5c7~mv2.png/v1/fill/w_740,h_493,al_c,q_90,enc_avif,quality_auto/img.png",
+    imageAlt: "Boat cabin interior in Level 4 remediation with crew in PPE performing industrial ozone and steam abatement",
+    excerpt: "There comes a point where a boat interior stops being \"messy\" and starts being unsafe. Interior Level 4 is our intervention service — for vessels that are chemically or biologically compromised. If you open the companionway and the smell hits you like a wall, or you see fuzzy growth on the headliners, routine detailing is no longer sufficient. You need remediation.",
+    content: `There comes a point where a boat interior stops being "messy" and starts being unsafe. This usually happens after long-term storage, a water leak that went unnoticed, or an unwanted winter guest — like a raccoon or muskrat — made your cabin their home.
+
+Interior Level 4 is our intervention service. It is designed for vessels that are chemically or biologically compromised. If you open the companionway and the smell hits you like a wall, or if you see fuzzy growth on the headliners and bulkheads, routine detailing protocols are no longer sufficient. You need remediation.
+
+## What This Service Is Designed to Do
+
+This service is a biological reset. Its primary goal is to neutralize threats — specifically mold, mildew, pest contamination, and the deep-set odors they create.
+
+We are not just trying to make the boat look pretty; we are trying to make it healthy. Success at Level 4 means we have killed the mold spores, removed the pest waste, and neutralized the odor at a molecular level so the vessel is safe to inhabit again.
+
+## How the Work Is Performed
+
+Interior Level 4 is an industrial process. Our crew typically wears full PPE — Tyvek suits and respirators — because we are disturbing hazardous particulates.
+
+**Step 1 — Containment & Removal:** We physically remove organic buildup and any heavily contaminated items that cannot be salvaged.
+
+**Step 2 — Deep Steam & Enzyme Treatment:** We use high-temperature steam combined with specialized enzyme cleaners that digest biological residue rather than just masking it. We treat carpets, upholstery, vinyl, and go deep into lockers and bilges where contamination hides.
+
+**Step 3 — Cabinetry Detailing:** We open every drawer and cupboard to treat the dark spaces where odors and spores linger long after the visible surface looks clean.
+
+**Step 4 — Ozone Shock Treatment:** Once the surfaces are cleaned, we deploy industrial ozone generators. This saturates the interior with ozone (O₃), which oxidizes bacteria and mold spores in the air and in hard-to-reach crevices that no brush or chemical can physically contact. Ozone then reverts to clean O₂. Odor is eliminated at a molecular level — without perfumes or masking agents.
+
+## What This Service Is Not Intended For
+
+Level 4 is a cleaning and sanitization service, not a restoration of rotted materials. We can kill the mold on a bulkhead, but if the water intrusion has turned the wood into pulp, cleaning cannot bring the structural integrity back.
+
+Similarly, while we treat stains aggressively, fabrics that have been permanently dyed by mildew or rust over years may remain discolored. In these cases, we make the surface sanitary — even if the aesthetic damage cannot be reversed.
+
+## Why This Level Matters
+
+Mold and pest waste are respiratory hazards. Ignoring a musty smell means you are breathing active spores every time you sleep on the boat.
+
+Furthermore, biological damage spreads. Mold eats organic materials — leather, wood, cotton. Stopping it now preserves the remaining value of the vessel's interior. This is often the critical step required before listing a neglected boat for sale, or before truly enjoying a "new-to-you" purchase that was left sitting for too long.
+
+## When This Service Is the Right Choice
+
+**The Barn Find:** You bought a boat that hasn't been opened in two or more years.
+
+**The Leak:** A hatch leaked all winter, and the V-berth is covered in black or green spots.
+
+**The Pest:** You found evidence of mice, raccoons, or muskrats — droppings or nesting material.
+
+**The Smell:** The interior odor is persistent and cannot be aired out, no matter how long the hatches stay open.
+
+## When This Level Is No Longer Enough
+
+Level 4 is the end of the line for cleaning. If we perform this service and the materials are falling apart — carpet coming up in clumps, plywood bulkheads soft to the touch — you have moved beyond detailing into refit and construction. At that stage, the interior components need to be removed and replaced by a shipwright or upholsterer.
+
+Recovering a neglected boat is one of the most satisfying things we do. There is a specific relief in turning a hazmat zone back into a comfortable family cruiser. We bring the equipment and the chemistry to do it safely — so you can breathe easy on the water.
+
+Call us at 416-890-5899 to arrange an in-person assessment. We assess boats in any season, including winter storage, so you know exactly what you are dealing with before spring arrives.`,
+  },
+  {
     slug: "hull-wash-level-1",
     title: "Hull Wash Level 1: Routine Care for Mineral and Soap Runoff",
     date: "2024-04-01",
