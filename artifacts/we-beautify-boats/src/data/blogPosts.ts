@@ -103,6 +103,70 @@ If your boat was not maintained consistently the previous year and emerges from 
 We believe that your season should begin with excitement, not a chore list. We handle the intense spring preparation deliberately and methodically so you can step away knowing your boat is protected and ready to impress.`,
   },
   {
+    slug: "ai-advisor",
+    title: "The We Beautify Boats AI Advisor: Professional Standards in Your Pocket",
+    date: "2024-06-15",
+    category: "Boat Ownership Intelligence",
+    image: "https://static.wixstatic.com/media/2836bb_986c728fc74d45308f48d9987b3c8063~mv2.jpg/v1/fill/w_740,h_493,al_c,q_90,enc_avif,quality_auto/img.jpg",
+    imageAlt: "We Beautify Boats AI Marine Care Advisor interface showing diagnostic service recommendations",
+    excerpt: "Most boat owners guess at what they need. Is that dull hull just dirt, or is it oxidation? Guessing leads to over-spending on things you don't need, or under-spending and watching your boat degrade. We built the Marine Care Advisor to close that gap — our entire professional framework, digitized.",
+    content: `Owning a boat is freedom, but maintaining one is complicated. Most owners guess at what they need. Is that dull hull just dirt, or is it oxidation? Do you need a wash or a cut-and-polish? Guessing leads to over-spending on things you don't need, or under-spending and watching your boat degrade.
+
+We built the Marine Care Advisor because I can't be on every dock at once. We took our entire professional framework — the exact rules, exclusions, and service levels used in the field — and trained an AI on them. It's not a generic chatbot; it's a standard-bearer. It helps you identify if you are looking at a Level 1 problem or a Level 4 disaster before you book.
+
+However, education isn't execution. The AI helps you understand the situation, but it cannot verify the risk or do the work. That requires a human. This tool is the bridge to the in-person assessment, ensuring that when we do meet, we are speaking the same language.
+
+## What the AI Advisor Is Designed to Do
+
+In the marine industry, the gap between what a boat owner sees and what a professional knows can be expensive. You might see a "dull" hull; we see heavy oxidation requiring a multi-stage correction. You might see "green slime"; we see a biological bond requiring specific enzyme cleaners.
+
+The We Beautify Boats AI Advisor was created to close this gap. We have digitized our entire service library — from Deck Wash Level 1 to Hull Polish Level 5 — into an interactive tool. This isn't about generic boating advice; it is about applying our specific, battle-tested standards to your vessel's condition. It allows you to stop guessing and start diagnosing.
+
+This tool is a diagnostic engine built to:
+
+- **Identify Condition:** Match your boat's symptoms (e.g., "chalky gelcoat," "black streaks") to the correct Service Level.
+- **Clarify Scope:** Explain exactly what is included in a service and, more importantly, what is excluded.
+- **Prevent Errors:** Stop you from booking a wax service for a boat that needs compounding, or a wash for a boat that needs restoration.
+
+Success means you understand why your boat needs a specific service before you ever speak to a human.
+
+## How It Works: Technical Capabilities
+
+This isn't a generic chatbot — it is a domain-specific system adapted to our framework. When you engage with the Advisor, you are accessing a structured logic engine.
+
+**Context-Aware Dialogue:** It maintains a multi-turn conversation to diagnose vessel conditions based on your descriptions — distinguishing between "dullness" and "chalky oxidation," for example.
+
+**Structured Document Interpretation:** It accesses and cross-references our proprietary service matrices, pricing structures, and exclusion lists.
+
+**Conditional Logic Reasoning:** It applies "if/then" frameworks based on service dependencies — for example, "If Bottom Prep Level 2 is selected, antifouling application protocols apply."
+
+The Advisor is strictly confined to the We Beautify Boats service library. It does not guess outside of this scope. It understands the complete service ladder:
+
+- Deck Wash: Levels 1–4 (Routine to Disaster/Mold Remediation)
+- Hull Wash: Levels 1–3 (Dust to Tannin/Acid Decontamination)
+- Interior Detailing: Levels 1–4 (Basic Wipe to Ozone/Mold Intervention)
+- Hull Polish: Levels 1–5 (Refresh to Wet Sanding/Correction Extreme)
+- Bottom Prep: Levels 1–4 (including Class 4 Laser Removal)
+
+## Why This Tool Matters
+
+Guessing is expensive. Booking the wrong service leads to frustration — either because the result wasn't what you hoped for (under-servicing) or because you paid for more than you needed (over-servicing).
+
+By using the Advisor, you gain clarity. You understand that oxidation requires cutting, not just waxing. You understand that mold requires remediation, not just cleaning. It respects your budget by ensuring it is applied to the right problem.
+
+## When to Use It
+
+Use the Advisor right now — before you book your spring launch, before you request a mid-season wash, and definitely before you attempt to sell your boat. It eliminates uncertainty and educates you on professional prep requirements, saving time during the actual on-site evaluation.
+
+## When the AI Is No Longer Enough
+
+The Advisor gives you a diagnosis, but it cannot give you a guarantee. For that, you need eyes on the boat.
+
+Once you have a general idea of what you need, the next step is the in-person assessment — a paid evaluation ($250 CAD) where we verify the condition, measure the oxidation, check the bottom paint adhesion, and build a binding service plan. The AI gets you in the ballpark; Spike gets you on the schedule.
+
+Call or text Spike directly at 416-890-5899 to book your professional verification.`,
+  },
+  {
     slug: "bottom-prep-level-4",
     title: "Bottom Prep Level 4: The $1.2 Million Laser Solution",
     date: "2024-07-01",
