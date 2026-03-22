@@ -202,7 +202,7 @@ Our workshops move beyond basic cleaning. We dive into the technical intellectua
 
 **Yacht Club "Owner's Day"** — for Private Owners. Practical DIY skills, tool safety, and seasonal maintenance. Take the knowledge home and apply it yourself.
 
-**The Restoration Masterclass** — for Advanced Technicians. Wet sanding, spot repairs, and ceramic coating application for experienced hands operating at the highest level.
+**The Restoration Masterclass** — for Advanced Technicians. Wet sanding, spot repairs, and Spike's PT surface protection application for experienced hands operating at the highest level.
 
 ## Why Book a Spike Workshop?
 

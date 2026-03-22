@@ -111,7 +111,7 @@ const FORMATS = [
   {
     name: "The Restoration Masterclass",
     audience: "Advanced Technicians",
-    focus: "Wet sanding, spot repairs, and ceramic coating application. For experienced hands ready to operate at the highest level.",
+    focus: "Wet sanding, spot repairs, and Spike's PT surface protection application. For experienced hands ready to operate at the highest level.",
     tag: "Advanced",
     color: "bg-marine-900",
   },
