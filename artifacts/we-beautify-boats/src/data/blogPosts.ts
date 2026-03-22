@@ -103,6 +103,46 @@ If your boat was not maintained consistently the previous year and emerges from 
 We believe that your season should begin with excitement, not a chore list. We handle the intense spring preparation deliberately and methodically so you can step away knowing your boat is protected and ready to impress.`,
   },
   {
+    slug: "hull-polish-level-5-wet-sanding",
+    title: "This Is a HUGE Effort: Hull Polish Level 5 | Wet Sanding",
+    date: "2025-07-01",
+    category: "Spike's Essential Care Guides",
+    image: "https://static.wixstatic.com/media/2836bb_62b1baff65184cad8b7105f78a1f526d~mv2.png/v1/fill/w_740,h_493,al_c,q_90,enc_avif,quality_auto/img.png",
+    imageAlt: "Hull being wet sanded through progressive grits during Level 5 restoration",
+    excerpt: "When decades of harsh sun, salt, and neglect push gelcoat to the brink of failure, standard machine compounding is no longer safe or effective. Hull Polish Level 5 is the final intervention — physical wet sanding before it's too late.",
+    content: `Gelcoat is an incredibly resilient system, but decades of harsh sun, salt, and neglect can push it to the brink of failure. When a boat is left unprotected for years, the surface does not just lose its shine — it physically degrades, forming a thick, chalky crust of dead material.
+
+For hulls suffering from extreme oxidation and deep surface scratches, standard machine compounding is no longer safe or effective. Heavy rotary buffers alone generate too much heat when trying to cut through layers this thick, which can permanently burn or warp the surface.
+
+Hull Polish Level 5 is our most comprehensive restoration service, designed specifically to rescue severely degraded gelcoat through physical leveling — bringing it back from the edge of structural failure.
+
+## What Hull Polish Level 5 | Wet Sanding Is Designed to Do
+
+This service solves the problem of extreme surface damage that lower levels of compounding simply cannot touch. By physically leveling the gelcoat with water and abrasives first, we safely remove severe oxidation and deep scratches without relying on aggressive machine heat. Success at this ultimate tier realistically looks like a flawless, mirror-like finish that restores the hull to a like-new condition, completely halting the cycle of decay.
+
+We begin with a meticulous, staged wet sanding process. Our technicians carefully work across the hull using progressively finer grits of sandpaper and water. This manual step safely levels deep imperfections and removes the dead, porous gelcoat layer.
+
+Once the surface is uniformly flat and smooth, we transition to a multi-stage machine polishing process. Using high-speed professional buffing machines, we start with coarse compounds to remove the fine sanding marks, and finish with fine polishes to build absolute clarity and a high-gloss finish.
+
+## What This Service Is Not Intended For
+
+It is critical to establish the boundaries of cosmetic restoration. Hull Polish Level 5 strictly excludes structural hull repairs, blister remediation, or gelcoat reconstruction. If your hull has deep gouges that penetrate entirely through the gelcoat into the raw fiberglass mat, wet sanding cannot replace the missing material. We do not perform structural fiberglass patching or repainting during this service.
+
+## Why This Is the Right Intervention — and Why Timing Matters
+
+If severe oxidation and deep scratches are left untreated, the highly porous gelcoat will actively draw in moisture, inevitably leading to osmotic blistering or complete system failure. Rescuing the original gelcoat through staged wet sanding is the final, crucial intervention available. It saves owners from the immense cost and downtime of a complete hull repaint or structural re-gelcoating project.
+
+## When This Level Is the Right Choice
+
+This service is the right choice for owners preparing a heavily neglected vessel for premium resale, high-profile events, or those who have recently purchased a project boat. The visual cues are severe: the hull will have a completely flat, white, chalky surface that rubs off heavily on your hand, alongside scratches deep enough to cast shadows but not yet exposing raw fiberglass.
+
+## When This Level Is No Longer Enough
+
+Hull Polish Level 5 is the absolute highest level of cosmetic correction we offer. If our in-person inspection reveals that the gelcoat is already too thin to safely sand, or if the hull is plagued with structural osmosis blisters and exposed fiberglass, cosmetic restoration is no longer an option. At that point, the vessel requires a dedicated fiberglass repair facility for a complete bottom strip, epoxy barrier coating, or full topside repainting.
+
+Restoring a heavily neglected hull is an intense, highly technical process. We respect the physical limits of your vessel's materials and apply this extreme level of correction only when it is the exact intervention required to save the finish.`,
+  },
+  {
     slug: "reset-routine-monthly-plan",
     title: "The Reset Routine: Monthly Deep Deck Detailing",
     date: "2025-06-01",
