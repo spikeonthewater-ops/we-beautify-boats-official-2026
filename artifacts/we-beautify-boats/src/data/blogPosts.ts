@@ -103,6 +103,62 @@ If your boat was not maintained consistently the previous year and emerges from 
 We believe that your season should begin with excitement, not a chore list. We handle the intense spring preparation deliberately and methodically so you can step away knowing your boat is protected and ready to impress.`,
   },
   {
+    slug: "hull-wash-level-2",
+    title: "Hull Wash Level 2: Manual Scrub for Scum, Bugs & Black Streaks",
+    date: "2024-04-20",
+    category: "Spike's Essential Care Guides",
+    image: "https://static.wixstatic.com/media/2836bb_fe2338285a1940cf8b3bc60ff818a979~mv2.png/v1/fill/w_740,h_493,al_c,q_90,enc_avif,quality_auto/img.png",
+    imageAlt: "Hull being hand-scrubbed with Universal Stone paste to remove black streaks, scum line, and bug splatter",
+    excerpt: "Every rainfall or deck wash gives your boat a lesson in gravity. Water flows from the superstructure down the topsides, carrying oxidation and pollutants that dry into heavy black vertical streaks. Hull Wash Level 2 is the manual intervention — three targeted products, applied by hand — to reset the surface when a simple rinse no longer cuts it.",
+    content: `Every rainfall or deck wash gives your boat a lesson in gravity. Water naturally flows from the highest point of the superstructure down the hull topsides to the lake below. If your deck gelcoat is chalky or your stainless steel is unprotected, that runoff isn't clean water — it's a slurry of oxidation and pollutants that dries into heavy black vertical streaks.
+
+Hull Wash Level 2 is the manual intervention required when this buildup, along with lake organics, becomes too tough for a simple rinse. While a perfectly maintained vessel should rarely need more than a monthly Level 1 wash, reality often gets in the way. When bugs bake onto the bow, fenders leave rubber marks, and the waterline grows a green beard, this service provides the elbow grease needed to reset the surface.
+
+## What This Service Is Designed to Do
+
+This service restores the hygiene of your hull by physically removing contaminants that have bonded to the surface. It targets three things:
+
+**Black Streaks:** The dark runoff lines caused by oxidized gelcoat or dirty brightwork on the deck.
+
+**Scum Line:** The green algae and slime ring that forms at the waterline over the season.
+
+**Dock Rash & Bugs:** Black rubber transfer from fenders and dried insect splatter baked onto the bow.
+
+Success at this level means the hull is clean to the touch. The roughness of the algae is gone, the black streaks are erased, and the white gelcoat is free of organic debris.
+
+## How the Work Is Performed
+
+This is a 100% manual process. We access the hull via our tender — the White Pearl — or from the dock using floats to ensure we can safely reach the waterline on both sides.
+
+**The Exfoliation:** We start with Universal Stone, a biodegradable clay-based paste. We work this in by hand to exfoliate the hard calcium shell of algae and loosen stubborn black streaks without scratching the wax beneath.
+
+**The Wash:** We follow up with Tug Scrub, a specialized cleaner that lifts the remaining organic residue and cleanses the pores of the gelcoat.
+
+**The Spot Treatments:** For black rubber fender marks, we use acetone on a terry cloth to safely dissolve the rubber transfer. For stubborn yellowing or organic stains above the waterline that resist scrubbing, we apply Easy Eco Hull Cleaner — non-acidic — to dissolve them safely without burning the surface.
+
+## What This Service Is Not Intended For
+
+Level 2 removes what is on the gelcoat, not what is wrong with the gelcoat.
+
+**Tannin Stains:** Deep orange or brown staining absorbed into the pores of the gelcoat requires the acid treatment of Level 3. Manual scrubbing cannot neutralize tannins.
+
+**Oxidation:** If the hull itself is chalky and dull, cleaning it will simply reveal a clean, dull boat. That requires polishing — not washing.
+
+## Why This Level Matters
+
+These contaminants are not just unsightly — they are symptoms of other issues. Black streaks indicate that your decks or rails need polishing. Algae holds moisture against your wax, accelerating its breakdown.
+
+By manually removing this buildup, you stop the cycle of degradation. However, frequent need for Level 2 is a sign that your vessel needs a fresh coat of wax or ceramic protection to repel dirt rather than hold it.
+
+## When This Service Is the Right Choice
+
+If you see black vertical lines running down your hull, a green ring at the waterline, or a bug graveyard on the bow — and a simple hose-down doesn't move it — you need the manual agitation of this service.
+
+## When This Service Is No Longer Enough
+
+If we scrub the hull and a deep yellow or brown stain remains, the gelcoat has absorbed tannins from the water. Mechanical scrubbing has reached its limit. To fix that, we need to chemically neutralize the stain using the stronger treatments found in Hull Wash Level 3.`,
+  },
+  {
     slug: "bottom-prep-level-1",
     title: "Bottom Prep Level 1: Basic Bottom Cleaning & Stain Removal",
     date: "2024-05-01",
