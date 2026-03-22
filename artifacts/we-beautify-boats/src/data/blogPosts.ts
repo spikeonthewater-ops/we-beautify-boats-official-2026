@@ -172,6 +172,46 @@ We've spent 28+ years — since 1998 — taking boats from neglected to beautifu
 Call 416-890-5899 to discuss scheduling for the season.`,
   },
   {
+    slug: "annual-interior-steam-sanitization",
+    title: "5 Ways to Win in Boat Ownership with Annual Interior Steam Sanitization",
+    date: "2023-08-15",
+    category: "Interior & Onboard Living",
+    image: "https://static.wixstatic.com/media/2836bb_374543c9767b4f9bb3db6358dd719f99~mv2.png/v1/fill/w_740,h_493,al_c,q_90,enc_avif,quality_auto/img.png",
+    imageAlt: "Interior of a boat cabin being steam sanitized to eliminate mold, moisture, and odour before the season begins",
+    excerpt: "Few things are more horrifying for a boat owner than stepping aboard in May to find your sanctuary riddled with black mold. The culprit? Last year's unchecked moisture, unvisited spaces, and a calculated risk that didn't pan out. The short answer to this nightmare is simple: Annual Interior Steam Sanitization.",
+    content: `Few things are more horrifying for a boat owner than stepping aboard in May to find your sanctuary riddled with black mold. The immediate realization hits hard: no one can safely enter without significant intervention. The culprit? Last year's unchecked moisture, unvisited spaces, and a calculated risk that didn't pan out.
+
+The short answer to this nightmare is simple: Annual Interior Steam Sanitization.
+
+Let us tackle the issue before it becomes a catastrophic problem and restore your boat to its best condition.
+
+## The Danger of Going It Alone
+
+For those considering a DIY approach to annual steam sanitization, think carefully. Mold, pests, and moisture-related damage are not just unsightly — they're dangerous. Anyone aboard could be severely compromised by the unintended ecosystem you've created below decks.
+
+By having We Beautify Boats conduct a full steam sanitization annually, you mitigate these risks, prevent infestations, and ensure your boat remains a safe, welcoming space. We address not only the visible issues but also the hidden ones — unnoticed moisture accumulation that could wreak havoc over time.
+
+## How to Stay Ahead of It
+
+The best way to prevent unpleasant spring discoveries is consistent engagement with your vessel throughout the season and into storage. Here's how to stay proactive:
+
+**Use your boat regularly.** Staying connected with your boat's condition and needs is itself a form of maintenance. A boat that's used is a boat that's monitored.
+
+**Make frequent visits.** Even when you're not on the water, regular inspection walks — checking for early signs of moisture, pests, or wear — catch small problems before they become expensive ones.
+
+**Plan overnight adventures.** Spending time aboard as a living space reveals issues that a daytime visit never will — condensation patterns, odours, areas that don't dry properly.
+
+**Engage actively with your vessel.** Keep it in top shape and ensure a seamless boating experience. Complacency is how boats fall into neglect.
+
+**Book annual steam sanitization.** This is the professional reset that ties all of it together — removing what daily use and storage accumulate, sanitizing what you can't reach, and giving you a clean, verified baseline for the season ahead.
+
+## Boat Ownership Is a Responsibility
+
+Maintaining a ready-to-sail condition should always be your goal. We're here to supplement your efforts and help identify potential issues before they escalate. The key is to ask for help — and to do so regularly.
+
+Call 416-890-5899 to book your annual steam sanitization and ensure another incredible, worry-free season on the water.`,
+  },
+  {
     slug: "a-full-day-task",
     title: "A Full Day Task: The Case for Reorganizing How We Present Our Services",
     date: "2023-09-01",
