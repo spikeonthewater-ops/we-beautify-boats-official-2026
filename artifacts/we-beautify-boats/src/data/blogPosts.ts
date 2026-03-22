@@ -103,6 +103,73 @@ If your boat was not maintained consistently the previous year and emerges from 
 We believe that your season should begin with excitement, not a chore list. We handle the intense spring preparation deliberately and methodically so you can step away knowing your boat is protected and ready to impress.`,
   },
   {
+    slug: "bottom-prep-level-3",
+    title: "Bottom Prep Level 3: Correcting Bad Antifouling Before We Protect",
+    date: "2024-06-01",
+    category: "Spike's Essential Care Guides",
+    image: "https://static.wixstatic.com/media/2836bb_6bf8a3178af849fe80923a9ac5853c93~mv2.jpg/v1/fill/w_740,h_493,al_c,q_90,enc_avif,quality_auto/img.jpg",
+    imageAlt: "Boat hull with failed antifouling paint being aggressively sanded to a stable base before new protection",
+    excerpt: "Year after year, owners slap a new coat of bottom paint over the old one without checking the foundation. The result isn't protection — it's failure. Bottom Prep Level 3 exists because painting over a compromised surface is a waste of money. We correct the substrate so your new antifouling actually performs.",
+    content: `In the fresh waters of Ontario, bottom paint is often treated like a band-aid. Year after year, owners — or untrained yard hands — slap a new coat over the old one without checking the foundation.
+
+The result isn't protection; it's failure.
+
+Bottom Prep Level 3 (BP03) exists because painting over a compromised surface is a waste of money. When paint peels, flakes, or creates a "moon surface" of craters, it is proof that the previous layers were not prepped properly. At this level, we stop adding to the problem. We aggressively correct the substrate so your new antifouling actually performs.
+
+## What This Service Is Designed to Do
+
+This service solves the problem of adhesion failure and mechanical interference.
+
+When bottom paint is applied over slime, loose paint, or unprepared gelcoat, it inevitably lifts. This creates drag and exposes your hull to osmosis. Furthermore, lazy painting leads to "paint creep" — where layers build up on moving parts until they seize.
+
+Success at this level means the flaking is removed, the craters are feathered out, and the hull is mechanically sound. We are establishing a stable, sanded base that is ready to accept and hold new protection.
+
+## How the Work Is Performed
+
+This is not a wash — it is an aggressive mechanical intervention.
+
+**Stage 1 — Assessment:** We identify loose layers and interference points across the entire underwater section.
+
+**Stage 2 — Aggressive Sanding:** Using heavy-grit mechanical sanders and dust extraction, we remove the failed layers of paint down to a solid base.
+
+**Stage 3 — Hardware Liberation:** We manually scrape and sand paint accumulation away from moving parts — trim tabs, hydraulic struts, and hinges.
+
+**Stage 4 — The Transom Gap:** We specifically clear the area between the outdrive assembly and the transom. See below.
+
+## The Spike Standard: Three Pet Peeves We Always Fix
+
+A major focus of BP03 is correcting the laziness of the past. We target three specific issues that ruin boat performance and safety:
+
+**1. The Transom Stress Gap:** Outdrives must have a paint gap between the gimbal housing and the transom. Lazy painters paint right over this rubber seal. You must be able to visually inspect this seal — if it is caked in paint, you cannot detect transom stress cracks or seal failure until water is already in the bilge. We re-establish this safety gap every time.
+
+**2. Trim Tabs and Hydraulic Struts:** We frequently see hydraulic struts and trim tabs that are "frozen" or limited in travel because years of paint have hardened around the cylinders and hinges. If a strut can't compress because of paint buildup, your trim system fails. We remove the interference entirely.
+
+**3. Through-Hull Fittings:** Scuppers, water intakes, and transducers often get painted shut or clogged during lazy bottom jobs. We clear every fitting to ensure they flow as designed.
+
+## What This Service Is Not Intended For
+
+This is not a full gelcoat reset — if you want 100% of the paint gone to bare white gelcoat, that is Bottom Prep Level 4 with laser removal. This service creates a sound, sanded base — not a blue-printed racing finish. It also does not include structural repair; we remove paint and flag what we find underneath, but we do not fiberglass over blisters or cracks.
+
+## Why This Level Matters
+
+A rough bottom is slow and inefficient. But a jammed bottom is dangerous. By freeing your trim tabs and clearing your transom gaps, we return the vessel to its engineered functionality.
+
+More importantly, paint is expensive. If you pay for premium antifouling and apply it over flaking old paint, you are literally throwing money into the lake. BP03 ensures your investment sticks.
+
+## When This Service Is the Right Choice
+
+- Your hull looks like the surface of the moon — craters everywhere.
+- Paint is visibly flaking off in sheets.
+- You cannot see the rubber seal on your transom assembly.
+- Your trim tabs look like solid blocks of paint rather than moving metal plates.
+
+## When This Service Is No Longer Enough
+
+If the paint buildup is measured in millimetres rather than microns, or if you are switching from a banned paint (like VC17) to a new system, sanding alone is messy and often insufficient. In that case, we escalate to Bottom Prep Level 4 — laser removal vaporizes decades of buildup without the dust, giving you a factory-fresh start.
+
+We correct before we protect. If your bottom is a mess, let's fix the foundation first.`,
+  },
+  {
     slug: "ai-advisor",
     title: "The We Beautify Boats AI Advisor: Professional Standards in Your Pocket",
     date: "2024-06-15",
