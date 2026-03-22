@@ -172,6 +172,69 @@ We've spent 28+ years — since 1998 — taking boats from neglected to beautifu
 Call 416-890-5899 to discuss scheduling for the season.`,
   },
   {
+    slug: "if-i-had-50-million-dollars",
+    title: "If I Had 50 Million Dollars",
+    date: "2023-10-15",
+    category: "Boat Ownership Intelligence",
+    image: "https://static.wixstatic.com/media/2836bb_f9bfb126341f48b199bae69cb62993c6~mv2.png/v1/fill/w_740,h_493,al_c,q_90,enc_avif,quality_auto/img.png",
+    imageAlt: "Vision rendering of Spike's Marine Station floating hub on the Canadian shores of the Great Lakes",
+    excerpt: "If I had $50 million, I would launch the first five Spike's Marine Stations — strategically placed on the Canadian shores of the Great Lakes. Floating hubs for sustainability, marine services, and community connection. One for each Great Lake. Here's the full vision.",
+    content: `If I had $50 million, I would launch the first five Spike's Marine Stations, strategically placed on the Canadian shores of the Great Lakes. These floating hubs would be centres for sustainability, marine services, and community connection — ensuring that Canada leads the way in eco-conscious boating and water conservation.
+
+This vision isn't just about boaters. It's about protecting freshwater resources, creating jobs, and building a future where marine technology and environmental stewardship go hand in hand.
+
+## The Five Stations Across Canada's Great Lakes
+
+Each Spike's Marine Station would be uniquely tailored to its location, addressing local environmental concerns, marine industry needs, and community engagement.
+
+**1. Lake Ontario — Toronto, Ontario**
+*The Gateway Hub for Sustainable Boating*
+
+Toronto's bustling waterfront makes it the perfect home for the first Spike's Marine Station. This station would host a VR Friendship Centre honouring Indigenous water protectors, feature a Water Lab for testing pollutants and educating boaters, offer a Marine Stock Shop supplying eco-friendly products, and provide a zero-waste Boat Wash designed to reduce harmful runoff into the lake.
+
+With Toronto as the flagship location, this station would serve as the model for expanding across the Great Lakes.
+
+**2. Lake Erie — Port Dover, Ontario**
+*A Hub for Clean Water and Coastal Boating*
+
+Lake Erie has been severely impacted by algal blooms and pollution. A Spike's Marine Station here would focus on water conservation initiatives including on-site water testing, educational programs for local boaters to prevent fuel and waste spills, and sustainable marina practices to keep local harbours clean.
+
+Port Dover sits in the heart of Ontario's southern boating community — the right place for this work.
+
+**3. Lake Huron — Georgian Bay, Ontario**
+*Protecting Canada's Boating Paradise*
+
+Georgian Bay is known for its crystal-clear waters, rugged landscapes, and remote boating destinations. To preserve this natural beauty, the station here would feature aquaponic gardens showcasing sustainable food production, serve as a knowledge hub for boaters on fuel efficiency and waste management, and support remote communities by offering water testing and eco-conscious marine services.
+
+This station would serve both seasonal cruisers and local communities dependent on healthy water systems.
+
+**4. Lake Superior — Thunder Bay, Ontario**
+*Canada's Cold-Water Boating and Research Hub*
+
+Lake Superior is the largest and most untouched of the Great Lakes, but it faces unique challenges — from climate change to Indigenous water rights. This station would provide cold-water safety training for remote and northern boaters, serve as a climate change research centre monitoring Superior's changing conditions, and partner with Indigenous communities by integrating traditional ecological knowledge into everything we do.
+
+Superior is Canada's wildest, most unpredictable Great Lake. This station would be essential for safe and sustainable navigation.
+
+**5. Lake St. Clair — Sarnia, Ontario**
+*Industry Meets Innovation in Canada's Marine Service Hub*
+
+Nestled between Lake Huron and Lake Erie, Lake St. Clair is one of Canada's busiest boating regions. This station would provide rapid-response eco-services for marine industry professionals, offer marine apprenticeships to train the next generation of skilled tradespeople, and showcase AI-driven boat maintenance technology to make servicing more efficient.
+
+With Sarnia's longstanding history as a marine and trade hub, this station would serve as a bridge between recreational boating and commercial marine industries.
+
+## Why This Matters for Canada
+
+These five Spike's Marine Stations wouldn't just enhance the boating experience — they would protect Canada's freshwater resources for future generations, create sustainable jobs in marine trades and conservation, position Canada as a leader in eco-conscious boating practices, and strengthen Indigenous partnerships honouring traditional water stewardship.
+
+## Making This Vision a Reality
+
+While $50 million would get this project off the ground, it's going to take a collective effort to bring it to life. Investors, environmentalists, boaters, and local communities can all play a role in making Canada's Great Lakes the global standard for sustainable boating.
+
+Thanks for reading my musing. In reality, spring is coming in hot and I would love to make your boat beautiful before launch. Call 416-890-5899 to reserve your spot.
+
+And if you love this idea — let me know. See you on the water.`,
+  },
+  {
     slug: "if-i-had-5-million-dollars",
     title: "If I Had $5 Million Dollars",
     date: "2023-11-01",
