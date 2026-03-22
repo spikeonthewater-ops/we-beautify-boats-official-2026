@@ -340,43 +340,41 @@ We approach storage as an act of preservation, closing your season deliberately 
   },
   {
     slug: "10-year-old-boats-hull-polish-level-4",
-    title: "10-Year-Old Boats Want a Hull Polish Level 4",
+    title: "10 Year Old Boats Want a Hull Polish Level 4",
     date: "2026-02-25",
     category: "Spike's Essential Care Guides",
-    image: "https://static.wixstatic.com/media/2836bb_9536a101080040df8fbdb680eb197a00~mv2.png/v1/fill/w_740,h_493,al_c,q_90,enc_avif,quality_auto/img.png",
-    imageAlt: "Person polishing a boat hull in three steps",
-    excerpt: "Gelcoat is resilient — but prolonged neglect breaks it down into a chalky, oxidized state that standard washing can't touch. Hull Polish Level 4 is the intensive service designed to rescue it.",
+    image: "https://static.wixstatic.com/media/2836bb_2c387fa7f61f472687185b7bbdf6e314~mv2.png/v1/fill/w_740,h_493,al_c,q_90,enc_avif,quality_auto/img.png",
+    imageAlt: "Severely oxidized boat hull before and after Level 4 correction",
+    excerpt: "Gelcoat is resilient — but prolonged neglect breaks it down into a heavily oxidized, chalky state that standard washing can't touch. Hull Polish Level 4 is the intensive, multi-stage correction service designed to rescue it.",
     content: `Gelcoat is a resilient system designed to protect your vessel, but prolonged neglect and harsh environmental exposure will eventually break it down into a heavily oxidized, chalky state. When a hull reaches this level of severe degradation, standard maintenance washing and medium polishing will no longer make a dent. Hull Polish Level 4 is an intensive, multi-stage correction service designed specifically to rescue the gelcoat and reverse the visible signs of long-term neglect before permanent structural failure occurs.
 
 ## What This Service Is Designed to Do
 
-This service solves the problem of severe oxidation, deep surface scratches, and heavy fading. It is designed to actively cut through the compromised, dead outer layer of the gelcoat to reveal the healthy material beneath.
+This service solves the problem of severe oxidation, deep surface scratches, and heavy fading. It is designed to actively cut through the compromised, dead outer layer of the gelcoat to reveal the healthy material beneath. Success at this level realistically looks like a massive visual transformation, restoring the original color depth and leaving a deep, luxurious reflective surface that seals the hull from further immediate decay.
 
-Success at this level realistically looks like: a significant improvement in surface clarity and color depth, the elimination of chalky texture and dull patches, reduction of visible scratches and swirl marks, and a uniform surface ready for protection application.
+We approach this intensive restoration in three distinct stages, relying heavily on professional buffing machines and specific pad combinations. The first stage requires significant finesse as we use a very coarse compound paired with a full wool pad to physically rip the dead, oxidized skin off your boat.
 
-We do not promise miracles. Severely damaged gelcoat has finite material depth. What Level 4 does is maximize the potential of what remains.
+This aggressive step levels the heavy defects but leaves a balanced and consistent swirl-full finish. In the second stage, we target those machine swirls and holograms using a fast-cut compound and a blended semi-synthetic wool pad mixed with polyester to refine the cut. Finally, we switch to a foam pad and a medium polish to wash out the remaining minor blemishes, refining the gelcoat into a smooth, uniform gloss.
 
-## The Multi-Stage Process
+## What This Service Is Not Intended For
 
-**Stage 1 — Heavy compound cut:** Using a coarse compound and a rotary polisher, we aggressively remove the oxidized outer layer. This is the most physically demanding and technically precise stage. Too much pressure in one area creates heat damage; too little fails to cut through the oxidation layer.
+It is extremely important to understand the limits of machine polishing. Hull Polish Level 4 strictly excludes wet sanding, blister remediation, or structural hull repairs. We do not perform gelcoat reconstruction at this stage. If the deep scratches go completely through the gelcoat, or the damage requires physical material replacement, this service will not rebuild the missing surface.
 
-**Stage 2 — Medium correction pass:** A medium-cut compound refines the surface left by the heavy stage, removing the deep swirl marks introduced by the coarse compound while continuing to address remaining oxidation.
+## Why Acting Now Protects Your Investment
 
-**Stage 3 — Polish and refinement:** A fine polish brings clarity and initial gloss to the corrected surface.
+Leaving severe oxidation untreated allows the gelcoat to remain highly porous, constantly drawing in moisture, pollutants, and deeper UV damage. By cutting away the dead layer and sealing the fresh surface underneath, you are halting the active decay of your vessel's primary defense system.
 
-**Stage 4 — Protection application:** The corrected surface is sealed with a durable marine wax or sealant appropriate to the gelcoat condition and the owner's protection goals.
+This level of intervention often saves owners from the immense cost of entirely repainting or structurally rebuilding the hull.
 
-## Is Level 4 Right for Your Hull?
+## When Hull Polish Level 4 Is the Right Choice
 
-Level 4 is appropriate when:
+This service is the right choice when your boat has been neglected for years or exposed to harsh environments without seasonal protection. The visual cues are unmistakable: the hull will look severely faded, lack any reflection, and when you run your bare hand across the fiberglass, it will leave a thick, white, chalky residue on your skin.
 
-- The hull surface has a chalky, powdery texture when dry
-- Color has significantly faded compared to original
-- Standard polishes and quick details have stopped producing improvement
-- The vessel has gone multiple seasons without professional correction
-- You are preparing a boat for sale and want to maximize its presented condition
+## When This Level Is No Longer Enough
 
-If you are unsure which level applies to your hull, Spike will assess the surface condition before any service begins.`,
+When the gelcoat is so severely damaged that even our most aggressive wool pad and coarse compound combination cannot cut through the oxidation safely, or when the surface feels deeply pitted and requires physical manual leveling, this service is no longer enough. At that point, the hull must be handed over to the staged wet sanding processes of our ultimate correction tier.
+
+Rescuing a neglected hull takes a lot of rigorous work, but providing that extra input yields a solid outcome that truly protects your investment. We respect the realities of the marine environment and apply the precise mechanics necessary to bring your vessel back to life.`,
   },
   {
     slug: "hull-polish-level-3-for-the-love-of-shine",
