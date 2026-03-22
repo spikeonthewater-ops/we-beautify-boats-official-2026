@@ -40,6 +40,60 @@ const CURRICULUM = [
   },
 ];
 
+const SERIES = [
+  {
+    number: "100",
+    title: "Fundamentals of Marine Detailing",
+    subtitle: "Start Your Journey in Marine Detailing",
+    format: "Hybrid — Online Theory & On-the-Water Practical",
+    img: "workshop-100-series.png",
+    skills: [
+      "Safe chemical handling & product selection",
+      "Surface reading: gelcoat, paint & composites",
+      "Basic compound & polish application",
+      "Seasonal maintenance fundamentals",
+      "Tool safety & buffer orientation",
+    ],
+    cert: "Certificate of Practical Completion — 100 Series",
+    tag: "Entry Level",
+    color: "bg-cyan-500",
+  },
+  {
+    number: "200",
+    title: "Advanced Marine Detailing Theory",
+    subtitle: "Comprehensive Online Learning Platform",
+    format: "Online Theory Only (200) · On-the-Water Practical (201)",
+    img: "workshop-200-series.png",
+    skills: [
+      "Compound & Polish Chemistry",
+      "Oxidation Dynamics",
+      "Gelcoat & Paint Substrates",
+      "Buffer & Pad Selections",
+      "Business of Detailing — pricing, contracts & client communication",
+    ],
+    cert: "Certificate of Theoretical Completion — 200 Series",
+    tag: "Theory & Science",
+    color: "bg-purple-600",
+  },
+  {
+    number: "300",
+    title: "Advanced Marine Detailing & Crew Management",
+    subtitle: "Comprehensive Practical Training — Advanced Modules",
+    format: "Hands-on Practical Only",
+    img: "workshop-300-series.png",
+    skills: [
+      "Mirror Brightwork Finish & Degreasing Engine Bays",
+      "Tender Tube Detailing & Heavy Fallout Deck Wash",
+      "Safe Vinyl Recoloring & Safe Decal Removal",
+      "Wet Sanding, Spot Repairs & Advanced Finish Restore",
+      "Level 4 Interior Mold & Pest Remediation",
+    ],
+    cert: "Certificate of Practical Completion — 300 Series",
+    tag: "Advanced Practical",
+    color: "bg-marine-900",
+  },
+];
+
 const FORMATS = [
   {
     name: "The Marina Pro-Series",
@@ -192,6 +246,76 @@ export default function Workshops() {
                   <h3 className="font-display font-bold text-marine-900 text-lg mb-1">{fmt.name}</h3>
                   <p className="text-cyan-600 font-semibold text-sm mb-3">{fmt.audience}</p>
                   <p className="text-muted-foreground text-sm leading-relaxed">{fmt.focus}</p>
+                </div>
+              </motion.div>
+            ))}
+          </div>
+        </motion.div>
+
+        {/* Course Series */}
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+        >
+          <div className="text-center mb-12">
+            <span className="text-cyan-500 font-bold uppercase tracking-widest text-xs block mb-3">
+              Structured Learning Path
+            </span>
+            <h2 className="text-3xl md:text-4xl font-display font-bold text-marine-900">
+              The Course Series
+            </h2>
+            <p className="text-muted-foreground mt-4 max-w-2xl mx-auto">
+              From your first day on the dock to running a crew — three progressively advanced series, each earning a certificate.
+            </p>
+          </div>
+          <div className="space-y-16">
+            {SERIES.map((series, index) => (
+              <motion.div
+                key={series.number}
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: index * 0.1 }}
+                className={`flex flex-col lg:flex-row gap-10 items-center ${index % 2 !== 0 ? "lg:flex-row-reverse" : ""}`}
+              >
+                {/* Image */}
+                <div className="w-full lg:w-2/5 shrink-0">
+                  <div className="relative rounded-3xl overflow-hidden shadow-2xl aspect-square">
+                    <img
+                      src={`${import.meta.env.BASE_URL}images/${series.img}`}
+                      alt={`${series.number} Series: ${series.title}`}
+                      className="w-full h-full object-cover"
+                    />
+                    <div className={`absolute top-4 left-4 ${series.color} text-white text-xs font-bold uppercase tracking-widest px-3 py-1.5 rounded-full`}>
+                      {series.tag}
+                    </div>
+                  </div>
+                </div>
+                {/* Content */}
+                <div className="w-full lg:w-3/5 space-y-5">
+                  <div className={`inline-block text-7xl font-display font-bold opacity-10 text-marine-900 leading-none`}>
+                    {series.number}
+                  </div>
+                  <h3 className="text-2xl md:text-3xl font-display font-bold text-marine-900 -mt-4">
+                    {series.number} Series: {series.title}
+                  </h3>
+                  <p className="text-cyan-600 font-semibold">{series.subtitle}</p>
+                  <p className="text-sm text-muted-foreground font-medium uppercase tracking-wider">
+                    {series.format}
+                  </p>
+                  <ul className="space-y-2.5">
+                    {series.skills.map((skill) => (
+                      <li key={skill} className="flex items-start gap-3">
+                        <span className={`mt-1.5 w-2 h-2 rounded-full ${series.color} shrink-0`} />
+                        <span className="text-marine-800">{skill}</span>
+                      </li>
+                    ))}
+                  </ul>
+                  <div className="inline-flex items-center gap-2 bg-amber-50 border border-amber-200 text-amber-800 text-xs font-semibold px-4 py-2 rounded-full">
+                    <GraduationCap className="w-3.5 h-3.5" />
+                    {series.cert}
+                  </div>
                 </div>
               </motion.div>
             ))}
