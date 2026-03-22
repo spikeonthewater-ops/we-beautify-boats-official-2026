@@ -87,6 +87,11 @@
     <priority>0.65</priority>
   </url>
   <url>
+    <loc>https://www.webeautifyboats.com/blog/simple-serenity-monthly-plan</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.65</priority>
+  </url>
+  <url>
     <loc>https://www.webeautifyboats.com/blog/basic-topsides-polish</loc>
     <changefreq>monthly</changefreq>
     <priority>0.65</priority>

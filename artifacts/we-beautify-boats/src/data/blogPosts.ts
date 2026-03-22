@@ -103,6 +103,52 @@ If your boat was not maintained consistently the previous year and emerges from 
 We believe that your season should begin with excitement, not a chore list. We handle the intense spring preparation deliberately and methodically so you can step away knowing your boat is protected and ready to impress.`,
   },
   {
+    slug: "simple-serenity-monthly-plan",
+    title: "Simple Serenity Monthly Plan: Essential Deep Cleaning and Protection",
+    date: "2025-06-15",
+    category: "Spike's Essential Care Guides",
+    image: "https://static.wixstatic.com/media/2836bb_a0661f405af4438e8a743b3cf005b21f~mv2.png/v1/fill/w_740,h_493,al_c,q_90,enc_avif,quality_auto/img.png",
+    imageAlt: "Boat deck and hull being reset during a monthly deep cleaning service",
+    excerpt: "In an Ontario marina, thirty days is a long time for a boat to sit exposed to the elements. The Simple Serenity Monthly Plan exists for owners who get out a few times a month but still want to protect their investment.",
+    content: `In an Ontario marina, thirty days is a long time for a boat to sit exposed to the elements. During that month, morning dew cycles trap airborne dust, spiders take up residence in your canvas rigging, and the waterline develops a distinct layer of organic slime and algae.
+
+This Simple Serenity monthly plan exists for owners who may only get out on the water a few times a month, but still want to protect their investment from the rapid degradation that happens when a boat is left completely unattended.
+
+We created this specific schedule because leaving a boat for four weeks fundamentally changes the chemistry of the dirt on its surfaces. A simple hose-off no longer works. The contamination has baked into the non-skid and the foul line has established itself. This service is designed to step in once a month to perform a heavy, mechanical reset of the exterior while lightly freshening the cabin — ensuring the vessel does not slip into a state of neglect.
+
+## What the Simple Serenity Service Is Designed to Do
+
+This plan is designed to perform a deep, comprehensive reset of your boat's exterior surfaces every thirty days, preventing environmental fallout from causing permanent damage. It solves the problem of compounding neglect for boats that sit idle between infrequent uses. Because the boat sits longer between washes, the dirt bonds more aggressively. Success with this plan looks like a vessel that is thoroughly decontaminated on the outside, protected against UV damage, and dusted and refreshed on the inside — ready for your next weekend aboard.
+
+Over the course of six scheduled visits throughout the season, our technicians perform a highly targeted routine.
+
+Because the deck has been exposed for a month, we execute a Level 3 Deck Wash — an intensive, inch-by-inch scrubbing process using strong eco-friendly detergents to break down embedded grime, bird droppings, and tree sap, including the interior faces of your deck lockers.
+
+For the hull, we perform a Level 2 Hull Wash, applying marine-safe cleaners and mechanically scrubbing the foul line to erase the accumulated lake slime and black streaks. We also apply a monthly marine wax to seal these surfaces against the sun.
+
+Inside the cabin, because the boat has likely seen less foot traffic, we perform a Level 1 Interior Detailing — vacuuming, dusting, and wiping down all visible surfaces to remove stale air and settled dust.
+
+## What This Service Is Not Intended For
+
+This plan is a heavy maintenance routine, not a full restoration or a high-frequency lifestyle plan. It is not intended for boats that are used heavily every single weekend with large groups of guests, as a Level 1 interior detail once a month will not keep up with heavy foot traffic, spills, or wet bathing suits.
+
+This monthly service does not correct heavy, chalky gelcoat oxidation or deep scratches. We do not use rotary polishers or compounding chemicals during these visits. If your boat requires wet sanding or deep mold abatement in the cabin, those services must be completed prior to beginning a monthly maintenance schedule.
+
+## Why Thirty Days Without Intervention Costs More Than You Think
+
+Thirty days of unchecked UV exposure, mineral deposits, and organic growth can transition from a cleaning issue to a correction issue. When bird droppings and sap sit for a month, they etch into the gelcoat — turning what should have been a five-minute removal into a multi-stage correction service.
+
+## When This Level Is No Longer Enough
+
+There will be times when a monthly schedule simply cannot keep pace with your boating lifestyle. If you find yourself spending more weekends on the water, hosting guests frequently, or sleeping aboard regularly, a monthly interior dusting will quickly become inadequate.
+
+If you notice the cabin feeling damp or the decks becoming unmanageable between our monthly visits, the baseline has shifted. At that point, we will have a transparent conversation about stepping up to the Bi-Weekly Detail Plan to provide the increased frequency your lifestyle demands — without any pressure.
+
+As marine professionals, our goal is to align our maintenance with how you actually use your vessel. We manage the harsh realities of the marina environment so that when you do have time to step aboard, you can focus entirely on the water.
+
+We work, you play.`,
+  },
+  {
     slug: "basic-topsides-polish",
     title: "Basic Topsides Polish: Your Finish Is Still Current",
     date: "2025-09-01",
