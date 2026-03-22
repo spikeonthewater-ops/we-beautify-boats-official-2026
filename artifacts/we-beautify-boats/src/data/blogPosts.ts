@@ -103,6 +103,54 @@ If your boat was not maintained consistently the previous year and emerges from 
 We believe that your season should begin with excitement, not a chore list. We handle the intense spring preparation deliberately and methodically so you can step away knowing your boat is protected and ready to impress.`,
   },
   {
+    slug: "hull-wash-level-1",
+    title: "Hull Wash Level 1: Routine Care for Mineral and Soap Runoff",
+    date: "2024-04-01",
+    category: "Spike's Essential Care Guides",
+    image: "https://static.wixstatic.com/media/2836bb_956d832cc6ed4de194ff6e8b92ccb8ca~mv2.png/v1/fill/w_740,h_493,al_c,q_90,enc_avif,quality_auto/img.png",
+    imageAlt: "Clean boat hull showing no mineral staining or soap runoff after routine Level 1 hull wash maintenance",
+    excerpt: "In a fresh water environment, a boat doesn't need to leave the dock to get dirty. Your air conditioner discharges water constantly, leaving mineral stains that compound over time. Hull Wash Level 1 is the maintenance layer designed to stop this accumulation — not a restoration, a hygiene service.",
+    content: `In a fresh water environment, a boat doesn't need to leave the dock to get dirty. While we don't deal with ocean salt, we deal with hard water. If your air conditioner is running, it is constantly discharging water that leaves a mineral stain on the hull — a stain that grows in severity over time.
+
+Hull Wash Level 1 is the maintenance layer designed to stop this accumulation. It is not a restoration service; it is a hygiene service. It targets the dust, pollen, and specifically the mineral spotting that dulls your finish. For owners of boats with coloured gelcoat, this service is essential — dark blue or black hulls reveal every single inconsistency that a white hull might hide for a few more weeks.
+
+## What This Service Is Designed to Do
+
+This service solves two specific problems: mineral buildup and chemical runoff.
+
+First, it removes the hard water spots from lake spray and AC exhaust before they can etch into the wax. Second, and perhaps more importantly, it cleans up the mess left by deck washing. When decks are washed, soapy water runs down the topsides. If left to dry, that soap residue creates an inconsistency on the hull surface. This residue compromises your wax protection and amplifies the sun's UV impact, leading to accelerated, patchy oxidation. Level 1 removes this residue, ensuring your hull wears evenly and your protection lasts longer.
+
+## How the Work Is Performed
+
+Access is everything in hull washing. For vessels between 40 and 80 feet, the White Pearl — our dedicated tender — is integral to our logistics. It allows us to service the water side of the boat efficiently across the region without requiring the owner to move the vessel.
+
+For tighter marina slips or specific docked scenarios, we use a system of floats and ropes to manually navigate around the boat. This low-tech, high-touch approach ensures we can reach every section of hull without the risk of a tender bumping against the gelcoat.
+
+Our product for this service is TugScrub — a neutral, environmentally responsible wash that breaks down fresh contamination without harming gelcoat, coatings, or the surrounding water. No aggressive acids, no runoff concerns, no residue left behind to interfere with wax or UV protection. We apply it with soft-bristled brushes, lift the mineral deposits and soap residue, then rinse thoroughly to ensure no new streaks are created.
+
+## What This Service Is Not Intended For
+
+Level 1 is strictly for surface contaminants.
+
+It will not remove the scum line — that ring of algae or green slime that forms at the waterline. That requires the mechanical agitation of Level 2. It does not remove the yellow or brown tannin stains common in Ontario's waters either — those require the chemical treatment of Level 3.
+
+Most importantly, this wash cannot fix oxidation. If your coloured hull looks cloudy or chalky after we rinse it, that is UV damage, not dirt. Washing a chalky boat will make it look good for about ten minutes until it dries dull again. That condition requires polishing.
+
+## Why This Level Matters
+
+Consistency is the key to longevity. By regularly removing AC mineral stains and soap runoff, you prevent them from becoming permanent features of your hull. On coloured boats, this service keeps the finish looking deep and uniform. On white boats, it prevents the yellowing and streaking that eventually forces a heavy compound polish.
+
+It is the difference between a boat that looks "washed" and a boat that looks "kept."
+
+## When This Service Is the Right Choice
+
+This is the right choice for weekly or bi-weekly maintenance on a boat that has good wax or ceramic coating. If you see a faint trail of white spots under your AC discharge, or if you just had your decks washed and want to ensure the hull is clear of runoff, this is the service.
+
+## When This Service Is No Longer Enough
+
+If you can feel a texture on the hull — sandpaper-like calcium deposits, or slime — Level 1 is not enough. If the AC discharge stain has turned into a hard, crusty line that a soft brush won't move, or if the waterline has turned green, you need to escalate to Level 2 for mechanical scrubbing.`,
+  },
+  {
     slug: "mold-abatement-protocol",
     title: "The 5-Step Mold Abatement Protocol (Why \"Spray and Pray\" Fails)",
     date: "2024-03-15",
