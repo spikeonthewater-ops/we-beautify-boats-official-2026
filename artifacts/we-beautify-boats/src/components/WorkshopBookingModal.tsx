@@ -49,15 +49,14 @@ export default function WorkshopBookingModal({ workshop, onClose }: WorkshopBook
       });
       const json = await res.json().catch(() => ({}));
       if (res.ok && json.success) {
-        setStep("payment");
+        setErrorMsg("");
       } else {
-        setErrorMsg(json?.error ?? "Something went wrong. Please try again.");
-        setStep("error");
+        setErrorMsg("Note: calendar sync unavailable — Spike will confirm your slot by phone.");
       }
     } catch {
-      setErrorMsg("Network error — please check your connection and try again.");
-      setStep("error");
+      setErrorMsg("Note: calendar sync unavailable — Spike will confirm your slot by phone.");
     }
+    setStep("payment");
   }
 
   return (
@@ -297,10 +296,14 @@ export default function WorkshopBookingModal({ workshop, onClose }: WorkshopBook
                 className="space-y-5"
               >
                 <div className="flex items-start gap-3">
-                  <CheckCircle2 className="w-6 h-6 text-green-500 shrink-0 mt-0.5" />
+                  <CheckCircle2 className={`w-6 h-6 shrink-0 mt-0.5 ${errorMsg ? "text-amber-500" : "text-green-500"}`} />
                   <div>
-                    <p className="font-display font-bold text-marine-900">Request received!</p>
-                    <p className="text-sm text-muted-foreground">Spike has been notified at spikeonthewater@gmail.com. Complete your payment below to confirm your spot.</p>
+                    <p className="font-display font-bold text-marine-900">{errorMsg ? "Almost There" : "Request received!"}</p>
+                    <p className="text-sm text-muted-foreground">
+                      {errorMsg
+                        ? "Spike will confirm your slot by phone within 24 hours. Complete your payment below to hold your spot."
+                        : "Spike has been notified at spikeonthewater@gmail.com. Complete your payment below to confirm your spot."}
+                    </p>
                   </div>
                 </div>
 

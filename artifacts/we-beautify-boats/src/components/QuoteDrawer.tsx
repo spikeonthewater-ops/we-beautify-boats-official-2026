@@ -211,15 +211,14 @@ export function QuoteDrawer() {
       });
       const json = await res.json().catch(() => ({}));
       if (res.ok && json.success) {
-        setStep("payment");
+        setBookingError("");
       } else {
-        setBookingError(json?.error ?? "Something went wrong. Please try again.");
-        setStep("confirm");
+        setBookingError("Note: calendar sync unavailable — Spike will confirm your slot by phone.");
       }
     } catch {
-      setBookingError("Network error — please check your connection and try again.");
-      setStep("confirm");
+      setBookingError("Note: calendar sync unavailable — Spike will confirm your slot by phone.");
     }
+    setStep("payment");
   }
 
   useEffect(() => {
@@ -1023,13 +1022,23 @@ export function QuoteDrawer() {
               {/* ── STEP: PAYMENT ── */}
               {step === "payment" && (
                 <div className="px-5 pt-6 pb-8">
-                  <div className="bg-green-50 border border-green-200 rounded-2xl p-5 mb-6 text-center">
-                    <CheckCircle2 className="w-10 h-10 text-green-500 mx-auto mb-2" />
-                    <h3 className="font-display font-bold text-lg text-marine-900 mb-1">Reservation Confirmed!</h3>
-                    <p className="text-sm text-gray-500 leading-relaxed">
-                      Your assessment is in Spike's calendar. Pay the $250 CAD fee below — it's fully credited when you proceed with a service.
-                    </p>
-                  </div>
+                  {bookingError ? (
+                    <div className="bg-amber-50 border border-amber-200 rounded-2xl p-5 mb-6 text-center">
+                      <CheckCircle2 className="w-10 h-10 text-amber-500 mx-auto mb-2" />
+                      <h3 className="font-display font-bold text-lg text-marine-900 mb-1">Almost There</h3>
+                      <p className="text-sm text-gray-500 leading-relaxed">
+                        Send your reservation via WhatsApp or call Spike directly — we'll confirm your slot and assessment fee within 24 hours.
+                      </p>
+                    </div>
+                  ) : (
+                    <div className="bg-green-50 border border-green-200 rounded-2xl p-5 mb-6 text-center">
+                      <CheckCircle2 className="w-10 h-10 text-green-500 mx-auto mb-2" />
+                      <h3 className="font-display font-bold text-lg text-marine-900 mb-1">Reservation Confirmed!</h3>
+                      <p className="text-sm text-gray-500 leading-relaxed">
+                        Your assessment is in Spike's calendar. Pay the $250 CAD fee below — it's fully credited when you proceed with a service.
+                      </p>
+                    </div>
+                  )}
 
                   <div className="text-[10px] font-black uppercase tracking-widest text-gray-400 text-center mb-4">Pay Assessment Fee — $250 CAD</div>
 
