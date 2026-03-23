@@ -1,0 +1,128 @@
+We are converting Boat Owner Meetups now named Workshops, Training Modules into events via Replit for static website build. Bring 30 years of recreational marine expertise directly to your dock. Hands-on workshops for yacht clubs, marina staff, and dedicated owner-operators who want to master the Ontario Standard of marine preservation. 
+
+From Science to Surface, our workshops move beyond basic cleaning. We dive into the technical intellectual property required to maintain hull integrity and long-term resale value. Below is the structured layout and copy for your web builder to create the information and booking links for the 100, 200, and 300 Course Series.
+
+### Global Event Details & Booking Format
+**Format:** Hybrid Learning 
+*   **Online Theory:** 45 Minutes (via Google Meet)
+*   **In-Person Practical:** 3 Hours (On-the-Water / At the Dock)
+
+**Pricing Structure:**
+*   **Online Attendance:** FREE for anyone
+*   **In-Person Attendance:** $250 CAD 
+*   **We Beautify Boats Full-Time Crew:** FREE (Online & In-Person)
+
+**Mandatory Recording Disclaimer (To be displayed on all booking checkout pages):**
+*Disclaimer: By registering for this workshop, you acknowledge and consent that all sessions (both 45-minute online Google Meets and 3-hour in-person practicals) will be recorded. These recordings will be published to the Spike On The Water YouTube channel to promote shared knowledge and community learning.*
+
+### The Level 10 (L10) Marine Meeting Structure
+To fulfill your goal of integrating Level 10 meetings into these modules, here is the standardized L10 format tailored to the We Beautify Boats "Kaizen" and "Evidence-Based Action" values, meant to be held during the final segment of each session to foster open communication and feedback:
+1.  **Segue / Wins (5 mins):** Share a recent detailing victory or positive client feedback.
+2.  **Scorecard (5 mins):** Review standard times for tasks (e.g., timing a Level 1 Deck Wash).
+3.  **Headlines (5 mins):** Quick updates on marina regulations, environmental compliance, or crew logistics.
+4.  **To-Do List (5 mins):** Review any carry-over action items from previous training.
+5.  **IDS - Identify, Discuss, Solve (20 mins):** The core of the L10. Participants bring up specific pre-service conditions (e.g., failing antifoul, heavy oxidation, surface memory) and the group discusses and solves the approach using the Level 1-5 service matrix.
+6.  **Conclude (5 mins):** Recap the solved issues and rate the meeting.
+
+***
+
+### 100 Series: Fundamentals of Marine Detailing
+*Start Your Journey in Marine Detailing*
+
+**101. Boat Detailing 101: Introduction to the Trade**
+*   **Tagline:** Start Your Journey in Marine Detailing
+*   **Description:** A comprehensive overview of marine detailing, foundational skills, and the standards upheld by We Beautify Boats. Learn essential tools, safety measures, and eco-friendly practices, concluding with a Level 10 Meeting to foster open communication and feedback.
+
+**102. Boat Detailing 102: Hull Services**
+*   **Tagline:** The Foundation of Every Vessel
+*   **Description:** Dive into fundamental techniques of hull washing and polishing, focusing on eco-friendly practices. Hands-on training develops proficiency in restoring hulls, followed by a Level 10 Meeting to discuss and refine techniques.
+
+**103. Boat Detailing 103: Bottom Prep and Antifouling**
+*   **Tagline:** Prepare for Protection
+*   **Description:** Focuses on preparing bottoms for antifouling, covering sanding, cleaning, and material selection. Includes hands-on application and a Level 10 Meeting to share solutions for challenging pre-service conditions.
+
+**104. Boat Detailing 104: Shrink Wrap Removal**
+*   **Tagline:** Efficient and Damage-Free
+*   **Description:** Learn safe and efficient shrink wrap removal techniques, focusing on minimizing waste and avoiding tension-point damage. Concludes with a Level 10 Meeting to evaluate and share best practices.
+
+**105. Boat Detailing 105: Deck Services**
+*   **Tagline:** Clean Decks, Happy Owners
+*   **Description:** Explore techniques for maintaining spotless, protected decks. Covers surface cleaning, stain removal, and polishing, followed by a Level 10 Meeting for insights into enhancing quality.
+
+**106. Boat Detailing 106: Interior Detailing**
+*   **Tagline:** Attention to Every Detail
+*   **Description:** Focuses on deep cleaning and preserving vessel interiors, including fabrics, fixtures, and sensitive materials. Includes a Level 10 Meeting for collective learning.
+
+***
+
+### 200 Series: Advanced Marine Detailing Theory
+*Theory & Science*
+
+**201. Boat Detailing Logistics and Career Development**
+*   **Tagline:** Charting Your Path in Marine Detailing
+*   **Description:** Expand your understanding of detailing logistics, operational workflows, and navigating seasonal demands. Includes a detailed introduction to the Level 10 Meeting structure to improve communication and task coordination.
+
+**202. Advanced Hull Services**
+*   **Tagline:** Perfection for the Toughest Hulls
+*   **Description:** Advanced techniques for heavily oxidized, scratched, or stained hulls using professional-grade products. Participants will engage in a Level 10 Meeting to refine these advanced techniques.
+
+**203. Bottom Prep and Advanced Coatings**
+*   **Tagline:** Professional Surface Preparation
+*   **Description:** Master preparing vessel bottoms for advanced coatings under challenging conditions. Learn advanced sanding, cleaning, and antifouling application, finishing with a Level 10 Meeting to discuss application challenges.
+
+**204. Specialized Deck Care**
+*   **Tagline:** Expertise in Deck Restoration
+*   **Description:** Comprehensive training on restoring decks with significant wear, including teak deck maintenance and brightwork. Review challenges and progress in a Level 10 Meeting.
+
+**205. Advanced Interior Detailing**
+*   **Tagline:** Transform Interiors with Precision
+*   **Description:** Advanced interior cleaning and restoration for luxury vessels, focusing on delicate materials, tough odors, and challenging conditions, assessed via a Level 10 Meeting.
+
+**206. Specialized Exterior Enhancements**
+*   **Tagline:** Polish and Protect Like a Pro
+*   **Description:** Specialized exterior detailing including SiO2 coatings, wet sanding, and propeller polishing. Review techniques and strategies in a Level 10 Meeting.
+
+***
+
+### 300 Series: Advanced Marine Detailing & Crew Management
+*Advanced Practical & Leadership*
+
+**301. Crew Leader Training**
+*   **Tagline:** Lead with Confidence and Precision
+*   **Description:** Essential leadership skills, crew management, effective reporting, resource allocation, and logistical coordination to maintain high service standards.
+
+**302. Brightwork Polishing**
+*   **Tagline:** Refining the Shine
+*   **Description:** Advanced training in restoring and maintaining intricate metal surfaces and high-value brightwork to a mirror finish.
+
+**303. Vinyl Recoloring**
+*   **Tagline:** Renew and Revive
+*   **Description:** Techniques for recoloring and restoring vinyl surfaces to their original condition, addressing severe discoloration and UV wear.
+
+**304. Engine Bay Cleaning**
+*   **Tagline:** Precision for the Heart of the Vessel
+*   **Description:** Proper techniques for safely degreasing and maintaining engine bays, focusing on environmental safety and protecting sensitive components.
+
+**305. Decal Removal**
+*   **Tagline:** A Clean Slate
+*   **Description:** Master techniques for efficiently removing decals and baked-on graphics without damaging the underlying gelcoat.
+
+**306. Tender Tube Detailing**
+*   **Tagline:** Attention to Every Vessel
+*   **Description:** Training on cleaning, restoring, and applying protective coatings to inflatable tender tubes to ensure performance and appearance.
+
+**307. Wood Refinishing: Exterior**
+*   **Tagline:** Reviving Natural Elegance
+*   **Description:** Advanced techniques for restoring, sanding, and sealing exterior wood surfaces, emphasizing weather resistance and aesthetics.
+
+**308. Wood Refinishing: Interior**
+*   **Tagline:** Craftsmanship for Luxury Interiors
+*   **Description:** Learn how to clean, prep, and match stains to restore and enhance interior woodwork for luxury vessel aesthetics.
+
+**309. Interior Detailing Level 4: Mold and Pest Control**
+*   **Tagline:** Safety and Cleanliness Above All
+*   **Description:** Training to safely identify, treat, and prevent mold and pest infestations within vessel interiors, including ozone and specialty treatments.
+
+**310. Deck Wash Level 4: Fallout Wash**
+*   **Tagline:** Deep Cleaning for Heavy Fallout
+*   **Description:** Advanced deck washing techniques for handling severe environmental contaminants and safely cleaning canvas systems.
