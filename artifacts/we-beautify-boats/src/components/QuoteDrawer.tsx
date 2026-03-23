@@ -5,7 +5,7 @@ import {
   Compass, Zap, Ship, Shield, Hammer, Calendar, Gauge, Anchor,
   ShoppingCart, Plus, Trash2, ChevronLeft, ClipboardList, ChevronRight,
   Phone, MessageCircle, ArrowRight, User, MapPin, Ruler, Layers, CalendarCheck,
-  GraduationCap,
+  GraduationCap, Loader2, CreditCard,
   LucideIcon
 } from "lucide-react";
 import { useQuote, QuoteCategory, CartItem } from "@/context/QuoteContext";
@@ -166,7 +166,7 @@ const SERVICE_DATA: Record<QuoteCategory, CategoryData> = {
   },
 };
 
-type Step = "browse" | "cart" | "form" | "confirm";
+type Step = "browse" | "cart" | "form" | "confirm" | "submitting" | "payment";
 
 interface FormData {
   firstName: string;
@@ -177,11 +177,12 @@ interface FormData {
   boatModel: string;
   address: string;
   slipId: string;
+  preferredDate: string;
 }
 
 const EMPTY_FORM: FormData = {
   firstName: "", lastName: "", phone: "", email: "",
-  boatName: "", boatModel: "", address: "", slipId: "",
+  boatName: "", boatModel: "", address: "", slipId: "", preferredDate: "",
 };
 
 export function QuoteDrawer() {
@@ -191,7 +192,34 @@ export function QuoteDrawer() {
   const [step, setStep] = useState<Step>("browse");
   const [browseMode, setBrowseMode] = useState<"grid" | "services">("grid");
   const [form, setForm] = useState<FormData>(EMPTY_FORM);
+  const [bookingError, setBookingError] = useState("");
   const scrollRef = useRef<HTMLDivElement>(null);
+
+  async function handleAssessmentSubmit() {
+    setBookingError("");
+    setStep("submitting");
+    try {
+      const res = await fetch("/api/bookings/assessment", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          ...form,
+          loaFeet,
+          cart: cart.map(i => ({ level: i.level, name: i.name, price: i.price })),
+        }),
+      });
+      const json = await res.json().catch(() => ({}));
+      if (res.ok && json.success) {
+        setStep("payment");
+      } else {
+        setBookingError(json?.error ?? "Something went wrong. Please try again.");
+        setStep("confirm");
+      }
+    } catch {
+      setBookingError("Network error — please check your connection and try again.");
+      setStep("confirm");
+    }
+  }
 
   useEffect(() => {
     scrollRef.current?.scrollTo({ top: 0, behavior: "smooth" });
@@ -803,6 +831,19 @@ export function QuoteDrawer() {
                         className="w-full border border-gray-200 rounded-lg px-3 py-2.5 text-sm font-medium text-marine-900 bg-white focus:outline-none focus:ring-2 focus:ring-cyan-400 placeholder:text-gray-300"
                       />
                     </div>
+                    <div>
+                      <div className="flex items-center gap-2 mb-1">
+                        <Calendar className="w-3.5 h-3.5 text-gray-400" />
+                        <label className="text-[10px] font-black uppercase tracking-widest text-gray-400">Preferred Assessment Date</label>
+                      </div>
+                      <input
+                        type="date"
+                        value={form.preferredDate}
+                        onChange={e => setForm(f => ({ ...f, preferredDate: e.target.value }))}
+                        className="w-full border border-gray-200 rounded-lg px-3 py-2.5 text-sm font-medium text-marine-900 bg-white focus:outline-none focus:ring-2 focus:ring-cyan-400"
+                      />
+                      <p className="text-[10px] text-gray-400 mt-1">Optional — Spike will confirm availability</p>
+                    </div>
                   </div>
 
                   {/* Services summary */}
@@ -914,20 +955,24 @@ export function QuoteDrawer() {
                     </div>
                   </div>
 
-                  {/* Primary CTA — Square Appointments */}
+                  {/* Error message if booking failed */}
+                  {bookingError && (
+                    <div className="mb-3 bg-red-50 border border-red-200 rounded-xl px-4 py-3">
+                      <p className="text-xs text-red-700 leading-relaxed">{bookingError}</p>
+                    </div>
+                  )}
+
+                  {/* Primary CTA — Confirm & Pay */}
                   <div className="mb-3">
-                    <a
-                      href="https://square.site/appointments/buyer/widget/fcf51xt73abko4/L06YYAF0XFN9A"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="flex items-center justify-center gap-3 w-full py-4 rounded-xl font-black text-sm uppercase tracking-widest transition-all active:scale-[0.99] shadow-lg text-white"
-                      style={{ background: "linear-gradient(135deg,#6c47c1 0%,#3d1f8a 100%)" }}
+                    <button
+                      onClick={handleAssessmentSubmit}
+                      className="flex items-center justify-center gap-3 w-full py-4 rounded-xl font-black text-sm uppercase tracking-widest transition-all active:scale-[0.99] shadow-lg text-white bg-cyan-500 hover:bg-cyan-400"
                     >
                       <CalendarCheck className="w-5 h-5" />
-                      Reserve Assessment — Book via Square
-                    </a>
+                      Confirm Reservation &amp; Pay Fee
+                    </button>
                     <p className="text-center text-[10px] text-gray-400 mt-2 leading-relaxed">
-                      $250 CAD assessment fee collected securely via Square · Credited toward your service
+                      Your booking is saved to our calendar · $250 CAD fee credited to your service
                     </p>
                   </div>
 
@@ -951,6 +996,61 @@ export function QuoteDrawer() {
                   >
                     <Phone className="w-4 h-4" />
                     Call Spike — 416-890-5899
+                  </a>
+                </div>
+              )}
+
+              {/* ── STEP: SUBMITTING ── */}
+              {step === "submitting" && (
+                <div className="px-5 pt-20 pb-8 flex flex-col items-center justify-center text-center">
+                  <Loader2 className="w-12 h-12 text-cyan-500 animate-spin mb-4" />
+                  <h3 className="font-display font-bold text-lg text-marine-900 mb-2">Saving Your Reservation</h3>
+                  <p className="text-sm text-gray-500">Adding to Spike's calendar — just a moment…</p>
+                </div>
+              )}
+
+              {/* ── STEP: PAYMENT ── */}
+              {step === "payment" && (
+                <div className="px-5 pt-6 pb-8">
+                  <div className="bg-green-50 border border-green-200 rounded-2xl p-5 mb-6 text-center">
+                    <CheckCircle2 className="w-10 h-10 text-green-500 mx-auto mb-2" />
+                    <h3 className="font-display font-bold text-lg text-marine-900 mb-1">Reservation Confirmed!</h3>
+                    <p className="text-sm text-gray-500 leading-relaxed">
+                      Your assessment is in Spike's calendar. Pay the $250 CAD fee below — it's fully credited when you proceed with a service.
+                    </p>
+                  </div>
+
+                  <div className="text-[10px] font-black uppercase tracking-widest text-gray-400 text-center mb-4">Pay Assessment Fee — $250 CAD</div>
+
+                  <div className="space-y-3 mb-6">
+                    <a
+                      href="https://buy.stripe.com/aFa4gA0zLd6H24T1xX0kE00"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="flex items-center justify-center gap-3 w-full py-4 rounded-xl font-black text-sm uppercase tracking-widest bg-[#635BFF] hover:bg-[#4f49cc] text-white transition-all active:scale-[0.99] shadow-lg"
+                    >
+                      <CreditCard className="w-5 h-5" />
+                      Pay with Stripe
+                    </a>
+                    <a
+                      href="https://paypal.me/spikeonthewater/250"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="flex items-center justify-center gap-3 w-full py-4 rounded-xl font-black text-sm uppercase tracking-widest bg-[#003087] hover:bg-[#002270] text-white transition-all active:scale-[0.99] shadow-lg"
+                    >
+                      <span className="font-black text-[#009cde]">Pay</span><span className="font-black text-white">Pal</span>
+                      &nbsp;— PayPal.me
+                    </a>
+                  </div>
+
+                  <a
+                    href={`https://wa.me/14168905899?text=${buildWhatsAppText()}`}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex items-center justify-center gap-3 w-full py-3.5 bg-[#25D366] hover:bg-[#1fba59] text-white font-black text-sm uppercase tracking-widest rounded-xl transition-all active:scale-[0.99]"
+                  >
+                    <MessageCircle className="w-4 h-4" />
+                    Also Send Cart via WhatsApp
                   </a>
                 </div>
               )}
