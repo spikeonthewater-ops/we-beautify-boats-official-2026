@@ -69,7 +69,7 @@ const FORMATS: Array<WorkshopBookingModalProps["workshop"] & { color: string }> 
     audience: "Staff & Crews",
     description: "Built for efficiency, workflow optimization, and crew leadership. Designed for professional marina teams and detailing crews serving multiple vessels at scale. Your staff will learn to read surfaces before a buffer ever touches a boat, implementing systematic quality control and our Predictive Buffer Workflow to eliminate guesswork.",
     color: "bg-cyan-500",
-    stripeLink: "https://buy.stripe.com/REPLACE_MARINA_PRO",
+    stripeLink: "https://buy.stripe.com/aFa4gA0zLd6H24T1xX0kE00",
     paypalLink: "https://paypal.me/spikeonthewater/250",
   },
   {
@@ -78,7 +78,7 @@ const FORMATS: Array<WorkshopBookingModalProps["workshop"] & { color: string }> 
     audience: "Private Owners",
     description: "Bring 30 years of recreational marine expertise directly to your yacht club members. Owners will learn the critical difference between cosmetic appearance and true asset preservation, how to perform safe eco-conscious maintenance, and exactly when to use routine care versus when to call a professional.",
     color: "bg-purple-500",
-    stripeLink: "https://buy.stripe.com/REPLACE_OWNERS_DAY",
+    stripeLink: "https://buy.stripe.com/aFa4gA0zLd6H24T1xX0kE00",
     paypalLink: "https://paypal.me/spikeonthewater/250",
   },
   {
@@ -87,7 +87,7 @@ const FORMATS: Array<WorkshopBookingModalProps["workshop"] & { color: string }> 
     audience: "Advanced Technicians",
     description: "For experienced hands ready to operate at the highest level. This technical masterclass covers Level 5 surface correction — wet sanding to safely level heavily degraded gelcoat, spot repairs, and the application of Spike's PT (PPS Technology®) to fuse long-lasting PTFE protection to marine surfaces. Transforming technicians into true craftsmen.",
     color: "bg-marine-900",
-    stripeLink: "https://buy.stripe.com/REPLACE_MASTERCLASS",
+    stripeLink: "https://buy.stripe.com/aFa4gA0zLd6H24T1xX0kE00",
     paypalLink: "https://paypal.me/spikeonthewater/250",
   },
 ];
