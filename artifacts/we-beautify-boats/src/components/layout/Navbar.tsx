@@ -51,11 +51,13 @@ export function Navbar() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between">
           {/* Logo */}
           <Link href="/" className="flex items-center group">
-            <img
-              src={`${import.meta.env.BASE_URL}images/logo-wbb.png`}
-              alt="We Beautify Boats Logo"
-              className="h-16 w-auto object-contain mix-blend-screen group-hover:scale-105 transition-transform duration-300"
-            />
+            <div className="bg-white rounded-full px-3 py-1.5 group-hover:scale-105 transition-transform duration-300">
+              <img
+                src={`${import.meta.env.BASE_URL}images/logo-wbb.png`}
+                alt="We Beautify Boats Logo"
+                className="h-9 w-auto object-contain"
+              />
+            </div>
           </Link>
 
           {/* Desktop Nav */}
