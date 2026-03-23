@@ -1,0 +1,49 @@
+Gemini said
+To turn this extensive list of modules into a functioning, professional workshop page via Replit, you need a prompt that tells the AI how to handle the data structure, the UI/UX design, and the logic for the booking links.
+
+Since you are building a static site, the best approach is to ask Replit to create a JSON-driven gallery. This makes it easy for you to update prices or dates in one place without touching the HTML.
+
+Copy and paste the prompt below into Replit (using Replit Agent or the Workspace):
+
+The Replit Prompt
+Role: You are an expert Web Developer specializing in high-end, static brand websites using HTML5, Tailwind CSS, and JavaScript.
+
+Task: Create a "Workshops & Training" page for "We Beautify Boats." The design must reflect 30 years of recreational marine expertise—professional, rugged, yet premium (The "Ontario Standard").
+
+Core Requirements:
+
+Header Section: Use the provided copy: "From Science to Surface... move beyond basic cleaning." Highlight the 30 years of expertise and the "Ontario Standard of Marine Preservation."
+
+Global Format Banner: Create a visually distinct "Hybrid Learning" info bar showing the 45-min Online Theory (Google Meet) and 3-hour In-Person Practical.
+
+Pricing Cards: Display the three-tier pricing: Online (FREE), In-Person ($250 CAD), and Full-Time Crew (FREE).
+
+The Course Grid:
+
+Organize the workshops into three distinct sections: 100 Series (Fundamentals), 200 Series (Theory & Science), and 300 Series (Leadership & Advanced).
+
+Each course must be a "Card" featuring the Course Number, Tagline, and a "Read More" toggle for the Description.
+
+Booking Logic: Every card needs two clear buttons: "Book Online Theory" and "Book In-Person Practical." These should link to a placeholder URL (e.g., booking.html?course=101&type=online).
+
+Level 10 (L10) Integration: Create a reusable "L10 Meeting Structure" component or modal that explains the 6-step Kaizen process (Segue to Conclude) used in every workshop.
+
+Footer/Legal: Include the Mandatory Recording Disclaimer in a high-visibility box near the booking buttons or in the footer.
+
+Technical Specs:
+
+Use Tailwind CSS for a clean, maritime-inspired aesthetic (Navy Blues, Slate Grays, Crisp Whites).
+
+Store all course data (101 through 310) in a JavaScript Constant (JSON array) so the page renders dynamically.
+
+Ensure the layout is mobile-responsive for marina staff checking the site on the docks.
+
+Data to Include:
+[Paste the 100, 200, and 300 series list from your message here]
+
+Why this works for you:
+Scalability: By asking for a "JSON-driven" build, if you decide to change the price of the 200 series later, you change one number in the code and it updates all 6 courses instantly.
+
+The L10 Hook: It treats the Level 10 meeting as a "feature" of the brand, showing potential attendees that this isn't just a cleaning lesson—it's a professional management system.
+
+Conversion Focused: Instead of one generic "Contact Us" button, each of the 22+ modules gets its own specific booking intent.
