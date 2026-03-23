@@ -71,7 +71,7 @@ export default function Home() {
           <div className="absolute inset-0 bg-gradient-to-t from-marine-900 via-marine-900/40 to-transparent"></div>
         </div>
 
-        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center pt-36">
+        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center pt-20">
           <motion.div
             initial="initial"
             animate="animate"
@@ -80,11 +80,16 @@ export default function Home() {
           >
             {/* Prominent logo */}
             <motion.div variants={fadeIn} className="flex justify-center mb-6">
-              <img
-                src={`${import.meta.env.BASE_URL}images/logo-wbb.png`}
-                alt="We Beautify Boats by Spike"
-                className="h-48 md:h-64 lg:h-72 w-auto object-contain mix-blend-screen drop-shadow-2xl"
-              />
+              <div className="relative inline-flex items-center justify-center">
+                <div className="absolute rounded-full bg-white/20 blur-3xl w-full h-full scale-110" />
+                <div className="absolute rounded-full bg-cyan-400/15 blur-2xl w-3/4 h-3/4" />
+                <img
+                  src={`${import.meta.env.BASE_URL}images/logo-wbb.png`}
+                  alt="We Beautify Boats by Spike"
+                  className="relative h-48 md:h-64 lg:h-72 w-auto object-contain drop-shadow-2xl"
+                  style={{ filter: 'drop-shadow(0 0 24px rgba(255,255,255,0.45)) drop-shadow(0 0 48px rgba(100,210,255,0.25))' }}
+                />
+              </div>
             </motion.div>
 
             <motion.div variants={fadeIn} className="flex justify-center mb-6">
