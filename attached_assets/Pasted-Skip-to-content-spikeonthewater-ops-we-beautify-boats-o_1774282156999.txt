@@ -1,0 +1,114 @@
+Skip to content
+spikeonthewater-ops
+we-beautify-boats-official-2026
+Repository navigation
+Code
+Issues
+Pull requests
+Actions
+Projects
+Wiki
+Security
+Insights
+Settings
+Deploy static content to Pages
+Adjust website logo to prevent overlap and improve appearance #6
+All jobs
+Run details
+Annotations
+1 error and 1 warning
+deploy
+failed now in 9s
+Search logs
+2s
+2s
+1s
+0s
+Run actions/upload-pages-artifact@v3
+  with:
+    path: .
+    name: github-pages
+    retention-days: 1
+  env:
+    GITHUB_PAGES: true
+Run echo ::group::Archive artifact
+Archive artifact
+  ./
+  ./replit.md
+  ./lib/
+  ./lib/api-spec/
+  ./lib/api-spec/openapi.yaml
+  ./lib/api-spec/package.json
+  ./lib/api-spec/node_modules/
+  tar: ./lib/api-spec/node_modules/orval: File removed before we read it
+  ./lib/api-spec/node_modules/.bin/
+  ./lib/api-spec/node_modules/.bin/orval
+  ./lib/api-spec/node_modules/.bin/prettier
+  ./lib/api-spec/node_modules/.bin/tsserver
+  ./lib/api-spec/node_modules/.bin/tsc
+  ./lib/api-spec/orval.config.ts
+  tar: ./lib/api-client-react/node_modules/@tanstack/react-query: File removed before we read it
+  ./lib/api-client-react/
+  ./lib/api-client-react/package.json
+  ./lib/api-client-react/node_modules/
+  ./lib/api-client-react/node_modules/@tanstack/
+  ./lib/api-client-react/tsconfig.json
+  ./lib/api-client-react/src/
+  tar: ./lib/api-zod/node_modules/zod: File removed before we read it
+  ./lib/api-client-react/src/custom-fetch.ts
+  ./lib/api-client-react/src/generated/
+  ./lib/api-client-react/src/generated/api.ts
+  ./lib/api-client-react/src/generated/api.schemas.ts
+  ./lib/api-client-react/src/index.ts
+  ./lib/api-zod/
+  ./lib/api-zod/package.json
+  ./lib/api-zod/node_modules/
+  ./lib/api-zod/tsconfig.json
+  ./lib/api-zod/src/
+  ./lib/api-zod/src/generated/
+  ./lib/api-zod/src/generated/api.ts
+  tar: ./lib/db/node_modules/drizzle-zod: File removed before we read it
+  tar: ./lib/db/node_modules/zod: File removed before we read it
+  tar: ./lib/db/node_modules/pg: File removed before we read it
+  tar: ./lib/db/node_modules/drizzle-orm: File removed before we read it
+  tar: ./lib/db/node_modules/@types/pg: File removed before we read it
+  tar: ./lib/db/node_modules/@types/node: File removed before we read it
+  tar: ./lib/db/node_modules/drizzle-kit: File removed before we read it
+  ./lib/api-zod/src/generated/types/
+  ./lib/api-zod/src/generated/types/index.ts
+  ./lib/api-zod/src/generated/types/healthStatus.ts
+  ./lib/api-zod/src/index.ts
+  ./lib/db/
+  ./lib/db/drizzle.config.ts
+  ./lib/db/package.json
+  ./lib/db/node_modules/
+  ./lib/db/node_modules/.bin/
+  ./lib/db/node_modules/.bin/drizzle-kit
+  ./lib/db/node_modules/@types/
+  ./lib/db/tsconfig.json
+  ./lib/db/src/
+  ./lib/db/src/index.ts
+  ./lib/db/src/schema/
+  ./lib/db/src/schema/index.ts
+  ./attached_assets/
+  ./attached_assets/Screenshot_2026-03-23_120257_1774281785964.png
+  ./attached_assets/Pasted-Run-pnpm-filter-workspace-we-beautify-boats-run-build-S_1774280912650.txt
+  ./attached_assets/2000X2000_logo_WBB_BY_SPIKE_(2)_1774020446485.png
+  ./attached_assets/recent_spike_1_1774141630860.jpg
+  ./attached_assets/Pasted-Welcome-back-To-ensure-your-new-Replit-website-is-fully_1774027872691.txt
+  ./attached_assets/Screenshot_2026-03-21_163146_1774125113059.png
+  ./attached_assets/node_modules/
+  tar: ./attached_assets/node_modules/@hookform/resolvers: File removed before we read it
+  tar: ./attached_assets/node_modules/date-fns: File removed before we read it
+  tar: ./attached_assets/node_modules/embla-carousel-react: File removed before we read it
+  ./attached_assets/node_modules/@hookform/
+  tar: ./attached_assets/node_modules/zod: File removed before we read it
+  ./attached_assets/node_modules/.vite/
+  ./attached_assets/node_modules/.vite/deps/
+  ./attached_assets/node_modules/.vite/deps/react-dom.js
+  ./attached_assets/node_modules/.vite/deps/clsx.js
+  ./attached_assets/node_modules/.vite/deps/clsx.js.map
+  ./attached_assets/node_modules/.vite/deps/chunk-KC53NVYV.js
+0s
+0s
+0s
