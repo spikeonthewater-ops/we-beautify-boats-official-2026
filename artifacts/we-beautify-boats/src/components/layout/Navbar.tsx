@@ -99,7 +99,7 @@ export function Navbar() {
               onClick={() => openQuote()}
               className="px-6 py-2.5 rounded-full bg-cyan-500 hover:bg-cyan-400 text-white font-semibold text-sm shadow-[0_0_20px_rgba(120,60,200,0.3)] hover:shadow-[0_0_25px_rgba(120,60,200,0.5)] transition-all hover:-translate-y-0.5 active:translate-y-0"
             >
-              Book Now
+              Get Quote
             </button>
           </div>
 
@@ -149,7 +149,7 @@ export function Navbar() {
                 onClick={() => { openQuote(); }}
                 className="flex items-center justify-center py-4 bg-cyan-500 text-white rounded-xl font-bold text-lg shadow-lg shadow-cyan-500/25"
               >
-                Book Now
+                Get Quote
               </button>
             </div>
           </motion.div>

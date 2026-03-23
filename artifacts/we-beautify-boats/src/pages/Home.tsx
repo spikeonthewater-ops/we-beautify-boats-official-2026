@@ -107,7 +107,7 @@ export default function Home() {
                 onClick={() => openQuote()}
                 className="px-8 py-4 w-full sm:w-auto rounded-full bg-cyan-500 hover:bg-cyan-400 text-white font-bold text-lg shadow-[0_0_30px_rgba(120,60,200,0.4)] hover:shadow-[0_0_40px_rgba(120,60,200,0.6)] transition-all hover:-translate-y-1"
               >
-                Book Your Service
+                Quote Your Boat
               </button>
               <Link
                 href="/our-services"

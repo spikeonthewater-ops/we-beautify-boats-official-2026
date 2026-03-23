@@ -88,7 +88,7 @@ export default function Contact() {
               <div className="flex-1">
                 <div className="flex items-center gap-3 mb-3">
                   <CalendarClock className="w-6 h-6 text-cyan-400" />
-                  <h3 className="text-2xl font-display font-bold text-white">Book Spike Now</h3>
+                  <h3 className="text-2xl font-display font-bold text-white">Get Your Quote</h3>
                 </div>
                 <p className="text-gray-300">Schedule your expert boat service online. Innovation meets precision.</p>
               </div>
