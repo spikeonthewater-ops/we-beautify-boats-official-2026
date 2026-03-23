@@ -1,0 +1,6 @@
+
+> @workspace/api-server@0.0.0 dev /home/runner/workspace/artifacts/api-server
+> NODE_ENV=development tsx ./src/index.ts
+
+[12:10:54.438] [32mINFO[39m (518): [36mServer listening[39m
+    [35mport[39m: 8080
