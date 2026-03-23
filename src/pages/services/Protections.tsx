@@ -1,0 +1,31 @@
+import { ServiceDetailLayout } from "../../components/layout/ServiceDetailLayout";
+
+export default function Protections() {
+  return (
+    <ServiceDetailLayout
+      title="Protections"
+      subtitle="Advanced Surface Shields. Lock In Your Investment."
+      description="Advanced surface shields that lock in your detailing investment and protect against UV rays, salt, and oxidation. Four protection options — matched to how you use and store your boat."
+      image="hero-bg.png"
+      quoteCategory="protections"
+      options={[
+        {
+          name: "Marine Wax",
+          description: "Classic, affordable seasonal protection for a smooth, glossy finish. The reliable baseline protection for well-maintained vessels on a regular maintenance schedule.",
+        },
+        {
+          name: "SiO2 Coating",
+          description: "Permanon nano-engineered coating for extreme water beading and dirt resistance without waxing. Hydrophobic protection that makes every washdown faster and more effective.",
+        },
+        {
+          name: "SpikePT",
+          description: "Ultimate Teflon-based (PTFE) fusion coating for long-lasting, maintenance-free durability. Our flagship protection — engineered for Ontario's freshwater season and UV exposure conditions.",
+        },
+        {
+          name: "Antifouling & Epoxy Barrier",
+          description: "Essential underwater defense systems against marine growth drag and osmotic blistering. Applied after Bottom Prep — the complete underwater protection package for seasonal Ontario boating.",
+        },
+      ]}
+    />
+  );
+}
