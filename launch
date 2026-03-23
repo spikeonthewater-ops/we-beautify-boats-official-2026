@@ -1,1 +1,0 @@
-pnpm run build && cp -rv dist/public/* . && git add . && git commit -m 'Quick Launch' && git push origin main --force
