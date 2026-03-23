@@ -452,7 +452,7 @@ export default function Workshops() {
           <div className="w-10 h-10 rounded-full bg-amber-200 flex items-center justify-center shrink-0 mt-0.5"><Mic className="w-5 h-5 text-amber-800" /></div>
           <div>
             <h3 className="font-display font-bold text-amber-900 mb-1">Mandatory Recording Disclaimer</h3>
-            <p className="text-sm text-amber-800 leading-relaxed">By registering for this workshop, you acknowledge and consent that all sessions (both 45-minute online Google Meets and 3-hour in-person practicals) will be recorded. These recordings will be published to the Spike On The Water YouTube channel to promote shared knowledge and community learning.</p>
+            <p className="text-sm text-amber-800 leading-relaxed">By registering for this workshop, you acknowledge and consent that all sessions (both 45-minute online Google Meets and 3-hour in-person practicals) will be recorded. These recordings will be published to the{" "}<a href="https://www.youtube.com/@SpikeOnTheWater" target="_blank" rel="noopener noreferrer" className="font-semibold underline underline-offset-2 hover:text-amber-900">Spike On The Water YouTube channel</a>{" "}to promote shared knowledge and community learning.</p>
           </div>
         </motion.div>
 
