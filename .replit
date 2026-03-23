@@ -1,14 +1,18 @@
 modules = ["nodejs-24"]
 
 [[artifacts]]
+id = "artifacts/we-beautify-boats"
+
+[[artifacts]]
 id = "artifacts/api-server"
 
 [[artifacts]]
 id = "artifacts/mockup-sandbox"
 
 [deployment]
-router = "application"
-deploymentTarget = "autoscale"
+deploymentTarget = "static"
+build = ["pnpm", "--filter", "@workspace/we-beautify-boats", "run", "build"]
+publicDir = "artifacts/we-beautify-boats/dist/public"
 
 [deployment.postBuild]
 args = ["pnpm", "store", "prune"]
