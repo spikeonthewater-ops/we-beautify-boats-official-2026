@@ -203,7 +203,7 @@ export default function Home() {
             Ready to Protect Your Investment?
           </h2>
           <p className="text-xl text-cyan-100/80 mb-10 font-light">
-            Book Spike directly or chat with our AI assistant for a prompt response.
+            Speak with Spike directly or request a Quote.
           </p>
           <div className="flex flex-col sm:flex-row justify-center gap-4">
             <button
