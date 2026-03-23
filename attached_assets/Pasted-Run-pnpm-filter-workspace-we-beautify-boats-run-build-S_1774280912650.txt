@@ -1,0 +1,23 @@
+Run pnpm --filter @workspace/we-beautify-boats run build
+Scope: 2 of 9 workspace projects
+. build$ vite build --config vite.config.ts
+artifacts/we-beautify-boats build$ vite build --config vite.config.ts
+Error: : ✘ [ERROR] Could not resolve "/home/runner/work/we-beautify-boats-official-2026/we-beautify-boats-official-2026/vite.config.ts"
+. build: failed to load config from /home/runner/work/we-beautify-boats-official-2026/we-beautify-boats-official-2026/vite.config.ts
+. build: error during build:
+. build: Error: Build failed with 1 error:
+. build: error: Could not resolve "/home/runner/work/we-beautify-boats-official-2026/we-beautify-boats-official-2026/vite.config.ts"
+. build:     at failureErrorWithLog (/home/runner/work/we-beautify-boats-official-2026/we-beautify-boats-official-2026/node_modules/.pnpm/esbuild@0.27.3/node_modules/esbuild/lib/main.js:1467:15)
+. build:     at /home/runner/work/we-beautify-boats-official-2026/we-beautify-boats-official-2026/node_modules/.pnpm/esbuild@0.27.3/node_modules/esbuild/lib/main.js:926:25
+. build:     at runOnEndCallbacks (/home/runner/work/we-beautify-boats-official-2026/we-beautify-boats-official-2026/node_modules/.pnpm/esbuild@0.27.3/node_modules/esbuild/lib/main.js:1307:45)
+. build:     at buildResponseToResult (/home/runner/work/we-beautify-boats-official-2026/we-beautify-boats-official-2026/node_modules/.pnpm/esbuild@0.27.3/node_modules/esbuild/lib/main.js:924:7)
+. build:     at /home/runner/work/we-beautify-boats-official-2026/we-beautify-boats-official-2026/node_modules/.pnpm/esbuild@0.27.3/node_modules/esbuild/lib/main.js:951:16
+. build:     at responseCallbacks.<computed> (/home/runner/work/we-beautify-boats-official-2026/we-beautify-boats-official-2026/node_modules/.pnpm/esbuild@0.27.3/node_modules/esbuild/lib/main.js:603:9)
+. build:     at handleIncomingPacket (/home/runner/work/we-beautify-boats-official-2026/we-beautify-boats-official-2026/node_modules/.pnpm/esbuild@0.27.3/node_modules/esbuild/lib/main.js:658:12)
+. build:     at Socket.readFromStdout (/home/runner/work/we-beautify-boats-official-2026/we-beautify-boats-official-2026/node_modules/.pnpm/esbuild@0.27.3/node_modules/esbuild/lib/main.js:581:7)
+. build:     at Socket.emit (node:events:508:28)
+. build:     at addChunk (node:internal/streams/readable:563:12)
+. build: Failed
+ ERR_PNPM_RECURSIVE_RUN_FIRST_FAIL  @workspace/we-beautify-boats@0.0.0 build: `vite build --config vite.config.ts`
+Exit status 1
+Error: Process completed with exit code 1.
