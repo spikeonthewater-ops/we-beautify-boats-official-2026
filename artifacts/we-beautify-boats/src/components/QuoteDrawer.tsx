@@ -1024,7 +1024,7 @@ export function QuoteDrawer() {
 
                   <div className="space-y-3 mb-6">
                     <a
-                      href="https://buy.stripe.com/aFa4gA0zLd6H24T1xX0kE00"
+                      href="https://buy.stripe.com/5kQ8wQ0zL9UvcJx5Od0kE01"
                       target="_blank"
                       rel="noopener noreferrer"
                       className="flex items-center justify-center gap-3 w-full py-4 rounded-xl font-black text-sm uppercase tracking-widest bg-[#635BFF] hover:bg-[#4f49cc] text-white transition-all active:scale-[0.99] shadow-lg"
