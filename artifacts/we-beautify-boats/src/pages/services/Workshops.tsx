@@ -3,6 +3,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import { Link } from "wouter";
 import { useQuote } from "@/context/QuoteContext";
 import PageMeta from "@/components/PageMeta";
+import WorkshopBookingModal, { type WorkshopBookingModalProps } from "@/components/WorkshopBookingModal";
 import {
   ArrowLeft,
   GraduationCap,
@@ -61,10 +62,34 @@ const CURRICULUM = [
   { icon: GraduationCap, title: "Safe Vinyl & Brightwork Recovery", desc: "Specialized modules for tender tube detailing, metal polishing, and vinyl recoloring — the high-visibility work that separates a good crew from a great one." },
 ];
 
-const FORMATS = [
-  { name: "The Marina Pro-Series", audience: "Staff & Crews", focus: "Efficiency, workflow optimization, and crew leadership. Designed for professional teams serving multiple vessels at scale.", tag: "Professional", color: "bg-cyan-500" },
-  { name: 'Yacht Club "Owner\'s Day"', audience: "Private Owners", focus: "Practical DIY skills, tool safety, and seasonal maintenance. Take the knowledge home and extend the life of your own boat.", tag: "Owner", color: "bg-purple-500" },
-  { name: "The Restoration Masterclass", audience: "Advanced Technicians", focus: "Wet sanding, spot repairs, and Spike's PT surface protection application. For experienced hands ready to operate at the highest level.", tag: "Advanced", color: "bg-marine-900" },
+const FORMATS: Array<WorkshopBookingModalProps["workshop"] & { color: string }> = [
+  {
+    name: "The Marina Pro-Series",
+    tag: "Professional",
+    audience: "Staff & Crews",
+    description: "Built for efficiency, workflow optimization, and crew leadership. Designed for professional marina teams and detailing crews serving multiple vessels at scale. Your staff will learn to read surfaces before a buffer ever touches a boat, implementing systematic quality control and our Predictive Buffer Workflow to eliminate guesswork.",
+    color: "bg-cyan-500",
+    stripeLink: "https://buy.stripe.com/REPLACE_MARINA_PRO",
+    paypalLink: "https://paypal.me/spikeonthewater/250",
+  },
+  {
+    name: 'Yacht Club "Owner\'s Day"',
+    tag: "Owner",
+    audience: "Private Owners",
+    description: "Bring 30 years of recreational marine expertise directly to your yacht club members. Owners will learn the critical difference between cosmetic appearance and true asset preservation, how to perform safe eco-conscious maintenance, and exactly when to use routine care versus when to call a professional.",
+    color: "bg-purple-500",
+    stripeLink: "https://buy.stripe.com/REPLACE_OWNERS_DAY",
+    paypalLink: "https://paypal.me/spikeonthewater/250",
+  },
+  {
+    name: "The Restoration Masterclass",
+    tag: "Advanced",
+    audience: "Advanced Technicians",
+    description: "For experienced hands ready to operate at the highest level. This technical masterclass covers Level 5 surface correction — wet sanding to safely level heavily degraded gelcoat, spot repairs, and the application of Spike's PT (PPS Technology®) to fuse long-lasting PTFE protection to marine surfaces. Transforming technicians into true craftsmen.",
+    color: "bg-marine-900",
+    stripeLink: "https://buy.stripe.com/REPLACE_MASTERCLASS",
+    paypalLink: "https://paypal.me/spikeonthewater/250",
+  },
 ];
 
 const SERIES = [
@@ -190,6 +215,7 @@ export default function Workshops() {
   const { openQuote } = useQuote();
   const [showL10, setShowL10] = useState(false);
   const [expandedSeries, setExpandedSeries] = useState<string | null>(null);
+  const [activeBooking, setActiveBooking] = useState<WorkshopBookingModalProps["workshop"] | null>(null);
 
   const toggleSeries = (number: string) =>
     setExpandedSeries((prev) => (prev === number ? null : number));
@@ -202,7 +228,10 @@ export default function Workshops() {
         path="/workshops"
       />
 
-      <AnimatePresence>{showL10 && <L10Modal onClose={() => setShowL10(false)} />}</AnimatePresence>
+      <AnimatePresence>
+        {showL10 && <L10Modal onClose={() => setShowL10(false)} />}
+        {activeBooking && <WorkshopBookingModal workshop={activeBooking} onClose={() => setActiveBooking(null)} />}
+      </AnimatePresence>
 
       {/* Hero */}
       <div className="bg-marine-900 text-white pt-32 pb-20 px-4 sm:px-6 lg:px-8 text-center relative overflow-hidden">
@@ -317,12 +346,21 @@ export default function Workshops() {
           </div>
           <div className="grid md:grid-cols-3 gap-8">
             {FORMATS.map((fmt, i) => (
-              <motion.div key={fmt.name} initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: i * 0.1 }} className="bg-white border border-border rounded-2xl overflow-hidden shadow-sm hover:shadow-lg transition-shadow">
+              <motion.div key={fmt.name} initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: i * 0.1 }} className="bg-white border border-border rounded-2xl overflow-hidden shadow-sm hover:shadow-lg transition-shadow flex flex-col">
                 <div className={`${fmt.color} px-6 py-4`}><span className="text-white text-xs font-bold uppercase tracking-widest">{fmt.tag}</span></div>
-                <div className="p-6">
+                <div className="p-6 flex flex-col flex-1">
                   <h3 className="font-display font-bold text-marine-900 text-lg mb-1">{fmt.name}</h3>
                   <p className="text-cyan-600 font-semibold text-sm mb-3">{fmt.audience}</p>
-                  <p className="text-muted-foreground text-sm leading-relaxed">{fmt.focus}</p>
+                  <p className="text-muted-foreground text-sm leading-relaxed flex-1">{fmt.description}</p>
+                  <div className="mt-5 pt-4 border-t border-border flex items-center justify-between">
+                    <span className="text-xs font-bold text-marine-900">$250 CAD + HST</span>
+                    <button
+                      onClick={() => setActiveBooking(fmt)}
+                      className={`px-5 py-2 rounded-full ${fmt.color} text-white text-xs font-bold hover:opacity-90 transition-all hover:-translate-y-0.5 shadow-md`}
+                    >
+                      Book Now →
+                    </button>
+                  </div>
                 </div>
               </motion.div>
             ))}
