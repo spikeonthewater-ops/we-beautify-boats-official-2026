@@ -71,7 +71,7 @@ export default function Home() {
           <div className="absolute inset-0 bg-gradient-to-t from-marine-900 via-marine-900/40 to-transparent"></div>
         </div>
 
-        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center pt-20">
+        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center pt-36">
           <motion.div
             initial="initial"
             animate="animate"
