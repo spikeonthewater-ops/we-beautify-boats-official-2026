@@ -81,13 +81,14 @@ export default function Home() {
             {/* Prominent logo */}
             <motion.div variants={fadeIn} className="flex justify-center mb-6">
               <div className="relative inline-flex items-center justify-center">
-                <div className="absolute rounded-full bg-white/20 blur-3xl w-full h-full scale-110" />
-                <div className="absolute rounded-full bg-cyan-400/15 blur-2xl w-3/4 h-3/4" />
+                <div className="absolute rounded-full bg-white/30 blur-3xl w-full h-full scale-150" />
+                <div className="absolute rounded-full bg-white/20 blur-2xl w-full h-full scale-125" />
+                <div className="absolute rounded-full bg-cyan-400/25 blur-2xl w-full h-full" />
                 <img
                   src={`${import.meta.env.BASE_URL}images/logo-wbb.png`}
                   alt="We Beautify Boats by Spike"
-                  className="relative h-48 md:h-64 lg:h-72 w-auto object-contain drop-shadow-2xl"
-                  style={{ filter: 'drop-shadow(0 0 24px rgba(255,255,255,0.45)) drop-shadow(0 0 48px rgba(100,210,255,0.25))' }}
+                  className="relative h-48 md:h-64 lg:h-72 w-auto object-contain"
+                  style={{ filter: 'drop-shadow(0 0 16px rgba(255,255,255,0.9)) drop-shadow(0 0 40px rgba(255,255,255,0.6)) drop-shadow(0 0 80px rgba(100,210,255,0.5))' }}
                 />
               </div>
             </motion.div>
