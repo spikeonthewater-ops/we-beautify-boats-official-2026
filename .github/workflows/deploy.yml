@@ -33,7 +33,7 @@ jobs:
           version: latest
 
       - name: Install dependencies
-        run: pnpm install --frozen-lockfile
+        run: pnpm install
 
       - name: Build
         run: pnpm --filter @workspace/we-beautify-boats run build
@@ -41,8 +41,10 @@ jobs:
           BASE_PATH: /
           NODE_ENV: production
 
-      - name: Copy index.html to 404.html for SPA routing
-        run: cp artifacts/we-beautify-boats/dist/public/index.html artifacts/we-beautify-boats/dist/public/404.html
+      - name: Prepare deploy output
+        run: |
+          cp artifacts/we-beautify-boats/dist/public/index.html artifacts/we-beautify-boats/dist/public/404.html
+          echo "spikeonthewater.ca" > artifacts/we-beautify-boats/dist/public/CNAME
 
       - name: Upload Pages artifact
         uses: actions/upload-pages-artifact@v3
