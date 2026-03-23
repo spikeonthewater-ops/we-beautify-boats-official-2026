@@ -193,6 +193,7 @@ export function QuoteDrawer() {
   const [browseMode, setBrowseMode] = useState<"grid" | "services">("grid");
   const [form, setForm] = useState<FormData>(EMPTY_FORM);
   const [bookingError, setBookingError] = useState("");
+  const [formAttempted, setFormAttempted] = useState(false);
   const scrollRef = useRef<HTMLDivElement>(null);
 
   async function handleAssessmentSubmit() {
@@ -233,7 +234,7 @@ export function QuoteDrawer() {
 
   const handleClose = () => {
     closeQuote();
-    setTimeout(() => { setStep("browse"); setBrowseMode("grid"); setForm(EMPTY_FORM); }, 400);
+    setTimeout(() => { setStep("browse"); setBrowseMode("grid"); setForm(EMPTY_FORM); setFormAttempted(false); }, 400);
   };
 
   const catData = SERVICE_DATA[activeCategory];
@@ -283,7 +284,8 @@ export function QuoteDrawer() {
     return encodeURIComponent(lines.join("\n"));
   };
 
-  const formComplete = form.firstName && form.lastName && form.phone && form.boatName && form.address && form.slipId && loaFeet;
+  const formComplete = !!(form.firstName && form.lastName && form.phone && form.boatName && form.address && form.slipId && loaFeet);
+  const fe = (val: string) => formAttempted && !val.trim();
 
   return (
     <AnimatePresence>
@@ -699,9 +701,19 @@ export function QuoteDrawer() {
               {/* ── STEP: FORM ── */}
               {step === "form" && (
                 <div className="px-5 pt-6 pb-8">
-                  <p className="text-sm text-muted-foreground mb-6 leading-relaxed">
+                  <p className="text-sm text-muted-foreground mb-4 leading-relaxed">
                     Spike will reach out within 24 hours to confirm your assessment time. The $250 CAD fee is collected at the time of booking confirmation.
                   </p>
+
+                  {/* Validation banner */}
+                  {formAttempted && !formComplete && (
+                    <div className="mb-5 bg-red-50 border border-red-300 rounded-xl px-4 py-3 flex items-start gap-2">
+                      <span className="text-red-500 font-black text-sm shrink-0">!</span>
+                      <p className="text-xs text-red-700 leading-relaxed font-semibold">
+                        Please complete all required fields marked with <span className="text-red-500">*</span> before continuing.
+                      </p>
+                    </div>
+                  )}
 
                   {/* Contact */}
                   <div className="mb-6">
@@ -711,35 +723,35 @@ export function QuoteDrawer() {
                     </div>
                     <div className="grid grid-cols-2 gap-3 mb-3">
                       <div>
-                        <label className="text-[10px] font-black uppercase tracking-widest text-gray-400 block mb-1">First Name *</label>
+                        <label className="text-[10px] font-black uppercase tracking-widest text-gray-400 block mb-1">First Name <span className="text-red-500">*</span></label>
                         <input
                           type="text"
                           value={form.firstName}
                           onChange={e => setForm(f => ({ ...f, firstName: e.target.value }))}
                           placeholder="James"
-                          className="w-full border border-gray-200 rounded-lg px-3 py-2.5 text-sm font-medium text-marine-900 bg-white focus:outline-none focus:ring-2 focus:ring-cyan-400 placeholder:text-gray-300"
+                          className={`w-full border rounded-lg px-3 py-2.5 text-sm font-medium text-marine-900 focus:outline-none focus:ring-2 placeholder:text-gray-300 ${fe(form.firstName) ? "border-red-400 bg-red-50 focus:ring-red-400" : "border-gray-200 bg-white focus:ring-cyan-400"}`}
                         />
                       </div>
                       <div>
-                        <label className="text-[10px] font-black uppercase tracking-widest text-gray-400 block mb-1">Last Name *</label>
+                        <label className="text-[10px] font-black uppercase tracking-widest text-gray-400 block mb-1">Last Name <span className="text-red-500">*</span></label>
                         <input
                           type="text"
                           value={form.lastName}
                           onChange={e => setForm(f => ({ ...f, lastName: e.target.value }))}
                           placeholder="Robertson"
-                          className="w-full border border-gray-200 rounded-lg px-3 py-2.5 text-sm font-medium text-marine-900 bg-white focus:outline-none focus:ring-2 focus:ring-cyan-400 placeholder:text-gray-300"
+                          className={`w-full border rounded-lg px-3 py-2.5 text-sm font-medium text-marine-900 focus:outline-none focus:ring-2 placeholder:text-gray-300 ${fe(form.lastName) ? "border-red-400 bg-red-50 focus:ring-red-400" : "border-gray-200 bg-white focus:ring-cyan-400"}`}
                         />
                       </div>
                     </div>
                     <div className="grid grid-cols-2 gap-3">
                       <div>
-                        <label className="text-[10px] font-black uppercase tracking-widest text-gray-400 block mb-1">Phone *</label>
+                        <label className="text-[10px] font-black uppercase tracking-widest text-gray-400 block mb-1">Phone <span className="text-red-500">*</span></label>
                         <input
                           type="tel"
                           value={form.phone}
                           onChange={e => setForm(f => ({ ...f, phone: e.target.value }))}
                           placeholder="416-555-0100"
-                          className="w-full border border-gray-200 rounded-lg px-3 py-2.5 text-sm font-medium text-marine-900 bg-white focus:outline-none focus:ring-2 focus:ring-cyan-400 placeholder:text-gray-300"
+                          className={`w-full border rounded-lg px-3 py-2.5 text-sm font-medium text-marine-900 focus:outline-none focus:ring-2 placeholder:text-gray-300 ${fe(form.phone) ? "border-red-400 bg-red-50 focus:ring-red-400" : "border-gray-200 bg-white focus:ring-cyan-400"}`}
                         />
                       </div>
                       <div>
@@ -763,13 +775,13 @@ export function QuoteDrawer() {
                     </div>
                     <div className="grid grid-cols-2 gap-3 mb-3">
                       <div>
-                        <label className="text-[10px] font-black uppercase tracking-widest text-gray-400 block mb-1">Boat Name *</label>
+                        <label className="text-[10px] font-black uppercase tracking-widest text-gray-400 block mb-1">Boat Name <span className="text-red-500">*</span></label>
                         <input
                           type="text"
                           value={form.boatName}
                           onChange={e => setForm(f => ({ ...f, boatName: e.target.value }))}
                           placeholder="Some Nice III"
-                          className="w-full border border-gray-200 rounded-lg px-3 py-2.5 text-sm font-medium text-marine-900 bg-white focus:outline-none focus:ring-2 focus:ring-cyan-400 placeholder:text-gray-300"
+                          className={`w-full border rounded-lg px-3 py-2.5 text-sm font-medium text-marine-900 focus:outline-none focus:ring-2 placeholder:text-gray-300 ${fe(form.boatName) ? "border-red-400 bg-red-50 focus:ring-red-400" : "border-gray-200 bg-white focus:ring-cyan-400"}`}
                         />
                       </div>
                       <div>
@@ -798,7 +810,7 @@ export function QuoteDrawer() {
                           value={loaFeet}
                           onChange={e => setLoaFeet(e.target.value)}
                           placeholder="35"
-                          className="w-28 border border-gray-200 rounded-lg px-3 py-2.5 text-sm font-bold text-marine-900 bg-white focus:outline-none focus:ring-2 focus:ring-cyan-400 placeholder:text-gray-300"
+                          className={`w-28 border rounded-lg px-3 py-2.5 text-sm font-bold text-marine-900 focus:outline-none focus:ring-2 placeholder:text-gray-300 ${formAttempted && !loaFeet ? "border-red-400 bg-red-50 focus:ring-red-400" : "border-gray-200 bg-white focus:ring-cyan-400"}`}
                         />
                         <span className="text-sm font-semibold text-gray-500">ft overall length</span>
                       </div>
@@ -814,7 +826,7 @@ export function QuoteDrawer() {
                         value={form.address}
                         onChange={e => setForm(f => ({ ...f, address: e.target.value }))}
                         placeholder="Bronte Outer Harbour Marina, Oakville, ON"
-                        className="w-full border border-gray-200 rounded-lg px-3 py-2.5 text-sm font-medium text-marine-900 bg-white focus:outline-none focus:ring-2 focus:ring-cyan-400 placeholder:text-gray-300"
+                        className={`w-full border rounded-lg px-3 py-2.5 text-sm font-medium text-marine-900 focus:outline-none focus:ring-2 placeholder:text-gray-300 ${fe(form.address) ? "border-red-400 bg-red-50 focus:ring-red-400" : "border-gray-200 bg-white focus:ring-cyan-400"}`}
                       />
                     </div>
 
@@ -828,7 +840,7 @@ export function QuoteDrawer() {
                         value={form.slipId}
                         onChange={e => setForm(f => ({ ...f, slipId: e.target.value }))}
                         placeholder="B-42"
-                        className="w-full border border-gray-200 rounded-lg px-3 py-2.5 text-sm font-medium text-marine-900 bg-white focus:outline-none focus:ring-2 focus:ring-cyan-400 placeholder:text-gray-300"
+                        className={`w-full border rounded-lg px-3 py-2.5 text-sm font-medium text-marine-900 focus:outline-none focus:ring-2 placeholder:text-gray-300 ${fe(form.slipId) ? "border-red-400 bg-red-50 focus:ring-red-400" : "border-gray-200 bg-white focus:ring-cyan-400"}`}
                       />
                     </div>
                     <div>
@@ -872,12 +884,11 @@ export function QuoteDrawer() {
                   </div>
 
                   <button
-                    disabled={!formComplete}
-                    onClick={() => setStep("confirm")}
+                    onClick={() => { if (formComplete) { setFormAttempted(false); setStep("confirm"); } else { setFormAttempted(true); scrollRef.current?.scrollTo({ top: 0, behavior: "smooth" }); } }}
                     className={`flex items-center justify-center gap-2 w-full py-4 font-black text-sm uppercase tracking-widest rounded-xl transition-all active:scale-[0.99] shadow-lg ${
                       formComplete
                         ? "bg-cyan-500 hover:bg-cyan-400 text-white"
-                        : "bg-gray-200 text-gray-400 cursor-not-allowed"
+                        : formAttempted ? "bg-red-500 hover:bg-red-400 text-white" : "bg-gray-200 text-gray-400"
                     }`}
                   >
                     <ArrowRight className="w-4 h-4" />
