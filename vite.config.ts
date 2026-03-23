@@ -15,7 +15,7 @@ if (Number.isNaN(port) || port <= 0) {
 const basePath = process.env.BASE_PATH ?? "/";
 
 export default defineConfig({
-  base: '/we-beautify-boats-official-2026/',
+  base: '/',
   plugins: [
     react(),
     tailwindcss(),
