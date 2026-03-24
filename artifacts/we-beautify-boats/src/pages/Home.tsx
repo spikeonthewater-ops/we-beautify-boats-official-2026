@@ -3,6 +3,7 @@ import { Link } from "wouter";
 import { Anchor, Sparkles, Droplets, ShieldCheck, ArrowRight, Star, ClipboardList } from "lucide-react";
 import { useQuote } from "@/context/QuoteContext";
 import PageMeta from "@/components/PageMeta";
+import VisitorBar from "@/components/VisitorBar";
 
 const fadeIn = {
   initial: { opacity: 0, y: 20 },
@@ -58,6 +59,7 @@ export default function Home() {
         description="Mobile yacht & boat detailing across Ontario — deck washes, hull polishing, interior detailing & protection. Workshops & Training Series 100–300. Call Spike: 416-890-5899."
         path="/"
       />
+      <VisitorBar />
       {/* Hero Section */}
       <section className="relative h-screen min-h-[600px] flex items-center justify-center overflow-hidden">
         {/* Background Image & Overlay */}
