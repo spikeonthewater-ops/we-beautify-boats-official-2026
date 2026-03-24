@@ -165,12 +165,12 @@ function CourseCard({ course, accentColor }: { course: typeof COURSES_100[0]; ac
           {expanded ? <><ChevronUp className="w-3.5 h-3.5" /> Less</> : <><ChevronDown className="w-3.5 h-3.5" /> Read More</>}
         </button>
         <div className="flex flex-col gap-2 pt-1">
-          <a href={`/booking?course=${course.number}&type=online`} className="flex items-center justify-center gap-1.5 px-3 py-2 rounded-xl border border-cyan-500 text-cyan-600 hover:bg-cyan-50 text-xs font-bold transition-colors">
-            <Video className="w-3 h-3" /> Book Online Theory
-          </a>
-          <a href={`/booking?course=${course.number}&type=inperson`} className="flex items-center justify-center gap-1.5 px-3 py-2 rounded-xl bg-marine-900 hover:bg-marine-800 text-white text-xs font-bold transition-colors">
-            <Anchor className="w-3 h-3" /> Book In-Person
-          </a>
+          <div className="flex items-center justify-center gap-1.5 px-3 py-2 rounded-xl border border-gray-200 bg-gray-50 text-gray-400 text-xs font-bold cursor-not-allowed select-none">
+            <Video className="w-3 h-3" /> Online Booking — Coming Soon
+          </div>
+          <div className="flex items-center justify-center gap-1.5 px-3 py-2 rounded-xl border border-gray-200 bg-gray-50 text-gray-400 text-xs font-bold cursor-not-allowed select-none">
+            <Anchor className="w-3 h-3" /> In-Person Booking — Coming Soon
+          </div>
         </div>
       </div>
     </div>
