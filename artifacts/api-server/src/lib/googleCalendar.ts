@@ -53,6 +53,48 @@ export async function getCalendarClient() {
   return google.calendar({ version: "v3", auth: oauth2Client });
 }
 
+// ─── Dedicated WBB Calendars ─────────────────────────────────────────────────
+
+export const WBB_CALENDAR_NAMES = {
+  assessments:     "WBB — Assessments",
+  courses:         "WBB — Courses",
+  workshops:       "WBB — Workshops",
+  serviceDelivery: "WBB — Service Delivery",
+} as const;
+
+export type CalendarKey = keyof typeof WBB_CALENDAR_NAMES;
+
+const calendarIdCache: Partial<Record<CalendarKey, string>> = {};
+
+/**
+ * Returns the Google Calendar ID for a WBB calendar,
+ * creating it first if it doesn't already exist.
+ */
+export async function getOrCreateCalendar(key: CalendarKey): Promise<string> {
+  if (calendarIdCache[key]) return calendarIdCache[key]!;
+
+  const name = WBB_CALENDAR_NAMES[key];
+  const calendar = await getCalendarClient();
+
+  const listRes = await calendar.calendarList.list({ maxResults: 250 });
+  const existing = listRes.data.items?.find((c) => c.summary === name);
+
+  if (existing?.id) {
+    calendarIdCache[key] = existing.id;
+    return existing.id;
+  }
+
+  const createRes = await calendar.calendars.insert({
+    requestBody: { summary: name, timeZone: "America/Toronto" },
+  });
+
+  const newId = createRes.data.id!;
+  calendarIdCache[key] = newId;
+  return newId;
+}
+
+// ─── Create Event ─────────────────────────────────────────────────────────────
+
 export async function createCalendarEvent(params: {
   summary: string;
   description: string;
@@ -61,14 +103,19 @@ export async function createCalendarEvent(params: {
   endDateTime: string;
   attendeeEmail?: string;
   googleMeet?: boolean;
+  calendarKey?: CalendarKey;
 }) {
   const calendar = await getCalendarClient();
+
+  const calendarId = params.calendarKey
+    ? await getOrCreateCalendar(params.calendarKey)
+    : "primary";
 
   const event: any = {
     summary: params.summary,
     description: params.description,
     location: params.location,
-    colorId: "7", // Peacock — teal/cyan matches We Beautify Boats brand
+    colorId: "7", // Peacock — teal/cyan
     start: { dateTime: params.startDateTime, timeZone: "America/Toronto" },
     end: { dateTime: params.endDateTime, timeZone: "America/Toronto" },
     reminders: {
@@ -94,7 +141,7 @@ export async function createCalendarEvent(params: {
   }
 
   const response = await calendar.events.insert({
-    calendarId: "primary",
+    calendarId,
     requestBody: event,
     conferenceDataVersion: params.googleMeet ? 1 : 0,
     sendUpdates: params.attendeeEmail ? "all" : "none",
@@ -103,51 +150,62 @@ export async function createCalendarEvent(params: {
   return response.data;
 }
 
+// ─── Upcoming Courses ─────────────────────────────────────────────────────────
+
 export async function getUpcomingCourses(hoursAhead = 48) {
   const calendar = await getCalendarClient();
 
   const now = new Date();
   const cutoff = new Date(now.getTime() + hoursAhead * 60 * 60 * 1000);
 
-  const response = await calendar.events.list({
-    calendarId: "primary",
-    timeMin: now.toISOString(),
-    timeMax: cutoff.toISOString(),
-    singleEvents: true,
-    orderBy: "startTime",
+  const calendarIds: string[] = [];
+  for (const key of ["courses", "workshops"] as CalendarKey[]) {
+    try {
+      calendarIds.push(await getOrCreateCalendar(key));
+    } catch {}
+  }
+  if (calendarIds.length === 0) calendarIds.push("primary");
+
+  const allEvents: any[] = [];
+  for (const calId of calendarIds) {
+    try {
+      const res = await calendar.events.list({
+        calendarId: calId,
+        timeMin: now.toISOString(),
+        timeMax: cutoff.toISOString(),
+        singleEvents: true,
+        orderBy: "startTime",
+      });
+      allEvents.push(...(res.data.items ?? []));
+    } catch {}
+  }
+
+  return allEvents.map((e) => {
+    const summary = e.summary ?? "";
+    const courseMatch = summary.match(/Course\s+(\d+):\s+([^—\-]+)/i);
+    const courseNumber = courseMatch?.[1] ?? null;
+    const courseTitle = courseMatch?.[2]?.trim() ?? summary.replace(/^📚\s*/, "").trim();
+    const seriesNumber = courseNumber ? `${courseNumber[0]}00` : null;
+    const isOnline = !!(e.conferenceData?.entryPoints?.length);
+    const meetLink =
+      e.conferenceData?.entryPoints?.find((ep: any) => ep.entryPointType === "video")?.uri ?? null;
+
+    return {
+      eventId: e.id,
+      summary,
+      courseNumber,
+      courseTitle,
+      seriesNumber,
+      isOnline,
+      meetLink,
+      startDateTime: e.start?.dateTime ?? e.start?.date,
+      endDateTime: e.end?.dateTime ?? e.end?.date,
+      location: e.location ?? null,
+    };
   });
-
-  const events = response.data.items ?? [];
-
-  return events
-    .filter((e) => e.summary?.includes("📚") || e.summary?.toLowerCase().includes("course"))
-    .map((e) => {
-      const summary = e.summary ?? "";
-      const courseMatch = summary.match(/Course\s+(\d+):\s+([^—\-]+)/i);
-      const courseNumber = courseMatch?.[1] ?? null;
-      const courseTitle = courseMatch?.[2]?.trim() ?? summary.replace(/^📚\s*/, "").trim();
-      const seriesNumber = courseNumber
-        ? `${courseNumber[0]}00`
-        : null;
-      const isOnline = !!(e.conferenceData?.entryPoints?.length);
-      const meetLink = e.conferenceData?.entryPoints?.find(
-        (ep: any) => ep.entryPointType === "video"
-      )?.uri ?? null;
-
-      return {
-        eventId: e.id,
-        summary,
-        courseNumber,
-        courseTitle,
-        seriesNumber,
-        isOnline,
-        meetLink,
-        startDateTime: e.start?.dateTime ?? e.start?.date,
-        endDateTime: e.end?.dateTime ?? e.end?.date,
-        location: e.location ?? null,
-      };
-    });
 }
+
+// ─── Availability Check ───────────────────────────────────────────────────────
 
 export async function checkAvailability(
   startDateTime: string,
@@ -155,15 +213,28 @@ export async function checkAvailability(
 ): Promise<{ available: boolean; conflicts: number }> {
   const calendar = await getCalendarClient();
 
+  const items: { id: string }[] = [{ id: "primary" }];
+  for (const key of Object.keys(WBB_CALENDAR_NAMES) as CalendarKey[]) {
+    try {
+      const id = await getOrCreateCalendar(key);
+      items.push({ id });
+    } catch {}
+  }
+
   const response = await calendar.freebusy.query({
     requestBody: {
       timeMin: startDateTime,
       timeMax: endDateTime,
       timeZone: "America/Toronto",
-      items: [{ id: "primary" }],
+      items,
     },
   });
 
-  const busy = response.data.calendars?.["primary"]?.busy ?? [];
-  return { available: busy.length === 0, conflicts: busy.length };
+  const cals = response.data.calendars ?? {};
+  const totalBusy = Object.values(cals).reduce(
+    (sum, cal) => sum + (cal.busy?.length ?? 0),
+    0
+  );
+
+  return { available: totalBusy === 0, conflicts: totalBusy };
 }

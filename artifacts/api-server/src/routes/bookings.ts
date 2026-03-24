@@ -49,6 +49,7 @@ router.post("/bookings/workshop", async (req, res) => {
         startDateTime: startDateTime.toISOString(),
         endDateTime: endDateTime.toISOString(),
         attendeeEmail: email || undefined,
+        calendarKey: "workshops",
       }),
       sendMail({
         subject: `🎓 New Workshop Booking — ${workshop}`,
@@ -162,6 +163,7 @@ router.post("/bookings/assessment", async (req, res) => {
         location: address,
         startDateTime: startDateTime.toISOString(),
         endDateTime: endDateTime.toISOString(),
+        calendarKey: "assessments",
         // No attendeeEmail — event goes directly into Spike's calendar as confirmed,
         // no invite acceptance required
       }),
@@ -326,6 +328,7 @@ router.post("/bookings/course", async (req, res) => {
         endDateTime: endDateTime.toISOString(),
         attendeeEmail: email,
         googleMeet: isOnline,
+        calendarKey: "courses",
       }),
       sendMail({
         subject: `📚 New Course Booking — ${courseNumber}: ${courseTitle}`,
