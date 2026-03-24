@@ -17,7 +17,7 @@ const SERVICES_LIST = [
     ],
     links: [
       { name: "Deck Washes", href: "/deck-washes" },
-      { name: "Deck & Hull Polishing", href: "/deck-polishing" }
+      { name: "Deck Polishing", href: "/deck-polishing" }
     ],
     img: "service-deck.png"
   },
