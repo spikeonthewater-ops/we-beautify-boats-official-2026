@@ -269,4 +269,114 @@ router.post("/bookings/referral", async (req, res) => {
   }
 });
 
+// ─── Course Module Booking ──────────────────────────────────────────────────
+
+router.post("/bookings/course", async (req, res) => {
+  try {
+    const {
+      seriesNumber,
+      courseNumber,
+      courseTitle,
+      sessionType, // "online" | "inperson"
+      date,
+      time,
+      firstName,
+      lastName,
+      email,
+      phone,
+      location,
+    } = req.body as Record<string, string>;
+
+    if (!seriesNumber || !courseNumber || !date || !time || !firstName || !lastName || !phone) {
+      res.status(400).json({ error: "Missing required fields" });
+      return;
+    }
+
+    const isOnline = sessionType === "online";
+    const startDateTime = new Date(`${date}T${time}:00`);
+    const endDateTime = new Date(startDateTime.getTime() + 2 * 60 * 60 * 1000);
+
+    const description = [
+      `Course: ${seriesNumber} — ${courseNumber}: ${courseTitle}`,
+      `Session Type: ${isOnline ? "Online (Google Meet)" : "In-Person"}`,
+      `Student: ${firstName} ${lastName}`,
+      `Phone: ${phone}`,
+      email ? `Email: ${email}` : null,
+      !isOnline && location ? `Location: ${location}` : null,
+    ].filter(Boolean).join("\n");
+
+    const [calEvent] = await Promise.allSettled([
+      createCalendarEvent({
+        summary: `📚 Course ${courseNumber}: ${courseTitle} — ${firstName} ${lastName}`,
+        description,
+        location: isOnline ? undefined : (location || "To be confirmed"),
+        startDateTime: startDateTime.toISOString(),
+        endDateTime: endDateTime.toISOString(),
+        attendeeEmail: email || undefined,
+        googleMeet: isOnline,
+      }),
+      sendMail({
+        subject: `📚 New Course Booking — ${courseNumber}: ${courseTitle}`,
+        replyTo: email || undefined,
+        html: `
+          <div style="font-family:sans-serif;max-width:600px;margin:0 auto;color:#1a2942">
+            <div style="background:#1a2942;padding:24px 32px;border-radius:12px 12px 0 0">
+              <h1 style="color:#fff;margin:0;font-size:22px">New Course Booking</h1>
+              <p style="color:#67e8f9;margin:4px 0 0;font-size:13px;text-transform:uppercase;letter-spacing:1px">${courseNumber}: ${courseTitle}</p>
+            </div>
+            <div style="background:#f8fafc;padding:24px 32px;border-radius:0 0 12px 12px;border:1px solid #e2e8f0">
+              <table style="width:100%;border-collapse:collapse">
+                <tr><td style="padding:8px 0;color:#64748b;font-size:13px;width:140px">Student</td><td style="padding:8px 0;font-weight:600">${firstName} ${lastName}</td></tr>
+                <tr><td style="padding:8px 0;color:#64748b;font-size:13px">Phone</td><td style="padding:8px 0">${phone}</td></tr>
+                ${email ? `<tr><td style="padding:8px 0;color:#64748b;font-size:13px">Email</td><td style="padding:8px 0">${email}</td></tr>` : ""}
+                <tr><td style="padding:8px 0;color:#64748b;font-size:13px">Series</td><td style="padding:8px 0">${seriesNumber} Series</td></tr>
+                <tr><td style="padding:8px 0;color:#64748b;font-size:13px">Session</td><td style="padding:8px 0">${isOnline ? "🎥 Online — Google Meet link sent via calendar" : "📍 In-Person"}</td></tr>
+                <tr><td style="padding:8px 0;color:#64748b;font-size:13px">Date & Time</td><td style="padding:8px 0;color:#0891b2;font-weight:600">${date} at ${time}</td></tr>
+                ${!isOnline && location ? `<tr><td style="padding:8px 0;color:#64748b;font-size:13px">Location</td><td style="padding:8px 0">${location}</td></tr>` : ""}
+              </table>
+              <div style="margin-top:20px;padding:16px;background:${isOnline ? "#ecfdf5" : "#fffbeb"};border-radius:8px;border:1px solid ${isOnline ? "#6ee7b7" : "#fde68a"}">
+                <p style="margin:0;font-size:13px;color:${isOnline ? "#065f46" : "#92400e"}">${isOnline ? "🎥 Google Meet link has been added to the calendar invite." : "💰 Payment via Stripe or PayPal to confirm the in-person session."}</p>
+              </div>
+            </div>
+          </div>
+        `,
+      }),
+    ]);
+
+    const eventData = calEvent.status === "fulfilled" ? calEvent.value : null;
+    const meetLink = eventData?.conferenceData?.entryPoints?.find((ep: any) => ep.entryPointType === "video")?.uri;
+
+    res.json({ success: true, eventId: eventData?.id, meetLink: meetLink ?? null });
+  } catch (err: any) {
+    console.error("Course booking error:", err);
+    res.status(500).json({ error: err?.message ?? "Failed to process booking" });
+  }
+});
+
+// ─── Availability Check ──────────────────────────────────────────────────────
+
+router.get("/availability", async (req, res) => {
+  try {
+    const { date, time, duration = "120" } = req.query as Record<string, string>;
+
+    if (!date || !time) {
+      res.status(400).json({ error: "date and time are required" });
+      return;
+    }
+
+    const startDateTime = new Date(`${date}T${time}:00`);
+    const endDateTime = new Date(startDateTime.getTime() + parseInt(duration) * 60 * 1000);
+
+    const result = await checkAvailability(
+      startDateTime.toISOString(),
+      endDateTime.toISOString()
+    );
+
+    res.json(result);
+  } catch (err: any) {
+    console.error("Availability check error:", err);
+    res.status(500).json({ error: err?.message ?? "Failed to check availability" });
+  }
+});
+
 export default router;

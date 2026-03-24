@@ -4,6 +4,7 @@ import { Link } from "wouter";
 import { useQuote } from "@/context/QuoteContext";
 import PageMeta from "@/components/PageMeta";
 import WorkshopBookingModal, { type WorkshopBookingModalProps } from "@/components/WorkshopBookingModal";
+import CourseBookingModal, { type CourseBookingModalProps } from "@/components/CourseBookingModal";
 import {
   ArrowLeft,
   GraduationCap,
@@ -132,7 +133,19 @@ const L10_STEPS = [
 ];
 
 // ─── Sub-components ──────────────────────────────────────────────
-function CourseCard({ course, accentColor }: { course: typeof COURSES_100[0]; accentColor: string }) {
+function CourseCard({
+  course,
+  accentColor,
+  seriesNumber,
+  seriesColor,
+  onBook,
+}: {
+  course: typeof COURSES_100[0];
+  accentColor: string;
+  seriesNumber: string;
+  seriesColor: string;
+  onBook: (course: typeof COURSES_100[0], sessionType: "online" | "inperson") => void;
+}) {
   const [expanded, setExpanded] = useState(false);
   return (
     <div className="bg-white border border-border rounded-2xl overflow-hidden shadow-sm hover:shadow-md transition-shadow">
@@ -165,12 +178,18 @@ function CourseCard({ course, accentColor }: { course: typeof COURSES_100[0]; ac
           {expanded ? <><ChevronUp className="w-3.5 h-3.5" /> Less</> : <><ChevronDown className="w-3.5 h-3.5" /> Read More</>}
         </button>
         <div className="flex flex-col gap-2 pt-1">
-          <div className="flex items-center justify-center gap-1.5 px-3 py-2 rounded-xl border border-gray-200 bg-gray-50 text-gray-400 text-xs font-bold cursor-not-allowed select-none">
-            <Video className="w-3 h-3" /> Online Booking — Coming Soon
-          </div>
-          <div className="flex items-center justify-center gap-1.5 px-3 py-2 rounded-xl border border-gray-200 bg-gray-50 text-gray-400 text-xs font-bold cursor-not-allowed select-none">
-            <Anchor className="w-3 h-3" /> In-Person Booking — Coming Soon
-          </div>
+          <button
+            onClick={() => onBook(course, "online")}
+            className="flex items-center justify-center gap-1.5 px-3 py-2 rounded-xl border border-cyan-200 bg-cyan-50 text-cyan-700 text-xs font-bold hover:bg-cyan-100 hover:border-cyan-300 transition-all"
+          >
+            <Video className="w-3 h-3" /> Book Online · Google Meet
+          </button>
+          <button
+            onClick={() => onBook(course, "inperson")}
+            className="flex items-center justify-center gap-1.5 px-3 py-2 rounded-xl border border-marine-200 bg-marine-50 text-marine-900 text-xs font-bold hover:bg-marine-100 transition-all"
+          >
+            <Anchor className="w-3 h-3" /> Book In-Person · $250
+          </button>
         </div>
       </div>
     </div>
@@ -216,9 +235,24 @@ export default function Workshops() {
   const [showL10, setShowL10] = useState(false);
   const [expandedSeries, setExpandedSeries] = useState<string | null>(null);
   const [activeBooking, setActiveBooking] = useState<WorkshopBookingModalProps["workshop"] | null>(null);
+  const [activeCourse, setActiveCourse] = useState<CourseBookingModalProps | null>(null);
 
   const toggleSeries = (number: string) =>
     setExpandedSeries((prev) => (prev === number ? null : number));
+
+  function openCourseBooking(
+    series: typeof SERIES[0],
+    course: typeof COURSES_100[0],
+    sessionType: "online" | "inperson"
+  ) {
+    setActiveCourse({
+      course,
+      seriesNumber: series.number,
+      seriesColor: series.color,
+      initialSessionType: sessionType,
+      onClose: () => setActiveCourse(null),
+    });
+  }
 
   return (
     <div className="min-h-screen bg-background pb-20">
@@ -231,6 +265,7 @@ export default function Workshops() {
       <AnimatePresence>
         {showL10 && <L10Modal onClose={() => setShowL10(false)} />}
         {activeBooking && <WorkshopBookingModal workshop={activeBooking} onClose={() => setActiveBooking(null)} />}
+        {activeCourse && <CourseBookingModal {...activeCourse} />}
       </AnimatePresence>
 
       {/* Hero */}
@@ -435,7 +470,14 @@ export default function Workshops() {
                         </p>
                         <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
                           {series.courses.map((course) => (
-                            <CourseCard key={course.number} course={course} accentColor={series.accentColor} />
+                            <CourseCard
+                              key={course.number}
+                              course={course}
+                              accentColor={series.accentColor}
+                              seriesNumber={series.number}
+                              seriesColor={series.color}
+                              onBook={(c, st) => openCourseBooking(series, c, st)}
+                            />
                           ))}
                         </div>
                       </div>
@@ -444,6 +486,36 @@ export default function Workshops() {
                 </AnimatePresence>
               </motion.div>
             ))}
+          </div>
+        </motion.div>
+
+        {/* Live Schedule — Google Calendar Embed */}
+        <motion.div initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}>
+          <div className="text-center mb-8">
+            <span className="text-cyan-500 font-bold uppercase tracking-widest text-xs block mb-3">Live Schedule</span>
+            <h2 className="text-3xl md:text-4xl font-display font-bold text-marine-900">Session Calendar</h2>
+            <p className="text-muted-foreground mt-3 max-w-xl mx-auto text-sm">
+              See all confirmed sessions, availability, and booked time slots in real time. When you book a module the event appears here within minutes.
+            </p>
+          </div>
+          <div className="rounded-3xl overflow-hidden border-2 border-border shadow-lg bg-white">
+            <div className="bg-marine-900 px-6 py-4 flex items-center gap-3">
+              <CalendarDays className="w-5 h-5 text-cyan-400" />
+              <span className="text-white font-display font-bold">Spike On The Water — Workshop & Course Schedule</span>
+              <span className="ml-auto text-cyan-300 text-xs font-semibold">America/Toronto</span>
+            </div>
+            <div className="relative" style={{ paddingBottom: "56.25%", minHeight: 480 }}>
+              <iframe
+                src="https://calendar.google.com/calendar/embed?src=spikeonthewater%40gmail.com&ctz=America%2FToronto&showTitle=0&showNav=1&showDate=1&showPrint=0&showTabs=1&showCalendars=0&showTz=1&mode=WEEK"
+                className="absolute inset-0 w-full h-full border-0"
+                title="Spike On The Water Workshop & Course Schedule"
+                loading="lazy"
+              />
+            </div>
+            <div className="px-6 py-3 bg-gray-50 border-t border-border flex items-center gap-2 text-xs text-muted-foreground">
+              <div className="w-2.5 h-2.5 rounded-full bg-emerald-400 shrink-0" />
+              Live — updates within minutes of each booking
+            </div>
           </div>
         </motion.div>
 
