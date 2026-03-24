@@ -160,7 +160,8 @@ router.post("/bookings/assessment", async (req, res) => {
         location: address,
         startDateTime: startDateTime.toISOString(),
         endDateTime: endDateTime.toISOString(),
-        attendeeEmail: email || undefined,
+        // No attendeeEmail — event goes directly into Spike's calendar as confirmed,
+        // no invite acceptance required
       }),
       sendMail({
         subject: `⚓ New Assessment Booking — ${firstName} ${lastName} · ${boatName}`,

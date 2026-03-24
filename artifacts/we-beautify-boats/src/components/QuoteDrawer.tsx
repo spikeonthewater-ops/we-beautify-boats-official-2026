@@ -1,11 +1,11 @@
-import { useRef, useEffect, useState } from "react";
+import { useRef, useEffect, useState, useCallback } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import {
   X, CheckCircle2, Droplets, Sparkles, Waves,
   Compass, Zap, Ship, Shield, Hammer, Calendar, Gauge, Anchor,
   ShoppingCart, Plus, Trash2, ChevronLeft, ClipboardList, ChevronRight,
   Phone, MessageCircle, ArrowRight, User, MapPin, Ruler, Layers, CalendarCheck,
-  GraduationCap, Loader2, CreditCard,
+  GraduationCap, Loader2, CreditCard, AlertCircle,
   LucideIcon
 } from "lucide-react";
 import { useQuote, QuoteCategory, CartItem } from "@/context/QuoteContext";
@@ -195,7 +195,26 @@ export function QuoteDrawer() {
   const [bookingError, setBookingError] = useState("");
   const [formAttempted, setFormAttempted] = useState(false);
   const [cartSent, setCartSent] = useState(false);
+  const [availStatus, setAvailStatus] = useState<"idle" | "checking" | "available" | "conflict">("idle");
   const scrollRef = useRef<HTMLDivElement>(null);
+
+  const checkAvailability = useCallback(async (date: string) => {
+    if (!date) { setAvailStatus("idle"); return; }
+    setAvailStatus("checking");
+    try {
+      const res = await fetch(`/api/availability?date=${date}&time=10:00&duration=120`);
+      const json = await res.json();
+      setAvailStatus(json.available ? "available" : "conflict");
+    } catch {
+      setAvailStatus("idle");
+    }
+  }, []);
+
+  useEffect(() => {
+    if (!form.preferredDate) { setAvailStatus("idle"); return; }
+    const t = setTimeout(() => checkAvailability(form.preferredDate), 400);
+    return () => clearTimeout(t);
+  }, [form.preferredDate, checkAvailability]);
 
   async function handleAssessmentSubmit() {
     setBookingError("");
@@ -284,7 +303,7 @@ export function QuoteDrawer() {
     return encodeURIComponent(lines.join("\n"));
   };
 
-  const formComplete = !!(form.firstName && form.lastName && form.phone && form.boatName && form.address && form.slipId && loaFeet);
+  const formComplete = !!(form.firstName && form.lastName && form.phone && form.boatName && form.address && form.slipId && loaFeet && form.preferredDate && availStatus !== "conflict");
   const fe = (val: string) => formAttempted && !val.trim();
 
   return (
@@ -846,15 +865,34 @@ export function QuoteDrawer() {
                     <div>
                       <div className="flex items-center gap-2 mb-1">
                         <Calendar className="w-3.5 h-3.5 text-gray-400" />
-                        <label className="text-[10px] font-black uppercase tracking-widest text-gray-400">Preferred Assessment Date</label>
+                        <label className="text-[10px] font-black uppercase tracking-widest text-gray-400">Preferred Assessment Date *</label>
                       </div>
                       <input
                         type="date"
                         value={form.preferredDate}
+                        min={new Date(Date.now() + 86400000).toISOString().split("T")[0]}
                         onChange={e => setForm(f => ({ ...f, preferredDate: e.target.value }))}
-                        className="w-full border border-gray-200 rounded-lg px-3 py-2.5 text-sm font-medium text-marine-900 bg-white focus:outline-none focus:ring-2 focus:ring-cyan-400"
+                        className={`w-full border rounded-lg px-3 py-2.5 text-sm font-medium text-marine-900 bg-white focus:outline-none focus:ring-2 ${
+                          formAttempted && !form.preferredDate ? "border-red-400 bg-red-50 focus:ring-red-400"
+                          : availStatus === "conflict" ? "border-red-400 bg-red-50 focus:ring-red-400"
+                          : availStatus === "available" ? "border-green-400 bg-green-50 focus:ring-green-400"
+                          : "border-gray-200 focus:ring-cyan-400"
+                        }`}
                       />
-                      <p className="text-[10px] text-gray-400 mt-1">Optional — Spike will confirm availability</p>
+                      <div className="mt-1 h-4">
+                        {availStatus === "checking" && (
+                          <p className="text-[10px] text-gray-400 flex items-center gap-1"><Loader2 className="w-3 h-3 animate-spin" />Checking Spike's calendar…</p>
+                        )}
+                        {availStatus === "available" && (
+                          <p className="text-[10px] text-green-600 flex items-center gap-1"><CheckCircle2 className="w-3 h-3" />This date looks open — go ahead and reserve</p>
+                        )}
+                        {availStatus === "conflict" && (
+                          <p className="text-[10px] text-red-600 flex items-center gap-1"><AlertCircle className="w-3 h-3" />Spike already has something booked that day — try another date</p>
+                        )}
+                        {availStatus === "idle" && !form.preferredDate && (
+                          <p className="text-[10px] text-gray-400">Pick a date — we'll check it against Spike's calendar instantly</p>
+                        )}
+                      </div>
                     </div>
                   </div>
 
@@ -966,73 +1004,23 @@ export function QuoteDrawer() {
                     </div>
                   </div>
 
-                  {/* STEP 1 — WhatsApp cart summary */}
-                  <div className="mb-4">
+                  {/* STEP 1 — Reserve Time */}
+                  <div className="mb-2">
                     <div className="flex items-center gap-2 mb-2">
-                      <span className={`w-6 h-6 rounded-full flex items-center justify-center text-xs font-black shrink-0 ${cartSent ? "bg-green-500 text-white" : "bg-marine-900 text-white"}`}>
-                        {cartSent ? "✓" : "1"}
-                      </span>
+                      <span className="w-6 h-6 rounded-full flex items-center justify-center text-xs font-black shrink-0 bg-marine-900 text-white">1</span>
                       <p className="text-[11px] font-bold uppercase tracking-widest text-gray-500">
-                        {cartSent ? "Cart sent to Spike" : "Send your cart to Spike first"}
-                      </p>
-                    </div>
-                    <a
-                      href={`https://wa.me/14168905899?text=${buildWhatsAppText()}`}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      onClick={() => setCartSent(true)}
-                      className={`flex items-center justify-center gap-3 w-full py-3.5 font-black text-sm uppercase tracking-widest rounded-xl transition-all active:scale-[0.99] ${cartSent ? "bg-green-100 text-green-700 border border-green-300" : "bg-[#25D366] hover:bg-[#1fba59] text-white shadow-lg"}`}
-                    >
-                      <MessageCircle className="w-4 h-4" />
-                      {cartSent ? "Resend Cart via WhatsApp" : "Send Cart via WhatsApp"}
-                    </a>
-                  </div>
-
-                  {/* STEP 2 — Confirm & Pay (locked until cart sent) */}
-                  <div className="mb-3">
-                    <div className="flex items-center gap-2 mb-2">
-                      <span className={`w-6 h-6 rounded-full flex items-center justify-center text-xs font-black shrink-0 ${cartSent ? "bg-marine-900 text-white" : "bg-gray-200 text-gray-400"}`}>2</span>
-                      <p className={`text-[11px] font-bold uppercase tracking-widest ${cartSent ? "text-gray-500" : "text-gray-300"}`}>
-                        {cartSent ? "Confirm & pay your assessment fee" : "Complete step 1 first"}
+                        Reserve Your Time Slot
                       </p>
                     </div>
                     <button
-                      onClick={cartSent ? handleAssessmentSubmit : undefined}
-                      disabled={!cartSent}
-                      className={`flex items-center justify-center gap-3 w-full py-4 rounded-xl font-black text-sm uppercase tracking-widest transition-all shadow-lg ${cartSent ? "bg-cyan-500 hover:bg-cyan-400 text-white active:scale-[0.99] cursor-pointer" : "bg-gray-100 text-gray-300 cursor-not-allowed"}`}
+                      onClick={handleAssessmentSubmit}
+                      className="flex items-center justify-center gap-3 w-full py-4 rounded-xl font-black text-sm uppercase tracking-widest transition-all shadow-lg bg-cyan-500 hover:bg-cyan-400 text-white active:scale-[0.99] cursor-pointer"
                     >
                       <CalendarCheck className="w-5 h-5" />
-                      Confirm Reservation &amp; Pay Fee
+                      Reserve Time — Add to Calendar
                     </button>
                     <p className="text-center text-[10px] text-gray-400 mt-2 leading-relaxed">
-                      Your booking is saved to our calendar · $250 CAD fee credited to your service
-                    </p>
-                  </div>
-
-                  {/* Error message */}
-                  {bookingError && (
-                    <div className="mb-3 bg-red-50 border border-red-200 rounded-xl px-4 py-3">
-                      <p className="text-xs text-red-700 leading-relaxed">{bookingError}</p>
-                    </div>
-                  )}
-
-                  {/* STEP 3 — Call to confirm */}
-                  <div className="mb-2">
-                    <div className="flex items-center gap-2 mb-2">
-                      <span className="w-6 h-6 rounded-full flex items-center justify-center text-xs font-black shrink-0 bg-marine-900 text-white">3</span>
-                      <p className="text-[11px] font-bold uppercase tracking-widest text-gray-500">
-                        Call Spike to confirm date &amp; payment received
-                      </p>
-                    </div>
-                    <a
-                      href="tel:4168905899"
-                      className="flex items-center justify-center gap-3 w-full py-3.5 bg-white border-2 border-marine-900 hover:bg-marine-900 hover:text-white text-marine-900 font-black text-sm uppercase tracking-widest rounded-xl transition-all active:scale-[0.99]"
-                    >
-                      <Phone className="w-4 h-4" />
-                      Call Spike — 416-890-5899
-                    </a>
-                    <p className="text-center text-[10px] text-gray-400 mt-2 leading-relaxed">
-                      No WhatsApp? Call Spike directly to send your details and lock in your date.
+                      Books your preferred date on Spike's calendar instantly · Then pay &amp; call to confirm
                     </p>
                   </div>
                 </div>
@@ -1055,51 +1043,65 @@ export function QuoteDrawer() {
                       <CheckCircle2 className="w-10 h-10 text-amber-500 mx-auto mb-2" />
                       <h3 className="font-display font-bold text-lg text-marine-900 mb-1">Almost There</h3>
                       <p className="text-sm text-gray-500 leading-relaxed">
-                        Send your reservation via WhatsApp or call Spike directly — we'll confirm your slot and assessment fee within 24 hours.
+                        Calendar sync had a hiccup — call Spike directly to lock in your date and send your payment.
                       </p>
                     </div>
                   ) : (
                     <div className="bg-green-50 border border-green-200 rounded-2xl p-5 mb-6 text-center">
                       <CheckCircle2 className="w-10 h-10 text-green-500 mx-auto mb-2" />
-                      <h3 className="font-display font-bold text-lg text-marine-900 mb-1">Reservation Confirmed!</h3>
+                      <h3 className="font-display font-bold text-lg text-marine-900 mb-1">Time Reserved!</h3>
                       <p className="text-sm text-gray-500 leading-relaxed">
-                        Your assessment is in Spike's calendar. Pay the $250 CAD fee below — it's fully credited when you proceed with a service.
+                        Your preferred date is now on Spike's calendar. Complete your payment below, then call Spike to confirm.
                       </p>
                     </div>
                   )}
 
-                  <div className="text-[10px] font-black uppercase tracking-widest text-gray-400 text-center mb-4">Pay Assessment Fee — $250 CAD</div>
-
-                  <div className="space-y-3 mb-6">
-                    <a
-                      href="https://buy.stripe.com/5kQ8wQ0zL9UvcJx5Od0kE01"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="flex items-center justify-center gap-3 w-full py-4 rounded-xl font-black text-sm uppercase tracking-widest bg-[#635BFF] hover:bg-[#4f49cc] text-white transition-all active:scale-[0.99] shadow-lg"
-                    >
-                      <CreditCard className="w-5 h-5" />
-                      Pay with Stripe
-                    </a>
-                    <a
-                      href="https://paypal.me/spikeonthewater/250"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="flex items-center justify-center gap-3 w-full py-4 rounded-xl font-black text-sm uppercase tracking-widest bg-[#003087] hover:bg-[#002270] text-white transition-all active:scale-[0.99] shadow-lg"
-                    >
-                      <span className="font-black text-[#009cde]">Pay</span><span className="font-black text-white">Pal</span>
-                      &nbsp;— PayPal.me
-                    </a>
+                  {/* STEP 2 — Pay */}
+                  <div className="mb-5">
+                    <div className="flex items-center gap-2 mb-3">
+                      <span className="w-6 h-6 rounded-full flex items-center justify-center text-xs font-black shrink-0 bg-marine-900 text-white">2</span>
+                      <p className="text-[11px] font-bold uppercase tracking-widest text-gray-500">Pay $250 Assessment Fee</p>
+                    </div>
+                    <div className="space-y-3">
+                      <a
+                        href="https://buy.stripe.com/5kQ8wQ0zL9UvcJx5Od0kE01"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="flex items-center justify-center gap-3 w-full py-4 rounded-xl font-black text-sm uppercase tracking-widest bg-[#635BFF] hover:bg-[#4f49cc] text-white transition-all active:scale-[0.99] shadow-lg"
+                      >
+                        <CreditCard className="w-5 h-5" />
+                        Pay with Stripe
+                      </a>
+                      <a
+                        href="https://paypal.me/spikeonthewater/250"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="flex items-center justify-center gap-3 w-full py-4 rounded-xl font-black text-sm uppercase tracking-widest bg-[#003087] hover:bg-[#002270] text-white transition-all active:scale-[0.99] shadow-lg"
+                      >
+                        <span className="font-black text-[#009cde]">Pay</span><span className="font-black text-white">Pal</span>
+                        &nbsp;— PayPal.me
+                      </a>
+                    </div>
+                    <p className="text-center text-[10px] text-gray-400 mt-2">$250 CAD credited in full toward your service</p>
                   </div>
 
-                  <a
-                    href={`https://wa.me/14168905899?text=${buildWhatsAppText()}`}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="flex items-center justify-center gap-3 w-full py-3.5 bg-[#25D366] hover:bg-[#1fba59] text-white font-black text-sm uppercase tracking-widest rounded-xl transition-all active:scale-[0.99]"
-                  >
-                    <MessageCircle className="w-4 h-4" />
-                    Also Send Cart via WhatsApp
-                  </a>
+                  {/* STEP 3 — Call to confirm */}
+                  <div className="mb-2">
+                    <div className="flex items-center gap-2 mb-2">
+                      <span className="w-6 h-6 rounded-full flex items-center justify-center text-xs font-black shrink-0 bg-marine-900 text-white">3</span>
+                      <p className="text-[11px] font-bold uppercase tracking-widest text-gray-500">Call Spike to confirm</p>
+                    </div>
+                    <a
+                      href="tel:4168905899"
+                      className="flex items-center justify-center gap-3 w-full py-3.5 bg-white border-2 border-marine-900 hover:bg-marine-900 hover:text-white text-marine-900 font-black text-sm uppercase tracking-widest rounded-xl transition-all active:scale-[0.99]"
+                    >
+                      <Phone className="w-4 h-4" />
+                      Call Spike — 416-890-5899
+                    </a>
+                    <p className="text-center text-[10px] text-gray-400 mt-2 leading-relaxed">
+                      Spike will verify your payment and lock in the date
+                    </p>
+                  </div>
                 </div>
               )}
             </div>
