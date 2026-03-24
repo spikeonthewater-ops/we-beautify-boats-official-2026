@@ -143,10 +143,29 @@ export default function ReferralModal({ onClose }: Props) {
     return `mailto:webeautifyboats.toronto@gmail.com?subject=${encodeURIComponent("New Referral: " + form.friendName)}&body=${encodeURIComponent(body)}`;
   }
 
-  function handleSend(via: "whatsapp" | "email") {
+  async function handleSend(via: "whatsapp" | "email") {
     setAttempted(true);
     if (!requiredOk) return;
     setSent(true);
+
+    // Fire email to inbox silently regardless of channel chosen
+    fetch("/api/bookings/referral", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({
+        referrerName: form.referrerName,
+        referrerEmail: form.referrerEmail,
+        referrerPhone: form.referrerPhone,
+        friendName: form.friendName,
+        friendEmail: form.friendEmail,
+        boatName: form.boatName,
+        clubMarina: form.clubMarina,
+        friendPhone: form.friendPhone,
+        services: form.services,
+        notes: form.notes,
+      }),
+    }).catch(() => {}); // silent — don't block UX if API unavailable
+
     if (via === "whatsapp") {
       window.open(`https://wa.me/14168905899?text=${buildMessage()}`, "_blank", "noopener,noreferrer");
     } else {
