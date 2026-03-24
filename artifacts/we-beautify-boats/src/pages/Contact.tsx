@@ -1,11 +1,13 @@
-import { useEffect } from "react";
-import { motion } from "framer-motion";
-import { Phone, MessageCircle, Clock, MapPin, CalendarClock, ArrowUpRight } from "lucide-react";
+import { useEffect, useState } from "react";
+import { motion, AnimatePresence } from "framer-motion";
+import { Phone, MessageCircle, Clock, MapPin, CalendarClock, ArrowUpRight, Users } from "lucide-react";
 import { useQuote } from "@/context/QuoteContext";
 import PageMeta from "@/components/PageMeta";
+import ReferralModal from "@/components/ReferralModal";
 
 export default function Contact() {
   const { openQuote } = useQuote();
+  const [referralOpen, setReferralOpen] = useState(false);
 
   useEffect(() => {
     const script = document.createElement("script");
@@ -116,10 +118,31 @@ export default function Contact() {
               </div>
             </a>
 
+            {/* Referral Card */}
+            <button
+              onClick={() => setReferralOpen(true)}
+              className="group flex items-center p-8 bg-white border-2 border-marine-900 rounded-3xl hover:bg-marine-50 transition-colors shadow-lg w-full text-left"
+            >
+              <div className="flex-1">
+                <div className="flex items-center gap-3 mb-3">
+                  <Users className="w-6 h-6 text-marine-900" />
+                  <h3 className="text-2xl font-display font-bold text-marine-900">Send a Referral</h3>
+                </div>
+                <p className="text-muted-foreground">Know someone whose boat deserves the best? Send us their details.</p>
+              </div>
+              <div className="w-12 h-12 rounded-full bg-marine-900/10 flex items-center justify-center shrink-0 group-hover:scale-110 transition-transform">
+                <ArrowUpRight className="w-6 h-6 text-marine-900" />
+              </div>
+            </button>
+
           </motion.div>
         </div>
 
       </div>
+
+      <AnimatePresence>
+        {referralOpen && <ReferralModal onClose={() => setReferralOpen(false)} />}
+      </AnimatePresence>
     </div>
   );
 }
