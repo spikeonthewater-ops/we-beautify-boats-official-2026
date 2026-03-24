@@ -1,14 +1,12 @@
 import { Router } from "express";
 import fs from "fs";
 import path from "path";
-import { fileURLToPath } from "url";
-
-const __filename = fileURLToPath(import.meta.url);
-const __dirname = path.dirname(__filename);
 
 const router = Router();
 
-const DATA_FILE = path.join(__dirname, "../../analytics.json");
+// Resolve analytics.json relative to the working directory — works in both
+// ESM dev (tsx) and the CJS production bundle where import.meta is unavailable.
+const DATA_FILE = path.resolve(process.cwd(), "artifacts/api-server/analytics.json");
 
 interface AnalyticsData {
   allTime: number;
