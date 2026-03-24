@@ -1,6 +1,17 @@
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { X, Send, CheckCircle2, Users, Mail, Phone, Anchor } from "lucide-react";
+import { X, Send, CheckCircle2, Users, Mail, Phone } from "lucide-react";
+
+function CaptainHat({ className }: { className?: string }) {
+  return (
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" className={className}>
+      <path d="M3 17h18" />
+      <path d="M5 17c0-4 2.5-7 7-7s7 3 7 7" />
+      <path d="M9 10V8a3 3 0 0 1 6 0v2" />
+      <circle cx="12" cy="7" r="1" fill="currentColor" stroke="none" />
+    </svg>
+  );
+}
 
 const SERVICES = [
   { id: "deck-exterior", label: "Deck & Exterior" },
@@ -16,6 +27,7 @@ interface Form {
   referrerEmail: string;
   referrerPhone: string;
   friendName: string;
+  friendEmail: string;
   boatName: string;
   clubMarina: string;
   friendPhone: string;
@@ -28,6 +40,7 @@ const EMPTY: Form = {
   referrerEmail: "",
   referrerPhone: "",
   friendName: "",
+  friendEmail: "",
   boatName: "",
   clubMarina: "",
   friendPhone: "",
@@ -86,6 +99,7 @@ export default function ReferralModal({ onClose }: Props) {
       "",
       "⛵ *Referred Friend*",
       `Name: ${form.friendName}`,
+      ...(form.friendEmail.trim() ? [`Email: ${form.friendEmail}`] : []),
       `Boat: ${form.boatName}`,
       `Club / Marina: ${form.clubMarina}`,
       `Phone: ${form.friendPhone}`,
@@ -117,6 +131,7 @@ export default function ReferralModal({ onClose }: Props) {
       ``,
       `Referred Friend`,
       `Name: ${form.friendName}`,
+      ...(form.friendEmail.trim() ? [`Email: ${form.friendEmail}`] : []),
       `Boat: ${form.boatName}`,
       `Club / Marina: ${form.clubMarina}`,
       `Phone: ${form.friendPhone}`,
@@ -256,7 +271,7 @@ export default function ReferralModal({ onClose }: Props) {
               {/* FRIEND'S DETAILS */}
               <div>
                 <div className="flex items-center gap-2 mb-3">
-                  <Anchor className="w-4 h-4 text-cyan-600" />
+                  <CaptainHat className="w-4 h-4 text-cyan-600" />
                   <h3 className="font-display font-bold text-marine-900 text-sm uppercase tracking-wider">Their Details</h3>
                 </div>
                 <div className="space-y-3">
@@ -270,6 +285,18 @@ export default function ReferralModal({ onClose }: Props) {
                       value={form.friendName}
                       onChange={set("friendName")}
                       className={`w-full border rounded-xl px-4 py-3 text-sm outline-none focus:ring-2 focus:ring-cyan-300 transition-all ${fe(attempted, form.friendName)}`}
+                    />
+                  </div>
+                  <div>
+                    <label className="block text-xs font-bold text-gray-500 uppercase tracking-wider mb-1">
+                      Friend's Email <span className="text-gray-400 font-normal">(optional)</span>
+                    </label>
+                    <input
+                      type="email"
+                      placeholder="john@email.com"
+                      value={form.friendEmail}
+                      onChange={set("friendEmail")}
+                      className="w-full border border-border rounded-xl px-4 py-3 text-sm outline-none focus:ring-2 focus:ring-cyan-300 transition-all bg-white"
                     />
                   </div>
                   <div>
