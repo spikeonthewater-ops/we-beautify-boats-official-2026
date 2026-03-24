@@ -150,7 +150,7 @@ export default function ReferralModal({ onClose }: Props) {
     if (via === "whatsapp") {
       window.open(`https://wa.me/14168905899?text=${buildMessage()}`, "_blank", "noopener,noreferrer");
     } else {
-      window.open(buildMailto(), "_blank", "noopener,noreferrer");
+      window.location.href = buildMailto();
     }
   }
 
