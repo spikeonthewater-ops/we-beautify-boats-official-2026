@@ -194,6 +194,7 @@ export function QuoteDrawer() {
   const [form, setForm] = useState<FormData>(EMPTY_FORM);
   const [bookingError, setBookingError] = useState("");
   const [formAttempted, setFormAttempted] = useState(false);
+  const [cartSent, setCartSent] = useState(false);
   const scrollRef = useRef<HTMLDivElement>(null);
 
   async function handleAssessmentSubmit() {
@@ -233,7 +234,7 @@ export function QuoteDrawer() {
 
   const handleClose = () => {
     closeQuote();
-    setTimeout(() => { setStep("browse"); setBrowseMode("grid"); setForm(EMPTY_FORM); setFormAttempted(false); }, 400);
+    setTimeout(() => { setStep("browse"); setBrowseMode("grid"); setForm(EMPTY_FORM); setFormAttempted(false); setCartSent(false); }, 400);
   };
 
   const catData = SERVICE_DATA[activeCategory];
@@ -965,18 +966,40 @@ export function QuoteDrawer() {
                     </div>
                   </div>
 
-                  {/* Error message if booking failed */}
-                  {bookingError && (
-                    <div className="mb-3 bg-red-50 border border-red-200 rounded-xl px-4 py-3">
-                      <p className="text-xs text-red-700 leading-relaxed">{bookingError}</p>
+                  {/* STEP 1 — WhatsApp cart summary */}
+                  <div className="mb-4">
+                    <div className="flex items-center gap-2 mb-2">
+                      <span className={`w-6 h-6 rounded-full flex items-center justify-center text-xs font-black shrink-0 ${cartSent ? "bg-green-500 text-white" : "bg-marine-900 text-white"}`}>
+                        {cartSent ? "✓" : "1"}
+                      </span>
+                      <p className="text-[11px] font-bold uppercase tracking-widest text-gray-500">
+                        {cartSent ? "Cart sent to Spike" : "Send your cart to Spike first"}
+                      </p>
                     </div>
-                  )}
+                    <a
+                      href={`https://wa.me/14168905899?text=${buildWhatsAppText()}`}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      onClick={() => setCartSent(true)}
+                      className={`flex items-center justify-center gap-3 w-full py-3.5 font-black text-sm uppercase tracking-widest rounded-xl transition-all active:scale-[0.99] ${cartSent ? "bg-green-100 text-green-700 border border-green-300" : "bg-[#25D366] hover:bg-[#1fba59] text-white shadow-lg"}`}
+                    >
+                      <MessageCircle className="w-4 h-4" />
+                      {cartSent ? "Resend Cart via WhatsApp" : "Send Cart via WhatsApp"}
+                    </a>
+                  </div>
 
-                  {/* Primary CTA — Confirm & Pay */}
+                  {/* STEP 2 — Confirm & Pay (locked until cart sent) */}
                   <div className="mb-3">
+                    <div className="flex items-center gap-2 mb-2">
+                      <span className={`w-6 h-6 rounded-full flex items-center justify-center text-xs font-black shrink-0 ${cartSent ? "bg-marine-900 text-white" : "bg-gray-200 text-gray-400"}`}>2</span>
+                      <p className={`text-[11px] font-bold uppercase tracking-widest ${cartSent ? "text-gray-500" : "text-gray-300"}`}>
+                        {cartSent ? "Confirm & pay your assessment fee" : "Complete step 1 first"}
+                      </p>
+                    </div>
                     <button
-                      onClick={handleAssessmentSubmit}
-                      className="flex items-center justify-center gap-3 w-full py-4 rounded-xl font-black text-sm uppercase tracking-widest transition-all active:scale-[0.99] shadow-lg text-white bg-cyan-500 hover:bg-cyan-400"
+                      onClick={cartSent ? handleAssessmentSubmit : undefined}
+                      disabled={!cartSent}
+                      className={`flex items-center justify-center gap-3 w-full py-4 rounded-xl font-black text-sm uppercase tracking-widest transition-all shadow-lg ${cartSent ? "bg-cyan-500 hover:bg-cyan-400 text-white active:scale-[0.99] cursor-pointer" : "bg-gray-100 text-gray-300 cursor-not-allowed"}`}
                     >
                       <CalendarCheck className="w-5 h-5" />
                       Confirm Reservation &amp; Pay Fee
@@ -986,19 +1009,12 @@ export function QuoteDrawer() {
                     </p>
                   </div>
 
-                  {/* Secondary — WhatsApp cart summary */}
-                  <div className="mb-3">
-                    <p className="text-[10px] font-bold uppercase tracking-widest text-gray-400 text-center mb-2">Also send your cart summary to Spike</p>
-                    <a
-                      href={`https://wa.me/14168905899?text=${buildWhatsAppText()}`}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="flex items-center justify-center gap-3 w-full py-3.5 bg-[#25D366] hover:bg-[#1fba59] text-white font-black text-sm uppercase tracking-widest rounded-xl transition-all active:scale-[0.99]"
-                    >
-                      <MessageCircle className="w-4 h-4" />
-                      Send Cart via WhatsApp
-                    </a>
-                  </div>
+                  {/* Error message */}
+                  {bookingError && (
+                    <div className="mb-3 bg-red-50 border border-red-200 rounded-xl px-4 py-3">
+                      <p className="text-xs text-red-700 leading-relaxed">{bookingError}</p>
+                    </div>
+                  )}
 
                   <a
                     href="tel:4168905899"
