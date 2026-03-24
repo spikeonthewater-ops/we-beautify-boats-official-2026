@@ -100,6 +100,7 @@ router.post("/bookings/assessment", async (req, res) => {
       address,
       slipId,
       preferredDate,
+      preferredTime,
       cart,
     } = req.body as any;
 
@@ -108,9 +109,10 @@ router.post("/bookings/assessment", async (req, res) => {
       return;
     }
 
+    const resolvedTime = preferredTime || "10:00";
     let startDateTime: Date;
     if (preferredDate) {
-      startDateTime = new Date(`${preferredDate}T10:00:00`);
+      startDateTime = new Date(`${preferredDate}T${resolvedTime}:00`);
     } else {
       startDateTime = new Date();
       startDateTime.setDate(startDateTime.getDate() + 7);
@@ -140,7 +142,7 @@ router.post("/bookings/assessment", async (req, res) => {
       ...serviceLines,
       "",
       "Assessment Fee: $250 CAD (credited to service) — Payment: Stripe / PayPal",
-      preferredDate ? "" : "⚠️ No preferred date provided — date to be confirmed.",
+      preferredDate ? "" : "⚠️ No preferred date/time provided — to be confirmed.",
     ]
       .filter((l) => l !== null)
       .join("\n");
@@ -185,7 +187,7 @@ router.post("/bookings/assessment", async (req, res) => {
                 <tr><td style="padding:6px 0;color:#64748b;font-size:13px">LOA</td><td style="padding:6px 0">${loaFeet} ft</td></tr>
                 <tr><td style="padding:6px 0;color:#64748b;font-size:13px">Location</td><td style="padding:6px 0">${address}</td></tr>
                 <tr><td style="padding:6px 0;color:#64748b;font-size:13px">Slip / Berth</td><td style="padding:6px 0">${slipId}</td></tr>
-                ${preferredDate ? `<tr><td style="padding:6px 0;color:#64748b;font-size:13px">Preferred Date</td><td style="padding:6px 0;color:#0891b2;font-weight:600">${preferredDate}</td></tr>` : ""}
+                ${preferredDate ? `<tr><td style="padding:6px 0;color:#64748b;font-size:13px">Preferred Date</td><td style="padding:6px 0;color:#0891b2;font-weight:600">${preferredDate} at ${resolvedTime}</td></tr>` : ""}
               </table>
               ${serviceRowsHtml ? `
               <p style="margin:0 0 12px;font-size:13px;font-weight:700;text-transform:uppercase;color:#64748b;letter-spacing:1px">Services Requested</p>

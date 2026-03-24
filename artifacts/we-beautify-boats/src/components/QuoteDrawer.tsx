@@ -5,7 +5,7 @@ import {
   Compass, Zap, Ship, Shield, Hammer, Calendar, Gauge, Anchor,
   ShoppingCart, Plus, Trash2, ChevronLeft, ClipboardList, ChevronRight,
   Phone, MessageCircle, ArrowRight, User, MapPin, Ruler, Layers, CalendarCheck,
-  GraduationCap, Loader2, CreditCard, AlertCircle,
+  GraduationCap, Loader2, CreditCard, AlertCircle, Clock,
   LucideIcon
 } from "lucide-react";
 import { useQuote, QuoteCategory, CartItem } from "@/context/QuoteContext";
@@ -178,12 +178,24 @@ interface FormData {
   address: string;
   slipId: string;
   preferredDate: string;
+  preferredTime: string;
 }
 
 const EMPTY_FORM: FormData = {
   firstName: "", lastName: "", phone: "", email: "",
-  boatName: "", boatModel: "", address: "", slipId: "", preferredDate: "",
+  boatName: "", boatModel: "", address: "", slipId: "", preferredDate: "", preferredTime: "",
 };
+
+const ASSESSMENT_TIME_SLOTS = [
+  { label: "8:00 AM",  value: "08:00" },
+  { label: "9:00 AM",  value: "09:00" },
+  { label: "10:00 AM", value: "10:00" },
+  { label: "11:00 AM", value: "11:00" },
+  { label: "1:00 PM",  value: "13:00" },
+  { label: "2:00 PM",  value: "14:00" },
+  { label: "3:00 PM",  value: "15:00" },
+  { label: "4:00 PM",  value: "16:00" },
+];
 
 export function QuoteDrawer() {
   const { isOpen, activeCategory, closeQuote, setCategory, cart, addToCart, removeFromCart, isInCart } = useQuote();
@@ -198,11 +210,11 @@ export function QuoteDrawer() {
   const [availStatus, setAvailStatus] = useState<"idle" | "checking" | "available" | "conflict">("idle");
   const scrollRef = useRef<HTMLDivElement>(null);
 
-  const checkAvailability = useCallback(async (date: string) => {
-    if (!date) { setAvailStatus("idle"); return; }
+  const checkAvailability = useCallback(async (date: string, time: string) => {
+    if (!date || !time) { setAvailStatus("idle"); return; }
     setAvailStatus("checking");
     try {
-      const res = await fetch(`/api/availability?date=${date}&time=10:00&duration=120`);
+      const res = await fetch(`/api/availability?date=${date}&time=${time}&duration=120`);
       const json = await res.json();
       setAvailStatus(json.available ? "available" : "conflict");
     } catch {
@@ -211,10 +223,10 @@ export function QuoteDrawer() {
   }, []);
 
   useEffect(() => {
-    if (!form.preferredDate) { setAvailStatus("idle"); return; }
-    const t = setTimeout(() => checkAvailability(form.preferredDate), 400);
+    if (!form.preferredDate || !form.preferredTime) { setAvailStatus("idle"); return; }
+    const t = setTimeout(() => checkAvailability(form.preferredDate, form.preferredTime), 400);
     return () => clearTimeout(t);
-  }, [form.preferredDate, checkAvailability]);
+  }, [form.preferredDate, form.preferredTime, checkAvailability]);
 
   async function handleAssessmentSubmit() {
     setBookingError("");
@@ -303,7 +315,7 @@ export function QuoteDrawer() {
     return encodeURIComponent(lines.join("\n"));
   };
 
-  const formComplete = !!(form.firstName && form.lastName && form.phone && form.boatName && form.address && form.slipId && loaFeet && form.preferredDate && availStatus !== "conflict");
+  const formComplete = !!(form.firstName && form.lastName && form.phone && form.boatName && form.address && form.slipId && loaFeet && form.preferredDate && form.preferredTime && availStatus !== "conflict" && availStatus !== "checking");
   const fe = (val: string) => formAttempted && !val.trim();
 
   return (
@@ -871,26 +883,58 @@ export function QuoteDrawer() {
                         type="date"
                         value={form.preferredDate}
                         min={new Date(Date.now() + 86400000).toISOString().split("T")[0]}
-                        onChange={e => setForm(f => ({ ...f, preferredDate: e.target.value }))}
+                        onChange={e => setForm(f => ({ ...f, preferredDate: e.target.value, preferredTime: "" }))}
                         className={`w-full border rounded-lg px-3 py-2.5 text-sm font-medium text-marine-900 bg-white focus:outline-none focus:ring-2 ${
                           formAttempted && !form.preferredDate ? "border-red-400 bg-red-50 focus:ring-red-400"
-                          : availStatus === "conflict" ? "border-red-400 bg-red-50 focus:ring-red-400"
-                          : availStatus === "available" ? "border-green-400 bg-green-50 focus:ring-green-400"
                           : "border-gray-200 focus:ring-cyan-400"
                         }`}
                       />
-                      <div className="mt-1 h-4">
+
+                      {/* Time slot picker — appears once a date is chosen */}
+                      {form.preferredDate && (
+                        <div className="mt-3">
+                          <div className="flex items-center gap-2 mb-1.5">
+                            <Clock className="w-3.5 h-3.5 text-gray-400" />
+                            <label className="text-[10px] font-black uppercase tracking-widest text-gray-400">Preferred Time *</label>
+                          </div>
+                          <div className="grid grid-cols-4 gap-1.5">
+                            {ASSESSMENT_TIME_SLOTS.map(slot => (
+                              <button
+                                key={slot.value}
+                                type="button"
+                                onClick={() => setForm(f => ({ ...f, preferredTime: slot.value }))}
+                                className={`py-2 rounded-lg text-xs font-bold border transition-all ${
+                                  form.preferredTime === slot.value
+                                    ? availStatus === "conflict"
+                                      ? "bg-red-500 border-red-500 text-white"
+                                      : availStatus === "available"
+                                      ? "bg-green-500 border-green-500 text-white"
+                                      : "bg-cyan-500 border-cyan-500 text-white"
+                                    : "border-gray-200 text-marine-900 hover:border-cyan-400 hover:bg-cyan-50"
+                                }`}
+                              >
+                                {slot.label}
+                              </button>
+                            ))}
+                          </div>
+                        </div>
+                      )}
+
+                      <div className="mt-2 h-4">
                         {availStatus === "checking" && (
                           <p className="text-[10px] text-gray-400 flex items-center gap-1"><Loader2 className="w-3 h-3 animate-spin" />Checking Spike's calendar…</p>
                         )}
                         {availStatus === "available" && (
-                          <p className="text-[10px] text-green-600 flex items-center gap-1"><CheckCircle2 className="w-3 h-3" />This date looks open — go ahead and reserve</p>
+                          <p className="text-[10px] text-green-600 flex items-center gap-1"><CheckCircle2 className="w-3 h-3" />This slot is open — go ahead and reserve</p>
                         )}
                         {availStatus === "conflict" && (
-                          <p className="text-[10px] text-red-600 flex items-center gap-1"><AlertCircle className="w-3 h-3" />Spike already has something booked that day — try another date</p>
+                          <p className="text-[10px] text-red-600 flex items-center gap-1"><AlertCircle className="w-3 h-3" />Spike is already booked at that time — try another slot</p>
                         )}
                         {availStatus === "idle" && !form.preferredDate && (
-                          <p className="text-[10px] text-gray-400">Pick a date — we'll check it against Spike's calendar instantly</p>
+                          <p className="text-[10px] text-gray-400">Pick a date and time — we'll check Spike's calendar instantly</p>
+                        )}
+                        {availStatus === "idle" && form.preferredDate && !form.preferredTime && (
+                          <p className="text-[10px] text-gray-400">Now pick a time slot above</p>
                         )}
                       </div>
                     </div>
