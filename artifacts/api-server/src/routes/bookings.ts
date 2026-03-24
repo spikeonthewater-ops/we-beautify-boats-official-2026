@@ -286,9 +286,11 @@ router.post("/bookings/course", async (req, res) => {
       email,
       phone,
       location,
-    } = req.body as Record<string, string>;
+      instagram,
+      attendeeType,
+    } = req.body as Record<string, any>;
 
-    if (!seriesNumber || !courseNumber || !date || !time || !firstName || !lastName || !phone) {
+    if (!seriesNumber || !courseNumber || !date || !time || !firstName || !lastName || !phone || !email) {
       res.status(400).json({ error: "Missing required fields" });
       return;
     }
@@ -297,13 +299,19 @@ router.post("/bookings/course", async (req, res) => {
     const startDateTime = new Date(`${date}T${time}:00`);
     const endDateTime = new Date(startDateTime.getTime() + 2 * 60 * 60 * 1000);
 
+    const roleList = Array.isArray(attendeeType) && attendeeType.length > 0
+      ? attendeeType.join(", ")
+      : null;
+
     const description = [
       `Course: ${seriesNumber} — ${courseNumber}: ${courseTitle}`,
       `Session Type: ${isOnline ? "Online (Google Meet)" : "In-Person"}`,
       `Student: ${firstName} ${lastName}`,
       `Phone: ${phone}`,
-      email ? `Email: ${email}` : null,
-      !isOnline && location ? `Location: ${location}` : null,
+      `Email: ${email}`,
+      location ? `Location: ${location}` : null,
+      instagram ? `Instagram: ${instagram}` : null,
+      roleList ? `Attendee Type: ${roleList}` : null,
     ].filter(Boolean).join("\n");
 
     const [calEvent] = await Promise.allSettled([
@@ -313,12 +321,12 @@ router.post("/bookings/course", async (req, res) => {
         location: isOnline ? undefined : (location || "To be confirmed"),
         startDateTime: startDateTime.toISOString(),
         endDateTime: endDateTime.toISOString(),
-        attendeeEmail: email || undefined,
+        attendeeEmail: email,
         googleMeet: isOnline,
       }),
       sendMail({
         subject: `📚 New Course Booking — ${courseNumber}: ${courseTitle}`,
-        replyTo: email || undefined,
+        replyTo: email,
         html: `
           <div style="font-family:sans-serif;max-width:600px;margin:0 auto;color:#1a2942">
             <div style="background:#1a2942;padding:24px 32px;border-radius:12px 12px 0 0">
@@ -329,11 +337,13 @@ router.post("/bookings/course", async (req, res) => {
               <table style="width:100%;border-collapse:collapse">
                 <tr><td style="padding:8px 0;color:#64748b;font-size:13px;width:140px">Student</td><td style="padding:8px 0;font-weight:600">${firstName} ${lastName}</td></tr>
                 <tr><td style="padding:8px 0;color:#64748b;font-size:13px">Phone</td><td style="padding:8px 0">${phone}</td></tr>
-                ${email ? `<tr><td style="padding:8px 0;color:#64748b;font-size:13px">Email</td><td style="padding:8px 0">${email}</td></tr>` : ""}
+                <tr><td style="padding:8px 0;color:#64748b;font-size:13px">Email</td><td style="padding:8px 0">${email}</td></tr>
+                ${location ? `<tr><td style="padding:8px 0;color:#64748b;font-size:13px">Location</td><td style="padding:8px 0">${location}</td></tr>` : ""}
+                ${instagram ? `<tr><td style="padding:8px 0;color:#64748b;font-size:13px">Instagram</td><td style="padding:8px 0">${instagram}</td></tr>` : ""}
+                ${roleList ? `<tr><td style="padding:8px 0;color:#64748b;font-size:13px">Attendee Type</td><td style="padding:8px 0">${roleList}</td></tr>` : ""}
                 <tr><td style="padding:8px 0;color:#64748b;font-size:13px">Series</td><td style="padding:8px 0">${seriesNumber} Series</td></tr>
                 <tr><td style="padding:8px 0;color:#64748b;font-size:13px">Session</td><td style="padding:8px 0">${isOnline ? "🎥 Online — Google Meet link sent via calendar" : "📍 In-Person"}</td></tr>
                 <tr><td style="padding:8px 0;color:#64748b;font-size:13px">Date & Time</td><td style="padding:8px 0;color:#0891b2;font-weight:600">${date} at ${time}</td></tr>
-                ${!isOnline && location ? `<tr><td style="padding:8px 0;color:#64748b;font-size:13px">Location</td><td style="padding:8px 0">${location}</td></tr>` : ""}
               </table>
               <div style="margin-top:20px;padding:16px;background:${isOnline ? "#ecfdf5" : "#fffbeb"};border-radius:8px;border:1px solid ${isOnline ? "#6ee7b7" : "#fde68a"}">
                 <p style="margin:0;font-size:13px;color:${isOnline ? "#065f46" : "#92400e"}">${isOnline ? "🎥 Google Meet link has been added to the calendar invite." : "💰 Payment via Stripe or PayPal to confirm the in-person session."}</p>

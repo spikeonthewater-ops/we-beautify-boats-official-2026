@@ -3,7 +3,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import {
   X, Video, MapPin, CalendarDays, Clock, User, Phone, Mail,
   CheckCircle2, AlertCircle, Loader2, CreditCard, ChevronLeft,
-  ExternalLink,
+  ExternalLink, Instagram, Anchor,
 } from "lucide-react";
 
 export interface CourseBookingModalProps {
@@ -49,10 +49,29 @@ export default function CourseBookingModal({
   const [date, setDate] = useState("");
   const [time, setTime] = useState("");
   const [availStatus, setAvailStatus] = useState<AvailStatus>("idle");
-  const [form, setForm] = useState({ firstName: "", lastName: "", phone: "", email: "", location: "" });
+  const [form, setForm] = useState({
+    firstName: "", lastName: "", phone: "", email: "",
+    address: "", instagram: "", attendeeType: [] as string[],
+  });
   const [submitting, setSubmitting] = useState(false);
   const [result, setResult] = useState<{ meetLink?: string } | null>(null);
   const [error, setError] = useState("");
+
+  const ATTENDEE_ROLES = [
+    { id: "wbb-crew",      label: "We Beautify Boats Crew", Icon: Anchor },
+    { id: "boat-owner",    label: "Boat Owner",              Icon: Anchor },
+    { id: "marina-staff",  label: "Marina Staff",            Icon: MapPin },
+    { id: "marine-pro",    label: "Marine Professional",     Icon: User   },
+    { id: "other",         label: "Other",                   Icon: User   },
+  ];
+
+  const toggleRole = (id: string) =>
+    setForm((f) => ({
+      ...f,
+      attendeeType: f.attendeeType.includes(id)
+        ? f.attendeeType.filter((r) => r !== id)
+        : [...f.attendeeType, id],
+    }));
 
   const checkAvailability = useCallback(async (d: string, t: string) => {
     if (!d || !t) return;
@@ -70,8 +89,9 @@ export default function CourseBookingModal({
     if (date && time) checkAvailability(date, time);
   }, [date, time, checkAvailability]);
 
-  const handleField = (k: keyof typeof form) => (e: React.ChangeEvent<HTMLInputElement>) =>
-    setForm((f) => ({ ...f, [k]: e.target.value }));
+  const handleField = (k: keyof Omit<typeof form, "attendeeType">) =>
+    (e: React.ChangeEvent<HTMLInputElement>) =>
+      setForm((f) => ({ ...f, [k]: e.target.value }));
 
   const canProceedStep2 = sessionType !== null;
   const canProceedStep3 = date && time && (availStatus === "available");
@@ -79,7 +99,8 @@ export default function CourseBookingModal({
     form.firstName.trim() &&
     form.lastName.trim() &&
     form.phone.trim() &&
-    (sessionType === "online" || form.location.trim());
+    form.email.trim() &&
+    form.address.trim();
 
   async function submit() {
     setSubmitting(true);
@@ -95,7 +116,13 @@ export default function CourseBookingModal({
           sessionType,
           date,
           time,
-          ...form,
+          firstName: form.firstName,
+          lastName: form.lastName,
+          phone: form.phone,
+          email: form.email,
+          location: form.address,
+          instagram: form.instagram,
+          attendeeType: form.attendeeType,
         }),
       });
       const data = await res.json();
@@ -310,11 +337,12 @@ export default function CourseBookingModal({
                 <h3 className="font-display font-bold text-marine-900 mb-1">Your Details</h3>
                 <p className="text-sm text-muted-foreground mb-4">
                   {sessionType === "online"
-                    ? "A Google Meet link will be added to your calendar invite."
+                    ? "A Google Meet link will be sent to your email."
                     : "Payment via Stripe or PayPal confirms your in-person spot."}
                 </p>
 
                 <div className="space-y-3">
+                  {/* Name */}
                   <div className="grid grid-cols-2 gap-3">
                     <div>
                       <label className="text-xs font-bold text-marine-900 mb-1 block">First Name *</label>
@@ -341,6 +369,7 @@ export default function CourseBookingModal({
                     </div>
                   </div>
 
+                  {/* Phone */}
                   <div>
                     <label className="text-xs font-bold text-marine-900 mb-1 block">Phone *</label>
                     <div className="relative">
@@ -355,8 +384,9 @@ export default function CourseBookingModal({
                     </div>
                   </div>
 
+                  {/* Email — required */}
                   <div>
-                    <label className="text-xs font-bold text-marine-900 mb-1 block">Email <span className="text-gray-400 font-normal">(for calendar invite)</span></label>
+                    <label className="text-xs font-bold text-marine-900 mb-1 block">Email * <span className="text-gray-400 font-normal">(for calendar invite &amp; Meet link)</span></label>
                     <div className="relative">
                       <Mail className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-gray-400" />
                       <input
@@ -369,21 +399,62 @@ export default function CourseBookingModal({
                     </div>
                   </div>
 
-                  {sessionType === "inperson" && (
-                    <div>
-                      <label className="text-xs font-bold text-marine-900 mb-1 block">Marina / Location *</label>
-                      <div className="relative">
-                        <MapPin className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-gray-400" />
-                        <input
-                          type="text"
-                          value={form.location}
-                          onChange={handleField("location")}
-                          placeholder="e.g. Oakville Yacht Club"
-                          className="w-full pl-9 pr-3 py-2.5 border border-border rounded-xl text-sm focus:outline-none focus:ring-2 focus:ring-cyan-400"
-                        />
-                      </div>
+                  {/* Address — always required */}
+                  <div>
+                    <label className="text-xs font-bold text-marine-900 mb-1 block">
+                      {sessionType === "inperson" ? "Marina / Location *" : "City / Address *"}
+                    </label>
+                    <div className="relative">
+                      <MapPin className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-gray-400" />
+                      <input
+                        type="text"
+                        value={form.address}
+                        onChange={handleField("address")}
+                        placeholder={sessionType === "inperson" ? "e.g. Oakville Yacht Club" : "e.g. Toronto, ON"}
+                        className="w-full pl-9 pr-3 py-2.5 border border-border rounded-xl text-sm focus:outline-none focus:ring-2 focus:ring-cyan-400"
+                      />
                     </div>
-                  )}
+                  </div>
+
+                  {/* Instagram — optional */}
+                  <div>
+                    <label className="text-xs font-bold text-marine-900 mb-1 block">Instagram <span className="text-gray-400 font-normal">(optional)</span></label>
+                    <div className="relative">
+                      <Instagram className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-gray-400" />
+                      <input
+                        type="text"
+                        value={form.instagram}
+                        onChange={handleField("instagram")}
+                        placeholder="@yourhandle"
+                        className="w-full pl-9 pr-3 py-2.5 border border-border rounded-xl text-sm focus:outline-none focus:ring-2 focus:ring-cyan-400"
+                      />
+                    </div>
+                  </div>
+
+                  {/* Who are you? — multi-select */}
+                  <div>
+                    <label className="text-xs font-bold text-marine-900 mb-2 block">Who are you? <span className="text-gray-400 font-normal">(select all that apply)</span></label>
+                    <div className="grid grid-cols-2 gap-2">
+                      {ATTENDEE_ROLES.map(({ id, label }) => {
+                        const selected = form.attendeeType.includes(id);
+                        return (
+                          <button
+                            key={id}
+                            type="button"
+                            onClick={() => toggleRole(id)}
+                            className={`text-left px-3 py-2.5 rounded-xl border-2 text-xs font-bold transition-all ${
+                              selected
+                                ? "border-cyan-500 bg-cyan-50 text-cyan-800"
+                                : "border-border text-marine-900 hover:border-cyan-300 hover:bg-gray-50"
+                            }`}
+                          >
+                            <span className={`inline-block w-3.5 h-3.5 rounded border mr-2 align-middle transition-all ${selected ? "bg-cyan-500 border-cyan-500" : "border-gray-300"}`} />
+                            {label}
+                          </button>
+                        );
+                      })}
+                    </div>
+                  </div>
                 </div>
 
                 {error && (
