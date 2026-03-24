@@ -214,9 +214,17 @@ export function QuoteDrawer() {
     if (!date || !time) { setAvailStatus("idle"); return; }
     setAvailStatus("checking");
     try {
-      const res = await fetch(`/api/availability?date=${date}&time=${time}&duration=120`);
+      const controller = new AbortController();
+      const timer = setTimeout(() => controller.abort(), 6000);
+      const res = await fetch(`/api/availability?date=${date}&time=${time}&duration=120`, { signal: controller.signal });
+      clearTimeout(timer);
+      if (!res.ok) { setAvailStatus("idle"); return; }
       const json = await res.json();
-      setAvailStatus(json.available ? "available" : "conflict");
+      if (typeof json.available === "boolean") {
+        setAvailStatus(json.available ? "available" : "conflict");
+      } else {
+        setAvailStatus("idle");
+      }
     } catch {
       setAvailStatus("idle");
     }
