@@ -85,6 +85,8 @@ export default function CourseBookingModal({
     }
   }, []);
 
+  const sessionDurationMins = sessionType === "online" ? 90 : 120;
+
   useEffect(() => {
     if (date && time) checkAvailability(date, time, sessionDurationMins);
   }, [date, time, sessionDurationMins, checkAvailability]);
@@ -92,8 +94,6 @@ export default function CourseBookingModal({
   const handleField = (k: keyof Omit<typeof form, "attendeeType">) =>
     (e: React.ChangeEvent<HTMLInputElement>) =>
       setForm((f) => ({ ...f, [k]: e.target.value }));
-
-  const sessionDurationMins = sessionType === "online" ? 90 : 120;
 
   const canProceedStep2 = sessionType !== null;
   // Allow proceed unless there's an active check running or a confirmed conflict
