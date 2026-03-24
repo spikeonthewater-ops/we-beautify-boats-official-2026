@@ -1,5 +1,5 @@
 import { Router, type IRouter } from "express";
-import { createCalendarEvent } from "../lib/googleCalendar.js";
+import { createCalendarEvent, checkAvailability } from "../lib/googleCalendar.js";
 import { sendMail } from "../lib/mailer.js";
 
 const router: IRouter = Router();

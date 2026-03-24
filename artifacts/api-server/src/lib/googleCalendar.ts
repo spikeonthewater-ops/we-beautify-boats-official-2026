@@ -60,6 +60,7 @@ export async function createCalendarEvent(params: {
   startDateTime: string;
   endDateTime: string;
   attendeeEmail?: string;
+  googleMeet?: boolean;
 }) {
   const calendar = await getCalendarClient();
 
@@ -78,6 +79,15 @@ export async function createCalendarEvent(params: {
     },
   };
 
+  if (params.googleMeet) {
+    event.conferenceData = {
+      createRequest: {
+        requestId: `wbb-${Date.now()}`,
+        conferenceSolutionKey: { type: "hangoutsMeet" },
+      },
+    };
+  }
+
   if (params.attendeeEmail) {
     event.attendees = [{ email: params.attendeeEmail }];
   }
@@ -85,8 +95,28 @@ export async function createCalendarEvent(params: {
   const response = await calendar.events.insert({
     calendarId: "primary",
     requestBody: event,
+    conferenceDataVersion: params.googleMeet ? 1 : 0,
     sendUpdates: params.attendeeEmail ? "all" : "none",
   });
 
   return response.data;
+}
+
+export async function checkAvailability(
+  startDateTime: string,
+  endDateTime: string
+): Promise<{ available: boolean; conflicts: number }> {
+  const calendar = await getCalendarClient();
+
+  const response = await calendar.freebusy.query({
+    requestBody: {
+      timeMin: startDateTime,
+      timeMax: endDateTime,
+      timeZone: "America/Toronto",
+      items: [{ id: "primary" }],
+    },
+  });
+
+  const busy = response.data.calendars?.["primary"]?.busy ?? [];
+  return { available: busy.length === 0, conflicts: busy.length };
 }
