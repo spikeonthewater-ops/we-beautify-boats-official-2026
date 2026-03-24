@@ -1016,13 +1016,25 @@ export function QuoteDrawer() {
                     </div>
                   )}
 
-                  <a
-                    href="tel:4168905899"
-                    className="flex items-center justify-center gap-3 w-full py-3 bg-white border border-gray-200 hover:border-purple-300 hover:bg-purple-50 text-marine-900 font-black text-sm uppercase tracking-widest rounded-xl transition-all active:scale-[0.99] mb-2"
-                  >
-                    <Phone className="w-4 h-4" />
-                    Call Spike — 416-890-5899
-                  </a>
+                  {/* STEP 3 — Call to confirm */}
+                  <div className="mb-2">
+                    <div className="flex items-center gap-2 mb-2">
+                      <span className="w-6 h-6 rounded-full flex items-center justify-center text-xs font-black shrink-0 bg-marine-900 text-white">3</span>
+                      <p className="text-[11px] font-bold uppercase tracking-widest text-gray-500">
+                        Call Spike to confirm date &amp; payment received
+                      </p>
+                    </div>
+                    <a
+                      href="tel:4168905899"
+                      className="flex items-center justify-center gap-3 w-full py-3.5 bg-white border-2 border-marine-900 hover:bg-marine-900 hover:text-white text-marine-900 font-black text-sm uppercase tracking-widest rounded-xl transition-all active:scale-[0.99]"
+                    >
+                      <Phone className="w-4 h-4" />
+                      Call Spike — 416-890-5899
+                    </a>
+                    <p className="text-center text-[10px] text-gray-400 mt-2 leading-relaxed">
+                      No WhatsApp? Call Spike directly to send your details and lock in your date.
+                    </p>
+                  </div>
                 </div>
               )}
 
