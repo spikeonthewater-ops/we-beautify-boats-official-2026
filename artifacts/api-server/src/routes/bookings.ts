@@ -1,5 +1,5 @@
 import { Router, type IRouter } from "express";
-import { createCalendarEvent, checkAvailability } from "../lib/googleCalendar.js";
+import { createCalendarEvent, checkAvailability, getUpcomingCourses } from "../lib/googleCalendar.js";
 import { sendMail } from "../lib/mailer.js";
 
 const router: IRouter = Router();
@@ -350,6 +350,18 @@ router.post("/bookings/course", async (req, res) => {
   } catch (err: any) {
     console.error("Course booking error:", err);
     res.status(500).json({ error: err?.message ?? "Failed to process booking" });
+  }
+});
+
+// ─── Upcoming Courses ────────────────────────────────────────────────────────
+
+router.get("/upcoming-courses", async (_req, res) => {
+  try {
+    const courses = await getUpcomingCourses(48);
+    res.json(courses);
+  } catch (err: any) {
+    console.error("Upcoming courses error:", err);
+    res.status(500).json({ error: err?.message ?? "Failed to fetch upcoming courses" });
   }
 });
 

@@ -5,6 +5,7 @@ import { useQuote } from "@/context/QuoteContext";
 import PageMeta from "@/components/PageMeta";
 import WorkshopBookingModal, { type WorkshopBookingModalProps } from "@/components/WorkshopBookingModal";
 import CourseBookingModal, { type CourseBookingModalProps } from "@/components/CourseBookingModal";
+import UpcomingCourseBanner, { type UpcomingCourse } from "@/components/UpcomingCourseBanner";
 import {
   ArrowLeft,
   GraduationCap,
@@ -254,6 +255,26 @@ export default function Workshops() {
     });
   }
 
+  function openCourseFromBanner(upcoming: UpcomingCourse, sessionType: "online" | "inperson") {
+    const seriesNum = upcoming.seriesNumber ?? "100";
+    const seriesColorMap: Record<string, string> = {
+      "100": "bg-cyan-500",
+      "200": "bg-purple-600",
+      "300": "bg-marine-900",
+    };
+    setActiveCourse({
+      course: {
+        number: upcoming.courseNumber ?? "",
+        title: upcoming.courseTitle,
+        tagline: upcoming.isOnline ? "Online · Google Meet" : upcoming.location ?? "In-Person Practical",
+      },
+      seriesNumber: seriesNum,
+      seriesColor: seriesColorMap[seriesNum] ?? "bg-cyan-500",
+      initialSessionType: sessionType,
+      onClose: () => setActiveCourse(null),
+    });
+  }
+
   return (
     <div className="min-h-screen bg-background pb-20">
       <PageMeta
@@ -314,6 +335,9 @@ export default function Workshops() {
       </div>
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-20 space-y-24">
+
+        {/* Upcoming Sessions Banner */}
+        <UpcomingCourseBanner onJoin={openCourseFromBanner} />
 
         {/* Pricing */}
         <motion.div initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}>

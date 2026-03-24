@@ -103,6 +103,52 @@ export async function createCalendarEvent(params: {
   return response.data;
 }
 
+export async function getUpcomingCourses(hoursAhead = 48) {
+  const calendar = await getCalendarClient();
+
+  const now = new Date();
+  const cutoff = new Date(now.getTime() + hoursAhead * 60 * 60 * 1000);
+
+  const response = await calendar.events.list({
+    calendarId: "primary",
+    timeMin: now.toISOString(),
+    timeMax: cutoff.toISOString(),
+    singleEvents: true,
+    orderBy: "startTime",
+  });
+
+  const events = response.data.items ?? [];
+
+  return events
+    .filter((e) => e.summary?.includes("📚") || e.summary?.toLowerCase().includes("course"))
+    .map((e) => {
+      const summary = e.summary ?? "";
+      const courseMatch = summary.match(/Course\s+(\d+):\s+([^—\-]+)/i);
+      const courseNumber = courseMatch?.[1] ?? null;
+      const courseTitle = courseMatch?.[2]?.trim() ?? summary.replace(/^📚\s*/, "").trim();
+      const seriesNumber = courseNumber
+        ? `${courseNumber[0]}00`
+        : null;
+      const isOnline = !!(e.conferenceData?.entryPoints?.length);
+      const meetLink = e.conferenceData?.entryPoints?.find(
+        (ep: any) => ep.entryPointType === "video"
+      )?.uri ?? null;
+
+      return {
+        eventId: e.id,
+        summary,
+        courseNumber,
+        courseTitle,
+        seriesNumber,
+        isOnline,
+        meetLink,
+        startDateTime: e.start?.dateTime ?? e.start?.date,
+        endDateTime: e.end?.dateTime ?? e.end?.date,
+        location: e.location ?? null,
+      };
+    });
+}
+
 export async function checkAvailability(
   startDateTime: string,
   endDateTime: string
