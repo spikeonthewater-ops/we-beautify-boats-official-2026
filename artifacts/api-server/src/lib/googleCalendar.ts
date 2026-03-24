@@ -68,6 +68,7 @@ export async function createCalendarEvent(params: {
     summary: params.summary,
     description: params.description,
     location: params.location,
+    colorId: "7", // Peacock — teal/cyan matches We Beautify Boats brand
     start: { dateTime: params.startDateTime, timeZone: "America/Toronto" },
     end: { dateTime: params.endDateTime, timeZone: "America/Toronto" },
     reminders: {
