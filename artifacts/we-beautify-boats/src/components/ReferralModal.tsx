@@ -140,7 +140,7 @@ export default function ReferralModal({ onClose }: Props) {
       form.notes.trim() ? `\nNotes: ${form.notes.trim()}` : "",
     ].join("\n");
 
-    return `mailto:spikeonthewater@gmail.com?subject=${encodeURIComponent("New Referral: " + form.friendName)}&body=${encodeURIComponent(body)}`;
+    return `mailto:webeautifyboats.toronto@gmail.com?subject=${encodeURIComponent("New Referral: " + form.friendName)}&body=${encodeURIComponent(body)}`;
   }
 
   function handleSend(via: "whatsapp" | "email") {
@@ -413,7 +413,7 @@ export default function ReferralModal({ onClose }: Props) {
                   Send via Email
                 </button>
                 <p className="text-center text-[10px] text-gray-400 leading-relaxed">
-                  WhatsApp opens a pre-filled message · Email opens your mail app · spikeonthewater@gmail.com
+                  WhatsApp opens a pre-filled message · Email opens your mail app · webeautifyboats.toronto@gmail.com
                 </p>
               </div>
 

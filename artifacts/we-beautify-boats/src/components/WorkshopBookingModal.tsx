@@ -302,7 +302,7 @@ export default function WorkshopBookingModal({ workshop, onClose }: WorkshopBook
                     <p className="text-sm text-muted-foreground">
                       {errorMsg
                         ? "Spike will confirm your slot by phone within 24 hours. Complete your payment below to hold your spot."
-                        : "Spike has been notified at spikeonthewater@gmail.com. Complete your payment below to confirm your spot."}
+                        : "Spike has been notified at webeautifyboats.toronto@gmail.com. Complete your payment below to confirm your spot."}
                     </p>
                   </div>
                 </div>
