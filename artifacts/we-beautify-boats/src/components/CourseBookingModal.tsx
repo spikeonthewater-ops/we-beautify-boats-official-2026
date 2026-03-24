@@ -73,11 +73,11 @@ export default function CourseBookingModal({
         : [...f.attendeeType, id],
     }));
 
-  const checkAvailability = useCallback(async (d: string, t: string) => {
+  const checkAvailability = useCallback(async (d: string, t: string, durMins = 120) => {
     if (!d || !t) return;
     setAvailStatus("checking");
     try {
-      const res = await fetch(`/api/availability?date=${d}&time=${t}&duration=120`);
+      const res = await fetch(`/api/availability?date=${d}&time=${t}&duration=${durMins}`);
       const data = await res.json();
       setAvailStatus(data.available ? "available" : "conflict");
     } catch {
@@ -86,15 +86,18 @@ export default function CourseBookingModal({
   }, []);
 
   useEffect(() => {
-    if (date && time) checkAvailability(date, time);
-  }, [date, time, checkAvailability]);
+    if (date && time) checkAvailability(date, time, sessionDurationMins);
+  }, [date, time, sessionDurationMins, checkAvailability]);
 
   const handleField = (k: keyof Omit<typeof form, "attendeeType">) =>
     (e: React.ChangeEvent<HTMLInputElement>) =>
       setForm((f) => ({ ...f, [k]: e.target.value }));
 
+  const sessionDurationMins = sessionType === "online" ? 90 : 120;
+
   const canProceedStep2 = sessionType !== null;
-  const canProceedStep3 = date && time && (availStatus === "available");
+  // Allow proceed unless there's an active check running or a confirmed conflict
+  const canProceedStep3 = date && time && availStatus !== "conflict" && availStatus !== "checking";
   const canProceedStep4 =
     form.firstName.trim() &&
     form.lastName.trim() &&
@@ -253,7 +256,7 @@ export default function CourseBookingModal({
                 </button>
                 <h3 className="font-display font-bold text-marine-900 mb-1">Pick a Date & Time</h3>
                 <p className="text-sm text-muted-foreground mb-4">
-                  {sessionType === "online" ? "Online via Google Meet" : "In-Person Practical"} · 2-hour session
+                  {sessionType === "online" ? "Online via Google Meet · 90-minute session" : "In-Person Practical · 2-hour session"}
                 </p>
 
                 <div className="space-y-4">

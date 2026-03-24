@@ -297,7 +297,8 @@ router.post("/bookings/course", async (req, res) => {
 
     const isOnline = sessionType === "online";
     const startDateTime = new Date(`${date}T${time}:00`);
-    const endDateTime = new Date(startDateTime.getTime() + 2 * 60 * 60 * 1000);
+    const durationMs = isOnline ? 90 * 60 * 1000 : 2 * 60 * 60 * 1000; // 90 min online, 2h in-person
+    const endDateTime = new Date(startDateTime.getTime() + durationMs);
 
     const roleList = Array.isArray(attendeeType) && attendeeType.length > 0
       ? attendeeType.join(", ")
@@ -342,7 +343,7 @@ router.post("/bookings/course", async (req, res) => {
                 ${instagram ? `<tr><td style="padding:8px 0;color:#64748b;font-size:13px">Instagram</td><td style="padding:8px 0">${instagram}</td></tr>` : ""}
                 ${roleList ? `<tr><td style="padding:8px 0;color:#64748b;font-size:13px">Attendee Type</td><td style="padding:8px 0">${roleList}</td></tr>` : ""}
                 <tr><td style="padding:8px 0;color:#64748b;font-size:13px">Series</td><td style="padding:8px 0">${seriesNumber} Series</td></tr>
-                <tr><td style="padding:8px 0;color:#64748b;font-size:13px">Session</td><td style="padding:8px 0">${isOnline ? "🎥 Online — Google Meet link sent via calendar" : "📍 In-Person"}</td></tr>
+                <tr><td style="padding:8px 0;color:#64748b;font-size:13px">Session</td><td style="padding:8px 0">${isOnline ? "🎥 Online — Google Meet · 90 min" : "📍 In-Person · 2 hours"}</td></tr>
                 <tr><td style="padding:8px 0;color:#64748b;font-size:13px">Date & Time</td><td style="padding:8px 0;color:#0891b2;font-weight:600">${date} at ${time}</td></tr>
               </table>
               <div style="margin-top:20px;padding:16px;background:${isOnline ? "#ecfdf5" : "#fffbeb"};border-radius:8px;border:1px solid ${isOnline ? "#6ee7b7" : "#fde68a"}">
