@@ -386,7 +386,7 @@ export function QuoteDrawer() {
             {/* ── HEADER ─────────────────────────────────────── */}
             <div className="bg-marine-900 text-white shrink-0">
               <div className="bg-amber-500/20 border-b border-amber-400/20 text-amber-300 text-[10px] font-black uppercase tracking-widest text-center py-1.5">
-                Estimate Only — No Transactions Here · Assessment $250 CAD
+                No Service Transactions Here — Assessment First $250
               </div>
 
               <div className="px-5 py-4 flex items-center justify-between">
