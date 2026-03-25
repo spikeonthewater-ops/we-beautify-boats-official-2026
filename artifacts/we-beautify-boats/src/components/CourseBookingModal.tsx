@@ -3,7 +3,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import {
   X, Video, MapPin, CalendarDays, Clock, User, Phone, Mail,
   CheckCircle2, AlertCircle, Loader2, CreditCard, ChevronLeft,
-  ExternalLink, Instagram, Anchor,
+  ExternalLink, Instagram, Anchor, CalendarCheck,
 } from "lucide-react";
 
 export interface CourseBookingModalProps {
@@ -49,6 +49,8 @@ export default function CourseBookingModal({
   const [date, setDate] = useState("");
   const [time, setTime] = useState("");
   const [slotAvailabilities, setSlotAvailabilities] = useState<Record<string, AvailStatus>>({});
+  const [nextAvailableDate, setNextAvailableDate] = useState<string | null>(null);
+  const [findingNext, setFindingNext] = useState(false);
   const [form, setForm] = useState({
     firstName: "", lastName: "", phone: "", email: "",
     address: "", instagram: "", attendeeType: [] as string[],
@@ -79,6 +81,8 @@ export default function CourseBookingModal({
 
   useEffect(() => {
     if (!date) { setSlotAvailabilities({}); return; }
+    setNextAvailableDate(null);
+    setFindingNext(false);
     setSlotAvailabilities(Object.fromEntries(TIMES.map(t => [t, "checking" as AvailStatus])));
     TIMES.forEach(async (t) => {
       try {
@@ -97,6 +101,42 @@ export default function CourseBookingModal({
       }
     });
   }, [date, sessionDurationMins]);
+
+  useEffect(() => {
+    const values = Object.values(slotAvailabilities);
+    if (values.length < TIMES.length || !values.every(v => v === "conflict")) {
+      setNextAvailableDate(null);
+      setFindingNext(false);
+      return;
+    }
+    if (!date) return;
+    let cancelled = false;
+    setFindingNext(true);
+    setNextAvailableDate(null);
+    (async () => {
+      const base = new Date(date + "T12:00:00");
+      for (let i = 1; i <= 30; i++) {
+        if (cancelled) return;
+        const candidate = new Date(base);
+        candidate.setDate(candidate.getDate() + i);
+        const dateStr = candidate.toISOString().split("T")[0];
+        const results = await Promise.all(
+          TIMES.map(async (t) => {
+            try {
+              const res = await fetch(`/api/availability?date=${dateStr}&time=${t}&duration=${sessionDurationMins}`);
+              if (!res.ok) return false;
+              const json = await res.json();
+              return json.available === true;
+            } catch { return false; }
+          })
+        );
+        if (cancelled) return;
+        if (results.some(r => r)) { setNextAvailableDate(dateStr); setFindingNext(false); return; }
+      }
+      if (!cancelled) setFindingNext(false);
+    })();
+    return () => { cancelled = true; };
+  }, [slotAvailabilities, date, sessionDurationMins]);
 
   const handleField = (k: keyof Omit<typeof form, "attendeeType">) =>
     (e: React.ChangeEvent<HTMLInputElement>) =>
@@ -314,6 +354,24 @@ export default function CourseBookingModal({
                       })}
                     </div>
                   </div>
+
+                  {/* Next available date suggestion */}
+                  {findingNext && (
+                    <p className="text-xs text-gray-400 flex items-center gap-1.5">
+                      <Loader2 className="w-3.5 h-3.5 animate-spin" />
+                      All slots taken — finding next open date…
+                    </p>
+                  )}
+                  {nextAvailableDate && !findingNext && (
+                    <button
+                      type="button"
+                      onClick={() => { setDate(nextAvailableDate); setTime(""); }}
+                      className="w-full text-xs font-bold text-cyan-700 bg-cyan-50 border border-cyan-200 rounded-xl py-2.5 hover:bg-cyan-100 transition-all flex items-center justify-center gap-2"
+                    >
+                      <CalendarCheck className="w-3.5 h-3.5" />
+                      Next available: {new Date(nextAvailableDate + "T12:00:00").toLocaleDateString("en-CA", { weekday: "long", month: "long", day: "numeric" })} — tap to switch
+                    </button>
+                  )}
 
                   {/* Availability indicator */}
                   <AnimatePresence>

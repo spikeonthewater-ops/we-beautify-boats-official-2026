@@ -208,6 +208,8 @@ export function QuoteDrawer() {
   const [formAttempted, setFormAttempted] = useState(false);
   const [cartSent, setCartSent] = useState(false);
   const [slotAvailabilities, setSlotAvailabilities] = useState<Record<string, "idle" | "checking" | "available" | "conflict">>({});
+  const [nextAvailableDate, setNextAvailableDate] = useState<string | null>(null);
+  const [findingNext, setFindingNext] = useState(false);
   const scrollRef = useRef<HTMLDivElement>(null);
 
   const availStatus: "idle" | "checking" | "available" | "conflict" =
@@ -215,6 +217,8 @@ export function QuoteDrawer() {
 
   useEffect(() => {
     if (!form.preferredDate) { setSlotAvailabilities({}); return; }
+    setNextAvailableDate(null);
+    setFindingNext(false);
     setSlotAvailabilities(Object.fromEntries(ASSESSMENT_TIME_SLOTS.map(s => [s.value, "checking" as const])));
     ASSESSMENT_TIME_SLOTS.forEach(async (slot) => {
       try {
@@ -233,6 +237,42 @@ export function QuoteDrawer() {
       }
     });
   }, [form.preferredDate]);
+
+  useEffect(() => {
+    const values = Object.values(slotAvailabilities);
+    if (values.length < ASSESSMENT_TIME_SLOTS.length || !values.every(v => v === "conflict")) {
+      setNextAvailableDate(null);
+      setFindingNext(false);
+      return;
+    }
+    if (!form.preferredDate) return;
+    let cancelled = false;
+    setFindingNext(true);
+    setNextAvailableDate(null);
+    (async () => {
+      const base = new Date(form.preferredDate + "T12:00:00");
+      for (let i = 1; i <= 30; i++) {
+        if (cancelled) return;
+        const candidate = new Date(base);
+        candidate.setDate(candidate.getDate() + i);
+        const dateStr = candidate.toISOString().split("T")[0];
+        const results = await Promise.all(
+          ASSESSMENT_TIME_SLOTS.map(async (slot) => {
+            try {
+              const res = await fetch(`/api/availability?date=${dateStr}&time=${slot.value}&duration=120`);
+              if (!res.ok) return false;
+              const json = await res.json();
+              return json.available === true;
+            } catch { return false; }
+          })
+        );
+        if (cancelled) return;
+        if (results.some(r => r)) { setNextAvailableDate(dateStr); setFindingNext(false); return; }
+      }
+      if (!cancelled) setFindingNext(false);
+    })();
+    return () => { cancelled = true; };
+  }, [slotAvailabilities, form.preferredDate]);
 
   async function handleAssessmentSubmit() {
     setBookingError("");
@@ -932,6 +972,24 @@ export function QuoteDrawer() {
                             })}
                           </div>
                         </div>
+                      )}
+
+                      {/* Next available date suggestion */}
+                      {findingNext && (
+                        <p className="mt-2 text-[10px] text-gray-400 flex items-center gap-1">
+                          <Loader2 className="w-3 h-3 animate-spin" />
+                          All slots taken — finding next open date…
+                        </p>
+                      )}
+                      {nextAvailableDate && !findingNext && (
+                        <button
+                          type="button"
+                          onClick={() => setForm(f => ({ ...f, preferredDate: nextAvailableDate, preferredTime: "" }))}
+                          className="mt-2 w-full text-[10px] font-bold text-cyan-700 bg-cyan-50 border border-cyan-200 rounded-lg py-2 hover:bg-cyan-100 transition-all flex items-center justify-center gap-1.5"
+                        >
+                          <CalendarCheck className="w-3 h-3" />
+                          Next available: {new Date(nextAvailableDate + "T12:00:00").toLocaleDateString("en-CA", { weekday: "long", month: "long", day: "numeric" })} — tap to switch
+                        </button>
                       )}
 
                       <div className="mt-2 h-4">
