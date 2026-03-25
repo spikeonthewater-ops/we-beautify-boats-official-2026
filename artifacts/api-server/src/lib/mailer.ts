@@ -1,6 +1,6 @@
 import { Resend } from "resend";
 
-const FROM_ADDRESS = "We Beautify Boats <onboarding@resend.dev>";
+const FROM_ADDRESS = "We Beautify Boats <bookings@webeautifyboats.com>";
 const TO_ADDRESS = "webeautifyboats.toronto@gmail.com";
 
 let _resend: Resend | null = null;
