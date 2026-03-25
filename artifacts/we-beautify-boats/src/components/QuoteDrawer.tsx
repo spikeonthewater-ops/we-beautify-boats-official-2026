@@ -290,10 +290,10 @@ export function QuoteDrawer() {
       if (res.ok && json.success) {
         setBookingError("");
       } else {
-        setBookingError("Note: calendar sync unavailable — Spike will confirm your slot by phone.");
+        setBookingError("booking_failed");
       }
     } catch {
-      setBookingError("Note: calendar sync unavailable — Spike will confirm your slot by phone.");
+      setBookingError("booking_failed");
     }
     setStep("payment");
   }
@@ -1083,9 +1083,9 @@ export function QuoteDrawer() {
                   {bookingError ? (
                     <div className="bg-amber-50 border border-amber-200 rounded-2xl p-5 mb-6 text-center">
                       <CheckCircle2 className="w-10 h-10 text-amber-500 mx-auto mb-2" />
-                      <h3 className="font-display font-bold text-lg text-marine-900 mb-1">Almost There</h3>
+                      <h3 className="font-display font-bold text-lg text-marine-900 mb-1">Couldn't Connect</h3>
                       <p className="text-sm text-gray-500 leading-relaxed">
-                        Calendar sync had a hiccup — call Spike directly to lock in your date and send your payment.
+                        Your booking didn't go through. Please call or text Spike at <strong>(416) 890-5899</strong> to lock in your date.
                       </p>
                     </div>
                   ) : (

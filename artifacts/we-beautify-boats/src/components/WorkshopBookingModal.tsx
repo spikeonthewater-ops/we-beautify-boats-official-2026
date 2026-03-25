@@ -77,10 +77,10 @@ export default function WorkshopBookingModal({ workshop, onClose }: WorkshopBook
       if (res.ok && json.success) {
         setErrorMsg("");
       } else {
-        setErrorMsg("Note: calendar sync unavailable — Spike will confirm your slot by phone.");
+        setErrorMsg("booking_failed");
       }
     } catch {
-      setErrorMsg("Note: calendar sync unavailable — Spike will confirm your slot by phone.");
+      setErrorMsg("booking_failed");
     }
     setStep("payment");
   }

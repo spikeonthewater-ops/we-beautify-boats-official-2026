@@ -41,44 +41,47 @@ router.post("/bookings/workshop", async (req, res) => {
       .filter(Boolean)
       .join("\n");
 
-    const [event] = await Promise.allSettled([
-      createCalendarEvent({
-        summary: `🎓 Workshop Booking — ${workshop} @ ${venue}`,
-        description,
-        location: venue,
-        startDateTime: startDateTime.toISOString(),
-        endDateTime: endDateTime.toISOString(),
-        attendeeEmail: email || undefined,
-        calendarKey: "workshops",
-      }),
-      sendMail({
-        subject: `🎓 New Workshop Booking — ${workshop}`,
-        replyTo: email || undefined,
-        html: `
-          <div style="font-family:sans-serif;max-width:600px;margin:0 auto;color:#1a2942">
-            <div style="background:#1a2942;padding:24px 32px;border-radius:12px 12px 0 0">
-              <h1 style="color:#fff;margin:0;font-size:22px">New Workshop Booking</h1>
-              <p style="color:#67e8f9;margin:4px 0 0;font-size:13px;text-transform:uppercase;letter-spacing:1px">${workshop}</p>
-            </div>
-            <div style="background:#f8fafc;padding:24px 32px;border-radius:0 0 12px 12px;border:1px solid #e2e8f0">
-              <table style="width:100%;border-collapse:collapse">
-                <tr><td style="padding:8px 0;color:#64748b;font-size:13px;width:140px">Contact</td><td style="padding:8px 0;font-weight:600">${contact_person}</td></tr>
-                ${email ? `<tr><td style="padding:8px 0;color:#64748b;font-size:13px">Email</td><td style="padding:8px 0">${email}</td></tr>` : ""}
-                ${phone ? `<tr><td style="padding:8px 0;color:#64748b;font-size:13px">Phone</td><td style="padding:8px 0">${phone}</td></tr>` : ""}
-                <tr><td style="padding:8px 0;color:#64748b;font-size:13px">Venue</td><td style="padding:8px 0">${venue}</td></tr>
-                <tr><td style="padding:8px 0;color:#64748b;font-size:13px">Date</td><td style="padding:8px 0">${event_date} at ${event_time}</td></tr>
-                ${attendance ? `<tr><td style="padding:8px 0;color:#64748b;font-size:13px">Attendance</td><td style="padding:8px 0">${attendance}</td></tr>` : ""}
-              </table>
-              <div style="margin-top:20px;padding:16px;background:#fffbeb;border-radius:8px;border:1px solid #fde68a">
-                <p style="margin:0;font-size:13px;color:#92400e">⚠️ Recording disclaimer acknowledged. Payment of $250 CAD due via Stripe or PayPal.</p>
-              </div>
+    // Email is critical — must succeed
+    await sendMail({
+      subject: `🎓 New Workshop Booking — ${workshop}`,
+      replyTo: email || undefined,
+      html: `
+        <div style="font-family:sans-serif;max-width:600px;margin:0 auto;color:#1a2942">
+          <div style="background:#1a2942;padding:24px 32px;border-radius:12px 12px 0 0">
+            <h1 style="color:#fff;margin:0;font-size:22px">New Workshop Booking</h1>
+            <p style="color:#67e8f9;margin:4px 0 0;font-size:13px;text-transform:uppercase;letter-spacing:1px">${workshop}</p>
+          </div>
+          <div style="background:#f8fafc;padding:24px 32px;border-radius:0 0 12px 12px;border:1px solid #e2e8f0">
+            <table style="width:100%;border-collapse:collapse">
+              <tr><td style="padding:8px 0;color:#64748b;font-size:13px;width:140px">Contact</td><td style="padding:8px 0;font-weight:600">${contact_person}</td></tr>
+              ${email ? `<tr><td style="padding:8px 0;color:#64748b;font-size:13px">Email</td><td style="padding:8px 0">${email}</td></tr>` : ""}
+              ${phone ? `<tr><td style="padding:8px 0;color:#64748b;font-size:13px">Phone</td><td style="padding:8px 0">${phone}</td></tr>` : ""}
+              <tr><td style="padding:8px 0;color:#64748b;font-size:13px">Venue</td><td style="padding:8px 0">${venue}</td></tr>
+              <tr><td style="padding:8px 0;color:#64748b;font-size:13px">Date</td><td style="padding:8px 0">${event_date} at ${event_time}</td></tr>
+              ${attendance ? `<tr><td style="padding:8px 0;color:#64748b;font-size:13px">Attendance</td><td style="padding:8px 0">${attendance}</td></tr>` : ""}
+            </table>
+            <div style="margin-top:20px;padding:16px;background:#fffbeb;border-radius:8px;border:1px solid #fde68a">
+              <p style="margin:0;font-size:13px;color:#92400e">⚠️ Recording disclaimer acknowledged. Payment of $250 CAD due via Stripe or PayPal.</p>
             </div>
           </div>
-        `,
-      }),
-    ]);
+        </div>
+      `,
+    });
 
-    const eventId = event.status === "fulfilled" ? event.value.id : null;
+    // Calendar is best-effort — log failures but don't block the response
+    const eventId = await createCalendarEvent({
+      summary: `🎓 Workshop Booking — ${workshop} @ ${venue}`,
+      description,
+      location: venue,
+      startDateTime: startDateTime.toISOString(),
+      endDateTime: endDateTime.toISOString(),
+      attendeeEmail: email || undefined,
+      calendarKey: "workshops",
+    }).then(e => e.id).catch(err => {
+      console.error("Workshop calendar sync failed:", err?.message ?? err);
+      return null;
+    });
+
     res.json({ success: true, eventId });
   } catch (err: any) {
     console.error("Workshop booking error:", err);
@@ -156,58 +159,59 @@ router.post("/bookings/assessment", async (req, res) => {
           </tr>`).join("")
       : "";
 
-    await Promise.allSettled([
-      createCalendarEvent({
-        summary: `⚓ Assessment — ${firstName} ${lastName} · ${boatName} @ ${address}`,
-        description,
-        location: address,
-        startDateTime: startDateTime.toISOString(),
-        endDateTime: endDateTime.toISOString(),
-        calendarKey: "assessments",
-        // No attendeeEmail — event goes directly into Spike's calendar as confirmed,
-        // no invite acceptance required
-      }),
-      sendMail({
-        subject: `⚓ New Assessment Booking — ${firstName} ${lastName} · ${boatName}`,
-        replyTo: email || undefined,
-        html: `
-          <div style="font-family:sans-serif;max-width:600px;margin:0 auto;color:#1a2942">
-            <div style="background:#1a2942;padding:24px 32px;border-radius:12px 12px 0 0">
-              <h1 style="color:#fff;margin:0;font-size:22px">New Assessment Booking</h1>
-              <p style="color:#67e8f9;margin:4px 0 0;font-size:13px;text-transform:uppercase;letter-spacing:1px">${boatName}${boatModel ? ` · ${boatModel}` : ""}</p>
-            </div>
-            <div style="background:#f8fafc;padding:24px 32px;border-radius:0 0 12px 12px;border:1px solid #e2e8f0">
-              <p style="margin:0 0 16px;font-size:13px;font-weight:700;text-transform:uppercase;color:#64748b;letter-spacing:1px">Client</p>
-              <table style="width:100%;border-collapse:collapse;margin-bottom:20px">
-                <tr><td style="padding:6px 0;color:#64748b;font-size:13px;width:140px">Name</td><td style="padding:6px 0;font-weight:600">${firstName} ${lastName}</td></tr>
-                <tr><td style="padding:6px 0;color:#64748b;font-size:13px">Phone</td><td style="padding:6px 0">${phone}</td></tr>
-                ${email ? `<tr><td style="padding:6px 0;color:#64748b;font-size:13px">Email</td><td style="padding:6px 0">${email}</td></tr>` : ""}
-              </table>
-              <p style="margin:0 0 16px;font-size:13px;font-weight:700;text-transform:uppercase;color:#64748b;letter-spacing:1px">Vessel</p>
-              <table style="width:100%;border-collapse:collapse;margin-bottom:20px">
-                <tr><td style="padding:6px 0;color:#64748b;font-size:13px;width:140px">Boat</td><td style="padding:6px 0;font-weight:600">${boatName}${boatModel ? ` (${boatModel})` : ""}</td></tr>
-                <tr><td style="padding:6px 0;color:#64748b;font-size:13px">LOA</td><td style="padding:6px 0">${loaFeet} ft</td></tr>
-                <tr><td style="padding:6px 0;color:#64748b;font-size:13px">Location</td><td style="padding:6px 0">${address}</td></tr>
-                <tr><td style="padding:6px 0;color:#64748b;font-size:13px">Slip / Berth</td><td style="padding:6px 0">${slipId}</td></tr>
-                ${preferredDate ? `<tr><td style="padding:6px 0;color:#64748b;font-size:13px">Preferred Date</td><td style="padding:6px 0;color:#0891b2;font-weight:600">${preferredDate} at ${resolvedTime}</td></tr>` : ""}
-              </table>
-              ${serviceRowsHtml ? `
-              <p style="margin:0 0 12px;font-size:13px;font-weight:700;text-transform:uppercase;color:#64748b;letter-spacing:1px">Services Requested</p>
-              <table style="width:100%;border-collapse:collapse;margin-bottom:8px">
-                ${serviceRowsHtml}
-                <tr style="border-top:2px solid #e2e8f0">
-                  <td style="padding:10px 0 0;font-weight:700">Total Estimate</td>
-                  <td style="padding:10px 0 0;text-align:right;font-weight:700;font-size:15px">$${totalEstimate.toLocaleString()} CAD</td>
-                </tr>
-              </table>` : ""}
-              <div style="margin-top:20px;padding:16px;background:#fffbeb;border-radius:8px;border:1px solid #fde68a">
-                <p style="margin:0;font-size:13px;color:#92400e">💰 Assessment Fee: <strong>$250 CAD</strong> — credited to service upon booking. Payment via Stripe or PayPal.</p>
-              </div>
+    // Email is critical — must succeed
+    await sendMail({
+      subject: `⚓ New Assessment Booking — ${firstName} ${lastName} · ${boatName}`,
+      replyTo: email || undefined,
+      html: `
+        <div style="font-family:sans-serif;max-width:600px;margin:0 auto;color:#1a2942">
+          <div style="background:#1a2942;padding:24px 32px;border-radius:12px 12px 0 0">
+            <h1 style="color:#fff;margin:0;font-size:22px">New Assessment Booking</h1>
+            <p style="color:#67e8f9;margin:4px 0 0;font-size:13px;text-transform:uppercase;letter-spacing:1px">${boatName}${boatModel ? ` · ${boatModel}` : ""}</p>
+          </div>
+          <div style="background:#f8fafc;padding:24px 32px;border-radius:0 0 12px 12px;border:1px solid #e2e8f0">
+            <p style="margin:0 0 16px;font-size:13px;font-weight:700;text-transform:uppercase;color:#64748b;letter-spacing:1px">Client</p>
+            <table style="width:100%;border-collapse:collapse;margin-bottom:20px">
+              <tr><td style="padding:6px 0;color:#64748b;font-size:13px;width:140px">Name</td><td style="padding:6px 0;font-weight:600">${firstName} ${lastName}</td></tr>
+              <tr><td style="padding:6px 0;color:#64748b;font-size:13px">Phone</td><td style="padding:6px 0">${phone}</td></tr>
+              ${email ? `<tr><td style="padding:6px 0;color:#64748b;font-size:13px">Email</td><td style="padding:6px 0">${email}</td></tr>` : ""}
+            </table>
+            <p style="margin:0 0 16px;font-size:13px;font-weight:700;text-transform:uppercase;color:#64748b;letter-spacing:1px">Vessel</p>
+            <table style="width:100%;border-collapse:collapse;margin-bottom:20px">
+              <tr><td style="padding:6px 0;color:#64748b;font-size:13px;width:140px">Boat</td><td style="padding:6px 0;font-weight:600">${boatName}${boatModel ? ` (${boatModel})` : ""}</td></tr>
+              <tr><td style="padding:6px 0;color:#64748b;font-size:13px">LOA</td><td style="padding:6px 0">${loaFeet} ft</td></tr>
+              <tr><td style="padding:6px 0;color:#64748b;font-size:13px">Location</td><td style="padding:6px 0">${address}</td></tr>
+              <tr><td style="padding:6px 0;color:#64748b;font-size:13px">Slip / Berth</td><td style="padding:6px 0">${slipId}</td></tr>
+              ${preferredDate ? `<tr><td style="padding:6px 0;color:#64748b;font-size:13px">Preferred Date</td><td style="padding:6px 0;color:#0891b2;font-weight:600">${preferredDate} at ${resolvedTime}</td></tr>` : ""}
+            </table>
+            ${serviceRowsHtml ? `
+            <p style="margin:0 0 12px;font-size:13px;font-weight:700;text-transform:uppercase;color:#64748b;letter-spacing:1px">Services Requested</p>
+            <table style="width:100%;border-collapse:collapse;margin-bottom:8px">
+              ${serviceRowsHtml}
+              <tr style="border-top:2px solid #e2e8f0">
+                <td style="padding:10px 0 0;font-weight:700">Total Estimate</td>
+                <td style="padding:10px 0 0;text-align:right;font-weight:700;font-size:15px">$${totalEstimate.toLocaleString()} CAD</td>
+              </tr>
+            </table>` : ""}
+            <div style="margin-top:20px;padding:16px;background:#fffbeb;border-radius:8px;border:1px solid #fde68a">
+              <p style="margin:0;font-size:13px;color:#92400e">💰 Assessment Fee: <strong>$250 CAD</strong> — credited to service upon booking. Payment via Stripe or PayPal.</p>
             </div>
           </div>
-        `,
-      }),
-    ]);
+        </div>
+      `,
+    });
+
+    // Calendar is best-effort — log failures but don't block the response
+    createCalendarEvent({
+      summary: `⚓ Assessment — ${firstName} ${lastName} · ${boatName} @ ${address}`,
+      description,
+      location: address,
+      startDateTime: startDateTime.toISOString(),
+      endDateTime: endDateTime.toISOString(),
+      calendarKey: "assessments",
+    }).catch(err => {
+      console.error("Assessment calendar sync failed:", err?.message ?? err);
+    });
 
     res.json({ success: true });
   } catch (err: any) {
@@ -282,7 +286,7 @@ router.post("/bookings/course", async (req, res) => {
       seriesNumber,
       courseNumber,
       courseTitle,
-      sessionType, // "online" | "inperson"
+      sessionType,
       date,
       time,
       firstName,
@@ -301,7 +305,7 @@ router.post("/bookings/course", async (req, res) => {
 
     const isOnline = sessionType === "online";
     const startDateTime = new Date(`${date}T${time}:00`);
-    const durationMs = isOnline ? 90 * 60 * 1000 : 2 * 60 * 60 * 1000; // 90 min online, 2h in-person
+    const durationMs = isOnline ? 90 * 60 * 1000 : 2 * 60 * 60 * 1000;
     const endDateTime = new Date(startDateTime.getTime() + durationMs);
 
     const roleList = Array.isArray(attendeeType) && attendeeType.length > 0
@@ -319,51 +323,54 @@ router.post("/bookings/course", async (req, res) => {
       roleList ? `Attendee Type: ${roleList}` : null,
     ].filter(Boolean).join("\n");
 
-    const [calEvent] = await Promise.allSettled([
-      createCalendarEvent({
-        summary: `📚 Course ${courseNumber}: ${courseTitle} — ${firstName} ${lastName}`,
-        description,
-        location: isOnline ? undefined : (location || "To be confirmed"),
-        startDateTime: startDateTime.toISOString(),
-        endDateTime: endDateTime.toISOString(),
-        attendeeEmail: email,
-        googleMeet: isOnline,
-        calendarKey: "courses",
-      }),
-      sendMail({
-        subject: `📚 New Course Booking — ${courseNumber}: ${courseTitle}`,
-        replyTo: email,
-        html: `
-          <div style="font-family:sans-serif;max-width:600px;margin:0 auto;color:#1a2942">
-            <div style="background:#1a2942;padding:24px 32px;border-radius:12px 12px 0 0">
-              <h1 style="color:#fff;margin:0;font-size:22px">New Course Booking</h1>
-              <p style="color:#67e8f9;margin:4px 0 0;font-size:13px;text-transform:uppercase;letter-spacing:1px">${courseNumber}: ${courseTitle}</p>
-            </div>
-            <div style="background:#f8fafc;padding:24px 32px;border-radius:0 0 12px 12px;border:1px solid #e2e8f0">
-              <table style="width:100%;border-collapse:collapse">
-                <tr><td style="padding:8px 0;color:#64748b;font-size:13px;width:140px">Student</td><td style="padding:8px 0;font-weight:600">${firstName} ${lastName}</td></tr>
-                <tr><td style="padding:8px 0;color:#64748b;font-size:13px">Phone</td><td style="padding:8px 0">${phone}</td></tr>
-                <tr><td style="padding:8px 0;color:#64748b;font-size:13px">Email</td><td style="padding:8px 0">${email}</td></tr>
-                ${location ? `<tr><td style="padding:8px 0;color:#64748b;font-size:13px">Location</td><td style="padding:8px 0">${location}</td></tr>` : ""}
-                ${instagram ? `<tr><td style="padding:8px 0;color:#64748b;font-size:13px">Instagram</td><td style="padding:8px 0">${instagram}</td></tr>` : ""}
-                ${roleList ? `<tr><td style="padding:8px 0;color:#64748b;font-size:13px">Attendee Type</td><td style="padding:8px 0">${roleList}</td></tr>` : ""}
-                <tr><td style="padding:8px 0;color:#64748b;font-size:13px">Series</td><td style="padding:8px 0">${seriesNumber} Series</td></tr>
-                <tr><td style="padding:8px 0;color:#64748b;font-size:13px">Session</td><td style="padding:8px 0">${isOnline ? "🎥 Online — Google Meet · 90 min" : "📍 In-Person · 2 hours"}</td></tr>
-                <tr><td style="padding:8px 0;color:#64748b;font-size:13px">Date & Time</td><td style="padding:8px 0;color:#0891b2;font-weight:600">${date} at ${time}</td></tr>
-              </table>
-              <div style="margin-top:20px;padding:16px;background:${isOnline ? "#ecfdf5" : "#fffbeb"};border-radius:8px;border:1px solid ${isOnline ? "#6ee7b7" : "#fde68a"}">
-                <p style="margin:0;font-size:13px;color:${isOnline ? "#065f46" : "#92400e"}">${isOnline ? "🎥 Google Meet link has been added to the calendar invite." : "💰 Payment via Stripe or PayPal to confirm the in-person session."}</p>
-              </div>
+    // Email is critical — must succeed
+    await sendMail({
+      subject: `📚 New Course Booking — ${courseNumber}: ${courseTitle}`,
+      replyTo: email,
+      html: `
+        <div style="font-family:sans-serif;max-width:600px;margin:0 auto;color:#1a2942">
+          <div style="background:#1a2942;padding:24px 32px;border-radius:12px 12px 0 0">
+            <h1 style="color:#fff;margin:0;font-size:22px">New Course Booking</h1>
+            <p style="color:#67e8f9;margin:4px 0 0;font-size:13px;text-transform:uppercase;letter-spacing:1px">${courseNumber}: ${courseTitle}</p>
+          </div>
+          <div style="background:#f8fafc;padding:24px 32px;border-radius:0 0 12px 12px;border:1px solid #e2e8f0">
+            <table style="width:100%;border-collapse:collapse">
+              <tr><td style="padding:8px 0;color:#64748b;font-size:13px;width:140px">Student</td><td style="padding:8px 0;font-weight:600">${firstName} ${lastName}</td></tr>
+              <tr><td style="padding:8px 0;color:#64748b;font-size:13px">Phone</td><td style="padding:8px 0">${phone}</td></tr>
+              <tr><td style="padding:8px 0;color:#64748b;font-size:13px">Email</td><td style="padding:8px 0">${email}</td></tr>
+              ${location ? `<tr><td style="padding:8px 0;color:#64748b;font-size:13px">Location</td><td style="padding:8px 0">${location}</td></tr>` : ""}
+              ${instagram ? `<tr><td style="padding:8px 0;color:#64748b;font-size:13px">Instagram</td><td style="padding:8px 0">${instagram}</td></tr>` : ""}
+              ${roleList ? `<tr><td style="padding:8px 0;color:#64748b;font-size:13px">Attendee Type</td><td style="padding:8px 0">${roleList}</td></tr>` : ""}
+              <tr><td style="padding:8px 0;color:#64748b;font-size:13px">Series</td><td style="padding:8px 0">${seriesNumber} Series</td></tr>
+              <tr><td style="padding:8px 0;color:#64748b;font-size:13px">Session</td><td style="padding:8px 0">${isOnline ? "🎥 Online — Google Meet · 90 min" : "📍 In-Person · 2 hours"}</td></tr>
+              <tr><td style="padding:8px 0;color:#64748b;font-size:13px">Date & Time</td><td style="padding:8px 0;color:#0891b2;font-weight:600">${date} at ${time}</td></tr>
+            </table>
+            <div style="margin-top:20px;padding:16px;background:${isOnline ? "#ecfdf5" : "#fffbeb"};border-radius:8px;border:1px solid ${isOnline ? "#6ee7b7" : "#fde68a"}">
+              <p style="margin:0;font-size:13px;color:${isOnline ? "#065f46" : "#92400e"}">${isOnline ? "🎥 Google Meet link will be sent to the student's email." : "💰 Payment via Stripe or PayPal to confirm the in-person session."}</p>
             </div>
           </div>
-        `,
-      }),
-    ]);
+        </div>
+      `,
+    });
 
-    const eventData = calEvent.status === "fulfilled" ? calEvent.value : null;
-    const meetLink = eventData?.conferenceData?.entryPoints?.find((ep: any) => ep.entryPointType === "video")?.uri;
+    // Calendar is best-effort — log failures but don't block the response
+    const eventData = await createCalendarEvent({
+      summary: `📚 Course ${courseNumber}: ${courseTitle} — ${firstName} ${lastName}`,
+      description,
+      location: isOnline ? undefined : (location || "To be confirmed"),
+      startDateTime: startDateTime.toISOString(),
+      endDateTime: endDateTime.toISOString(),
+      attendeeEmail: email,
+      googleMeet: isOnline,
+      calendarKey: "courses",
+    }).catch(err => {
+      console.error("Course calendar sync failed:", err?.message ?? err);
+      return null;
+    });
 
-    res.json({ success: true, eventId: eventData?.id, meetLink: meetLink ?? null });
+    const meetLink = eventData?.conferenceData?.entryPoints?.find((ep: any) => ep.entryPointType === "video")?.uri ?? null;
+
+    res.json({ success: true, eventId: eventData?.id ?? null, meetLink });
   } catch (err: any) {
     console.error("Course booking error:", err);
     res.status(500).json({ error: err?.message ?? "Failed to process booking" });
