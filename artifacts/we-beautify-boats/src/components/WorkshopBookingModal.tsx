@@ -1,4 +1,4 @@
-import { useState, useRef } from "react";
+import { useState, useRef, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { X, CreditCard, CheckCircle2, AlertCircle, Loader2, User, Mail, Phone, MapPin, Calendar, Users, Clock } from "lucide-react";
 
@@ -18,11 +18,37 @@ export interface WorkshopBookingModalProps {
 
 type Step = "form" | "submitting" | "payment" | "error";
 
+type AvailStatus = "idle" | "checking" | "available" | "conflict";
+
 export default function WorkshopBookingModal({ workshop, onClose }: WorkshopBookingModalProps) {
   const [step, setStep] = useState<Step>("form");
   const [errorMsg, setErrorMsg] = useState("");
   const [agreed, setAgreed] = useState(false);
+  const [eventDate, setEventDate] = useState("");
+  const [eventTime, setEventTime] = useState("");
+  const [availStatus, setAvailStatus] = useState<AvailStatus>("idle");
   const formRef = useRef<HTMLFormElement>(null);
+
+  useEffect(() => {
+    if (!eventDate || !eventTime) { setAvailStatus("idle"); return; }
+    let cancelled = false;
+    setAvailStatus("checking");
+    (async () => {
+      try {
+        const [h, m] = eventTime.split(":");
+        const timeVal = `${h.padStart(2, "0")}:${(m ?? "00").padStart(2, "0")}`;
+        const res = await fetch(`/api/availability?date=${eventDate}&time=${timeVal}&duration=120`);
+        if (cancelled) return;
+        if (!res.ok) { setAvailStatus("idle"); return; }
+        const json = await res.json();
+        if (cancelled) return;
+        setAvailStatus(typeof json.available === "boolean" ? (json.available ? "available" : "conflict") : "idle");
+      } catch {
+        if (!cancelled) setAvailStatus("idle");
+      }
+    })();
+    return () => { cancelled = true; };
+  }, [eventDate, eventTime]);
 
   async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
@@ -148,6 +174,9 @@ export default function WorkshopBookingModal({ workshop, onClose }: WorkshopBook
                         type="date"
                         name="event_date"
                         required
+                        value={eventDate}
+                        onChange={e => { setEventDate(e.target.value); setEventTime(""); }}
+                        min={new Date(Date.now() + 86400000 * 2).toISOString().split("T")[0]}
                         className="w-full pl-9 pr-3 py-2.5 rounded-xl border border-border text-sm focus:outline-none focus:ring-2 focus:ring-cyan-500 focus:border-transparent"
                       />
                     </div>
@@ -162,11 +191,40 @@ export default function WorkshopBookingModal({ workshop, onClose }: WorkshopBook
                         type="time"
                         name="event_time"
                         required
+                        value={eventTime}
+                        onChange={e => setEventTime(e.target.value)}
                         className="w-full pl-9 pr-3 py-2.5 rounded-xl border border-border text-sm focus:outline-none focus:ring-2 focus:ring-cyan-500 focus:border-transparent"
                       />
                     </div>
                   </div>
                 </div>
+
+                {/* Availability indicator */}
+                <AnimatePresence>
+                  {availStatus !== "idle" && (
+                    <motion.div
+                      initial={{ opacity: 0, height: 0 }}
+                      animate={{ opacity: 1, height: "auto" }}
+                      exit={{ opacity: 0, height: 0 }}
+                      className={`flex items-start gap-2.5 px-4 py-3 rounded-xl text-sm ${
+                        availStatus === "checking"
+                          ? "bg-gray-50 text-gray-500"
+                          : availStatus === "available"
+                          ? "bg-emerald-50 text-emerald-700 border border-emerald-200"
+                          : "bg-amber-50 text-amber-800 border border-amber-200"
+                      }`}
+                    >
+                      {availStatus === "checking" && <Loader2 className="w-4 h-4 animate-spin shrink-0 mt-0.5" />}
+                      {availStatus === "available" && <CheckCircle2 className="w-4 h-4 shrink-0 mt-0.5" />}
+                      {availStatus === "conflict" && <AlertCircle className="w-4 h-4 shrink-0 mt-0.5" />}
+                      <span className="font-medium">
+                        {availStatus === "checking" && "Checking Spike's calendar…"}
+                        {availStatus === "available" && "Spike appears free on this date and time — great choice!"}
+                        {availStatus === "conflict" && "Spike has an existing commitment around that time. You can still submit your request — he'll coordinate with you to find a solution or alternate time."}
+                      </span>
+                    </motion.div>
+                  )}
+                </AnimatePresence>
 
                 {/* Contact Person */}
                 <div>
