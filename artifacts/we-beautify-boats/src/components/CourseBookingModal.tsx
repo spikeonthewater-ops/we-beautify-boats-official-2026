@@ -456,7 +456,9 @@ export default function CourseBookingModal({
                     <div className="relative">
                       <Phone className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-gray-400" />
                       <input
-                        type="tel"
+                        type="text"
+                        inputMode="tel"
+                        autoComplete="tel"
                         value={form.phone}
                         onChange={handleField("phone")}
                         placeholder="416-555-0100"
@@ -471,7 +473,9 @@ export default function CourseBookingModal({
                     <div className="relative">
                       <Mail className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-gray-400" />
                       <input
-                        type="email"
+                        type="text"
+                        inputMode="email"
+                        autoComplete="email"
                         value={form.email}
                         onChange={handleField("email")}
                         placeholder="you@example.com"

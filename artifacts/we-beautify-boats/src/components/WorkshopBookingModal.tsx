@@ -252,7 +252,9 @@ export default function WorkshopBookingModal({ workshop, onClose }: WorkshopBook
                     <div className="relative">
                       <Mail className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-muted-foreground" />
                       <input
-                        type="email"
+                        type="text"
+                        inputMode="email"
+                        autoComplete="email"
                         name="email"
                         required
                         placeholder="contact@marina.ca"
@@ -265,7 +267,9 @@ export default function WorkshopBookingModal({ workshop, onClose }: WorkshopBook
                     <div className="relative">
                       <Phone className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-muted-foreground" />
                       <input
-                        type="tel"
+                        type="text"
+                        inputMode="tel"
+                        autoComplete="tel"
                         name="phone"
                         placeholder="416-555-0100"
                         className="w-full pl-9 pr-3 py-2.5 rounded-xl border border-border text-sm focus:outline-none focus:ring-2 focus:ring-cyan-500 focus:border-transparent"

@@ -746,7 +746,9 @@ export function QuoteDrawer() {
                       <div>
                         <label className="text-[10px] font-black uppercase tracking-widest text-gray-400 block mb-1">Phone <span className="text-red-500">*</span></label>
                         <input
-                          type="tel"
+                          type="text"
+                          inputMode="tel"
+                          autoComplete="tel"
                           value={form.phone}
                           onChange={e => setForm(f => ({ ...f, phone: e.target.value }))}
                           placeholder="416-555-0100"
@@ -756,7 +758,9 @@ export function QuoteDrawer() {
                       <div>
                         <label className="text-[10px] font-black uppercase tracking-widest text-gray-400 block mb-1">Email</label>
                         <input
-                          type="email"
+                          type="text"
+                          inputMode="email"
+                          autoComplete="email"
                           value={form.email}
                           onChange={e => setForm(f => ({ ...f, email: e.target.value }))}
                           placeholder="james@email.com"
