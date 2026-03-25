@@ -1125,7 +1125,7 @@ export function QuoteDrawer() {
                     <div className="flex items-center gap-2 mb-2">
                       <span className="w-6 h-6 rounded-full flex items-center justify-center text-xs font-black shrink-0 bg-marine-900 text-white">1</span>
                       <p className="text-[11px] font-bold uppercase tracking-widest text-gray-500">
-                        Reserve Your Time Slot
+                        No Service Transaction Here
                       </p>
                     </div>
                     <button
