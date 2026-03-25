@@ -22,8 +22,6 @@ async function getAccessToken() {
     throw new Error("X-Replit-Token not found for repl/depl");
   }
 
-  // Pinned to the business account connection (webeautifyboats.toronto@gmail.com)
-  // Connection ID: conn_google-calendar_01KMH64BN6VSBJQWXDWJMS30E8
   connectionSettings = await fetch(
     "https://" +
       hostname +
@@ -36,14 +34,7 @@ async function getAccessToken() {
     },
   )
     .then((res) => res.json())
-    .then((data) => {
-      const items: any[] = data.items ?? [];
-      // Prefer the pinned business-account connection
-      return (
-        items.find((c: any) => c.id === "conn_google-calendar_01KMH64BN6VSBJQWXDWJMS30E8") ??
-        items[0]
-      );
-    });
+    .then((data) => data.items?.[0]);
 
   const accessToken =
     connectionSettings?.settings?.access_token ||
