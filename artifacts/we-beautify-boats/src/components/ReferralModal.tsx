@@ -115,34 +115,6 @@ export default function ReferralModal({ onClose }: Props) {
     return encodeURIComponent(lines.join("\n"));
   }
 
-  function buildMailto() {
-    const serviceList =
-      form.services.length > 0
-        ? form.services.map(id => SERVICES.find(s => s.id === id)?.label).join(", ")
-        : "Not specified";
-
-    const body = [
-      `New Referral — We Beautify Boats`,
-      ``,
-      `Referred By`,
-      `Name: ${form.referrerName}`,
-      `Email: ${form.referrerEmail}`,
-      `Phone: ${form.referrerPhone}`,
-      ``,
-      `Referred Friend`,
-      `Name: ${form.friendName}`,
-      ...(form.friendEmail.trim() ? [`Email: ${form.friendEmail}`] : []),
-      `Boat: ${form.boatName}`,
-      `Club / Marina: ${form.clubMarina}`,
-      `Phone: ${form.friendPhone}`,
-      ``,
-      `Services of Interest: ${serviceList}`,
-      form.notes.trim() ? `\nNotes: ${form.notes.trim()}` : "",
-    ].join("\n");
-
-    return `mailto:webeautifyboats.toronto@gmail.com?subject=${encodeURIComponent("New Referral: " + form.friendName)}&body=${encodeURIComponent(body)}`;
-  }
-
   async function handleSend(via: "whatsapp" | "email") {
     setAttempted(true);
     if (!requiredOk) return;
@@ -168,9 +140,8 @@ export default function ReferralModal({ onClose }: Props) {
 
     if (via === "whatsapp") {
       window.open(`https://wa.me/14168905899?text=${buildMessage()}`, "_blank", "noopener,noreferrer");
-    } else {
-      window.location.href = buildMailto();
     }
+    // "email" path: API call above already handles the notification — no mailto: needed
   }
 
   return (
@@ -429,10 +400,10 @@ export default function ReferralModal({ onClose }: Props) {
                   }`}
                 >
                   <Mail className="w-4 h-4" />
-                  Send via Email
+                  Submit Referral
                 </button>
                 <p className="text-center text-[10px] text-gray-400 leading-relaxed">
-                  WhatsApp opens a pre-filled message · Email opens your mail app · webeautifyboats.toronto@gmail.com
+                  WhatsApp sends a personal message to Spike · Submit delivers your referral directly
                 </p>
               </div>
 
