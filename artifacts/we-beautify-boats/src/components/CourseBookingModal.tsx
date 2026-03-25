@@ -5,6 +5,7 @@ import {
   CheckCircle2, AlertCircle, Loader2, CreditCard, ChevronLeft,
   ExternalLink, Instagram, Anchor, CalendarCheck,
 } from "lucide-react";
+import { apiBase } from "@/lib/api";
 
 export interface CourseBookingModalProps {
   course: { number: string; title: string; tagline: string };
@@ -88,7 +89,7 @@ export default function CourseBookingModal({
       try {
         const controller = new AbortController();
         const timer = setTimeout(() => controller.abort(), 8000);
-        const res = await fetch(`/api/availability?date=${date}&time=${t}&duration=${sessionDurationMins}`, { signal: controller.signal });
+        const res = await fetch(`${apiBase()}/api/availability?date=${date}&time=${t}&duration=${sessionDurationMins}`, { signal: controller.signal });
         clearTimeout(timer);
         if (!res.ok) { setSlotAvailabilities(prev => ({ ...prev, [t]: "idle" })); return; }
         const data = await res.json();
@@ -123,7 +124,7 @@ export default function CourseBookingModal({
         const results = await Promise.all(
           TIMES.map(async (t) => {
             try {
-              const res = await fetch(`/api/availability?date=${dateStr}&time=${t}&duration=${sessionDurationMins}`);
+              const res = await fetch(`${apiBase()}/api/availability?date=${dateStr}&time=${t}&duration=${sessionDurationMins}`);
               if (!res.ok) return false;
               const json = await res.json();
               return json.available === true;
@@ -156,7 +157,7 @@ export default function CourseBookingModal({
     setSubmitting(true);
     setError("");
     try {
-      const res = await fetch("/api/bookings/course", {
+      const res = await fetch(`${apiBase()}/api/bookings/course`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({

@@ -9,6 +9,7 @@ import {
   LucideIcon
 } from "lucide-react";
 import { useQuote, QuoteCategory, CartItem } from "@/context/QuoteContext";
+import { apiBase } from "@/lib/api";
 
 const SIZES = ["Up to 20'", "21–30'", "31–40'", "41–50'", "51–60'", "61–70'", "71–80'"];
 
@@ -223,7 +224,7 @@ export function QuoteDrawer() {
       try {
         const controller = new AbortController();
         const timer = setTimeout(() => controller.abort(), 8000);
-        const res = await fetch(`/api/availability?date=${form.preferredDate}&time=${slot.value}&duration=120`, { signal: controller.signal });
+        const res = await fetch(`${apiBase()}/api/availability?date=${form.preferredDate}&time=${slot.value}&duration=120`, { signal: controller.signal });
         clearTimeout(timer);
         if (!res.ok) { setSlotAvailabilities(prev => ({ ...prev, [slot.value]: "idle" })); return; }
         const json = await res.json();
@@ -258,7 +259,7 @@ export function QuoteDrawer() {
         const results = await Promise.all(
           ASSESSMENT_TIME_SLOTS.map(async (slot) => {
             try {
-              const res = await fetch(`/api/availability?date=${dateStr}&time=${slot.value}&duration=120`);
+              const res = await fetch(`${apiBase()}/api/availability?date=${dateStr}&time=${slot.value}&duration=120`);
               if (!res.ok) return false;
               const json = await res.json();
               return json.available === true;
@@ -277,7 +278,7 @@ export function QuoteDrawer() {
     setBookingError("");
     setStep("submitting");
     try {
-      const res = await fetch("/api/bookings/assessment", {
+      const res = await fetch(`${apiBase()}/api/bookings/assessment`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({

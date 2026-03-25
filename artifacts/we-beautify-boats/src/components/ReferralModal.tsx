@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { X, Send, CheckCircle2, Users, Mail, Phone } from "lucide-react";
+import { apiBase } from "@/lib/api";
 
 function CaptainHat({ className }: { className?: string }) {
   return (
@@ -121,7 +122,7 @@ export default function ReferralModal({ onClose }: Props) {
     setSent(true);
 
     // Fire email to inbox silently regardless of channel chosen
-    fetch("/api/bookings/referral", {
+    fetch(`${apiBase()}/api/bookings/referral`, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({

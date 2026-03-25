@@ -1,4 +1,5 @@
 import { useEffect, useRef, useState } from "react";
+import { apiBase } from "@/lib/api";
 
 interface Stats {
   allTime: number;
@@ -39,7 +40,7 @@ export default function VisitorBar() {
 
   async function heartbeat(newVisit: boolean) {
     try {
-      await fetch("/api/analytics/heartbeat", {
+      await fetch(`${apiBase()}/api/analytics/heartbeat`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ sessionId: sessionId.current, isNew: newVisit }),
@@ -51,7 +52,7 @@ export default function VisitorBar() {
 
   async function fetchStats() {
     try {
-      const res = await fetch("/api/analytics");
+      const res = await fetch(`${apiBase()}/api/analytics`);
       if (res.ok) {
         const data = await res.json();
         setStats(data);

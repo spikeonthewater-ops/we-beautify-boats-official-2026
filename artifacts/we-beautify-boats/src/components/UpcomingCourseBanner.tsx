@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Video, MapPin, Clock, X, Zap, ArrowRight } from "lucide-react";
+import { apiBase } from "@/lib/api";
 
 export interface UpcomingCourse {
   eventId: string;
@@ -55,7 +56,7 @@ export default function UpcomingCourseBanner({ onJoin }: Props) {
     let cancelled = false;
     async function load() {
       try {
-        const res = await fetch("/api/upcoming-courses");
+        const res = await fetch(`${apiBase()}/api/upcoming-courses`);
         if (!res.ok) return;
         const data = await res.json();
         if (!cancelled && Array.isArray(data)) setCourses(data);

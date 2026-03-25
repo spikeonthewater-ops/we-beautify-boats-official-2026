@@ -1,8 +1,9 @@
 import { useState, useRef, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { X, CreditCard, CheckCircle2, AlertCircle, Loader2, User, Mail, Phone, MapPin, Calendar, Users, Clock } from "lucide-react";
+import { apiBase } from "@/lib/api";
 
-const BOOKING_API = "/api/bookings/workshop";
+const BOOKING_API = `${apiBase()}/api/bookings/workshop`;
 
 export interface WorkshopBookingModalProps {
   workshop: {
@@ -37,7 +38,7 @@ export default function WorkshopBookingModal({ workshop, onClose }: WorkshopBook
       try {
         const [h, m] = eventTime.split(":");
         const timeVal = `${h.padStart(2, "0")}:${(m ?? "00").padStart(2, "0")}`;
-        const res = await fetch(`/api/availability?date=${eventDate}&time=${timeVal}&duration=120`);
+        const res = await fetch(`${apiBase()}/api/availability?date=${eventDate}&time=${timeVal}&duration=120`);
         if (cancelled) return;
         if (!res.ok) { setAvailStatus("idle"); return; }
         const json = await res.json();
