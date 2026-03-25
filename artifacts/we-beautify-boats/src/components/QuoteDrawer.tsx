@@ -1,4 +1,4 @@
-import { useRef, useEffect, useState, useCallback } from "react";
+import { useRef, useEffect, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import {
   X, CheckCircle2, Droplets, Sparkles, Waves,
@@ -207,34 +207,32 @@ export function QuoteDrawer() {
   const [bookingError, setBookingError] = useState("");
   const [formAttempted, setFormAttempted] = useState(false);
   const [cartSent, setCartSent] = useState(false);
-  const [availStatus, setAvailStatus] = useState<"idle" | "checking" | "available" | "conflict">("idle");
+  const [slotAvailabilities, setSlotAvailabilities] = useState<Record<string, "idle" | "checking" | "available" | "conflict">>({});
   const scrollRef = useRef<HTMLDivElement>(null);
 
-  const checkAvailability = useCallback(async (date: string, time: string) => {
-    if (!date || !time) { setAvailStatus("idle"); return; }
-    setAvailStatus("checking");
-    try {
-      const controller = new AbortController();
-      const timer = setTimeout(() => controller.abort(), 6000);
-      const res = await fetch(`/api/availability?date=${date}&time=${time}&duration=120`, { signal: controller.signal });
-      clearTimeout(timer);
-      if (!res.ok) { setAvailStatus("idle"); return; }
-      const json = await res.json();
-      if (typeof json.available === "boolean") {
-        setAvailStatus(json.available ? "available" : "conflict");
-      } else {
-        setAvailStatus("idle");
-      }
-    } catch {
-      setAvailStatus("idle");
-    }
-  }, []);
+  const availStatus: "idle" | "checking" | "available" | "conflict" =
+    form.preferredTime ? (slotAvailabilities[form.preferredTime] ?? "idle") : "idle";
 
   useEffect(() => {
-    if (!form.preferredDate || !form.preferredTime) { setAvailStatus("idle"); return; }
-    const t = setTimeout(() => checkAvailability(form.preferredDate, form.preferredTime), 400);
-    return () => clearTimeout(t);
-  }, [form.preferredDate, form.preferredTime, checkAvailability]);
+    if (!form.preferredDate) { setSlotAvailabilities({}); return; }
+    setSlotAvailabilities(Object.fromEntries(ASSESSMENT_TIME_SLOTS.map(s => [s.value, "checking" as const])));
+    ASSESSMENT_TIME_SLOTS.forEach(async (slot) => {
+      try {
+        const controller = new AbortController();
+        const timer = setTimeout(() => controller.abort(), 8000);
+        const res = await fetch(`/api/availability?date=${form.preferredDate}&time=${slot.value}&duration=120`, { signal: controller.signal });
+        clearTimeout(timer);
+        if (!res.ok) { setSlotAvailabilities(prev => ({ ...prev, [slot.value]: "idle" })); return; }
+        const json = await res.json();
+        setSlotAvailabilities(prev => ({
+          ...prev,
+          [slot.value]: typeof json.available === "boolean" ? (json.available ? "available" : "conflict") : "idle",
+        }));
+      } catch {
+        setSlotAvailabilities(prev => ({ ...prev, [slot.value]: "idle" }));
+      }
+    });
+  }, [form.preferredDate]);
 
   async function handleAssessmentSubmit() {
     setBookingError("");
@@ -906,24 +904,32 @@ export function QuoteDrawer() {
                             <label className="text-[10px] font-black uppercase tracking-widest text-gray-400">Preferred Time *</label>
                           </div>
                           <div className="grid grid-cols-4 gap-1.5">
-                            {ASSESSMENT_TIME_SLOTS.map(slot => (
-                              <button
-                                key={slot.value}
-                                type="button"
-                                onClick={() => setForm(f => ({ ...f, preferredTime: slot.value }))}
-                                className={`py-2 rounded-lg text-xs font-bold border transition-all ${
-                                  form.preferredTime === slot.value
-                                    ? availStatus === "conflict"
-                                      ? "bg-red-500 border-red-500 text-white"
-                                      : availStatus === "available"
+                            {ASSESSMENT_TIME_SLOTS.map(slot => {
+                              const ss = slotAvailabilities[slot.value] ?? "idle";
+                              const isConflict = ss === "conflict";
+                              const isChecking = ss === "checking";
+                              const isSelected = form.preferredTime === slot.value;
+                              return (
+                                <button
+                                  key={slot.value}
+                                  type="button"
+                                  disabled={isConflict || isChecking}
+                                  onClick={() => setForm(f => ({ ...f, preferredTime: slot.value }))}
+                                  className={`py-2 rounded-lg text-xs font-bold border transition-all flex items-center justify-center gap-1 ${
+                                    isConflict
+                                      ? "bg-gray-100 border-gray-200 text-gray-400 cursor-not-allowed line-through"
+                                      : isChecking
+                                      ? "bg-gray-50 border-gray-200 text-gray-400 cursor-wait"
+                                      : isSelected
                                       ? "bg-green-500 border-green-500 text-white"
-                                      : "bg-cyan-500 border-cyan-500 text-white"
-                                    : "border-gray-200 text-marine-900 hover:border-cyan-400 hover:bg-cyan-50"
-                                }`}
-                              >
-                                {slot.label}
-                              </button>
-                            ))}
+                                      : "border-gray-200 text-marine-900 hover:border-cyan-400 hover:bg-cyan-50"
+                                  }`}
+                                >
+                                  {isChecking && <Loader2 className="w-3 h-3 animate-spin shrink-0" />}
+                                  {slot.label}
+                                </button>
+                              );
+                            })}
                           </div>
                         </div>
                       )}

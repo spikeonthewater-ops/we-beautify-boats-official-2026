@@ -1,4 +1,4 @@
-import { useState, useEffect, useCallback } from "react";
+import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import {
   X, Video, MapPin, CalendarDays, Clock, User, Phone, Mail,
@@ -48,7 +48,7 @@ export default function CourseBookingModal({
   const [sessionType, setSessionType] = useState<SessionType>(initialSessionType ?? null);
   const [date, setDate] = useState("");
   const [time, setTime] = useState("");
-  const [availStatus, setAvailStatus] = useState<AvailStatus>("idle");
+  const [slotAvailabilities, setSlotAvailabilities] = useState<Record<string, AvailStatus>>({});
   const [form, setForm] = useState({
     firstName: "", lastName: "", phone: "", email: "",
     address: "", instagram: "", attendeeType: [] as string[],
@@ -73,23 +73,30 @@ export default function CourseBookingModal({
         : [...f.attendeeType, id],
     }));
 
-  const checkAvailability = useCallback(async (d: string, t: string, durMins = 120) => {
-    if (!d || !t) return;
-    setAvailStatus("checking");
-    try {
-      const res = await fetch(`/api/availability?date=${d}&time=${t}&duration=${durMins}`);
-      const data = await res.json();
-      setAvailStatus(data.available ? "available" : "conflict");
-    } catch {
-      setAvailStatus("idle");
-    }
-  }, []);
-
   const sessionDurationMins = sessionType === "online" ? 90 : 120;
 
+  const availStatus: AvailStatus = time ? (slotAvailabilities[time] ?? "idle") : "idle";
+
   useEffect(() => {
-    if (date && time) checkAvailability(date, time, sessionDurationMins);
-  }, [date, time, sessionDurationMins, checkAvailability]);
+    if (!date) { setSlotAvailabilities({}); return; }
+    setSlotAvailabilities(Object.fromEntries(TIMES.map(t => [t, "checking" as AvailStatus])));
+    TIMES.forEach(async (t) => {
+      try {
+        const controller = new AbortController();
+        const timer = setTimeout(() => controller.abort(), 8000);
+        const res = await fetch(`/api/availability?date=${date}&time=${t}&duration=${sessionDurationMins}`, { signal: controller.signal });
+        clearTimeout(timer);
+        if (!res.ok) { setSlotAvailabilities(prev => ({ ...prev, [t]: "idle" })); return; }
+        const data = await res.json();
+        setSlotAvailabilities(prev => ({
+          ...prev,
+          [t]: typeof data.available === "boolean" ? (data.available ? "available" : "conflict") : "idle",
+        }));
+      } catch {
+        setSlotAvailabilities(prev => ({ ...prev, [t]: "idle" }));
+      }
+    });
+  }, [date, sessionDurationMins]);
 
   const handleField = (k: keyof Omit<typeof form, "attendeeType">) =>
     (e: React.ChangeEvent<HTMLInputElement>) =>
@@ -269,7 +276,7 @@ export default function CourseBookingModal({
                       min={getTodayStr()}
                       max={getMaxDateStr()}
                       value={date}
-                      onChange={(e) => { setDate(e.target.value); setAvailStatus("idle"); }}
+                      onChange={(e) => { setDate(e.target.value); setTime(""); }}
                       className="w-full border border-border rounded-xl px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-cyan-400"
                     />
                   </div>
@@ -279,19 +286,32 @@ export default function CourseBookingModal({
                       <Clock className="w-3.5 h-3.5 text-cyan-500" /> Time (ET)
                     </label>
                     <div className="grid grid-cols-4 gap-2">
-                      {TIMES.map((t) => (
-                        <button
-                          key={t}
-                          onClick={() => setTime(t)}
-                          className={`py-2 rounded-xl text-xs font-bold transition-all ${
-                            time === t
-                              ? "bg-marine-900 text-white"
-                              : "bg-gray-50 border border-border text-marine-900 hover:border-cyan-400"
-                          }`}
-                        >
-                          {t}
-                        </button>
-                      ))}
+                      {TIMES.map((t) => {
+                        const ss = slotAvailabilities[t] ?? "idle";
+                        const isConflict = ss === "conflict";
+                        const isChecking = ss === "checking";
+                        const isSelected = time === t;
+                        return (
+                          <button
+                            key={t}
+                            type="button"
+                            disabled={isConflict || isChecking}
+                            onClick={() => setTime(t)}
+                            className={`py-2 rounded-xl text-xs font-bold transition-all flex items-center justify-center gap-1 ${
+                              isConflict
+                                ? "bg-gray-100 border border-border text-gray-400 cursor-not-allowed line-through"
+                                : isChecking
+                                ? "bg-gray-50 border border-border text-gray-400 cursor-wait"
+                                : isSelected
+                                ? "bg-marine-900 text-white"
+                                : "bg-gray-50 border border-border text-marine-900 hover:border-cyan-400"
+                            }`}
+                          >
+                            {isChecking && <Loader2 className="w-3 h-3 animate-spin shrink-0" />}
+                            {t}
+                          </button>
+                        );
+                      })}
                     </div>
                   </div>
 
