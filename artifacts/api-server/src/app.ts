@@ -33,6 +33,7 @@ app.use(express.urlencoded({ extended: true }));
 
 // QR code redirects — printed materials
 app.get("/scheduleservices", (_req, res) => res.redirect(301, "/our-services"));
+app.get("/booking-calendar/bottom-prep-level-4-bp04", (_req, res) => res.redirect(301, "https://spikeonthewater.ca/blog/bottom-prep-level-4"));
 
 app.use("/api", router);
 
