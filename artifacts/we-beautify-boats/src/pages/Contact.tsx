@@ -1,6 +1,6 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { Phone, MessageCircle, Clock, MapPin, CalendarClock, ArrowUpRight, Users } from "lucide-react";
+import { Phone, MessageCircle, MapPin, CalendarClock, ArrowUpRight, Users } from "lucide-react";
 import { useQuote } from "@/context/QuoteContext";
 import PageMeta from "@/components/PageMeta";
 import ReferralModal from "@/components/ReferralModal";
@@ -9,20 +9,10 @@ export default function Contact() {
   const { openQuote } = useQuote();
   const [referralOpen, setReferralOpen] = useState(false);
 
-  useEffect(() => {
-    const script = document.createElement("script");
-    script.src = "https://square.site/appointments/buyer/widget/fcf51xt73abko4/L06YYAF0XFN9A.js";
-    script.async = true;
-    document.body.appendChild(script);
-    return () => {
-      document.body.removeChild(script);
-    };
-  }, []);
-
   return (
     <div className="pt-32 pb-24 min-h-screen bg-background">
       <PageMeta
-        title="Contact & Book | Spike On The Water (Ontario)"
+        title="Contact & Book | We Beautify Boats by Spike (Ontario)"
         description="Book Ontario's top mobile boat detailer. Call Spike at 416-890-5899 or WhatsApp — serving Toronto, Oakville, Burlington & Hamilton marinas. Reserve your assessment today."
         path="/contact"
       />
