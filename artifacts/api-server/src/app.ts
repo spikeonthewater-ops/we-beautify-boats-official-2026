@@ -31,6 +31,9 @@ app.use(cors());
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
+// QR code redirects — printed materials
+app.get("/scheduleservices", (_req, res) => res.redirect(301, "/our-services"));
+
 app.use("/api", router);
 
 if (process.env.NODE_ENV === "production") {
