@@ -617,10 +617,24 @@ export default function CourseBookingModal({
                   </div>
                 )}
 
-                <p className="text-xs text-center text-muted-foreground mb-4">
-                  Spike has been notified at webeautifyboats.toronto@gmail.com
-                  {form.email ? " · A calendar invite is on its way to you." : "."}
-                </p>
+                <div className="text-xs text-center text-muted-foreground space-y-1.5 mb-4">
+                  <p>
+                    Spike has been notified at webeautifyboats.toronto@gmail.com
+                    {form.email ? " · A calendar invite is on its way to you." : "."}
+                  </p>
+                  <p>
+                    Questions? WhatsApp Spike at{" "}
+                    <a
+                      href="https://wa.me/14168905899"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-cyan-600 font-semibold hover:underline"
+                    >
+                      416-890-5899
+                    </a>{" "}
+                    or call to confirm your spot.
+                  </p>
+                </div>
 
                 <button
                   onClick={onClose}
