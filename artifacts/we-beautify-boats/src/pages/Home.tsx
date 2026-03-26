@@ -2,6 +2,8 @@ import { motion } from "framer-motion";
 import { Link } from "wouter";
 import { Anchor, Sparkles, Droplets, ShieldCheck, ArrowRight, Star, ClipboardList } from "lucide-react";
 import { useQuote } from "@/context/QuoteContext";
+import PageMeta from "@/components/PageMeta";
+import VisitorBar from "@/components/VisitorBar";
 
 const fadeIn = {
   initial: { opacity: 0, y: 20 },
@@ -41,7 +43,7 @@ const SERVICES = [
   },
   {
     title: "Protections",
-    desc: "Ceramic coatings, sealants, and wax protection systems matched to your usage.",
+    desc: "Antifouling coatings, Spike's PT protection, and wax systems matched to your usage.",
     icon: ShieldCheck,
     href: "/protections",
     image: "hero-bg.png" // reusing as abstract background
@@ -52,6 +54,12 @@ export default function Home() {
   const { openQuote } = useQuote();
   return (
     <div className="min-h-screen bg-background">
+      <PageMeta
+        title="Spike On The Water | Mobile Boat & Yacht Detailing in Ontario"
+        description="Mobile yacht & boat detailing across Ontario — deck washes, hull polishing, interior detailing & protection. Workshops & Training Series 100–300. Call Spike: 416-890-5899."
+        path="/"
+      />
+      <VisitorBar />
       {/* Hero Section */}
       <section className="relative h-screen min-h-[600px] flex items-center justify-center overflow-hidden">
         {/* Background Image & Overlay */}
@@ -74,11 +82,17 @@ export default function Home() {
           >
             {/* Prominent logo */}
             <motion.div variants={fadeIn} className="flex justify-center mb-6">
-              <img
-                src={`${import.meta.env.BASE_URL}images/logo-wbb.png`}
-                alt="We Beautify Boats by Spike"
-                className="h-48 md:h-64 lg:h-72 w-auto object-contain mix-blend-screen drop-shadow-2xl"
-              />
+              <div className="relative inline-flex items-center justify-center">
+                <div className="absolute rounded-full bg-white/30 blur-3xl w-full h-full scale-150" />
+                <div className="absolute rounded-full bg-white/20 blur-2xl w-full h-full scale-125" />
+                <div className="absolute rounded-full bg-cyan-400/25 blur-2xl w-full h-full" />
+                <img
+                  src={`${import.meta.env.BASE_URL}images/logo-wbb.png`}
+                  alt="We Beautify Boats by Spike"
+                  className="relative h-48 md:h-64 lg:h-72 w-auto object-contain"
+                  style={{ filter: 'drop-shadow(0 0 16px rgba(255,255,255,0.9)) drop-shadow(0 0 40px rgba(255,255,255,0.6)) drop-shadow(0 0 80px rgba(100,210,255,0.5))' }}
+                />
+              </div>
             </motion.div>
 
             <motion.div variants={fadeIn} className="flex justify-center mb-6">
@@ -101,7 +115,7 @@ export default function Home() {
                 onClick={() => openQuote()}
                 className="px-8 py-4 w-full sm:w-auto rounded-full bg-cyan-500 hover:bg-cyan-400 text-white font-bold text-lg shadow-[0_0_30px_rgba(120,60,200,0.4)] hover:shadow-[0_0_40px_rgba(120,60,200,0.6)] transition-all hover:-translate-y-1"
               >
-                Book Your Service
+                Quote Your Boat
               </button>
               <Link
                 href="/our-services"
@@ -197,7 +211,7 @@ export default function Home() {
             Ready to Protect Your Investment?
           </h2>
           <p className="text-xl text-cyan-100/80 mb-10 font-light">
-            Book Spike directly or chat with our AI assistant for a prompt response.
+            Speak with Spike directly or request a Quote.
           </p>
           <div className="flex flex-col sm:flex-row justify-center gap-4">
             <button
@@ -207,12 +221,12 @@ export default function Home() {
               <ClipboardList className="w-5 h-5" /> Reserve Assessment
             </button>
             <a
-              href="https://chatgpt.com/g/g-ZXCuleyCZ-we-beautify-boats-by-spike"
+              href="https://wa.me/14168905899"
               target="_blank"
               rel="noopener noreferrer"
               className="px-8 py-4 rounded-full bg-white hover:bg-gray-50 text-marine-900 font-bold text-lg shadow-lg transition-transform hover:-translate-y-1"
             >
-              Chat with Spike AI
+              WhatsApp Spike
             </a>
           </div>
         </div>

@@ -3,11 +3,13 @@ import { motion, AnimatePresence } from "framer-motion";
 import {
   X, CheckCircle2, Droplets, Sparkles, Waves,
   Compass, Zap, Ship, Shield, Hammer, Calendar, Gauge, Anchor,
-  ShoppingCart, Plus, Trash2, ChevronLeft, ClipboardList, ChevronRight,
+  ShoppingCart, Plus, Trash2, ChevronLeft, ClipboardList,
   Phone, MessageCircle, ArrowRight, User, MapPin, Ruler, Layers, CalendarCheck,
+  GraduationCap, Loader2, CreditCard, AlertCircle, Clock,
   LucideIcon
 } from "lucide-react";
 import { useQuote, QuoteCategory, CartItem } from "@/context/QuoteContext";
+import { apiBase } from "@/lib/api";
 
 const SIZES = ["Up to 20'", "21–30'", "31–40'", "41–50'", "51–60'", "61–70'", "71–80'"];
 
@@ -22,6 +24,7 @@ const CATEGORIES: { id: QuoteCategory; name: string; subtitle: string; Icon: Luc
   { id: "extraServices",   name: "Extra Services",    subtitle: "Canvas, teak, vinyl & more",       Icon: Hammer,   color: "text-orange-500 bg-orange-50 border-orange-200" },
   { id: "seasonalPlans",   name: "Seasonal Plans",    subtitle: "Managed care — 15% off",           Icon: Calendar, color: "text-rose-500 bg-rose-50 border-rose-200" },
   { id: "visitBundles",    name: "Visit Bundles",     subtitle: "Multi-visit packs — up to 15% off", Icon: Layers,  color: "text-purple-500 bg-purple-50 border-purple-200" },
+  { id: "workshops",       name: "Workshops",         subtitle: "Training & certification series",   Icon: GraduationCap, color: "text-amber-600 bg-amber-50 border-amber-200" },
 ];
 
 interface ServiceItem {
@@ -136,6 +139,18 @@ const SERVICE_DATA: Record<QuoteCategory, CategoryData> = {
       { level: "SWP01", name: "Season Wrap-Up",           desc: "Haul-out prep: Deck L3, Interior L3, Bottom L2, Canvas.", prices: [2950,3600,4250,5950,7100,8250,9450], features: ["Haul-out preparation","Dry hull guarantee"] },
     ],
   },
+  workshops: {
+    title: "Workshops & Training",
+    description: "Hands-on certification series taught by Spike. $250 CAD per course. Tools, chemistry, and 30 years of documented IP provided.",
+    items: [
+      { level: "WF-PRO", name: "The Marina Pro-Series",          desc: "For marina staff and professional crews. Covers efficiency, workflow optimization, crew leadership, and scaling service across multiple vessels.", prices: [250,250,250,250,250,250,250], features: ["Staff & crew format","Workflow & leadership focus","Certificate of Practical Completion"] },
+      { level: "WF-OWN", name: "Yacht Club Owner's Day",         desc: "For private boat owners. Practical DIY skills, tool safety, seasonal maintenance routines — take the knowledge back to your own vessel.", prices: [250,250,250,250,250,250,250], features: ["Private owner format","DIY skills & tool safety","Certificate of Practical Completion"] },
+      { level: "WF-ADV", name: "The Restoration Masterclass",    desc: "For advanced technicians. Wet sanding, spot repairs, Spike's PT surface protection application, brightwork, and vinyl restoration at the highest level.", prices: [250,250,250,250,250,250,250], features: ["Advanced technician format","Wet sand, restore & protect","Certificate of Practical Completion"] },
+      { level: "W100",   name: "100 Series: Fundamentals",       desc: "Entry-level hybrid course — online theory plus on-the-water practical. Surface reading, compound basics, tool safety. Certificate of Practical Completion.", prices: [250,250,250,250,250,250,250], features: ["Hybrid format","Entry-level curriculum","Certificate of Practical Completion"] },
+      { level: "W200",   name: "200 Series: Advanced Theory",    desc: "Comprehensive online theory platform (200) with optional on-the-water practical (201). Compound chemistry, oxidation dynamics, gelcoat substrates, business of detailing.", prices: [250,250,250,250,250,250,250], features: ["Online theory platform","Optional practical add-on","Certificate of Theoretical Completion"] },
+      { level: "W300",   name: "300 Series: Advanced Practical", desc: "Hands-on only. Buffing mastery, restoration, vinyl recoloring, brightwork, heavy fallout wash, Level 4 interior mold remediation. Spike's PT protection included.", prices: [250,250,250,250,250,250,250], features: ["Hands-on practical only","Advanced & crew management modules","Certificate of Practical Completion (300)"] },
+    ],
+  },
   visitBundles: {
     title: "Visit Bundles",
     description: "Pre-packaged multi-visit tiers for individual services — locked-in scheduling and 10–15% built-in savings.",
@@ -152,7 +167,7 @@ const SERVICE_DATA: Record<QuoteCategory, CategoryData> = {
   },
 };
 
-type Step = "browse" | "cart" | "form" | "confirm";
+type Step = "browse" | "cart" | "form" | "confirm" | "submitting" | "payment";
 
 interface FormData {
   firstName: string;
@@ -163,21 +178,126 @@ interface FormData {
   boatModel: string;
   address: string;
   slipId: string;
+  preferredDate: string;
+  preferredTime: string;
 }
 
 const EMPTY_FORM: FormData = {
   firstName: "", lastName: "", phone: "", email: "",
-  boatName: "", boatModel: "", address: "", slipId: "",
+  boatName: "", boatModel: "", address: "", slipId: "", preferredDate: "", preferredTime: "",
 };
+
+const ASSESSMENT_TIME_SLOTS = [
+  { label: "8:00 AM",  value: "08:00" },
+  { label: "9:00 AM",  value: "09:00" },
+  { label: "10:00 AM", value: "10:00" },
+  { label: "11:00 AM", value: "11:00" },
+  { label: "1:00 PM",  value: "13:00" },
+  { label: "2:00 PM",  value: "14:00" },
+  { label: "3:00 PM",  value: "15:00" },
+  { label: "4:00 PM",  value: "16:00" },
+];
 
 export function QuoteDrawer() {
   const { isOpen, activeCategory, closeQuote, setCategory, cart, addToCart, removeFromCart, isInCart } = useQuote();
   const [loaIndex, setLoaIndex] = useState(1);
   const [loaFeet, setLoaFeet] = useState("35");
   const [step, setStep] = useState<Step>("browse");
-  const [browseMode, setBrowseMode] = useState<"grid" | "services">("grid");
   const [form, setForm] = useState<FormData>(EMPTY_FORM);
+  const [bookingError, setBookingError] = useState("");
+  const [formAttempted, setFormAttempted] = useState(false);
+  const [cartSent, setCartSent] = useState(false);
+  const [slotAvailabilities, setSlotAvailabilities] = useState<Record<string, "idle" | "checking" | "available" | "conflict">>({});
+  const [nextAvailableDate, setNextAvailableDate] = useState<string | null>(null);
+  const [findingNext, setFindingNext] = useState(false);
   const scrollRef = useRef<HTMLDivElement>(null);
+
+  const availStatus: "idle" | "checking" | "available" | "conflict" =
+    form.preferredTime ? (slotAvailabilities[form.preferredTime] ?? "idle") : "idle";
+
+  useEffect(() => {
+    if (!form.preferredDate) { setSlotAvailabilities({}); return; }
+    setNextAvailableDate(null);
+    setFindingNext(false);
+    setSlotAvailabilities(Object.fromEntries(ASSESSMENT_TIME_SLOTS.map(s => [s.value, "checking" as const])));
+    ASSESSMENT_TIME_SLOTS.forEach(async (slot) => {
+      try {
+        const controller = new AbortController();
+        const timer = setTimeout(() => controller.abort(), 8000);
+        const res = await fetch(`${apiBase()}/api/availability?date=${form.preferredDate}&time=${slot.value}&duration=120`, { signal: controller.signal });
+        clearTimeout(timer);
+        if (!res.ok) { setSlotAvailabilities(prev => ({ ...prev, [slot.value]: "idle" })); return; }
+        const json = await res.json();
+        setSlotAvailabilities(prev => ({
+          ...prev,
+          [slot.value]: typeof json.available === "boolean" ? (json.available ? "available" : "conflict") : "idle",
+        }));
+      } catch {
+        setSlotAvailabilities(prev => ({ ...prev, [slot.value]: "idle" }));
+      }
+    });
+  }, [form.preferredDate]);
+
+  useEffect(() => {
+    const values = Object.values(slotAvailabilities);
+    if (values.length < ASSESSMENT_TIME_SLOTS.length || !values.every(v => v === "conflict")) {
+      setNextAvailableDate(null);
+      setFindingNext(false);
+      return;
+    }
+    if (!form.preferredDate) return;
+    let cancelled = false;
+    setFindingNext(true);
+    setNextAvailableDate(null);
+    (async () => {
+      const base = new Date(form.preferredDate + "T12:00:00");
+      for (let i = 1; i <= 30; i++) {
+        if (cancelled) return;
+        const candidate = new Date(base);
+        candidate.setDate(candidate.getDate() + i);
+        const dateStr = candidate.toISOString().split("T")[0];
+        const results = await Promise.all(
+          ASSESSMENT_TIME_SLOTS.map(async (slot) => {
+            try {
+              const res = await fetch(`${apiBase()}/api/availability?date=${dateStr}&time=${slot.value}&duration=120`);
+              if (!res.ok) return false;
+              const json = await res.json();
+              return json.available === true;
+            } catch { return false; }
+          })
+        );
+        if (cancelled) return;
+        if (results.some(r => r)) { setNextAvailableDate(dateStr); setFindingNext(false); return; }
+      }
+      if (!cancelled) setFindingNext(false);
+    })();
+    return () => { cancelled = true; };
+  }, [slotAvailabilities, form.preferredDate]);
+
+  async function handleAssessmentSubmit() {
+    setBookingError("");
+    setStep("submitting");
+    try {
+      const res = await fetch(`${apiBase()}/api/bookings/assessment`, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          ...form,
+          loaFeet,
+          cart: cart.map(i => ({ level: i.level, name: i.name, price: i.price })),
+        }),
+      });
+      const json = await res.json().catch(() => ({}));
+      if (res.ok && json.success) {
+        setBookingError("");
+      } else {
+        setBookingError("booking_failed");
+      }
+    } catch {
+      setBookingError("booking_failed");
+    }
+    setStep("payment");
+  }
 
   useEffect(() => {
     scrollRef.current?.scrollTo({ top: 0, behavior: "smooth" });
@@ -191,7 +311,7 @@ export function QuoteDrawer() {
 
   const handleClose = () => {
     closeQuote();
-    setTimeout(() => { setStep("browse"); setBrowseMode("grid"); setForm(EMPTY_FORM); }, 400);
+    setTimeout(() => { setStep("browse"); setForm(EMPTY_FORM); setFormAttempted(false); setCartSent(false); }, 400);
   };
 
   const catData = SERVICE_DATA[activeCategory];
@@ -199,7 +319,7 @@ export function QuoteDrawer() {
   const cartTotal = cart.reduce((sum, i) => sum + i.price, 0);
   const loaLabel = SIZES[loaIndex];
   const cartCountFor = (catId: QuoteCategory) => cart.filter(i => i.category === catId).length;
-  const reviewedCount = CATEGORIES.filter(c => cartCountFor(c.id) > 0).length;
+
 
   const handleAddToCart = (service: ServiceItem) => {
     const catName = CATEGORIES.find(c => c.id === activeCategory)?.name ?? activeCategory;
@@ -241,7 +361,8 @@ export function QuoteDrawer() {
     return encodeURIComponent(lines.join("\n"));
   };
 
-  const formComplete = form.firstName && form.lastName && form.phone && form.boatName && form.address && form.slipId && loaFeet;
+  const formComplete = !!(form.firstName && form.lastName && form.phone && form.boatName && form.address && form.slipId && loaFeet && form.preferredDate && form.preferredTime && availStatus !== "conflict" && availStatus !== "checking");
+  const fe = (val: string) => formAttempted && !val.trim();
 
   return (
     <AnimatePresence>
@@ -265,7 +386,7 @@ export function QuoteDrawer() {
             {/* ── HEADER ─────────────────────────────────────── */}
             <div className="bg-marine-900 text-white shrink-0">
               <div className="bg-amber-500/20 border-b border-amber-400/20 text-amber-300 text-[10px] font-black uppercase tracking-widest text-center py-1.5">
-                Estimate Only — No Transactions Here · Assessment $250 CAD
+                No Service Transactions Here — Assessment First $250
               </div>
 
               <div className="px-5 py-4 flex items-center justify-between">
@@ -319,39 +440,63 @@ export function QuoteDrawer() {
                 </div>
               </div>
 
-              {/* LOA selector — only on browse step */}
+              {/* LOA + Category selectors — only on browse step */}
               {step === "browse" && (
-                <div className="px-5 pb-4 border-t border-white/10 pt-3">
-                  <div className="flex items-center gap-2 mb-2">
-                    <Gauge className="w-3.5 h-3.5 text-cyan-400" />
-                    <span className="text-[10px] font-black uppercase tracking-widest text-cyan-400">Vessel Length (LOA) — for pricing</span>
+                <div className="px-5 pb-4 border-t border-white/10 pt-3 space-y-3">
+                  {/* LOA row */}
+                  <div>
+                    <div className="flex items-center gap-2 mb-2">
+                      <Gauge className="w-3.5 h-3.5 text-cyan-400" />
+                      <span className="text-[10px] font-black uppercase tracking-widest text-cyan-400">Vessel Length (LOA) — for pricing</span>
+                    </div>
+                    <div className="flex gap-1.5 overflow-x-auto pb-1 scrollbar-hide">
+                      {SIZES.map((size, idx) => (
+                        <button
+                          key={size}
+                          onClick={() => setLoaIndex(idx)}
+                          className={`shrink-0 px-3 py-1.5 rounded-full text-xs font-bold border transition-all ${
+                            loaIndex === idx
+                              ? "bg-cyan-500 border-cyan-400 text-white shadow-md"
+                              : "border-white/20 text-white/60 hover:text-white hover:border-white/40"
+                          }`}
+                        >
+                          {size}
+                        </button>
+                      ))}
+                    </div>
                   </div>
-                  <div className="flex gap-1.5 overflow-x-auto pb-1 scrollbar-hide">
-                    {SIZES.map((size, idx) => (
-                      <button
-                        key={size}
-                        onClick={() => setLoaIndex(idx)}
-                        className={`shrink-0 px-3 py-1.5 rounded-full text-xs font-bold border transition-all ${
-                          loaIndex === idx
-                            ? "bg-cyan-500 border-cyan-400 text-white shadow-md"
-                            : "border-white/20 text-white/60 hover:text-white hover:border-white/40"
-                        }`}
-                      >
-                        {size}
-                      </button>
-                    ))}
+
+                  {/* Category row — ~2× the height of the LOA row */}
+                  <div>
+                    <div className="flex items-center gap-2 mb-2">
+                      <span className="text-[10px] font-black uppercase tracking-widest text-white/50">Service Category</span>
+                    </div>
+                    <div className="flex gap-2 overflow-x-auto pb-1 scrollbar-hide">
+                      {CATEGORIES.map(cat => {
+                        const count = cartCountFor(cat.id);
+                        const isActive = activeCategory === cat.id;
+                        return (
+                          <button
+                            key={cat.id}
+                            onClick={() => setCategory(cat.id)}
+                            className={`shrink-0 flex items-center gap-2 px-4 py-3 rounded-2xl text-sm font-bold border transition-all ${
+                              isActive
+                                ? "bg-white text-marine-900 border-white shadow-md"
+                                : "border-white/20 text-white/70 hover:text-white hover:border-white/50"
+                            }`}
+                          >
+                            <cat.Icon className="w-4 h-4 shrink-0" />
+                            <span className="whitespace-nowrap">{cat.name}</span>
+                            {count > 0 && (
+                              <span className="ml-0.5 bg-purple-500 text-white text-[10px] font-black w-4 h-4 rounded-full flex items-center justify-center shrink-0">
+                                {count}
+                              </span>
+                            )}
+                          </button>
+                        );
+                      })}
+                    </div>
                   </div>
-                  {browseMode === "services" && catMeta && (
-                    <button
-                      onClick={() => setBrowseMode("grid")}
-                      className="mt-3 flex items-center gap-1.5 text-[11px] font-bold text-white/60 hover:text-white transition-colors"
-                    >
-                      <ChevronLeft className="w-3.5 h-3.5" />
-                      All Categories
-                      <span className="ml-1 text-white/40">·</span>
-                      <span className="text-white font-black">{catMeta.name}</span>
-                    </button>
-                  )}
                 </div>
               )}
             </div>
@@ -359,109 +504,8 @@ export function QuoteDrawer() {
             {/* ── BODY ───────────────────────────────────────── */}
             <div ref={scrollRef} className="flex-1 overflow-y-auto">
 
-              {/* ── STEP: BROWSE — GRID ── */}
-              {step === "browse" && browseMode === "grid" && (
-                <div className="px-4 pt-5 pb-8">
-                  {/* Header + progress */}
-                  <div className="flex items-end justify-between mb-4 px-1">
-                    <div>
-                      <h2 className="font-display font-bold text-marine-900 text-lg leading-tight">Select Your Services</h2>
-                      <p className="text-xs text-gray-400 mt-0.5">Browse each category and add what you need</p>
-                    </div>
-                    {reviewedCount > 0 && (
-                      <div className="text-right shrink-0 ml-3">
-                        <div className="text-[10px] font-black uppercase tracking-widest text-gray-400">Explored</div>
-                        <div className="text-sm font-black text-purple-600">{reviewedCount}<span className="text-gray-300 font-normal"> / {CATEGORIES.length}</span></div>
-                      </div>
-                    )}
-                  </div>
-
-                  {/* Category grid */}
-                  <div className="grid grid-cols-2 gap-3">
-                    {CATEGORIES.map(cat => {
-                      const count = cartCountFor(cat.id);
-                      const hasItems = count > 0;
-                      return (
-                        <motion.button
-                          key={cat.id}
-                          onClick={() => { setCategory(cat.id); setBrowseMode("services"); }}
-                          whileTap={{ scale: 0.97 }}
-                          className={`relative text-left rounded-2xl border-2 p-4 transition-all shadow-sm ${
-                            hasItems
-                              ? "bg-white border-purple-400 ring-2 ring-purple-100"
-                              : "bg-white border-gray-100 hover:border-gray-300"
-                          }`}
-                        >
-                          {/* Cart badge */}
-                          {hasItems && (
-                            <div className="absolute top-3 right-3 flex items-center gap-1 bg-purple-600 text-white text-[9px] font-black px-2 py-0.5 rounded-full">
-                              <CheckCircle2 className="w-2.5 h-2.5" />
-                              {count}
-                            </div>
-                          )}
-
-                          {/* Icon */}
-                          <div className={`w-10 h-10 rounded-xl border flex items-center justify-center mb-3 ${cat.color}`}>
-                            <cat.Icon className="w-5 h-5" />
-                          </div>
-
-                          {/* Name */}
-                          <div className={`font-display font-bold text-sm leading-tight mb-1 ${hasItems ? "text-purple-900" : "text-marine-900"}`}>
-                            {cat.name}
-                          </div>
-
-                          {/* Subtitle */}
-                          <div className="text-[10px] text-gray-400 leading-snug">{cat.subtitle}</div>
-
-                          {/* Arrow */}
-                          <div className={`mt-2 flex items-center gap-1 text-[10px] font-bold ${hasItems ? "text-purple-500" : "text-gray-300"}`}>
-                            {hasItems ? "View / edit" : "Explore"}
-                            <ChevronRight className="w-3 h-3" />
-                          </div>
-                        </motion.button>
-                      );
-                    })}
-                  </div>
-
-                  {/* Bottom CTA */}
-                  {cart.length > 0 && (
-                    <motion.div
-                      initial={{ opacity: 0, y: 12 }}
-                      animate={{ opacity: 1, y: 0 }}
-                      className="mt-5 bg-marine-900 rounded-2xl p-5 text-white"
-                    >
-                      <div className="flex items-center justify-between mb-3">
-                        <div>
-                          <div className="font-display font-bold text-base">Ready to reserve?</div>
-                          <div className="text-gray-400 text-xs mt-0.5">{cart.length} service{cart.length !== 1 ? "s" : ""} selected · ~${cartTotal.toLocaleString()} CAD est.</div>
-                        </div>
-                        <ShoppingCart className="w-8 h-8 text-cyan-400 shrink-0" />
-                      </div>
-                      <button
-                        onClick={() => setStep("cart")}
-                        className="flex items-center justify-center gap-2 w-full py-3 bg-cyan-500 hover:bg-cyan-400 text-white font-black text-sm uppercase tracking-widest rounded-xl transition-all"
-                      >
-                        Review Cart <ArrowRight className="w-4 h-4" />
-                      </button>
-                    </motion.div>
-                  )}
-
-                  {cart.length === 0 && (
-                    <div className="mt-5 border border-dashed border-gray-200 rounded-2xl p-5 text-center">
-                      <p className="text-xs text-gray-400 leading-relaxed">Not sure what you need? Browse each category above — Spike will scope the work during your on-site assessment.</p>
-                      <button
-                        onClick={() => setStep("form")}
-                        className="mt-3 inline-flex items-center gap-2 px-4 py-2.5 bg-marine-900 text-white font-bold text-xs rounded-xl hover:bg-marine-800 transition-all"
-                      >
-                        Skip to Reserve Assessment <ArrowRight className="w-3.5 h-3.5" />
-                      </button>
-                    </div>
-                  )}
-                </div>
-              )}
-
               {/* ── STEP: BROWSE — SERVICES ── */}
-              {step === "browse" && browseMode === "services" && (
+              {step === "browse" && (
                 <div>
                   <div className="px-5 pt-5 pb-3">
                     <div className="flex items-center gap-2 mb-1">
@@ -657,9 +701,19 @@ export function QuoteDrawer() {
               {/* ── STEP: FORM ── */}
               {step === "form" && (
                 <div className="px-5 pt-6 pb-8">
-                  <p className="text-sm text-muted-foreground mb-6 leading-relaxed">
+                  <p className="text-sm text-muted-foreground mb-4 leading-relaxed">
                     Spike will reach out within 24 hours to confirm your assessment time. The $250 CAD fee is collected at the time of booking confirmation.
                   </p>
+
+                  {/* Validation banner */}
+                  {formAttempted && !formComplete && (
+                    <div className="mb-5 bg-red-50 border border-red-300 rounded-xl px-4 py-3 flex items-start gap-2">
+                      <span className="text-red-500 font-black text-sm shrink-0">!</span>
+                      <p className="text-xs text-red-700 leading-relaxed font-semibold">
+                        Please complete all required fields marked with <span className="text-red-500">*</span> before continuing.
+                      </p>
+                    </div>
+                  )}
 
                   {/* Contact */}
                   <div className="mb-6">
@@ -669,41 +723,45 @@ export function QuoteDrawer() {
                     </div>
                     <div className="grid grid-cols-2 gap-3 mb-3">
                       <div>
-                        <label className="text-[10px] font-black uppercase tracking-widest text-gray-400 block mb-1">First Name *</label>
+                        <label className="text-[10px] font-black uppercase tracking-widest text-gray-400 block mb-1">First Name <span className="text-red-500">*</span></label>
                         <input
                           type="text"
                           value={form.firstName}
                           onChange={e => setForm(f => ({ ...f, firstName: e.target.value }))}
                           placeholder="James"
-                          className="w-full border border-gray-200 rounded-lg px-3 py-2.5 text-sm font-medium text-marine-900 bg-white focus:outline-none focus:ring-2 focus:ring-cyan-400 placeholder:text-gray-300"
+                          className={`w-full border rounded-lg px-3 py-2.5 text-sm font-medium text-marine-900 focus:outline-none focus:ring-2 placeholder:text-gray-300 ${fe(form.firstName) ? "border-red-400 bg-red-50 focus:ring-red-400" : "border-gray-200 bg-white focus:ring-cyan-400"}`}
                         />
                       </div>
                       <div>
-                        <label className="text-[10px] font-black uppercase tracking-widest text-gray-400 block mb-1">Last Name *</label>
+                        <label className="text-[10px] font-black uppercase tracking-widest text-gray-400 block mb-1">Last Name <span className="text-red-500">*</span></label>
                         <input
                           type="text"
                           value={form.lastName}
                           onChange={e => setForm(f => ({ ...f, lastName: e.target.value }))}
                           placeholder="Robertson"
-                          className="w-full border border-gray-200 rounded-lg px-3 py-2.5 text-sm font-medium text-marine-900 bg-white focus:outline-none focus:ring-2 focus:ring-cyan-400 placeholder:text-gray-300"
+                          className={`w-full border rounded-lg px-3 py-2.5 text-sm font-medium text-marine-900 focus:outline-none focus:ring-2 placeholder:text-gray-300 ${fe(form.lastName) ? "border-red-400 bg-red-50 focus:ring-red-400" : "border-gray-200 bg-white focus:ring-cyan-400"}`}
                         />
                       </div>
                     </div>
                     <div className="grid grid-cols-2 gap-3">
                       <div>
-                        <label className="text-[10px] font-black uppercase tracking-widest text-gray-400 block mb-1">Phone *</label>
+                        <label className="text-[10px] font-black uppercase tracking-widest text-gray-400 block mb-1">Phone <span className="text-red-500">*</span></label>
                         <input
-                          type="tel"
+                          type="text"
+                          inputMode="tel"
+                          autoComplete="tel"
                           value={form.phone}
                           onChange={e => setForm(f => ({ ...f, phone: e.target.value }))}
                           placeholder="416-555-0100"
-                          className="w-full border border-gray-200 rounded-lg px-3 py-2.5 text-sm font-medium text-marine-900 bg-white focus:outline-none focus:ring-2 focus:ring-cyan-400 placeholder:text-gray-300"
+                          className={`w-full border rounded-lg px-3 py-2.5 text-sm font-medium text-marine-900 focus:outline-none focus:ring-2 placeholder:text-gray-300 ${fe(form.phone) ? "border-red-400 bg-red-50 focus:ring-red-400" : "border-gray-200 bg-white focus:ring-cyan-400"}`}
                         />
                       </div>
                       <div>
                         <label className="text-[10px] font-black uppercase tracking-widest text-gray-400 block mb-1">Email</label>
                         <input
-                          type="email"
+                          type="text"
+                          inputMode="email"
+                          autoComplete="email"
                           value={form.email}
                           onChange={e => setForm(f => ({ ...f, email: e.target.value }))}
                           placeholder="james@email.com"
@@ -721,13 +779,13 @@ export function QuoteDrawer() {
                     </div>
                     <div className="grid grid-cols-2 gap-3 mb-3">
                       <div>
-                        <label className="text-[10px] font-black uppercase tracking-widest text-gray-400 block mb-1">Boat Name *</label>
+                        <label className="text-[10px] font-black uppercase tracking-widest text-gray-400 block mb-1">Boat Name <span className="text-red-500">*</span></label>
                         <input
                           type="text"
                           value={form.boatName}
                           onChange={e => setForm(f => ({ ...f, boatName: e.target.value }))}
                           placeholder="Some Nice III"
-                          className="w-full border border-gray-200 rounded-lg px-3 py-2.5 text-sm font-medium text-marine-900 bg-white focus:outline-none focus:ring-2 focus:ring-cyan-400 placeholder:text-gray-300"
+                          className={`w-full border rounded-lg px-3 py-2.5 text-sm font-medium text-marine-900 focus:outline-none focus:ring-2 placeholder:text-gray-300 ${fe(form.boatName) ? "border-red-400 bg-red-50 focus:ring-red-400" : "border-gray-200 bg-white focus:ring-cyan-400"}`}
                         />
                       </div>
                       <div>
@@ -756,7 +814,7 @@ export function QuoteDrawer() {
                           value={loaFeet}
                           onChange={e => setLoaFeet(e.target.value)}
                           placeholder="35"
-                          className="w-28 border border-gray-200 rounded-lg px-3 py-2.5 text-sm font-bold text-marine-900 bg-white focus:outline-none focus:ring-2 focus:ring-cyan-400 placeholder:text-gray-300"
+                          className={`w-28 border rounded-lg px-3 py-2.5 text-sm font-bold text-marine-900 focus:outline-none focus:ring-2 placeholder:text-gray-300 ${formAttempted && !loaFeet ? "border-red-400 bg-red-50 focus:ring-red-400" : "border-gray-200 bg-white focus:ring-cyan-400"}`}
                         />
                         <span className="text-sm font-semibold text-gray-500">ft overall length</span>
                       </div>
@@ -772,7 +830,7 @@ export function QuoteDrawer() {
                         value={form.address}
                         onChange={e => setForm(f => ({ ...f, address: e.target.value }))}
                         placeholder="Bronte Outer Harbour Marina, Oakville, ON"
-                        className="w-full border border-gray-200 rounded-lg px-3 py-2.5 text-sm font-medium text-marine-900 bg-white focus:outline-none focus:ring-2 focus:ring-cyan-400 placeholder:text-gray-300"
+                        className={`w-full border rounded-lg px-3 py-2.5 text-sm font-medium text-marine-900 focus:outline-none focus:ring-2 placeholder:text-gray-300 ${fe(form.address) ? "border-red-400 bg-red-50 focus:ring-red-400" : "border-gray-200 bg-white focus:ring-cyan-400"}`}
                       />
                     </div>
 
@@ -786,8 +844,98 @@ export function QuoteDrawer() {
                         value={form.slipId}
                         onChange={e => setForm(f => ({ ...f, slipId: e.target.value }))}
                         placeholder="B-42"
-                        className="w-full border border-gray-200 rounded-lg px-3 py-2.5 text-sm font-medium text-marine-900 bg-white focus:outline-none focus:ring-2 focus:ring-cyan-400 placeholder:text-gray-300"
+                        className={`w-full border rounded-lg px-3 py-2.5 text-sm font-medium text-marine-900 focus:outline-none focus:ring-2 placeholder:text-gray-300 ${fe(form.slipId) ? "border-red-400 bg-red-50 focus:ring-red-400" : "border-gray-200 bg-white focus:ring-cyan-400"}`}
                       />
+                    </div>
+                    <div>
+                      <div className="flex items-center gap-2 mb-1">
+                        <Calendar className="w-3.5 h-3.5 text-gray-400" />
+                        <label className="text-[10px] font-black uppercase tracking-widest text-gray-400">Preferred Assessment Date *</label>
+                      </div>
+                      <input
+                        type="date"
+                        value={form.preferredDate}
+                        min={new Date(Date.now() + 86400000).toISOString().split("T")[0]}
+                        onChange={e => setForm(f => ({ ...f, preferredDate: e.target.value, preferredTime: "" }))}
+                        className={`w-full border rounded-lg px-3 py-2.5 text-sm font-medium text-marine-900 bg-white focus:outline-none focus:ring-2 ${
+                          formAttempted && !form.preferredDate ? "border-red-400 bg-red-50 focus:ring-red-400"
+                          : "border-gray-200 focus:ring-cyan-400"
+                        }`}
+                      />
+
+                      {/* Time slot picker — appears once a date is chosen */}
+                      {form.preferredDate && (
+                        <div className="mt-3">
+                          <div className="flex items-center gap-2 mb-1.5">
+                            <Clock className="w-3.5 h-3.5 text-gray-400" />
+                            <label className="text-[10px] font-black uppercase tracking-widest text-gray-400">Preferred Time *</label>
+                          </div>
+                          <div className="grid grid-cols-4 gap-1.5">
+                            {ASSESSMENT_TIME_SLOTS.map(slot => {
+                              const ss = slotAvailabilities[slot.value] ?? "idle";
+                              const isConflict = ss === "conflict";
+                              const isChecking = ss === "checking";
+                              const isSelected = form.preferredTime === slot.value;
+                              return (
+                                <button
+                                  key={slot.value}
+                                  type="button"
+                                  disabled={isConflict || isChecking}
+                                  onClick={() => setForm(f => ({ ...f, preferredTime: slot.value }))}
+                                  className={`py-2 rounded-lg text-xs font-bold border transition-all flex items-center justify-center gap-1 ${
+                                    isConflict
+                                      ? "bg-gray-100 border-gray-200 text-gray-400 cursor-not-allowed line-through"
+                                      : isChecking
+                                      ? "bg-gray-50 border-gray-200 text-gray-400 cursor-wait"
+                                      : isSelected
+                                      ? "bg-green-500 border-green-500 text-white"
+                                      : "border-gray-200 text-marine-900 hover:border-cyan-400 hover:bg-cyan-50"
+                                  }`}
+                                >
+                                  {isChecking && <Loader2 className="w-3 h-3 animate-spin shrink-0" />}
+                                  {slot.label}
+                                </button>
+                              );
+                            })}
+                          </div>
+                        </div>
+                      )}
+
+                      {/* Next available date suggestion */}
+                      {findingNext && (
+                        <p className="mt-2 text-[10px] text-gray-400 flex items-center gap-1">
+                          <Loader2 className="w-3 h-3 animate-spin" />
+                          All slots taken — finding next open date…
+                        </p>
+                      )}
+                      {nextAvailableDate && !findingNext && (
+                        <button
+                          type="button"
+                          onClick={() => setForm(f => ({ ...f, preferredDate: nextAvailableDate, preferredTime: "" }))}
+                          className="mt-2 w-full text-[10px] font-bold text-cyan-700 bg-cyan-50 border border-cyan-200 rounded-lg py-2 hover:bg-cyan-100 transition-all flex items-center justify-center gap-1.5"
+                        >
+                          <CalendarCheck className="w-3 h-3" />
+                          Next available: {new Date(nextAvailableDate + "T12:00:00").toLocaleDateString("en-CA", { weekday: "long", month: "long", day: "numeric" })} — tap to switch
+                        </button>
+                      )}
+
+                      <div className="mt-2 h-4">
+                        {availStatus === "checking" && (
+                          <p className="text-[10px] text-gray-400 flex items-center gap-1"><Loader2 className="w-3 h-3 animate-spin" />Checking Spike's calendar…</p>
+                        )}
+                        {availStatus === "available" && (
+                          <p className="text-[10px] text-green-600 flex items-center gap-1"><CheckCircle2 className="w-3 h-3" />This slot is open — go ahead and reserve</p>
+                        )}
+                        {availStatus === "conflict" && (
+                          <p className="text-[10px] text-red-600 flex items-center gap-1"><AlertCircle className="w-3 h-3" />Spike is already booked at that time — try another slot</p>
+                        )}
+                        {availStatus === "idle" && !form.preferredDate && (
+                          <p className="text-[10px] text-gray-400">Pick a date and time — we'll check Spike's calendar instantly</p>
+                        )}
+                        {availStatus === "idle" && form.preferredDate && !form.preferredTime && (
+                          <p className="text-[10px] text-gray-400">Now pick a time slot above</p>
+                        )}
+                      </div>
                     </div>
                   </div>
 
@@ -817,12 +965,11 @@ export function QuoteDrawer() {
                   </div>
 
                   <button
-                    disabled={!formComplete}
-                    onClick={() => setStep("confirm")}
+                    onClick={() => { if (formComplete) { setFormAttempted(false); setStep("confirm"); } else { setFormAttempted(true); scrollRef.current?.scrollTo({ top: 0, behavior: "smooth" }); } }}
                     className={`flex items-center justify-center gap-2 w-full py-4 font-black text-sm uppercase tracking-widest rounded-xl transition-all active:scale-[0.99] shadow-lg ${
                       formComplete
                         ? "bg-cyan-500 hover:bg-cyan-400 text-white"
-                        : "bg-gray-200 text-gray-400 cursor-not-allowed"
+                        : formAttempted ? "bg-red-500 hover:bg-red-400 text-white" : "bg-gray-200 text-gray-400"
                     }`}
                   >
                     <ArrowRight className="w-4 h-4" />
@@ -916,28 +1063,85 @@ export function QuoteDrawer() {
                       $250 CAD assessment fee · Credited toward your service
                     </p>
                   </div>
+                </div>
+              )}
 
-                  {/* Secondary — WhatsApp cart summary */}
-                  <div className="mb-3">
-                    <p className="text-[10px] font-bold uppercase tracking-widest text-gray-400 text-center mb-2">Also send your cart summary to Spike</p>
-                    <a
-                      href={`https://wa.me/14168905899?text=${buildWhatsAppText()}`}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="flex items-center justify-center gap-3 w-full py-3.5 bg-[#25D366] hover:bg-[#1fba59] text-white font-black text-sm uppercase tracking-widest rounded-xl transition-all active:scale-[0.99]"
-                    >
-                      <MessageCircle className="w-4 h-4" />
-                      Send Cart via WhatsApp
-                    </a>
+              {/* ── STEP: SUBMITTING ── */}
+              {step === "submitting" && (
+                <div className="px-5 pt-20 pb-8 flex flex-col items-center justify-center text-center">
+                  <Loader2 className="w-12 h-12 text-cyan-500 animate-spin mb-4" />
+                  <h3 className="font-display font-bold text-lg text-marine-900 mb-2">Saving Your Reservation</h3>
+                  <p className="text-sm text-gray-500">Adding to Spike's calendar — just a moment…</p>
+                </div>
+              )}
+
+              {/* ── STEP: PAYMENT ── */}
+              {step === "payment" && (
+                <div className="px-5 pt-6 pb-8">
+                  {bookingError ? (
+                    <div className="bg-amber-50 border border-amber-200 rounded-2xl p-5 mb-6 text-center">
+                      <CheckCircle2 className="w-10 h-10 text-amber-500 mx-auto mb-2" />
+                      <h3 className="font-display font-bold text-lg text-marine-900 mb-1">Couldn't Connect</h3>
+                      <p className="text-sm text-gray-500 leading-relaxed">
+                        Your booking didn't go through. Please call or text Spike at <strong>(416) 890-5899</strong> to lock in your date.
+                      </p>
+                    </div>
+                  ) : (
+                    <div className="bg-green-50 border border-green-200 rounded-2xl p-5 mb-6 text-center">
+                      <CheckCircle2 className="w-10 h-10 text-green-500 mx-auto mb-2" />
+                      <h3 className="font-display font-bold text-lg text-marine-900 mb-1">Time Reserved!</h3>
+                      <p className="text-sm text-gray-500 leading-relaxed">
+                        Your preferred date is now on Spike's calendar. Complete your payment below, then call Spike to confirm.
+                      </p>
+                    </div>
+                  )}
+
+                  {/* STEP 2 — Pay */}
+                  <div className="mb-5">
+                    <div className="flex items-center gap-2 mb-3">
+                      <span className="w-6 h-6 rounded-full flex items-center justify-center text-xs font-black shrink-0 bg-marine-900 text-white">2</span>
+                      <p className="text-[11px] font-bold uppercase tracking-widest text-gray-500">Pay $250 Assessment Fee</p>
+                    </div>
+                    <div className="space-y-3">
+                      <a
+                        href="https://buy.stripe.com/5kQ8wQ0zL9UvcJx5Od0kE01"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="flex items-center justify-center gap-3 w-full py-4 rounded-xl font-black text-sm uppercase tracking-widest bg-[#635BFF] hover:bg-[#4f49cc] text-white transition-all active:scale-[0.99] shadow-lg"
+                      >
+                        <CreditCard className="w-5 h-5" />
+                        Pay with Stripe
+                      </a>
+                      <a
+                        href="https://paypal.me/spikeonthewater/250"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="flex items-center justify-center gap-3 w-full py-4 rounded-xl font-black text-sm uppercase tracking-widest bg-[#003087] hover:bg-[#002270] text-white transition-all active:scale-[0.99] shadow-lg"
+                      >
+                        <span className="font-black text-[#009cde]">Pay</span><span className="font-black text-white">Pal</span>
+                        &nbsp;— PayPal.me
+                      </a>
+                    </div>
+                    <p className="text-center text-[10px] text-gray-400 mt-2">$250 CAD credited in full toward your service</p>
                   </div>
 
-                  <a
-                    href="tel:4168905899"
-                    className="flex items-center justify-center gap-3 w-full py-3 bg-white border border-gray-200 hover:border-purple-300 hover:bg-purple-50 text-marine-900 font-black text-sm uppercase tracking-widest rounded-xl transition-all active:scale-[0.99] mb-2"
-                  >
-                    <Phone className="w-4 h-4" />
-                    Call Spike — 416-890-5899
-                  </a>
+                  {/* STEP 3 — Call to confirm */}
+                  <div className="mb-2">
+                    <div className="flex items-center gap-2 mb-2">
+                      <span className="w-6 h-6 rounded-full flex items-center justify-center text-xs font-black shrink-0 bg-marine-900 text-white">3</span>
+                      <p className="text-[11px] font-bold uppercase tracking-widest text-gray-500">Call Spike to confirm</p>
+                    </div>
+                    <a
+                      href="tel:4168905899"
+                      className="flex items-center justify-center gap-3 w-full py-3.5 bg-white border-2 border-marine-900 hover:bg-marine-900 hover:text-white text-marine-900 font-black text-sm uppercase tracking-widest rounded-xl transition-all active:scale-[0.99]"
+                    >
+                      <Phone className="w-4 h-4" />
+                      Call Spike — 416-890-5899
+                    </a>
+                    <p className="text-center text-[10px] text-gray-400 mt-2 leading-relaxed">
+                      Spike will verify your payment and lock in the date
+                    </p>
+                  </div>
                 </div>
               )}
             </div>

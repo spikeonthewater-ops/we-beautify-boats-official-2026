@@ -1,0 +1,41 @@
+Global Event Details & Booking Format
+Format: On-Site Speaking Event / Hands-On Workshop Location: Hosted directly at your Marina or Yacht Club Pricing Structure: $250.00 CAD per participant (or can be configured as a flat-rate group booking depending on your checkout setup). Mandatory Recording Disclaimer: Disclaimer: By registering for this workshop, you acknowledge and consent that these sessions may be recorded. These recordings will be published to the Spike On The Water YouTube channel to promote shared knowledge and community learning
+.
+
+--------------------------------------------------------------------------------
+Web Copy for Event Pages
+1. The Marina Pro-Series
+Target Audience: Staff & Crews (Professional) Description: Built for efficiency, workflow optimization, and crew leadership. This event is designed for professional marina teams and detailing crews serving multiple vessels at scale. We dive into the logistics of marine detailing, time management, and the leadership required to maintain high service standards without avoidable rework
+. Your staff will learn to read surfaces before a buffer ever touches a boat, implementing systematic quality control and our Predictive Buffer Workflow to eliminate guesswork.
+2. Yacht Club "Owner's Day"
+Target Audience: Private Owners (Owner) Description: Bring 30 years of recreational marine expertise directly to your yacht club members. This workshop focuses on practical DIY skills, tool safety, and seasonal maintenance fundamentals. Owners will learn the critical difference between cosmetic appearance and true asset preservation
+, as well as how to perform safe, eco-conscious maintenance that protects Ontario's freshwater lakes
+. Take the knowledge home to extend the life of your own boat, knowing exactly when to use routine care and when to call a professional.
+3. The Restoration Masterclass
+Target Audience: Advanced Technicians (Advanced) Description: For experienced hands ready to operate at the highest level. This highly technical masterclass covers Level 5 surface correction, including the precise stages of wet sanding to safely level heavily degraded gelcoat
+. We will also cover spot repairs and the application of Spike’s PT (PPS Technology®) to fuse long-lasting PTFE protection to marine surfaces
+. This is an abrasive, direct route to pulling the beautiful finish back out of the fiberglass, transforming technicians into true craftsmen
+.
+
+--------------------------------------------------------------------------------
+E-Commerce Booking Table for Web Builder
+Class name
+Category
+Description
+Price per class
+Taxes
+The Marina Pro-Series: Staff & Crews
+Professional Workshops
+Hosted at your Marina. Efficiency, workflow optimization, and crew leadership. Designed for professional teams serving multiple vessels at scale. Learn to read gelcoat, implement the Predictive Buffer Workflow, and manage crew logistics safely. Disclaimer: Sessions may be recorded for the Spike On The Water YouTube channel.
+$250.00
+Standard HST
+Yacht Club "Owner's Day"
+Owner Workshops
+Hosted at your Yacht Club. Practical DIY skills, tool safety, and seasonal maintenance. Take the knowledge home and extend the life of your own boat. Learn eco-conscious chemical application and how to protect your hull's integrity. Disclaimer: Sessions may be recorded for the Spike On The Water YouTube channel.
+$250.00
+Standard HST
+The Restoration Masterclass
+Advanced Technical
+Hosted On-Site. Wet sanding, spot repairs, and Spike's PT surface protection application
+. For experienced hands ready to operate at the highest level of surface correction. Master Level 5 wet sanding techniques
+. Disclaimer: Sessions may be recorded for the Spike On The Water YouTube channel.

@@ -10,7 +10,8 @@ export type QuoteCategory =
   | "protections"
   | "extraServices"
   | "seasonalPlans"
-  | "visitBundles";
+  | "visitBundles"
+  | "workshops";
 
 export interface CartItem {
   level: string;

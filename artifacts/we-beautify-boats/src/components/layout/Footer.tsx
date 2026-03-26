@@ -1,8 +1,32 @@
 import { useState } from "react";
 import { Link } from "wouter";
-import { Phone, Mail, MapPin, Instagram, Facebook } from "lucide-react";
+import { Phone, Mail, MapPin } from "lucide-react";
+import { FaInstagram, FaFacebook, FaYoutube, FaLinkedin } from "react-icons/fa";
 import { useQuote } from "@/context/QuoteContext";
 import ReferralModal from "@/components/ReferralModal";
+
+const SOCIAL = [
+  {
+    href: "https://www.instagram.com/webeautifyboats/",
+    label: "Instagram",
+    Icon: FaInstagram,
+  },
+  {
+    href: "https://www.facebook.com/webeautifyboats",
+    label: "Facebook",
+    Icon: FaFacebook,
+  },
+  {
+    href: "https://www.youtube.com/@SpikeOnTheWater",
+    label: "YouTube",
+    Icon: FaYoutube,
+  },
+  {
+    href: "https://www.linkedin.com/company/we-beautify-boats",
+    label: "LinkedIn",
+    Icon: FaLinkedin,
+  },
+];
 
 export function Footer() {
   const { openQuote } = useQuote();
@@ -22,15 +46,21 @@ export function Footer() {
               />
             </Link>
             <p className="text-sm leading-relaxed text-gray-400">
-              Defined service levels. Documented processes. 25 years of freshwater expertise protecting your hull, deck and interior for long-term value.
+              Defined service levels. Documented processes. 30 years of freshwater expertise protecting your hull, deck and interior for long-term value.
             </p>
-            <div className="flex gap-4">
-              <a href="#" className="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center hover:bg-cyan-500 hover:text-white transition-colors duration-300">
-                <Instagram className="w-5 h-5" />
-              </a>
-              <a href="#" className="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center hover:bg-cyan-500 hover:text-white transition-colors duration-300">
-                <Facebook className="w-5 h-5" />
-              </a>
+            <div className="flex gap-3">
+              {SOCIAL.map(({ href, label, Icon }) => (
+                <a
+                  key={label}
+                  href={href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label={label}
+                  className="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center hover:bg-cyan-500 hover:text-white transition-colors duration-300"
+                >
+                  <Icon className="w-4 h-4" />
+                </a>
+              ))}
             </div>
           </div>
 
@@ -41,6 +71,7 @@ export function Footer() {
               {[
                 { label: "Home", href: "/" },
                 { label: "Our Services", href: "/our-services" },
+                { label: "Workshops & Training", href: "/workshops" },
                 { label: "Seasonal Plans", href: "/seasonal-plans" },
                 { label: "Our Work Gallery", href: "/our-work" },
                 { label: "Meet the Team", href: "/meet-the-team" },
@@ -76,6 +107,7 @@ export function Footer() {
                 { label: "Bottom Prep", href: "/bottom-prep" },
                 { label: "Interior Details", href: "/interior-details" },
                 { label: "Protections", href: "/protections" },
+                { label: "Extra Services", href: "/extra-services" },
               ].map((link) => (
                 <li key={link.href}>
                   <Link href={link.href} className="text-sm hover:text-cyan-400 transition-colors flex items-center gap-2">
@@ -103,7 +135,7 @@ export function Footer() {
               </li>
               <li className="flex items-center gap-3 text-sm">
                 <Mail className="w-5 h-5 text-cyan-400 shrink-0" />
-                <a href="mailto:webeautifyboats@gmail.com" className="hover:text-white transition-colors">webeautifyboats@gmail.com</a>
+                <a href="mailto:webeautifyboats.toronto@gmail.com" className="hover:text-white transition-colors">webeautifyboats.toronto@gmail.com</a>
               </li>
             </ul>
             <div className="mt-8">
@@ -119,7 +151,7 @@ export function Footer() {
 
         <div className="pt-8 border-t border-white/10 flex flex-col md:flex-row items-center justify-between gap-4">
           <p className="text-sm text-gray-500">
-            &copy; {new Date().getFullYear()} We Beautify Boats by Spike. All rights reserved.
+            &copy; {new Date().getFullYear()} Spike On The Water (We Beautify Boats by Spike). All rights reserved.
           </p>
           <p className="text-sm font-display text-gray-400">
             We Work <span className="text-cyan-500 mx-1">&middot;</span> You Play

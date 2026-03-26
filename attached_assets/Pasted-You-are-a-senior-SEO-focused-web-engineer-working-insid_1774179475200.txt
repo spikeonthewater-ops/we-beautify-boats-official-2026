@@ -1,0 +1,128 @@
+You are a senior SEO-focused web engineer working inside this Replit workspace. This repo builds a static website deployed at https://www.spikeonthewater.ca/ (GitHub Pages/Fastly). The site was migrated from a Wix site on webeautifyboats.com which will expire soon. Your job is to implement a complete SEO hardening + domain migration cleanup and commit the changes.
+Brand/IP clarification (must follow)
+We Beautify Boats and Spike On The Water are both brands and intellectual property owned by the same person: Shane “Spike” DesLoges. The old domain webeautifyboats.com is being retired/forwarded, but the business identity/ownership is continuous.
+Implementation requirements:
+Update public-facing branding on spikeonthewater.ca to Spike On The Water (titles, OG, Twitter, site_name, etc.).
+In structured data, set the owner identity consistently to Shane “Spike” DesLoges (Person and/or Organization/LocalBusiness founder/owner where appropriate).
+Do not reference webeautifyboats.com in canonicals, OG URLs, sitemap, robots, or asset URLs, even though it’s the same IP—treat it as a legacy domain only.
+Objectives (in priority order)
+Eliminate all SEO identity dependencies on webeautifyboats.com (canonical, OG, Twitter, sitemap, robots, schema, internal links, images).
+Self-canonicalize every indexable page to https://www.spikeonthewater.ca/….
+Fix metadata (titles + meta descriptions) to match Spike On The Water branding and best practices.
+Add Local SEO structured data (JSON-LD) for LocalBusiness + Person (Spike).
+Improve performance in static-friendly ways (image formats, lazy loading, defer non-critical JS) without breaking the site.
+Add analytics hook (GA4 placeholder) behind config/env var.
+Add /llms.txt.
+Ensure sitemap + robots are correct and consistent with preferred domain.
+Hard requirements
+Static-site compatible only (no server runtime required).
+Do not introduce broken links.
+Do not add noindex anywhere.
+Prefer a single canonical origin: https://www.spikeonthewater.ca/ (www + https). Enforce consistent internal linking.
+If the project uses templates/layouts/components, implement changes centrally (one place) rather than editing every page manually.
+After changes, run whatever build/lint/test commands exist in the repo and fix failures.
+When finished, commit with a clear message like: SEO: canonical + metadata + schema + sitemap/robots cleanup.
+Step 1 — Detect framework + central head template
+Identify the site generator/framework (Astro / Next export / Hugo / Eleventy / Jekyll / custom).
+Locate the single best “source of truth” for <head> (layout file, template, partial, component).
+Report where you will implement global head changes.
+Step 2 — Repo-wide search (must do)
+Search the entire codebase and output a short report with file paths + line numbers for matches:
+webeautifyboats.com
+www.webeautifyboats.com
+opengraph.jpg (especially if hosted on old domain)
+rel="canonical"
+og:url
+og:site_name
+twitter:image
+sitemap.xml
+robots.txt
+Step 3 — Implement SEO fixes (must do)
+A) Canonicals (highest priority)
+Ensure every indexable page has exactly one canonical tag.
+Canonical must be absolute and point to the matching page on: https://www.spikeonthewater.ca/
+Normalize trailing slashes consistently across:
+canonicals
+sitemap URLs
+internal links Choose one convention and apply it everywhere.
+B) Titles & meta descriptions
+Homepage <title> must become: Spike On The Water | Mobile Boat & Yacht Detailing in Ontario
+Other pages: use pattern: [Primary Service/Topic] | Spike On The Water (Ontario)
+Meta descriptions:
+Keep between 140–160 characters
+Mention Ontario + primary service intent naturally
+Include “Call Spike 416-890-5899” only if it still fits within length and reads cleanly
+C) OpenGraph + Twitter
+Set:
+og:site_name = Spike On The Water
+og:url = current page URL on spikeonthewater.ca
+og:title aligned with page title
+og:description aligned with meta description
+Ensure og:image and twitter:image are hosted on spikeonthewater.ca:
+Add a default OG image into the repo at a stable path like /assets/og/default.jpg (or png/webp).
+Update tags to reference that local asset with an absolute URL.
+Ensure:
+twitter:card = summary_large_image
+D) Sitemap + robots
+Ensure sitemap exists at: https://www.spikeonthewater.ca/sitemap.xml
+Ensure robots.txt includes exactly: Sitemap: https://www.spikeonthewater.ca/sitemap.xml
+Ensure robots does not block important paths.
+E) Structured data (JSON-LD)
+Add JSON-LD on the homepage (and sitewide if appropriate) for:
+1) LocalBusiness (or best-fit subtype)
+@type: LocalBusiness (or ProfessionalService if more appropriate)
+name: Spike On The Water
+url: https://www.spikeonthewater.ca/
+telephone: +1-416-890-5899
+areaServed: Ontario, Canada (optionally include Toronto, Oakville, Burlington, Hamilton)
+serviceType: Mobile boat detailing, yacht detailing, hull polishing, deck washing, interior detailing, bottom prep
+founder or owner: reference the Person entity for Spike
+If there is no public storefront address, do not fabricate a street address. Use service area only.
+2) Person (Spike)
+@type: Person
+name: Shane "Spike" DesLoges
+jobTitle: something appropriate like Marine Detailing Specialist
+url: https://www.spikeonthewater.ca/
+Link Person to the LocalBusiness via worksFor or founder/owner.
+Also add WebSite schema with name, url, and potentialAction (SearchAction) only if there is an on-site search; otherwise omit SearchAction.
+F) Headings/content sanity
+Ensure each page has exactly one H1.
+If homepage text content is thin, add a short crawlable paragraph (not keyword stuffing) describing:
+mobile boat & yacht detailing
+Ontario service area
+core services (deck wash, hull polishing, interior, protections, bottom prep) Keep it human and brand-consistent.
+G) Performance improvements (static-friendly)
+Without breaking the site:
+Identify the largest images and convert to modern formats (WebP/AVIF) if the build supports it.
+Add responsive images (srcset/sizes) for hero and key images.
+Lazy-load below-the-fold images.
+Defer non-critical JS and remove unused JS where safe.
+Reduce total payload where possible. Provide a short before/after summary using repo asset sizes (do not guess).
+H) Analytics hook
+Add GA4 support behind an environment variable/config flag:
+If GA4_MEASUREMENT_ID (or similar) is present, inject the GA script.
+If not present, do not inject tracking, but leave clear instructions in README or comments.
+I) llms.txt
+Create /llms.txt at site root with:
+Site name: Spike On The Water
+Preferred domain: https://www.spikeonthewater.ca/
+Short description of services
+Key URLs (home, services, contact)
+Allow crawling
+Step 4 — Validate
+Run build/test/lint commands defined in the repo (package.json, etc.).
+Fix any failures introduced by your changes.
+Ensure the generated HTML contains the new canonical + OG + JSON-LD.
+Step 5 — Commit + Output
+Commit all changes with message: SEO: canonical + metadata + schema + sitemap/robots cleanup
+Output:
+A bullet list of files changed/added
+A bullet list of what changed (canonical, title, OG, schema, robots, sitemap, llms.txt, perf)
+A production verification checklist:
+View-source shows canonical = spikeonthewater.ca
+OG preview shows Spike On The Water + correct image
+https://www.spikeonthewater.ca/sitemap.xml loads
+https://www.spikeonthewater.ca/robots.txt contains sitemap line
+Structured data passes Rich Results / Schema validator
+http→https and non-preferred host redirects are consistent
+Now proceed to implement all changes in this repo.

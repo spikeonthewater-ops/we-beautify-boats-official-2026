@@ -13,6 +13,7 @@ function cn(...inputs: ClassValue[]) {
 const NAV_LINKS = [
   { href: "/", label: "Home" },
   { href: "/our-services", label: "Services" },
+  { href: "/workshops", label: "Workshops" },
   { href: "/seasonal-plans", label: "Seasonal Plans" },
   { href: "/our-work", label: "Our Work" },
   { href: "/meet-the-team", label: "Team" },
@@ -50,11 +51,13 @@ export function Navbar() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between">
           {/* Logo */}
           <Link href="/" className="flex items-center group">
-            <img
-              src={`${import.meta.env.BASE_URL}images/logo-wbb.png`}
-              alt="We Beautify Boats Logo"
-              className="h-16 w-auto object-contain mix-blend-screen group-hover:scale-105 transition-transform duration-300"
-            />
+            <div className="bg-white rounded-full px-3 py-1.5 group-hover:scale-105 transition-transform duration-300">
+              <img
+                src={`${import.meta.env.BASE_URL}images/logo-wbb.png`}
+                alt="We Beautify Boats Logo"
+                className="h-9 w-auto object-contain"
+              />
+            </div>
           </Link>
 
           {/* Desktop Nav */}
@@ -98,7 +101,7 @@ export function Navbar() {
               onClick={() => openQuote()}
               className="px-6 py-2.5 rounded-full bg-cyan-500 hover:bg-cyan-400 text-white font-semibold text-sm shadow-[0_0_20px_rgba(120,60,200,0.3)] hover:shadow-[0_0_25px_rgba(120,60,200,0.5)] transition-all hover:-translate-y-0.5 active:translate-y-0"
             >
-              Book Now
+              Get Quote
             </button>
           </div>
 
@@ -148,7 +151,7 @@ export function Navbar() {
                 onClick={() => { openQuote(); }}
                 className="flex items-center justify-center py-4 bg-cyan-500 text-white rounded-xl font-bold text-lg shadow-lg shadow-cyan-500/25"
               >
-                Book Now
+                Get Quote
               </button>
             </div>
           </motion.div>

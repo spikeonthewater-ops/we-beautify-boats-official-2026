@@ -12,20 +12,11 @@ version = "1.0.0"
 [[services]]
 name = "web"
 paths = [ "/" ]
-localPort = 23763
+localPort = 5173
 
 [services.development]
 run = "pnpm --filter @workspace/we-beautify-boats run dev"
 
-[services.production]
-build = [ "pnpm", "--filter", "@workspace/we-beautify-boats", "run", "build" ]
-publicDir = "artifacts/we-beautify-boats/dist/public"
-serve = "static"
-
-[[services.production.rewrites]]
-from = "/*"
-to = "/index.html"
-
 [services.env]
-PORT = "23763"
+PORT = "5173"
 BASE_PATH = "/"

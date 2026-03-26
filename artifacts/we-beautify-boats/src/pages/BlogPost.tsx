@@ -3,6 +3,7 @@ import { motion } from "framer-motion";
 import { Calendar, Tag, ArrowLeft, ArrowRight, Phone } from "lucide-react";
 import { getPostBySlug, blogPosts, formatDate } from "@/data/blogPosts";
 import { useQuote } from "@/context/QuoteContext";
+import PageMeta from "@/components/PageMeta";
 
 function renderContent(content: string) {
   const lines = content.split("\n");
@@ -104,6 +105,12 @@ export default function BlogPost() {
 
   return (
     <div className="min-h-screen bg-background pt-16 pb-24">
+      <PageMeta
+        title={post.title}
+        description={post.excerpt.length > 160 ? post.excerpt.slice(0, 157) + "…" : post.excerpt}
+        path={`/blog/${post.slug}`}
+        ogImage={post.image?.startsWith("http") ? post.image : undefined}
+      />
 
       {/* Hero */}
       <div className="relative h-72 md:h-[420px] overflow-hidden">

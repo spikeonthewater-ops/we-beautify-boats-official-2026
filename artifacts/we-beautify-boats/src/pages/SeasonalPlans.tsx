@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
 import { Check, Repeat, CalendarDays, Package, ClipboardList } from "lucide-react";
 import { useQuote } from "@/context/QuoteContext";
+import PageMeta from "@/components/PageMeta";
 
 interface Plan {
   title: string;
@@ -333,6 +334,11 @@ export default function SeasonalPlans() {
   const { openQuote } = useQuote();
   return (
     <div className="pt-32 pb-24 min-h-screen bg-background">
+      <PageMeta
+        title="Seasonal Detailing Plans | Spike On The Water (Ontario)"
+        description="Flexible seasonal boat detailing packages for Ontario boaters — weekly, bi-weekly, and full-season plans. Consistent care from opening day to winter storage. Call Spike: 416-890-5899."
+        path="/seasonal-plans"
+      />
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
         {/* Page Header */}

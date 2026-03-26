@@ -1,14 +1,18 @@
 modules = ["nodejs-24"]
 
 [[artifacts]]
+id = "artifacts/we-beautify-boats"
+
+[[artifacts]]
 id = "artifacts/api-server"
 
 [[artifacts]]
 id = "artifacts/mockup-sandbox"
 
 [deployment]
-router = "application"
-deploymentTarget = "autoscale"
+deploymentTarget = "static"
+build = ["pnpm", "--filter", "@workspace/we-beautify-boats", "run", "build"]
+publicDir = "artifacts/we-beautify-boats/dist/public"
 
 [deployment.postBuild]
 args = ["pnpm", "store", "prune"]
@@ -17,10 +21,51 @@ env = { "CI" = "true" }
 [workflows]
 runButton = "Project"
 
+[[workflows.workflow]]
+name = "Project"
+mode = "parallel"
+author = "agent"
+
+[[workflows.workflow.tasks]]
+task = "workflow.run"
+args = "artifacts/we-beautify-boats: web"
+
+[[workflows.workflow.tasks]]
+task = "workflow.run"
+args = "artifacts/api-server: api"
+
+[[workflows.workflow]]
+name = "artifacts/we-beautify-boats: web"
+author = "agent"
+
+[workflows.workflow.metadata]
+outputType = "webview"
+
+[[workflows.workflow.tasks]]
+task = "shell.exec"
+args = "pnpm --filter @workspace/we-beautify-boats run dev"
+waitForPort = 5173
+
+[[workflows.workflow]]
+name = "artifacts/api-server: api"
+author = "agent"
+
+[[workflows.workflow.tasks]]
+task = "shell.exec"
+args = "PORT=3001 pnpm --filter @workspace/api-server run dev"
+waitForPort = 3001
+
+[workflows.workflow.metadata]
+outputType = "console"
+
 [agent]
 stack = "PNPM_WORKSPACE"
 expertMode = true
+integrations = ["google-calendar:1.0.0"]
 
 [postMerge]
 path = "scripts/post-merge.sh"
 timeoutMs = 20000
+
+[nix]
+channel = "stable-25_05"

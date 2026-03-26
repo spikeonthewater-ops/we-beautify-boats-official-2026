@@ -1,3 +1,4 @@
+import { lazy, Suspense } from "react";
 import { Switch, Route, Router as WouterRouter } from "wouter";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { Toaster } from "@/components/ui/toaster";
@@ -10,26 +11,28 @@ import { QuoteDrawer } from "@/components/QuoteDrawer";
 import { Navbar } from "@/components/layout/Navbar";
 import { Footer } from "@/components/layout/Footer";
 
-// Pages
-import Home from "@/pages/Home";
-import Services from "@/pages/Services";
-import SeasonalPlans from "@/pages/SeasonalPlans";
-import OurWork from "@/pages/OurWork";
-import MeetTheTeam from "@/pages/MeetTheTeam";
-import Contact from "@/pages/Contact";
-import Blog from "@/pages/Blog";
-import BlogPost from "@/pages/BlogPost";
+// Pages — lazy loaded for smaller initial bundle
+const Home = lazy(() => import("@/pages/Home"));
+const Services = lazy(() => import("@/pages/Services"));
+const SeasonalPlans = lazy(() => import("@/pages/SeasonalPlans"));
+const OurWork = lazy(() => import("@/pages/OurWork"));
+const MeetTheTeam = lazy(() => import("@/pages/MeetTheTeam"));
+const Contact = lazy(() => import("@/pages/Contact"));
+const Blog = lazy(() => import("@/pages/Blog"));
+const BlogPost = lazy(() => import("@/pages/BlogPost"));
 
-// Service Detail Pages
-import DeckWashes from "@/pages/services/DeckWashes";
-import DeckPolishing from "@/pages/services/DeckPolishing";
-import Protections from "@/pages/services/Protections";
-import HullWashes from "@/pages/services/HullWashes";
-import BottomPrep from "@/pages/services/BottomPrep";
-import InteriorDetails from "@/pages/services/InteriorDetails";
-import ExtraServices from "@/pages/services/ExtraServices";
+// Service Detail Pages — lazy loaded
+const DeckWashes = lazy(() => import("@/pages/services/DeckWashes"));
+const DeckPolishing = lazy(() => import("@/pages/services/DeckPolishing"));
+const Protections = lazy(() => import("@/pages/services/Protections"));
+const HullWashes = lazy(() => import("@/pages/services/HullWashes"));
+const BottomPrep = lazy(() => import("@/pages/services/BottomPrep"));
+const InteriorDetails = lazy(() => import("@/pages/services/InteriorDetails"));
+const ExtraServices = lazy(() => import("@/pages/services/ExtraServices"));
+const Workshops = lazy(() => import("@/pages/services/Workshops"));
 
 import { useScrollToTop } from "@/hooks/use-navigation";
+import Analytics from "@/components/Analytics";
 
 const queryClient = new QueryClient();
 
@@ -38,33 +41,40 @@ function ScrollWrapper({ children }: { children: React.ReactNode }) {
   return <>{children}</>;
 }
 
+function PageLoader() {
+  return <div className="min-h-screen bg-background" aria-hidden />;
+}
+
 function Router() {
   return (
     <ScrollWrapper>
       <div className="flex flex-col min-h-screen">
         <Navbar />
         <main className="flex-1">
-          <Switch>
-            <Route path="/" component={Home} />
-            <Route path="/our-services" component={Services} />
-            <Route path="/seasonal-plans" component={SeasonalPlans} />
-            <Route path="/our-work" component={OurWork} />
-            <Route path="/meet-the-team" component={MeetTheTeam} />
-            <Route path="/contact" component={Contact} />
-            
-            <Route path="/deck-washes" component={DeckWashes} />
-            <Route path="/deck-polishing" component={DeckPolishing} />
-            <Route path="/protections" component={Protections} />
-            <Route path="/hull-washes" component={HullWashes} />
-            <Route path="/bottom-prep" component={BottomPrep} />
-            <Route path="/interior-details" component={InteriorDetails} />
-            <Route path="/extra-services" component={ExtraServices} />
+          <Suspense fallback={<PageLoader />}>
+            <Switch>
+              <Route path="/" component={Home} />
+              <Route path="/our-services" component={Services} />
+              <Route path="/seasonal-plans" component={SeasonalPlans} />
+              <Route path="/our-work" component={OurWork} />
+              <Route path="/meet-the-team" component={MeetTheTeam} />
+              <Route path="/contact" component={Contact} />
 
-            <Route path="/blog" component={Blog} />
-            <Route path="/blog/:slug" component={BlogPost} />
+              <Route path="/deck-washes" component={DeckWashes} />
+              <Route path="/deck-polishing" component={DeckPolishing} />
+              <Route path="/protections" component={Protections} />
+              <Route path="/hull-washes" component={HullWashes} />
+              <Route path="/bottom-prep" component={BottomPrep} />
+              <Route path="/interior-details" component={InteriorDetails} />
+              <Route path="/extra-services" component={ExtraServices} />
+              <Route path="/workshops" component={Workshops} />
 
-            <Route component={NotFound} />
-          </Switch>
+              <Route path="/blog" component={Blog} />
+              <Route path="/blog/:slug" component={BlogPost} />
+
+              <Route component={NotFound} />
+            </Switch>
+          </Suspense>
         </main>
         <Footer />
       </div>
@@ -77,6 +87,7 @@ function App() {
     <QueryClientProvider client={queryClient}>
       <TooltipProvider>
         <QuoteProvider>
+          <Analytics />
           <WouterRouter base={import.meta.env.BASE_URL.replace(/\/$/, "")}>
             <Router />
           </WouterRouter>

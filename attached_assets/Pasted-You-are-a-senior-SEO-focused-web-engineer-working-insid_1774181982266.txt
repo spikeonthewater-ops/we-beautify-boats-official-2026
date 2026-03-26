@@ -1,0 +1,117 @@
+You are a senior SEO-focused web engineer working inside this Replit workspace. This repo builds a static website deployed at https://www.spikeonthewater.ca/. The site was migrated from a Wix site on webeautifyboats.com which will expire soon. Implement the SEO improvements below repo-wide, run the build, and commit.
+Brand/IP clarification (must follow)
+We Beautify Boats and Spike On The Water are both brands and intellectual property owned by the same person: Shane “Spike” DesLoges. The old domain webeautifyboats.com is being retired/forwarded, but the business identity/ownership is continuous.
+Implementation requirements:
+Public-facing branding on spikeonthewater.ca should be Spike On The Water.
+Keep brand continuity by referencing “We Beautify Boats” in on-page copy where appropriate, but do not use webeautifyboats.com anywhere in canonicals/OG URLs/sitemaps/robots/assets.
+Structured data must consistently identify the owner/founder as Shane “Spike” DesLoges.
+Official social profiles (use in schema + site footer/header if present)
+Instagram: https://www.instagram.com/webeautifyboats/
+LinkedIn: https://www.linkedin.com/company/we-beautify-boats
+YouTube: https://www.youtube.com/@SpikeOnTheWater
+Facebook: https://www.facebook.com/webeautifyboats
+Objectives (priority order)
+Ensure self-canonicalization on every indexable page to https://www.spikeonthewater.ca/... (no legacy domain references).
+Improve title + meta description for homepage and key service pages (length + intent).
+Ensure OpenGraph/Twitter tags are correct and consistent sitewide.
+Improve Local SEO schema (LocalBusiness + Person + WebSite) and populate sameAs with the social profiles above.
+Improve performance, especially mobile, without breaking the site (reduce JS impact, optimize images, lazy-load where safe).
+Ensure robots.txt + sitemap.xml are correct and consistent.
+Add /llms.txt.
+Run build/test and commit.
+Hard requirements
+Static-site compatible only.
+Do not introduce broken links.
+Do not add noindex.
+Prefer a single canonical origin: https://www.spikeonthewater.ca/ (www + https).
+Implement changes centrally via the main layout/head component if the framework supports it.
+After changes, run repo build/lint/test scripts and fix failures.
+Commit message: SEO: metadata + schema + perf + crawlability
+Step 1 — Identify framework + central head
+Detect the framework (React SPA, Astro, Next export, Hugo, Eleventy, etc.).
+Locate the central place where <head> is generated (layout/template/component).
+Implement all head changes there (not duplicated per page unless unavoidable).
+Step 2 — Repo-wide search report
+Search the entire codebase and output a short report with file paths + line numbers for:
+webeautifyboats.com
+www.webeautifyboats.com
+rel="canonical"
+og:url
+og:site_name
+twitter:image
+sitemap.xml
+robots.txt
+application/ld+json
+square.site/appointments (for performance review)
+Step 3 — Implement changes
+A) Titles (homepage + pattern)
+Update homepage <title> to exactly:
+Spike On The Water | Mobile Boat & Yacht Detailing in Ontario
+For other pages, enforce pattern:
+[Page Topic/Service] | Spike On The Water (Ontario)
+Do NOT include “aka We Beautify Boats” in the <title> tag. If you want continuity, add it in visible page copy (e.g., hero subheading).
+B) Meta description
+Rewrite homepage meta description to be 140–160 characters, service + location + call. Example target (you can refine):
+“Mobile yacht & boat detailing across Ontario—deck washes, hull polishing, interior detailing & protection. Call Spike: 416-890-5899.”
+Ensure other key pages follow the same length guidance and include service intent.
+C) Canonical
+Ensure every indexable page has exactly one canonical tag:
+Absolute URL
+Uses https://www.spikeonthewater.ca/
+Consistent trailing slash rules across site + sitemap
+D) OpenGraph + Twitter
+Ensure sitewide:
+og:site_name = Spike On The Water
+og:url = current page URL on spikeonthewater.ca
+og:title aligns with page title
+og:description aligns with meta description
+og:image and twitter:image use an image hosted on spikeonthewater.ca (keep /opengraph.jpg if present)
+twitter:card = summary_large_image
+E) Structured data (JSON-LD) — fix and enrich
+Update JSON-LD to:
+Use AdministrativeArea for Ontario (Canada) instead of State.
+Populate sameAs for the LocalBusiness with the official social URLs:
+https://www.instagram.com/webeautifyboats/
+https://www.linkedin.com/company/we-beautify-boats
+https://www.youtube.com/@SpikeOnTheWater
+https://www.facebook.com/webeautifyboats
+Ensure the Person entity is:
+name: Shane "Spike" DesLoges
+linked as founder/owner of the LocalBusiness
+Do NOT fabricate a street address. If there is no public storefront, omit address.
+F) Performance improvements (static-friendly)
+Review the Square Appointments widget:
+If it’s loaded sitewide, change it to load only on the Contact/Booking page OR lazy-load it after main content is rendered.
+Ensure images are optimized:
+compress opengraph.jpg
+use modern formats where supported
+lazy-load below-the-fold images
+Defer non-critical scripts where safe.
+Provide a short before/after summary using actual repo asset sizes (do not guess).
+G) robots.txt + sitemap.xml
+Ensure robots.txt includes: Sitemap: https://www.spikeonthewater.ca/sitemap.xml
+Ensure sitemap URLs match canonical format (slash/no-slash consistency).
+Optional but recommended: add <lastmod> values (use build date if needed).
+H) llms.txt
+Create /llms.txt at site root including:
+Site name
+Preferred domain
+Short description
+Key URLs (home, services, contact, blog)
+Allow crawling
+Step 4 — Validate
+Run build/test/lint scripts.
+Verify generated HTML contains updated title/description/canonical/OG/JSON-LD.
+Step 5 — Commit + output
+Commit all changes with message: SEO: metadata + schema + perf + crawlability
+Output:
+Files changed/added
+Summary of changes
+Production verification checklist:
+View-source shows canonical = spikeonthewater.ca
+OG preview shows correct title/site_name/image
+/sitemap.xml loads and URLs match canonical format
+/robots.txt contains sitemap line
+Schema validates
+Square widget only loads where intended
+Proceed now.

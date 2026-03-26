@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+import PageMeta from "@/components/PageMeta";
 import { Link } from "wouter";
 import { ArrowRight, CheckCircle2, Plus } from "lucide-react";
 
@@ -16,7 +17,7 @@ const SERVICES_LIST = [
     ],
     links: [
       { name: "Deck Washes", href: "/deck-washes" },
-      { name: "Deck & Hull Polishing", href: "/deck-polishing" }
+      { name: "Deck Polishing", href: "/deck-polishing" }
     ],
     img: "service-deck.png"
   },
@@ -55,12 +56,28 @@ const SERVICES_LIST = [
     img: "service-interior.png"
   },
   {
+    id: "05",
+    title: "Workshops & Training",
+    subtitle: "The Ontario Standard — Taught at Your Dock",
+    desc: "Bring 30 years of documented marine IP directly to your marina or yacht club. Intensive, hands-on workshops for staff crews, private owners, and advanced technicians — covering compound chemistry, predictive buffer workflows, environmental compliance, and surface restoration.",
+    features: [
+      "Certificate of Practical Completion for all participants",
+      "Three formats: Marina Pro-Series, Owner's Day, Restoration Masterclass",
+      "Tools, chemistry, and curriculum provided by Spike",
+      "Seasonal availability — fill quickly"
+    ],
+    links: [
+      { name: "View Workshops", href: "/workshops" },
+    ],
+    img: "service-workshops.png"
+  },
+  {
     id: "04",
     title: "Protections",
     subtitle: "Long-term Value Preservation",
     desc: "Advanced marine surface protection systems matched to your usage patterns. We apply industry-leading sealants and coatings to defend against the elements.",
     features: [
-      "Ceramic coating applications",
+      "Antifouling coatings & long-term surface protection",
       "Marine-grade polymer sealants",
       "Teak oiling and sealing",
       "UV resistance treatments"
@@ -90,6 +107,11 @@ const EXTRAS_PREVIEW = [
 export default function Services() {
   return (
     <div className="min-h-screen bg-background pb-20">
+      <PageMeta
+        title="Our Services | Spike On The Water (Ontario)"
+        description="Professional mobile boat detailing across Ontario — deck washes, hull polishing, interior detailing, antifouling, protections, and extra services. Call Spike: 416-890-5899."
+        path="/our-services"
+      />
       {/* Header */}
       <div className="bg-marine-900 text-white pt-32 pb-20 px-4 sm:px-6 lg:px-8 text-center relative overflow-hidden">
         <div className="absolute inset-0 opacity-10 bg-[url('https://images.unsplash.com/photo-1567899378494-47b22a2ae96a?w=1920&q=80')] bg-cover bg-center mix-blend-overlay"></div>
@@ -98,7 +120,7 @@ export default function Services() {
           animate={{ opacity: 1, y: 0 }}
           className="max-w-3xl mx-auto relative z-10"
         >
-          <h1 className="text-4xl md:text-5xl lg:text-6xl font-display font-bold mb-6">Our 4 Areas of Attention</h1>
+          <h1 className="text-4xl md:text-5xl lg:text-6xl font-display font-bold mb-6">Our Areas of Service</h1>
           <p className="text-xl text-cyan-100/80 font-light leading-relaxed">
             More than just cleaning... it's the art of preserving and enhancing every element of your vessel, ensuring it looks and performs its best on the water.
           </p>
