@@ -1,10 +1,14 @@
+import { useState } from "react";
 import { Link } from "wouter";
 import { Phone, Mail, MapPin, Instagram, Facebook } from "lucide-react";
 import { useQuote } from "@/context/QuoteContext";
+import ReferralModal from "@/components/ReferralModal";
 
 export function Footer() {
   const { openQuote } = useQuote();
+  const [referralOpen, setReferralOpen] = useState(false);
   return (
+    <>
     <footer className="bg-marine-900 text-gray-300 pt-20 pb-10 border-t border-marine-800">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16">
@@ -49,6 +53,15 @@ export function Footer() {
                   </Link>
                 </li>
               ))}
+              <li>
+                <button
+                  onClick={() => setReferralOpen(true)}
+                  className="text-sm hover:text-cyan-400 transition-colors flex items-center gap-2 text-left"
+                >
+                  <span className="w-1.5 h-1.5 rounded-full bg-cyan-500/50"></span>
+                  Refer a Friend
+                </button>
+              </li>
             </ul>
           </div>
 
@@ -114,5 +127,8 @@ export function Footer() {
         </div>
       </div>
     </footer>
+
+    {referralOpen && <ReferralModal onClose={() => setReferralOpen(false)} />}
+    </>
   );
 }

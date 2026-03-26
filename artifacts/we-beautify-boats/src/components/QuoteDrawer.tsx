@@ -900,20 +900,20 @@ export function QuoteDrawer() {
                     </div>
                   </div>
 
-                  {/* Primary CTA — Square Appointments */}
+                  {/* Primary CTA — Stripe Payment */}
                   <div className="mb-3">
                     <a
-                      href="https://square.site/appointments/buyer/widget/fcf51xt73abko4/L06YYAF0XFN9A"
+                      href="https://buy.stripe.com/5kQ8wQ0zL9UvcJx5Od0kE01"
                       target="_blank"
                       rel="noopener noreferrer"
                       className="flex items-center justify-center gap-3 w-full py-4 rounded-xl font-black text-sm uppercase tracking-widest transition-all active:scale-[0.99] shadow-lg text-white"
                       style={{ background: "linear-gradient(135deg,#6c47c1 0%,#3d1f8a 100%)" }}
                     >
                       <CalendarCheck className="w-5 h-5" />
-                      Reserve Assessment — Book via Square
+                      Reserve Assessment — Pay Securely
                     </a>
                     <p className="text-center text-[10px] text-gray-400 mt-2 leading-relaxed">
-                      $250 CAD assessment fee collected securely via Square · Credited toward your service
+                      $250 CAD assessment fee · Credited toward your service
                     </p>
                   </div>
 
