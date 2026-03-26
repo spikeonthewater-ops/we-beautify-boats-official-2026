@@ -1,6 +1,6 @@
 import { useEffect } from "react";
 
-const BASE = "https://www.spikeonthewater.ca";
+const BASE = "https://www.webeautifyboats.com";
 const DEFAULT_DESC = "Ontario's premier mobile yacht & boat detailing. Deck washes, hull polishing, interior detailing, antifouling & more. Serving Toronto, Oakville, Burlington & Hamilton marinas. Call Spike: 416-890-5899.";
 
 interface PageMetaProps {

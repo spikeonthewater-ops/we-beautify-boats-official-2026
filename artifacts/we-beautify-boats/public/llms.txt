@@ -1,7 +1,7 @@
 # Spike On The Water — llms.txt
 
 Site name: Spike On The Water
-Preferred domain: https://www.spikeonthewater.ca/
+Preferred domain: https://www.webeautifyboats.com/
 Owner: Shane "Spike" DesLoges
 Phone: +1-416-890-5899
 Location: Ontario, Canada (mobile — serving Toronto, Oakville, Burlington, Hamilton and surrounding marinas)
@@ -10,24 +10,24 @@ Location: Ontario, Canada (mobile — serving Toronto, Oakville, Burlington, Ham
 Spike On The Water is a professional mobile yacht and boat detailing service operating across Ontario's freshwater lakes and marinas. Founded and operated by Shane "Spike" DesLoges with 28+ years of marine detailing experience. Services are fully documented with defined service levels and measurable results.
 
 ## Core Services
-- Deck Washes (Levels 1–4): https://www.spikeonthewater.ca/deck-washes
-- Deck Polishing: https://www.spikeonthewater.ca/deck-polishing
-- Hull Washes: https://www.spikeonthewater.ca/hull-washes
-- Bottom Prep & Antifouling: https://www.spikeonthewater.ca/bottom-prep
-- Interior Detailing (Levels 1–4): https://www.spikeonthewater.ca/interior-details
-- Surface Protections (Spike's PT, SiO2, Wax): https://www.spikeonthewater.ca/protections
-- Extra Services: https://www.spikeonthewater.ca/extra-services
-- Workshops & Training: https://www.spikeonthewater.ca/workshops
+- Deck Washes (Levels 1–4): https://www.webeautifyboats.com/deck-washes
+- Deck Polishing: https://www.webeautifyboats.com/deck-polishing
+- Hull Washes: https://www.webeautifyboats.com/hull-washes
+- Bottom Prep & Antifouling: https://www.webeautifyboats.com/bottom-prep
+- Interior Detailing (Levels 1–4): https://www.webeautifyboats.com/interior-details
+- Surface Protections (Spike's PT, SiO2, Wax): https://www.webeautifyboats.com/protections
+- Extra Services: https://www.webeautifyboats.com/extra-services
+- Workshops & Training: https://www.webeautifyboats.com/workshops
 
 ## Key Pages
-- Home: https://www.spikeonthewater.ca/
-- Services Overview: https://www.spikeonthewater.ca/our-services
-- Seasonal Plans: https://www.spikeonthewater.ca/seasonal-plans
-- Our Work: https://www.spikeonthewater.ca/our-work
-- Meet the Team: https://www.spikeonthewater.ca/meet-the-team
-- Blog: https://www.spikeonthewater.ca/blog
-- Contact: https://www.spikeonthewater.ca/contact
+- Home: https://www.webeautifyboats.com/
+- Services Overview: https://www.webeautifyboats.com/our-services
+- Seasonal Plans: https://www.webeautifyboats.com/seasonal-plans
+- Our Work: https://www.webeautifyboats.com/our-work
+- Meet the Team: https://www.webeautifyboats.com/meet-the-team
+- Blog: https://www.webeautifyboats.com/blog
+- Contact: https://www.webeautifyboats.com/contact
 
 ## Crawling
 Allow all crawlers. Content is educational, service-oriented, and openly indexed.
-Sitemap: https://www.spikeonthewater.ca/sitemap.xml
+Sitemap: https://www.webeautifyboats.com/sitemap.xml
