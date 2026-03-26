@@ -31,6 +31,16 @@ app.use(cors());
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
+// Redirect spikeonthewater.ca to webeautifyboats.com — preserve full path + query
+app.use((req, res, next) => {
+  const host = req.hostname ?? "";
+  if (host.includes("spikeonthewater.ca")) {
+    const destination = `https://www.webeautifyboats.com${req.originalUrl}`;
+    return res.redirect(301, destination);
+  }
+  next();
+});
+
 // QR code redirects — printed materials
 app.get("/scheduleservices", (_req, res) => res.redirect(301, "/our-services"));
 app.get("/booking-calendar/bottom-prep-level-4-bp04", (_req, res) => res.redirect(301, "https://spikeonthewater.ca/blog/bottom-prep-level-4"));
